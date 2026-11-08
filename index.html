@@ -3,979 +3,905 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MU 美光科技 · 期权结构日报 2026/11/07</title>
+<title>MU 美光科技 · 期权结构日报 2026/11/08</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 :root{
-  --bg:#000; --bg2:#08080a; --card:rgba(255,255,255,.038); --card2:rgba(255,255,255,.06);
-  --stroke:rgba(255,255,255,.085); --stroke2:rgba(255,255,255,.16);
-  --tx:#f5f5f7; --dim:#86868b; --dim2:#5f5f63;
-  --blue:#0a84ff; --up:#ff453a; --down:#30d158; --amber:#ff9f0a; --purple:#bf5af2; --cyan:#64d2ff;
+  --bg:#000; --bg2:#08080a; --card:rgba(255,255,255,.038); --card2:rgba(255,255,255,.062);
+  --stroke:rgba(255,255,255,.085); --stroke2:rgba(255,255,255,.17);
+  --tx:#f5f5f7; --dim:#86868b; --dim2:#5b5b60;
+  --blue:#0a84ff; --up:#ff453a; --down:#30d158; --amber:#ff9f0a; --purple:#bf5af2; --cyan:#64d2ff; --pink:#ff375f;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg); color:var(--tx);
+body{background:var(--bg);color:var(--tx);
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue","Segoe UI",sans-serif;
-  font-size:15px; line-height:1.6; letter-spacing:-.01em; overflow-x:hidden;
-}
-body::before{
-  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  font-size:15px;line-height:1.62;letter-spacing:-.011em;overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
-    radial-gradient(900px 600px at 78% -8%, rgba(10,132,255,.13), transparent 62%),
-    radial-gradient(700px 500px at 12% 4%, rgba(191,90,242,.07), transparent 60%),
-    radial-gradient(1000px 700px at 50% 108%, rgba(255,69,58,.05), transparent 65%);
-}
-.mono{font-variant-numeric:tabular-nums; font-feature-settings:"tnum"}
+    radial-gradient(900px 620px at 80% -10%,rgba(10,132,255,.14),transparent 62%),
+    radial-gradient(720px 520px at 8% 2%,rgba(191,90,242,.075),transparent 60%),
+    radial-gradient(1100px 700px at 50% 108%,rgba(255,69,58,.055),transparent 66%);}
+.mono{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
 .wrap{max-width:1180px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
 
-/* ---------- nav ---------- */
-.nav{
-  position:fixed; top:0; left:0; right:0; height:58px; z-index:100;
-  background:rgba(0,0,0,.72); backdrop-filter:saturate(180%) blur(22px);
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;height:58px;z-index:100;
+  background:rgba(0,0,0,.74);backdrop-filter:saturate(180%) blur(22px);
   -webkit-backdrop-filter:saturate(180%) blur(22px);
-  border-bottom:1px solid rgba(255,255,255,.07); display:flex; align-items:center;
-}
-.nav .wrap{display:flex;align-items:center;gap:22px;width:100%}
-.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.logo-mark{
-  width:26px;height:26px;border-radius:7px;
-  background:linear-gradient(140deg,#0a84ff,#5e5ce6 55%,#bf5af2);
-  display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;letter-spacing:0;
-  box-shadow:0 0 18px rgba(10,132,255,.45);
-}
-.logo-txt{font-size:13px;font-weight:600;letter-spacing:.06em}
-.logo-txt span{color:var(--dim);font-weight:400;margin-left:8px;letter-spacing:.02em}
-.navlinks{margin-left:auto;display:flex;gap:20px}
+  border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;gap:20px;width:100%}
+.logo{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.logo-mark{width:27px;height:27px;border-radius:8px;
+  background:linear-gradient(140deg,#c8102e,#8a0b20 60%,#4a0612);
+  display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;
+  box-shadow:0 0 16px rgba(200,16,46,.42);letter-spacing:0}
+.logo-txt{font-size:13px;font-weight:600;letter-spacing:.07em}
+.logo-txt span{color:var(--dim);font-weight:400;margin-left:9px;letter-spacing:.02em}
+.navlinks{margin-left:auto;display:flex;gap:19px;align-items:center}
 .navlinks a{color:var(--dim);text-decoration:none;font-size:12.5px;transition:color .2s}
 .navlinks a:hover{color:var(--tx)}
-.nav-tag{
-  font-size:11px;padding:4px 9px;border-radius:20px;border:1px solid rgba(255,69,58,.35);
-  background:rgba(255,69,58,.1);color:#ff8f87;margin-left:6px;letter-spacing:.04em;
-}
+.nav-tag{font-size:10.5px;padding:4px 9px;border-radius:20px;border:1px solid rgba(255,159,10,.34);
+  background:rgba(255,159,10,.1);color:#ffc06a;letter-spacing:.05em}
 
-/* ---------- hero ---------- */
-.hero{padding:132px 0 56px}
-.eyebrow{
-  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);
-  display:flex;align-items:center;gap:12px;margin-bottom:26px;
-}
+/* hero */
+.hero{padding:128px 0 52px}
+.eyebrow{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);
+  display:flex;align-items:center;gap:12px;margin-bottom:26px}
 .eyebrow::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--stroke),transparent)}
-.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:end}
-h1{
-  font-size:64px;line-height:1.03;letter-spacing:-.035em;font-weight:600;
-  background:linear-gradient(180deg,#fff 30%,#9a9aa0);-webkit-background-clip:text;background-clip:text;color:transparent;
-}
-h1 em{font-style:normal;color:var(--dim);font-size:.42em;letter-spacing:-.01em;display:block;margin-top:10px;font-weight:400;-webkit-text-fill-color:var(--dim)}
-.priceblock{display:flex;align-items:flex-end;gap:18px;margin-top:34px}
-.price{font-size:80px;font-weight:600;letter-spacing:-.045em;line-height:.95}
-.price small{font-size:26px;color:var(--dim);font-weight:400;margin-right:4px;vertical-align:6px}
-.delta{display:flex;flex-direction:column;gap:2px;padding-bottom:8px}
-.delta b{font-size:22px;font-weight:600;letter-spacing:-.02em}
-.delta span{font-size:12px;color:var(--dim)}
-.up{color:var(--up)} .down{color:var(--down)} .dim{color:var(--dim)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
-.chip{
-  font-size:11.5px;padding:6px 12px;border-radius:9px;border:1px solid var(--stroke);
-  background:var(--card);color:var(--dim);letter-spacing:.02em;
-}
+.hero-grid{display:grid;grid-template-columns:1.28fr 1fr;gap:52px;align-items:end}
+h1{font-size:60px;line-height:1.05;letter-spacing:-.036em;font-weight:600;
+  background:linear-gradient(180deg,#fff 28%,#97979d);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 em{font-style:normal;color:var(--dim);font-size:.4em;letter-spacing:-.01em;display:block;margin-top:12px;
+  font-weight:400;-webkit-text-fill-color:var(--dim);line-height:1.5}
+.priceblock{display:flex;align-items:flex-end;gap:16px;margin-top:32px}
+.price{font-size:76px;font-weight:600;letter-spacing:-.045em;line-height:.95}
+.price small{font-size:25px;color:var(--dim);font-weight:400;margin-right:3px;vertical-align:6px}
+.delta{display:flex;flex-direction:column;gap:1px;padding-bottom:7px}
+.delta b{font-size:21px;font-weight:600;letter-spacing:-.02em}
+.delta span{font-size:11.5px;color:var(--dim)}
+.up{color:var(--up)} .down{color:var(--down)} .dim{color:var(--dim)} .amber{color:var(--amber)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-size:11.5px;padding:6px 12px;border-radius:9px;border:1px solid var(--stroke);
+  background:var(--card);color:var(--dim);letter-spacing:.015em}
 .chip b{color:var(--tx);font-weight:500}
-.chip.alert{border-color:rgba(255,69,58,.3);background:rgba(255,69,58,.08);color:#ff9d96}
+.chip.alert{border-color:rgba(255,69,58,.3);background:rgba(255,69,58,.085);color:#ff9d96}
+.chip.warn{border-color:rgba(255,159,10,.3);background:rgba(255,159,10,.08);color:#ffc478}
 
-/* ---------- clock cards ---------- */
-.clock{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.clock-card{
-  border:1px solid var(--stroke);background:var(--card);border-radius:16px;padding:16px 18px;
-  position:relative;overflow:hidden;
-}
-.clock-card.on{border-color:rgba(10,132,255,.35);background:linear-gradient(160deg,rgba(10,132,255,.1),rgba(255,255,255,.03))}
-.clock-card.next{opacity:.62}
-.cc-head{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
-.cc-head i{
-  font-style:normal;font-size:9.5px;padding:2px 7px;border-radius:20px;
-  background:rgba(255,255,255,.07);color:var(--dim);letter-spacing:.04em;
-}
-.clock-card.on .cc-head i{background:rgba(10,132,255,.2);color:#7cc0ff}
-.cc-px{font-size:26px;font-weight:600;letter-spacing:-.03em;margin-top:9px}
-.cc-meta{font-size:11.5px;color:var(--dim);margin-top:3px;line-height:1.5}
-.cc-meta b{color:#c9c9ce;font-weight:500}
+/* clock */
+.clock{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+.clock .cell{background:var(--card);border:1px solid var(--stroke);border-radius:14px;padding:15px 17px}
+.clock .k{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim2);margin-bottom:7px}
+.clock .v{font-size:19px;font-weight:600;letter-spacing:-.02em}
+.clock .t{font-size:11px;color:var(--dim);margin-top:4px;font-variant-numeric:tabular-nums}
+.clock .cell.hl{border-color:rgba(10,132,255,.3);background:rgba(10,132,255,.07)}
 
-/* ---------- sections ---------- */
-section{padding:64px 0;border-top:1px solid rgba(255,255,255,.06)}
-section:first-of-type{border-top:none}
-.s-head{margin-bottom:34px}
-.s-num{font-size:11.5px;letter-spacing:.2em;color:var(--dim2);margin-bottom:12px}
-h2{font-size:36px;font-weight:600;letter-spacing:-.028em;line-height:1.15}
-.s-sub{font-size:14.5px;color:var(--dim);margin-top:12px;max-width:760px;line-height:1.65}
-h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin:36px 0 16px;display:flex;align-items:center;gap:10px}
-h3::before{content:"";width:3px;height:15px;border-radius:2px;background:var(--blue)}
+/* sections */
+section{padding:66px 0;position:relative}
+section+section{border-top:1px solid rgba(255,255,255,.055)}
+.sec-h{display:flex;align-items:baseline;gap:16px;margin-bottom:12px}
+.sec-n{font-size:11px;color:var(--dim2);letter-spacing:.18em;font-weight:500}
+h2{font-size:33px;letter-spacing:-.03em;font-weight:600}
+.sec-sub{color:var(--dim);font-size:14px;max-width:800px;margin-bottom:32px}
+h3{font-size:17px;letter-spacing:-.02em;font-weight:600;margin:34px 0 13px;
+  display:flex;align-items:center;gap:10px}
+h3::before{content:"";width:3px;height:15px;border-radius:2px;
+  background:linear-gradient(180deg,var(--blue),var(--purple))}
+h4{font-size:13.5px;font-weight:600;color:var(--tx);margin:22px 0 9px;letter-spacing:0}
+p{color:#c8c8cd;font-size:14.2px;margin-bottom:14px;max-width:940px}
+p b,li b{color:#fff;font-weight:600}
+p em{font-style:normal;color:var(--amber)}
+ul{list-style:none;margin:0 0 16px}
+li{color:#c8c8cd;font-size:14.2px;padding-left:20px;position:relative;margin-bottom:9px;max-width:940px}
+li::before{content:"";position:absolute;left:5px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--dim2)}
+li b{color:#fff}
 
-/* ---------- cards ---------- */
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card{
-  border:1px solid var(--stroke);background:var(--card);border-radius:18px;padding:22px;
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-}
-.card.tight{padding:18px}
-.stat-l{font-size:11.5px;color:var(--dim);letter-spacing:.06em;margin-bottom:8px}
-.stat-v{font-size:26px;font-weight:600;letter-spacing:-.03em}
-.stat-n{font-size:11.5px;color:var(--dim2);margin-top:6px}
+/* cards */
+.card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:22px 24px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+.kpi{background:var(--card);border:1px solid var(--stroke);border-radius:14px;padding:16px 18px}
+.kpi .l{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim2);margin-bottom:6px}
+.kpi .n{font-size:23px;font-weight:600;letter-spacing:-.028em;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:11.5px;color:var(--dim);margin-top:3px}
 
-/* ---------- tables ---------- */
-.tw{overflow-x:auto;border:1px solid var(--stroke);border-radius:16px;background:rgba(255,255,255,.02)}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{
-  text-align:left;font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--dim);padding:13px 16px;border-bottom:1px solid var(--stroke);white-space:nowrap;
-  background:rgba(255,255,255,.025);position:sticky;top:0;
-}
-td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.045);vertical-align:middle}
-tr:last-child td{border-bottom:none}
-tbody tr{transition:background .15s}
-tbody tr:hover{background:rgba(255,255,255,.032)}
-.num{text-align:right;white-space:nowrap}
-.strong{font-weight:600}
-.small{font-size:12px}
-.tag{font-size:10px;padding:3px 8px;border-radius:6px;letter-spacing:.06em;font-weight:600}
-.tag-c{background:rgba(10,132,255,.16);color:#7cc0ff}
-.tag-p{background:rgba(255,159,10,.16);color:#ffc26b}
+/* tables */
+.tw{overflow-x:auto;margin:16px 0 8px;border:1px solid var(--stroke);border-radius:14px;background:rgba(255,255,255,.02)}
+table{width:100%;border-collapse:collapse;font-size:12.8px;font-variant-numeric:tabular-nums;min-width:600px}
+thead th{text-align:right;padding:11px 13px;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--dim2);font-weight:500;border-bottom:1px solid var(--stroke);white-space:nowrap;background:rgba(255,255,255,.022)}
+thead th:first-child{text-align:left}
+tbody td{padding:10px 13px;text-align:right;border-bottom:1px solid rgba(255,255,255,.045);color:#d6d6da;white-space:nowrap}
+tbody td:first-child{text-align:left;color:#fff;font-weight:500}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(255,255,255,.028)}
+td.pos{color:var(--up)} td.neg{color:var(--down)}
+.tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:5px;letter-spacing:.03em;
+  border:1px solid var(--stroke2);color:var(--dim)}
+.tag.c{border-color:rgba(255,69,58,.34);background:rgba(255,69,58,.1);color:#ff9d96}
+.tag.p{border-color:rgba(48,209,88,.3);background:rgba(48,209,88,.1);color:#7ee2a0}
+.tag.w{border-color:rgba(255,159,10,.34);background:rgba(255,159,10,.1);color:#ffc478}
+.tag.b{border-color:rgba(10,132,255,.34);background:rgba(10,132,255,.1);color:#7fbfff}
 
-/* ---------- walls ---------- */
-.wallbox{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.wl{display:grid;grid-template-columns:78px 1fr 74px;align-items:center;gap:12px;padding:7px 0;font-size:13px}
-.wk{color:#e8e8ec}
-.wv{text-align:right;color:var(--dim)}
-.wbar{height:7px;border-radius:4px;background:rgba(255,255,255,.06);overflow:hidden}
-.wbar i{display:block;height:100%;border-radius:4px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
-.bc{background:linear-gradient(90deg,#0a84ff,#5e5ce6)}
-.bp{background:linear-gradient(90deg,#ff9f0a,#ff6482)}
+/* charts */
+.chartbox{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:20px 20px 12px;margin:18px 0}
+.chartbox .ct{font-size:12.5px;color:var(--dim);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.chartbox .ct b{color:var(--tx);font-weight:500;font-size:13px}
+.cw{position:relative;height:280px}
+.cw.tall{height:330px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.05)}
+.legend span{font-size:11.5px;color:var(--dim);display:flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
 
-/* ---------- ladder ---------- */
-.ladder{border:1px solid var(--stroke);border-radius:18px;padding:10px 18px;background:rgba(255,255,255,.02)}
-.lvl{display:grid;grid-template-columns:96px 1fr 300px;align-items:center;gap:16px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.lvl:last-child{border-bottom:none}
-.lk{font-size:13.5px;font-weight:600}
-.lbar{height:6px;border-radius:4px;background:rgba(255,255,255,.05);overflow:hidden}
-.lbar i{display:block;height:100%;border-radius:4px}
-.lnote{font-size:11.5px;color:var(--dim);text-align:right}
-.lv-res .lk{color:#ff8f87} .lv-res .lbar i{background:linear-gradient(90deg,rgba(255,69,58,.35),#ff453a)}
-.lv-sup .lk{color:#7ee2a0} .lv-sup .lbar i{background:linear-gradient(90deg,rgba(48,209,88,.3),#30d158)}
-.lv-ma .lk{color:#bf5af2} .lv-ma .lbar i{background:linear-gradient(90deg,rgba(191,90,242,.3),#bf5af2)}
-.lv-piv .lk{color:#ffc26b} .lv-piv .lbar i{background:linear-gradient(90deg,rgba(255,159,10,.3),#ff9f0a)}
-.lv-spot{background:rgba(10,132,255,.09);border-radius:10px;padding:13px 10px;margin:4px 0}
-.lv-spot .lk{color:#fff;font-size:16px}
-.lv-spot .lbar i{background:linear-gradient(90deg,#0a84ff,#64d2ff)}
-.lv-ah{opacity:.9}
-.lv-ah .lk{color:#64d2ff} .lv-ah .lbar i{background:rgba(100,210,255,.45)}
+/* callouts */
+.note{border-left:2px solid var(--blue);background:rgba(10,132,255,.055);padding:15px 20px;border-radius:0 12px 12px 0;margin:20px 0}
+.note.warn{border-color:var(--amber);background:rgba(255,159,10,.055)}
+.note.danger{border-color:var(--pink);background:rgba(255,55,95,.06)}
+.note .nt{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
+.note p,.note li{font-size:13.4px;margin-bottom:7px;color:#d2d2d7}
+.note p:last-child,.note li:last-child{margin-bottom:0}
 
-/* ---------- charts ---------- */
-.chart-card{border:1px solid var(--stroke);border-radius:18px;padding:20px 22px 12px;background:var(--card)}
-.chart-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
-.chart-t{font-size:13.5px;font-weight:600}
-.chart-s{font-size:11px;color:var(--dim2)}
-.chart-wrap{position:relative;height:280px}
-.chart-wrap.tall{height:320px}
+/* ladder */
+.ladder{margin:18px 0;display:flex;flex-direction:column;gap:3px}
+.rung{display:grid;grid-template-columns:82px 1fr 220px;align-items:center;gap:12px;font-size:12px}
+.rung .lv{font-variant-numeric:tabular-nums;color:#fff;font-weight:600;text-align:right}
+.rung .bar{height:22px;position:relative;background:rgba(255,255,255,.028);border-radius:5px;overflow:hidden}
+.rung .bar .mid{position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.2)}
+.rung .bar i{position:absolute;top:0;bottom:0;border-radius:5px}
+.rung .lb{color:var(--dim);font-size:11px;font-variant-numeric:tabular-nums}
+.rung .lb .pct{color:#fff;font-weight:600;margin-right:5px}
+.rung.spot .lv{color:var(--cyan)}
 
-/* ---------- prose / news ---------- */
-.lead{font-size:17px;line-height:1.75;color:#d8d8dd;letter-spacing:-.012em}
-.lead b{color:#fff;font-weight:600}
-.lead .hl{background:linear-gradient(180deg,transparent 62%,rgba(255,69,58,.28) 62%);padding:0 2px}
-.news{border-left:2px solid rgba(255,255,255,.12);padding-left:20px;margin:22px 0}
-.news-item{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.news-item:last-child{border-bottom:none}
-.news-h{font-size:14.5px;font-weight:600;margin-bottom:5px;line-height:1.45}
-.news-b{font-size:13px;color:var(--dim);line-height:1.65}
-.news-t{font-size:10.5px;color:var(--dim2);letter-spacing:.06em;margin-bottom:6px;text-transform:uppercase}
+/* strategy cards */
+.stg{border:1px solid var(--stroke);border-radius:15px;background:var(--card);padding:19px 21px;margin-bottom:12px}
+.stg .hd{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.stg .id{font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:6px;
+  background:rgba(10,132,255,.16);color:#8cc6ff;border:1px solid rgba(10,132,255,.3)}
+.stg .id.p{background:rgba(48,209,88,.14);color:#7ee2a0;border-color:rgba(48,209,88,.28)}
+.stg .id.w{background:rgba(255,159,10,.14);color:#ffc478;border-color:rgba(255,159,10,.28)}
+.stg .id.d{background:rgba(191,90,242,.14);color:#d79bff;border-color:rgba(191,90,242,.28)}
+.stg .ti{font-size:15px;font-weight:600;letter-spacing:-.015em}
+.stg .mt{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:12px 0 10px;
+  padding:12px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.stg .mt .x .k{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim2);margin-bottom:4px}
+.stg .mt .x .v{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stg .ds{font-size:12.8px;color:#a8a8ae;line-height:1.55}
+.stg .ds b{color:#e8e8ec}
 
-/* ---------- risk ---------- */
-.risk{display:flex;gap:14px;padding:16px 18px;border-radius:14px;border:1px solid var(--stroke);margin-bottom:10px;background:rgba(255,255,255,.025)}
-.risk.crit{border-color:rgba(255,69,58,.32);background:rgba(255,69,58,.06)}
-.risk.high{border-color:rgba(255,159,10,.28);background:rgba(255,159,10,.05)}
-.risk.mid{border-color:rgba(10,132,255,.22);background:rgba(10,132,255,.04)}
-.risk-i{font-size:15px;flex-shrink:0;width:22px;text-align:center;line-height:1.4}
-.risk-h{font-size:14px;font-weight:600;margin-bottom:4px}
-.risk-b{font-size:12.5px;color:var(--dim);line-height:1.6}
+/* scenario */
+.sc{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.sc .s1{border:1px solid var(--stroke);border-radius:14px;padding:18px;background:var(--card)}
+.sc .s1 .p{font-size:26px;font-weight:600;letter-spacing:-.03em;margin-bottom:2px}
+.sc .s1 .r{font-size:11px;color:var(--dim);letter-spacing:.05em}
+.sc .s1 .b{font-size:12.6px;color:#b8b8be;margin-top:10px;line-height:1.5}
 
-/* ---------- footer ---------- */
-footer{padding:56px 0 72px;border-top:1px solid rgba(255,255,255,.06);color:var(--dim2);font-size:12px;line-height:1.8}
-footer b{color:var(--dim);font-weight:500}
+/* verdict */
+.vd{border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:30px 32px;
+  background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.014));margin:22px 0}
+.vd .h{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.vd .big{font-size:26px;font-weight:600;letter-spacing:-.028em;line-height:1.3;margin-bottom:16px}
+.vd .big em{font-style:normal;color:var(--amber)}
+.vd p{font-size:14px}
 
-@media (max-width:980px){
-  .hero-grid{grid-template-columns:1fr;gap:34px}
-  h1{font-size:44px} .price{font-size:56px}
-  .grid2,.grid3,.grid4,.wallbox{grid-template-columns:1fr}
-  .clock{grid-template-columns:1fr 1fr}
-  .lvl{grid-template-columns:80px 1fr;gap:10px} .lnote{display:none}
-  .navlinks{display:none}
+footer{padding:52px 0 72px;border-top:1px solid rgba(255,255,255,.06);color:var(--dim2);font-size:11.5px}
+footer p{font-size:11.5px;color:var(--dim2);margin-bottom:8px;line-height:1.6}
+.src{font-size:11px;color:var(--dim2);margin-top:10px;line-height:1.7}
+
+@media(max-width:980px){
+  .hero-grid,.grid2,.grid3,.grid4,.clock{grid-template-columns:1fr}
+  .stg .mt{grid-template-columns:repeat(2,1fr)}
+  h1{font-size:40px}.price{font-size:52px}
   .wrap{padding:0 20px}
-  section{padding:48px 0}
+  .sc{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<div class="nav">
-  <div class="wrap">
-    <div class="logo">
-      <div class="logo-mark">华</div>
-      <div class="logo-txt">华宝 · HUABAO<span>MU 期权结构日报</span></div>
-    </div>
-    <div class="navlinks">
-      <a href="#quote">行情时点</a>
-      <a href="#news">新闻</a>
-      <a href="#sector">行业</a>
-      <a href="#flow">期权流</a>
-      <a href="#struct">结构</a>
-      <a href="#level">支撑阻力</a>
-      <a href="#strat">30 日策略</a>
-    </div>
-    <div class="nav-tag">周六休市</div>
+<div class="nav"><div class="wrap">
+  <div class="logo"><div class="logo-mark">华</div>
+    <div class="logo-txt">华宝 <span>HUABAO · Equity Derivatives Desk</span></div></div>
+  <div class="navlinks">
+    <a href="#price">价格形态</a><a href="#news">新闻叙事</a><a href="#sector">板块温度</a>
+    <a href="#chain">期权结构</a><a href="#flow">期权大单</a><a href="#strategy">30日建议</a>
+    <span class="nav-tag">周末休市 · 数据锚定 11/06 收盘</span>
   </div>
-</div>
+</div></div>
 
-<div class="wrap hero">
-  <div class="eyebrow">Micron Technology · NASDAQ: MU · 期权结构研报</div>
+<div class="hero"><div class="wrap">
+  <div class="eyebrow">MU · Micron Technology · 期权结构日报 · 2026 年 11 月 8 日（周日）</div>
   <div class="hero-grid">
     <div>
-      <h1>暴跌后的第一根阳线<em>负 Gamma 区里的反弹，是修复还是逃命？</em></h1>
+      <h1>反弹在开盘<br>二十五分钟内结束
+        <em>周五 +5.12% 的涨幅，是 724.80 跌回 690.00 的残值。<br>而真正的变量不在价格，在资本的流向。</em>
+      </h1>
       <div class="priceblock">
         <div class="price"><small>$</small>690.00</div>
         <div class="delta">
-          <b class="up">+33.61 &nbsp;+5.12%</b>
-          <span>11/06 收盘 · 盘后 $694.79 (+0.69%)</span>
+          <b class="up">+33.61 (+5.12%)</b>
+          <span>11/06 16:00 EST 收盘 · 周 −22.01%</span>
         </div>
       </div>
       <div class="chips">
-        <div class="chip">周涨跌 <b class="down">−22.01%</b></div>
-        <div class="chip">距 52 周高点 <b class="down">−45.0%</b></div>
-        <div class="chip">IV30 <b>79.0%</b> / HV30 <b>78.6%</b></div>
-        <div class="chip alert">净 GEX <b>−$125.4M / 1%</b></div>
-        <div class="chip">Gamma Flip <b>$755.50</b></div>
-        <div class="chip">P/C OI <b>0.93</b></div>
+        <div class="chip alert">GEX 翻转位 <b>$757.50</b> · 现价低于 <b>8.9%</b></div>
+        <div class="chip">净 GEX <b>−$126.0M / 1%</b> · 深度负 Gamma</div>
+        <div class="chip warn">11/20 ATM IV <b>91.4%</b></div>
+        <div class="chip warn">25Δ RR <b>+12.4pp</b> · Put 溢价极值</div>
+        <div class="chip">P/C OI <b>0.927</b> · 结构偏 Call</div>
+        <div class="chip">MA200 <b>$756.73</b> 失守</div>
       </div>
     </div>
-
     <div class="clock">
-      <div class="clock-card next">
-        <div class="cc-head">周五收盘 <i>CLOSE</i></div>
-        <div class="cc-px mono">$690.00</div>
-        <div class="cc-meta"><b>11/07 05:00 SGT</b> = 11/06 16:00 EST<br>量 4,477 万（均量 1.62×）</div>
+      <div class="cell">
+        <div class="k">周五收盘 · Closing</div>
+        <div class="v mono">$690.00 <span class="up" style="font-size:13px">+5.12%</span></div>
+        <div class="t">11/06 16:00 EST = 11/07 05:00 SGT</div>
       </div>
-      <div class="clock-card on">
-        <div class="cc-head">盘后最后成交 <i>AFTER-HRS</i></div>
-        <div class="cc-px mono up">$694.79</div>
-        <div class="cc-meta"><b>11/07 09:00 SGT</b> = 11/06 19:59 EST<br>盘后区间 688.55 – 696.59</div>
+      <div class="cell">
+        <div class="k">盘后终值 · After Hours</div>
+        <div class="v mono">$694.79 <span class="up" style="font-size:13px">+0.69%</span></div>
+        <div class="t">11/06 19:59 EST = 11/07 08:59 SGT</div>
       </div>
-      <div class="clock-card next">
-        <div class="cc-head">夜盘 Blue Ocean <i>CLOSED</i></div>
-        <div class="cc-px mono dim">无报价</div>
-        <div class="cc-meta">周五夜间不开放 · 下周 <b>11/09 09:00 SGT</b> 恢复<br>（周日至周四 20:00–04:00 EST）</div>
+      <div class="cell">
+        <div class="k">夜盘 · Blue Ocean</div>
+        <div class="v mono" style="color:var(--dim2)">休市</div>
+        <div class="t">周五夜间不开放；下次 11/09 20:00 EST</div>
       </div>
-      <div class="clock-card next">
-        <div class="cc-head">下次盘前 <i>PRE-MKT</i></div>
-        <div class="cc-px mono dim">11/09 17:00</div>
-        <div class="cc-meta"><b>SGT 17:00</b> = 11/09 04:00 EST<br>开盘 SGT 22:30 · 收盘 SGT 次日 05:00</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ================= 1. QUOTE ================= -->
-<section id="quote">
-  <div class="wrap">
-    <div class="s-head">
-      <div class="s-num">01 / 行情与时点</div>
-      <h2>四段时点，四个价格</h2>
-      <div class="s-sub">本周是 2026 年波动最剧烈的一周：周四纳指 −5.52%（2025 年 4 月以来最差），费城半导体指数 −12.25%（2020 年 3 月以来最差），MU 单日 −17.46%；周五一根 +5.12% 的阳线收复部分失地，但全周仍跌 22%。以下所有期权结构数据均取自 <b>11/06 美东收盘后</b>的 Nasdaq 期权链快照（3,886 个合约 / 17 个到期日），价格为收盘价，非实时。</div>
-    </div>
-
-    <div class="grid4" style="margin-bottom:26px">
-      <div class="card tight"><div class="stat-l">周五振幅</div><div class="stat-v mono">7.4%</div><div class="stat-n">676.00 – 724.80（7.4% 振幅）</div></div>
-      <div class="card tight"><div class="stat-l">成交额</div><div class="stat-v mono">$309 亿</div><div class="stat-n">全市场前列 · 换手 4.2%</div></div>
-      <div class="card tight"><div class="stat-l">市值</div><div class="stat-v mono">$743B</div><div class="stat-n">PE(TTM) 9.2× / FY27E 4.5×</div></div>
-      <div class="card tight"><div class="stat-l">YTD</div><div class="stat-v mono up">+142%</div><div class="stat-n">一年 +172.7%</div></div>
-    </div>
-
-    <div class="grid2">
-      <div class="tw">
-        <table>
-          <thead><tr><th>指数 / 期货</th><th>名称</th><th class="num">收盘</th><th class="num">日涨跌</th></tr></thead>
-          <tbody><tr><td class='mono strong'>SPX</td><td class='dim'>标普 500</td><td class='num mono'>7,376.86</td><td class='num mono up'>+0.31%</td></tr><tr><td class='mono strong'>COMP</td><td class='dim'>纳斯达克综合</td><td class='num mono'>24,579.42</td><td class='num mono up'>+1.09%</td></tr><tr><td class='mono strong'>DJI</td><td class='dim'>道琼斯</td><td class='num mono'>51,285.73</td><td class='num mono down'>-0.46%</td></tr><tr><td class='mono strong'>SOX</td><td class='dim'>费城半导体</td><td class='num mono'>9,390.25</td><td class='num mono up'>+4.21%</td></tr><tr><td class='mono strong'>VIX</td><td class='dim'>VIX 恐慌指数</td><td class='num mono'>25.64</td><td class='num mono down'>-9.01%</td></tr><tr><td class='mono strong'>US10Y</td><td class='dim'>10 年美债收益率</td><td class='num mono'>4.86%</td><td class='num mono up'>+0.45%</td></tr><tr><td class='mono strong'>ES</td><td class='dim'>标普期货 ES</td><td class='num mono'>7,404.00</td><td class='num mono up'>+0.28%</td></tr><tr><td class='mono strong'>NQ</td><td class='dim'>纳指期货 NQ</td><td class='num mono'>27,107.50</td><td class='num mono up'>+1.33%</td></tr></tbody>
-        </table>
-      </div>
-      <div class="tw">
-        <table>
-          <thead><tr><th>代码</th><th>名称</th><th class="num">收盘</th><th class="num">日涨跌</th><th class="num">高</th><th class="num">低</th></tr></thead>
-          <tbody><tr style="background:rgba(255,255,255,.045)"><td class='mono strong'>MU</td><td class='dim'>美光科技</td><td class='num mono'>$690.00</td><td class='num mono up'>+5.12%</td><td class='num mono dim'>724.80</td><td class='num mono dim'>676.00</td></tr><tr><td class='mono strong'>SNDK</td><td class='dim'>闪迪</td><td class='num mono'>$806.43</td><td class='num mono down'>-22.26%</td><td class='num mono dim'>967.99</td><td class='num mono dim'>803.97</td></tr><tr><td class='mono strong'>WDC</td><td class='dim'>西部数据</td><td class='num mono'>$263.78</td><td class='num mono down'>-1.44%</td><td class='num mono dim'>288.00</td><td class='num mono dim'>258.61</td></tr><tr><td class='mono strong'>STX</td><td class='dim'>希捷</td><td class='num mono'>$460.99</td><td class='num mono down'>-1.19%</td><td class='num mono dim'>508.00</td><td class='num mono dim'>449.28</td></tr><tr><td class='mono strong'>SKHY</td><td class='dim'>SK 海力士 ADR</td><td class='num mono'>$123.90</td><td class='num mono down'>-13.40%</td><td class='num mono dim'>134.07</td><td class='num mono dim'>122.20</td></tr><tr><td class='mono strong'>NVDA</td><td class='dim'>英伟达</td><td class='num mono'>$186.64</td><td class='num mono up'>+2.78%</td><td class='num mono dim'>194.90</td><td class='num mono dim'>185.22</td></tr><tr><td class='mono strong'>AMD</td><td class='dim'>AMD</td><td class='num mono'>$449.04</td><td class='num mono up'>+11.04%</td><td class='num mono dim'>459.80</td><td class='num mono dim'>433.30</td></tr><tr><td class='mono strong'>INTC</td><td class='dim'>英特尔</td><td class='num mono'>$56.28</td><td class='num mono up'>+7.71%</td><td class='num mono dim'>57.32</td><td class='num mono dim'>54.56</td></tr><tr><td class='mono strong'>TSM</td><td class='dim'>台积电</td><td class='num mono'>$375.44</td><td class='num mono up'>+6.33%</td><td class='num mono dim'>380.72</td><td class='num mono dim'>367.95</td></tr><tr><td class='mono strong'>AVGO</td><td class='dim'>博通</td><td class='num mono'>$293.69</td><td class='num mono up'>+0.74%</td><td class='num mono dim'>311.52</td><td class='num mono dim'>289.77</td></tr><tr><td class='mono strong'>MRVL</td><td class='dim'>Marvell</td><td class='num mono'>$141.20</td><td class='num mono up'>+5.73%</td><td class='num mono dim'>146.32</td><td class='num mono dim'>135.34</td></tr></tbody>
-        </table>
-        <div style="font-size:10.5px;color:#5f5f63;padding:10px 16px;line-height:1.6">注：SNDK 与 SKHY 的 11/06 收盘尚未在数据源更新，表中为 <b style="color:#86868b">11/05 收盘</b>（分别 −22.26% / −13.40%），仅作参考。</div>
-      </div>
-    </div>
-
-    <h3>全周表现：存储链是唯一的震中</h3>
-    <div class="tw">
-      <table>
-        <thead><tr><th>标的</th><th class="num">10/30 收盘</th><th class="num">11/06 收盘</th><th class="num">周涨跌</th><th>备注</th></tr></thead>
-        <tbody>
-          <tr style="background:rgba(255,255,255,.045)"><td class="mono strong">MU</td><td class="num mono">884.74</td><td class="num mono">690.00</td><td class="num mono down">−22.01%</td><td class="dim small">周四 −17.46%，周五 +5.12%</td></tr>
-          <tr><td class="mono strong">SOX 费半</td><td class="num mono">10,688.80</td><td class="num mono">9,390.25</td><td class="num mono down">−12.15%</td><td class="dim small">周四单日 −12.25%，2020/3 以来最差</td></tr>
-          <tr><td class="mono strong">纳指</td><td class="num mono">25,437.00</td><td class="num mono">24,579.42</td><td class="num mono down">−3.37%</td><td class="dim small">自高点回撤进入技术性修正</td></tr>
-          <tr><td class="mono strong">标普 500</td><td class="num mono">7,580.07</td><td class="num mono">7,376.86</td><td class="num mono down">−2.68%</td><td class="dim small">周五 +0.31%</td></tr>
-          <tr><td class="mono strong">道指</td><td class="num mono">51,770.31</td><td class="num mono">51,285.73</td><td class="num mono down">−0.94%</td><td class="dim small">防御性轮动受益</td></tr>
-          <tr><td class="mono strong">VIX</td><td class="num mono">19.42</td><td class="num mono">25.64</td><td class="num mono up">+32.03%</td><td class="dim small">周四盘中一度 28.18</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 2. NEWS ================= -->
-<section id="news">
-  <div class="wrap">
-    <div class="s-head">
-      <div class="s-num">02 / 新闻与叙事</div>
-      <h2>跌的不是业绩，是「谁来买单」</h2>
-      <div class="s-sub">MU 的 FQ4 财报（9/30 发布）是史上最强的一份：营收 $542.3 亿、同比 +379%、EPS $33.42、毛利率 80.71%，下季指引 $615 亿 vs 华尔街 $570 亿。但这一周股价腰斩式下跌，杀的是估值锚——AI 数据中心的「融资与审批」假设。</div>
-    </div>
-
-    <p class="lead">11 月 3 日中期选举，民主党横扫参众两院，并拿下德州州长——当选者 Gina Hinojosa 的竞选纲领包含<span class="hl">暂停新建数据中心</span>。高盛测算，可能收紧监管的州合计占美国规划数据中心容量约 <b>45%</b>。这条逻辑链条在一夜之间被重定价：<b>AI 算力的增量需求，不再由芯片供给决定，而由电网、土地与选票决定。</b></p>
-
-    <div class="news">
-      <div class="news-item">
-        <div class="news-t">11/05 周四 · 崩盘日</div>
-        <div class="news-h">纳指 −5.52%、费半 −12.25%，2020 年 3 月以来最差的芯片日</div>
-        <div class="news-b">MU −17.46% 至 $656.39（成交 2.3 倍均量），SNDK −22.26% 至 $806.43（较 6 月高点回撤 64%），WDC、STX、SKHY 全线下挫。触发因素三重叠加：① 中期选举后的数据中心政策风险；② 铠侠（Kioxia）12 月季度指引保守、预警 FY2027 价格可能止涨；③ 高通手机业务疲软（盘后 −7%），消费端需求破坏被证实。讽刺的是，闪迪一周前刚交出营收 $110.3 亿、EPS $49.51 的超预期财报——<b>卖压来自倍数，不来自数字。</b></div>
-      </div>
-      <div class="news-item">
-        <div class="news-t">11/06 周五 · 反弹日</div>
-        <div class="news-h">10 月非农 +16.5 万强于预期，MU +5.12%，纳指 +1.09%</div>
-        <div class="news-b">市场把周四定性为「过度反应」，加上就业数据强劲（+165K）缓解衰退担忧，资金回补超跌科技股。MU 全天在 676.00–724.80 之间剧烈震荡，尾盘收在 690.00，盘后再上 0.69% 至 694.79。但全周仍是 −22%，且反弹量能（4,477 万股）虽高于均量，却低于周四的 7,787 万股——<b>是空头回补，不是新增买盘。</b></div>
-      </div>
-      <div class="news-item">
-        <div class="news-t">产业侧 · 硬利好被无视</div>
-        <div class="news-h">SK 海力士：DRAM 与 HBM 产能「实质上已售罄至 2029 年」</div>
-        <div class="news-b">SK 海力士在最新财报中确认，DRAM 与 HBM 产能已售罄至 2029 年，客户采购需求超过当前供应能力两倍以上。美光大概率同步（其 26 份 SCA 长约覆盖至 2030 年，占营收 50%+）。这条消息在 11/06 被 Motley Fool 等媒体解读为「对美光股东的巨大利好」，也是周五反弹的叙事支撑之一。</div>
-      </div>
-      <div class="news-item">
-        <div class="news-t">估值 · 便宜到什么程度</div>
-        <div class="news-h">4.5 倍 FY2027 盈利，45 位分析师中 41 位给买入</div>
-        <div class="news-b">按 FY27 共识 EPS $154.89 计算，690 美元对应 <b>4.5×</b>；按 TTM 四季合计 $75.40 计算为 <b>9.2×</b>。共识目标价 $1,561.91（45 家覆盖，8 强烈买入 / 33 买入 / 4 持有），隐含 +126%。<b>但目标价是滞后指标</b>——最新一批上调停留在 10/22（Rosenblatt $1,900、Needham $1,650），本轮暴跌后尚无一家下修，这份共识的参考价值需要打折。</div>
+      <div class="cell hl">
+        <div class="k">下次盘前 · Pre-Market</div>
+        <div class="v mono">11/09 04:00 EST</div>
+        <div class="t">= 11/09 17:00 SGT · 距报告时点约 33 小时</div>
       </div>
     </div>
   </div>
-</section>
+</div></div>
 
-<!-- ================= 3. SECTOR ================= -->
-<section id="sector">
-  <div class="wrap">
-    <div class="s-head">
-      <div class="s-num">03 / 半导体行业</div>
-      <h2>合约价还在涨，现货价已经开始跌</h2>
-      <div class="s-sub">这是当前存储周期最危险的形态：合约（长约、AI 客户）与现货（渠道、消费）第一次出现方向背离。合约价决定未来两个季度的报表，现货价决定六个月后的报表。</div>
-    </div>
 
-    <div class="grid3" style="margin-bottom:8px">
-      <div class="card">
-        <div class="stat-l">Q4 合约价（TrendForce）</div>
-        <div class="stat-v mono up">+10~15%</div>
-        <div class="stat-n">常规 DRAM 环比；含 HBM 后 +15~20%</div>
-      </div>
-      <div class="card">
-        <div class="stat-l">Q4 NAND 合约价</div>
-        <div class="stat-v mono up">+15~20%</div>
-        <div class="stat-n">企业级 SSD +23~28%（最强分支）</div>
-      </div>
-      <div class="card" style="border-color:rgba(255,69,58,.3);background:rgba(255,69,58,.05)">
-        <div class="stat-l">512Gb TLC 晶圆现货（周）</div>
-        <div class="stat-v mono down">−4.33%</div>
-        <div class="stat-n">前一周 −9.19%；连续两周下跌</div>
-      </div>
-    </div>
-
-    <div class="grid2" style="margin-top:16px">
-      <div class="card">
-        <h3 style="margin-top:0">供给端：锁死到 2030</h3>
-        <ul style="list-style:none;font-size:13.5px;color:var(--dim);line-height:1.9">
-          <li>· SK 海力士：DRAM + HBM 售罄至 <b style="color:#fff">2029</b>，需求/供给 = 2×+</li>
-          <li>· 三星：2027 年 HBM 产能已全部售罄，明年代工价格已谈定</li>
-          <li>· 美光：26 份 SCA 长约、RPO $1,500 亿，覆盖 2030 年 35%+ 营收</li>
-          <li>· 三大原厂 2026 年合计 CapEx 超 $500 亿，但新增产能 2027H2 后才释放</li>
-          <li>· 2027 年 HBM 混合 ASP 上修至 <b style="color:#fff">+121%</b></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3 style="margin-top:0">需求端：消费级正在崩塌</h3>
-        <ul style="list-style:none;font-size:13.5px;color:var(--dim);line-height:1.9">
-          <li>· OPPO Find X10 Ultra 项目暂停，小米 18 Ultra 传暂停迭代</li>
-          <li>· 内存成本压力下，Pro Max 级机型售价逼近 7,000–10,000 元</li>
-          <li>· 铠侠 NAND ASP 季增幅：Q2 约 +70% → Q3 约 +25%，并预警 FY27 止涨</li>
-          <li>· 闪迪消费业务营收环比 <b style="color:#fff">−29%</b>（仅 $3.97 亿）</li>
-          <li>· 渠道 DDR4 现货高于原厂官价，买家预期回调、成交萎缩</li>
-        </ul>
-      </div>
-    </div>
-
-    <h3>格局：三强份额重排</h3>
-    <div class="tw">
-      <table>
-        <thead><tr><th>指标</th><th class="num">2026 Q2 份额</th><th>解读</th></tr></thead>
-        <tbody>
-          <tr><td>三星 DRAM</td><td class="num mono">39%</td><td class="dim small">重夺第一，HBM4 明年反超 HBM3E</td></tr>
-          <tr><td>SK 海力士 DRAM</td><td class="num mono">26%</td><td class="dim small">由 39% 骤降，产能向 HBM 倾斜的代价</td></tr>
-          <tr><td>美光 DRAM</td><td class="num mono">25%</td><td class="dim small">几乎追平海力士，HBM4 量产爬坡中</td></tr>
-          <tr><td>长鑫存储（CXMT）</td><td class="num mono">约 10%</td><td class="dim small">DDR5 商用推进，4F² 争议未定</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:13px;color:var(--dim2);margin-top:14px;line-height:1.7">判断：<b style="color:#c9c9ce">MU 的多头逻辑（供给锁死至 2029）没有坏，坏的是「估值乘数」</b>。当市场开始怀疑 2027-2028 年的数据中心竣工节奏，4.5× FY27 的市盈率并不构成支撑——因为周期股在盈利见顶前，市盈率本来就会先杀到 3-4×。这正是 2026 年 6 月以来 MU 从 1,255 跌到 690 的全部原因。</p>
+<section id="tp"><div class="wrap">
+  <div class="sec-h"><span class="sec-n">00</span><h2>数据时点与口径</h2></div>
+  <p class="sec-sub">本报告生成于新加坡时间周日上午，美股处于完整休市状态（周六、周日连续 48 小时无连续竞价）。所有价格均为 11/06（周五）收盘与盘后结算值，期权链为 Nasdaq 11/06 收盘后的 EOD 快照。请勿把任何数字当作"实时"。</p>
+  <div class="grid4">
+    <div class="kpi"><div class="l">报告生成时点</div><div class="n" style="font-size:17px">11/08 09:15 SGT</div><div class="s">= 11/07 20:15 EST（周六）</div></div>
+    <div class="kpi"><div class="l">美股状态</div><div class="n" style="font-size:17px">周末休市</div><div class="s">下次开盘 11/09 09:30 EST</div></div>
+    <div class="kpi"><div class="l">SGT / EST 时差</div><div class="n" style="font-size:17px">13 小时</div><div class="s">11/01 起冬令时 EST=UTC−5</div></div>
+    <div class="kpi"><div class="l">期权数据</div><div class="n" style="font-size:17px">3,886 张合约</div><div class="s">17 个到期日 · 自算 BS IV / GEX</div></div>
   </div>
-</section>
-
-<!-- ================= 4. FLOW ================= -->
-<section id="flow">
-  <div class="wrap">
-    <div class="s-num">04 / 期权大单与资金流</div>
-    <h2 style="margin-bottom:34px">谁在买，谁在跑</h2>
-
-    <div class="grid4" style="margin-bottom:26px">
-      <div class="card tight"><div class="stat-l">总成交</div><div class="stat-v mono">60.5 万</div><div class="stat-n">Call 31.7 万 / Put 28.8 万</div></div>
-      <div class="card tight"><div class="stat-l">成交量 P/C</div><div class="stat-v mono">0.91</div><div class="stat-n">≤7DTE 为 1.09（近月偏空）</div></div>
-      <div class="card tight"><div class="stat-l">总持仓</div><div class="stat-v mono">275.8 万</div><div class="stat-n">P/C 0.93 · Call 143.1 万</div></div>
-      <div class="card tight"><div class="stat-l">虚值权利金比</div><div class="stat-v mono">0.81</div><div class="stat-n">Call $4.49 亿 vs Put $3.62 亿</div></div>
-    </div>
-
-    <div class="tw" style="margin-bottom:16px">
-      <table>
-        <thead><tr><th>方向</th><th class="num">行权价</th><th>到期</th><th class="num">DTE</th><th class="num">成交量</th><th class="num">持仓</th><th class="num">金额（估）</th><th class="num">IV</th><th>性质</th></tr></thead>
-        <tbody><tr><td><span class='tag tag-c'>CALL</span></td><td class='num mono'>$600</td><td class='mono'>01/15</td><td class='num mono'>70</td><td class='num mono'>4,179</td><td class='num mono'>5,029</td><td class='num mono'>$58.3M</td><td class='num mono'>75%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$1,300</td><td class='mono'>11/20</td><td class='num mono'>14</td><td class='num mono'>723</td><td class='num mono'>1,000</td><td class='num mono'>$44.1M</td><td class='num mono'>155%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$1,200</td><td class='mono'>11/20</td><td class='num mono'>14</td><td class='num mono'>410</td><td class='num mono'>125</td><td class='num mono'>$20.9M</td><td class='num mono'>120%</td><td class='dim small'>新开仓</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$860</td><td class='mono'>01/15</td><td class='num mono'>70</td><td class='num mono'>965</td><td class='num mono'>1,031</td><td class='num mono'>$18.8M</td><td class='num mono'>68%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$850</td><td class='mono'>01/15</td><td class='num mono'>70</td><td class='num mono'>811</td><td class='num mono'>5,716</td><td class='num mono'>$15.2M</td><td class='num mono'>69%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$700</td><td class='mono'>11/09</td><td class='num mono'>3</td><td class='num mono'>5,751</td><td class='num mono'>713</td><td class='num mono'>$13.7M</td><td class='num mono'>74%</td><td class='dim small'>新开仓</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$690</td><td class='mono'>11/09</td><td class='num mono'>3</td><td class='num mono'>7,354</td><td class='num mono'>494</td><td class='num mono'>$13.6M</td><td class='num mono'>75%</td><td class='dim small'>新开仓</td></tr><tr><td><span class='tag tag-c'>CALL</span></td><td class='num mono'>$800</td><td class='mono'>01/15</td><td class='num mono'>70</td><td class='num mono'>2,874</td><td class='num mono'>6,320</td><td class='num mono'>$13.0M</td><td class='num mono'>68%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$800</td><td class='mono'>06/17</td><td class='num mono'>223</td><td class='num mono'>616</td><td class='num mono'>4,356</td><td class='num mono'>$11.7M</td><td class='num mono'>62%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$690</td><td class='mono'>12/18</td><td class='num mono'>42</td><td class='num mono'>1,591</td><td class='num mono'>2,093</td><td class='num mono'>$10.9M</td><td class='num mono'>76%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$680</td><td class='mono'>12/18</td><td class='num mono'>42</td><td class='num mono'>1,706</td><td class='num mono'>2,376</td><td class='num mono'>$10.8M</td><td class='num mono'>75%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-p'>PUT</span></td><td class='num mono'>$900</td><td class='mono'>12/18</td><td class='num mono'>42</td><td class='num mono'>489</td><td class='num mono'>4,771</td><td class='num mono'>$10.7M</td><td class='num mono'>69%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-c'>CALL</span></td><td class='num mono'>$800</td><td class='mono'>06/17</td><td class='num mono'>223</td><td class='num mono'>1,079</td><td class='num mono'>2,832</td><td class='num mono'>$10.6M</td><td class='num mono'>61%</td><td class='dim small'>换手</td></tr><tr><td><span class='tag tag-c'>CALL</span></td><td class='num mono'>$700</td><td class='mono'>11/09</td><td class='num mono'>3</td><td class='num mono'>6,769</td><td class='num mono'>761</td><td class='num mono'>$10.6M</td><td class='num mono'>80%</td><td class='dim small'>新开仓</td></tr></tbody>
-      </table>
-    </div>
-    <p style="font-size:11.5px;color:var(--dim2);line-height:1.7">口径：成交额 = 当日成交量 × 中间价 × 100，为<b>估算值</b>，非逐笔大单还原；"新开仓"指成交量 &gt; 2× 原持仓，说明当日以开仓为主。数据源：Nasdaq 期权链 EOD。</p>
-
-    <h3>四条线索</h3>
-    <div class="grid2">
-      <div class="card">
-        <div class="stat-l">① 近月 Put 是新买的</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.8;margin-top:8px">
-          11/09 到期的 $690P 成交 7,354 张（原持仓仅 494 张）、$700P 成交 5,751 张（原持仓 713 张），合计约 <b style="color:#fff">$2,730 万</b>权利金，几乎全是当日新开。这是本周最明确的信号：<b style="color:#fff">有人愿意为一个周末付 3–4% 的权利金买保险</b>。同一到期日 $800C 也有 10,994 张成交，多空在同一个到期日里对赌。
-        </div>
-      </div>
-      <div class="card">
-        <div class="stat-l">② 长周期对冲在 850/860</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.8;margin-top:8px">
-          1/15/27 的 $850P（811 张，持仓 5,716）与 $860P（965 张，持仓 1,031）合计成交额 <b style="color:#fff">$3,400 万</b>。这两档在 11/06 时点已是深度实值（现价 690），更像是<b style="color:#fff">机构把原有持仓的保险向下滚（roll down）</b>或股票替代平仓，不宜简单读作新增看空。
-        </div>
-      </div>
-      <div class="card">
-        <div class="stat-l">③ 600C 的 4,179 张不是看多</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.8;margin-top:8px">
-          1/15/27 $600C 成交 4,179 张、金额 $5,830 万，是全链最大单。但 600C 相对 690 已是<b style="color:#fff">深度实值</b>（delta ≈ 0.78），这种单子 90% 是<b style="color:#fff">股票替代（stock replacement）或备兑平仓</b>——用少量资本获得 78% 的股价敞口，而不是押注上涨。
-        </div>
-      </div>
-      <div class="card">
-        <div class="stat-l">④ 权利金口径的真实多空</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.8;margin-top:8px">
-          若只看全链权利金，Put 占 63%，看起来很空；但这是被深度实值 Put 的换手放大的。<b style="color:#fff">剔除实值合约后，虚值 Call 权利金 $4.49 亿 &gt; 虚值 Put $3.62 亿（比值 0.81）</b>。也就是说：方向上双向下注，但<b style="color:#fff">波动率上，双方都在付高价</b>。
-        </div>
-      </div>
-    </div>
+  <div class="note warn"><div class="nt">口径说明 · 必读</div>
+    <p><b>1. 成交量口径分歧：</b>周五成交量为 4,458–4,489 万股（新浪 4,458.06 万 / Nasdaq 4,488.79 万 / Yahoo 4,476.51 万），本报告取 Nasdaq 合并口径 <b>4,488.8 万股</b>。部分盘中快照曾显示 6,425 万股，属未结算临时值，不采信。</p>
+    <p><b>2. 期权链为 EOD：</b>OI 与成交均为 11/06 收盘结算值，不代表下周一开盘前的真实持仓——周末若有新的大宗交易安排，周一开盘才会反映。</p>
+    <p><b>3. 隐含波动率自算：</b>IV 由中间价 Black-Scholes 反解（r=4.20%），非数据商口径，与 Barchart / OptionCharts 可能有 1–3 个波动点差异。</p>
   </div>
-</section>
+</div></section>
 
-<!-- ================= 5. STRUCTURE ================= -->
-<section id="struct">
-  <div class="wrap">
-    <div class="s-head">
-      <div class="s-num">05 / 期权结构</div>
-      <h2>现价在墙与墙之间的真空地带</h2>
-      <div class="s-sub">690 美元上方最近的实质性 Call 墙在 800（20,996 张），下方最近的 Put 墙在 650（15,605 张）与 600（19,149 张）。中间 650–800 这一段，Gamma 为负且分散——意味着做市商的对冲行为会放大而非抑制波动。</div>
-    </div>
 
-    <h3 style="margin-top:0">5.1 墙位（0–45 DTE）</h3>
-    <div class="wallbox">
-      <div class="card">
-        <div class="stat-l" style="margin-bottom:14px">Call 墙 · 上方阻力（持仓）</div>
-        <div class='wl'><span class='wk mono'>$900</span><span class='wbar'><i class='bc' style='width:100%'></i></span><span class='wv mono'>27,607</span></div><div class='wl'><span class='wk mono'>$1,000</span><span class='wbar'><i class='bc' style='width:98%'></i></span><span class='wv mono'>27,092</span></div><div class='wl'><span class='wk mono'>$800</span><span class='wbar'><i class='bc' style='width:76%'></i></span><span class='wv mono'>20,996</span></div><div class='wl'><span class='wk mono'>$1,200</span><span class='wbar'><i class='bc' style='width:62%'></i></span><span class='wv mono'>16,982</span></div><div class='wl'><span class='wk mono'>$1,150</span><span class='wbar'><i class='bc' style='width:56%'></i></span><span class='wv mono'>15,403</span></div><div class='wl'><span class='wk mono'>$1,050</span><span class='wbar'><i class='bc' style='width:55%'></i></span><span class='wv mono'>15,246</span></div>
-        <div class="stat-l" style="margin:18px 0 10px">Call 成交密集（当日）</div>
-        <div class='wl'><span class='wk mono'>$800</span><span class='wbar'><i class='bc' style='width:100%'></i></span><span class='wv mono'>17,099</span></div><div class='wl'><span class='wk mono'>$750</span><span class='wbar'><i class='bc' style='width:83%'></i></span><span class='wv mono'>14,195</span></div><div class='wl'><span class='wk mono'>$900</span><span class='wbar'><i class='bc' style='width:78%'></i></span><span class='wv mono'>13,365</span></div><div class='wl'><span class='wk mono'>$720</span><span class='wbar'><i class='bc' style='width:76%'></i></span><span class='wv mono'>12,986</span></div><div class='wl'><span class='wk mono'>$700</span><span class='wbar'><i class='bc' style='width:74%'></i></span><span class='wv mono'>12,635</span></div><div class='wl'><span class='wk mono'>$1,000</span><span class='wbar'><i class='bc' style='width:53%'></i></span><span class='wv mono'>9,026</span></div>
-      </div>
-      <div class="card">
-        <div class="stat-l" style="margin-bottom:14px">Put 墙 · 下方支撑（持仓）</div>
-        <div class='wl'><span class='wk mono'>$600</span><span class='wbar'><i class='bp' style='width:100%'></i></span><span class='wv mono'>19,149</span></div><div class='wl'><span class='wk mono'>$800</span><span class='wbar'><i class='bp' style='width:97%'></i></span><span class='wv mono'>18,614</span></div><div class='wl'><span class='wk mono'>$450</span><span class='wbar'><i class='bp' style='width:94%'></i></span><span class='wv mono'>17,974</span></div><div class='wl'><span class='wk mono'>$500</span><span class='wbar'><i class='bp' style='width:89%'></i></span><span class='wv mono'>16,950</span></div><div class='wl'><span class='wk mono'>$850</span><span class='wbar'><i class='bp' style='width:87%'></i></span><span class='wv mono'>16,678</span></div><div class='wl'><span class='wk mono'>$400</span><span class='wbar'><i class='bp' style='width:82%'></i></span><span class='wv mono'>15,700</span></div>
-        <div style="font-size:10.5px;color:#5f5f63;line-height:1.6;margin-top:10px">注：$800 / $850 的 Put 持仓建立于股价 850–1,200 时期，现已是深度实值，<b style="color:#86868b">不构成下方支撑</b>，仅反映历史对冲成本。真正的下方墙是 $650 与 $600。</div>
-        <div class="stat-l" style="margin:18px 0 10px">Put 成交密集（当日）</div>
-        <div class='wl'><span class='wk mono'>$600</span><span class='wbar'><i class='bp' style='width:100%'></i></span><span class='wv mono'>15,287</span></div><div class='wl'><span class='wk mono'>$690</span><span class='wbar'><i class='bp' style='width:94%'></i></span><span class='wv mono'>14,369</span></div><div class='wl'><span class='wk mono'>$650</span><span class='wbar'><i class='bp' style='width:84%'></i></span><span class='wv mono'>12,819</span></div><div class='wl'><span class='wk mono'>$680</span><span class='wbar'><i class='bp' style='width:74%'></i></span><span class='wv mono'>11,292</span></div><div class='wl'><span class='wk mono'>$700</span><span class='wbar'><i class='bp' style='width:69%'></i></span><span class='wv mono'>10,536</span></div><div class='wl'><span class='wk mono'>$550</span><span class='wbar'><i class='bp' style='width:57%'></i></span><span class='wv mono'>8,681</span></div>
-      </div>
-    </div>
+<section id="price"><div class="wrap">
+  <div class="sec-h"><span class="sec-n">01</span><h2>价格与形态：一次被卖压掐断的反弹</h2></div>
+  <p class="sec-sub">收盘 +5.12% 听上去是一次强反弹。但把 5 分钟线拉开看，涨幅在开盘 25 分钟内就到顶，之后全天在 676–700 之间横盘，尾盘才被拉回 690。这是"高开低走 + 长上影"的典型形态，不是底部反转的形态。</p>
 
-    <div class="grid3" style="margin-top:16px">
-      <div class="card tight"><div class="stat-l">Call Wall 主力</div><div class="stat-v mono" style="color:#7cc0ff">$900</div><div class="stat-n">27,607 张 · 正 Gamma +5.59</div></div>
-      <div class="card tight"><div class="stat-l">Put Wall 主力</div><div class="stat-v mono" style="color:#ffc26b">$600</div><div class="stat-n">19,149 张 · 负 Gamma −16.02</div></div>
-      <div class="card tight"><div class="stat-l">最近决战位</div><div class="stat-v mono" style="color:#fff">$800</div><div class="stat-n">Call 20,996 / Put 18,614 · 30 日 Max Pain</div></div>
-    </div>
-
-    <div class="chart-card" style="margin-top:16px">
-      <div class="chart-h"><div class="chart-t">按行权价分布的持仓（0–45 DTE）</div><div class="chart-s">蓝 = Call OI · 橙 = Put OI</div></div>
-      <div class="chart-wrap tall"><canvas id="chartOI"></canvas></div>
-    </div>
-
-    <h3>5.2 做市商 Gamma 敞口（GEX）</h3>
-    <p style="font-size:13.5px;color:var(--dim);line-height:1.75;margin-bottom:18px">
-      全链（0–45 DTE）净 Gamma 敞口 <b style="color:#ff8f87">−$125.4M / 每 1% 变动</b>。翻转位（Gamma Flip）在 <b style="color:#fff">$755.50</b>，而现价 690 低于翻转位 <b style="color:#fff">8.7%</b>——这是典型的<b style="color:#fff">深度负 Gamma 区</b>：做市商在下跌时卖出、上涨时买入，<b style="color:#fff">波动被系统性放大</b>。这也解释了为什么 ATR 一周内从 5.8% 飙到 8.5%。
-    </p>
-    <div class="chart-card">
-      <div class="chart-h"><div class="chart-t">净 Gamma 敞口 vs 标的价（$M / 1%）</div><div class="chart-s">横轴：MU 价格 · 纵轴：净 GEX</div></div>
-      <div class="chart-wrap tall"><canvas id="chartGex"></canvas></div>
-    </div>
-
-    <div class="grid2" style="margin-top:16px">
-      <div class="tw">
-        <table>
-          <thead><tr><th class="num">行权价</th><th class="num">Gamma（$M/1%）</th><th>含义</th></tr></thead>
-          <tbody><tr><td class='num mono'>$900</td><td class='num mono up'>+5.59</td><td class='dim small'>正 Gamma 钉住</td></tr><tr><td class='num mono'>$1,000</td><td class='num mono up'>+5.32</td><td class='dim small'>正 Gamma 钉住</td></tr><tr><td class='num mono'>$910</td><td class='num mono up'>+3.32</td><td class='dim small'>正 Gamma 钉住</td></tr><tr><td class='num mono'>$760</td><td class='num mono up'>+1.32</td><td class='dim small'>正 Gamma 钉住</td></tr><tr><td class='num mono'>$980</td><td class='num mono up'>+1.24</td><td class='dim small'>正 Gamma 钉住</td></tr><tr><td class='num mono'>$650</td><td class='num mono down'>-18.08</td><td class='dim small'>负 Gamma 加速</td></tr><tr><td class='num mono'>$600</td><td class='num mono down'>-16.02</td><td class='dim small'>负 Gamma 加速</td></tr><tr><td class='num mono'>$660</td><td class='num mono down'>-9.19</td><td class='dim small'>负 Gamma 加速</td></tr><tr><td class='num mono'>$680</td><td class='num mono down'>-7.56</td><td class='dim small'>负 Gamma 加速</td></tr><tr><td class='num mono'>$750</td><td class='num mono down'>-6.58</td><td class='dim small'>负 Gamma 加速</td></tr></tbody>
-        </table>
-      </div>
-      <div class="card">
-        <div class="stat-l">为什么 650 和 600 最危险</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.8;margin-top:6px">
-          $650 与 $600 分别是全部行权价中 Gamma 最负的两档（−18.08 与 −16.02），且下方 600 有 19,149 张 Put 持仓。这意味着：<b style="color:#fff">一旦跌破 650，做市商为对冲空头 Put 必须持续卖出期货，跌势会在 650 → 600 这段被加速</b>，而不是被支撑。$600 是"最后的机构 Put 墙"，破了之后 550/450 的持仓密度骤降，容易出现跳空。<br><br>
-          上方则是镜像：900（+5.59）与 1000（+5.32）是正 Gamma 钉住位，也是 27,607 / 27,092 张 Call 持仓所在——<b style="color:#fff">任何反弹到 850–900，都会遇到做市商卖 Delta 的自然压制</b>。
-        </div>
-      </div>
-    </div>
-
-    <h3>5.3 Max Pain：近月数字要打折看</h3>
-    <div class="grid2">
-      <div class="tw">
-        <table>
-          <thead><tr><th>到期日</th><th class="num">Max Pain</th><th class="num">距现价</th></tr></thead>
-          <tbody><tr><td class='mono'>11/09</td><td class='num mono'>$750</td><td class='num mono up'>+8.7%</td></tr><tr><td class='mono'>11/13</td><td class='num mono'>$800</td><td class='num mono up'>+15.9%</td></tr><tr><td class='mono'>11/20</td><td class='num mono'>$855</td><td class='num mono up'>+23.9%</td></tr><tr><td class='mono'>11/27</td><td class='num mono'>$900</td><td class='num mono up'>+30.4%</td></tr><tr><td class='mono'>12/04</td><td class='num mono'>$860</td><td class='num mono up'>+24.6%</td></tr><tr><td class='mono'>12/18</td><td class='num mono'>$770</td><td class='num mono up'>+11.6%</td></tr><tr><td class='mono'>01/15/27</td><td class='num mono'>$690</td><td class='num mono down'>+0.0%</td></tr><tr><td class='mono'>30 日聚合</td><td class='num mono'>$800</td><td class='num mono up'>+15.9%</td></tr></tbody>
-        </table>
-      </div>
-      <div class="card">
-        <div class="stat-l">口径警告</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.8;margin-top:6px">
-          11/20 的 Max Pain $855（+24%）与 11/27 的 $900 明显失真：这两个到期日堆积了 9–10 月股价在 900–1,200 时建立的 Call 库存（11/20 单日 Call OI 23.6 万张），这些合约早已深度虚值、不会再被行权，但它们仍被计入模型。<br><br>
-          <b style="color:#fff">更有参考价值的是</b>：30 日聚合 $800、12/18 $770、1/15/27 $690（与现价完全重合）。1 月合约的 Max Pain 恰好落在 690，说明<b style="color:#fff">远期资金的中性预期就在这里</b>，而不是 900。
-        </div>
-      </div>
-    </div>
-
-    <h3>5.4 波动率：期限倒挂 + 左偏</h3>
-    <div class="grid2">
-      <div class="chart-card">
-        <div class="chart-h"><div class="chart-t">ATM 隐含波动率期限结构</div><div class="chart-s">11/20 89.2% → 6/17/27 62.7%（11/11–11/13 凸起为周内到期薄盘噪声）</div></div>
-        <div class="chart-wrap"><canvas id="chartTerm"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-h"><div class="chart-t">11/20 到期 IV 微笑 / 偏斜</div><div class="chart-s">$500 = 114% vs $915 = 83%</div></div>
-        <div class="chart-wrap"><canvas id="chartSmile"></canvas></div>
-      </div>
-    </div>
-
-    <div class="grid2" style="margin-top:16px">
-      <div class="tw">
-        <table>
-          <thead><tr><th>到期</th><th class="num">DTE</th><th class="num">25Δ Call</th><th class="num">25Δ Put</th><th class="num">风险逆转</th></tr></thead>
-          <tbody><tr><td class='mono'>11/20</td><td class='num mono'>14</td><td class='num mono'>$780 / 83%</td><td class='num mono'>$620 / 95%</td><td class='num mono down'>+12.2pp</td></tr><tr><td class='mono'>11/27</td><td class='num mono'>21</td><td class='num mono'>$795 / 75%</td><td class='num mono'>$610 / 89%</td><td class='num mono down'>+13.6pp</td></tr><tr><td class='mono'>12/18</td><td class='num mono'>42</td><td class='num mono'>$840 / 70%</td><td class='num mono'>$600 / 81%</td><td class='num mono down'>+10.1pp</td></tr><tr><td class='mono'>01/15/27</td><td class='num mono'>70</td><td class='num mono'>$880 / 67%</td><td class='num mono'>$590 / 74%</td><td class='num mono down'>+7.6pp</td></tr></tbody>
-        </table>
-      </div>
-      <div class="card">
-        <div class="stat-l">关键读数</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.85;margin-top:6px">
-          · <b style="color:#fff">IV30 ≈ 79.0%</b>（12/04）vs <b style="color:#fff">HV30 78.6%</b> → 溢价仅 +0.4pp，<b style="color:#fff">期权并不贵</b>；<br>
-          · 前端 11/20（14 天）89.2% 与 HV20 91.0% 基本持平——<b style="color:#fff">近月并没有额外定价恐慌</b>，恐慌体现在偏斜而非绝对水位；<br>
-          · <b style="color:#fff">25Δ 风险逆转 +12.2pp</b>（11/20），Put 比 Call 贵 12 个波动率点 —— 上周还是 −7.4pp，<b style="color:#fff">一周内偏斜翻向，恐慌定价已经完成</b>；<br>
-          · 期限结构深度倒挂（89.2% → 62.7%），说明市场把风险全部集中在未来 4–6 周（NVDA 财报、FOMC、MU 财报），而非长期基本面。
-        </div>
-      </div>
-    </div>
-
-    <h3>5.5 隐含概率（风险中性，ATM IV）</h3>
-    <div class="tw">
-      <table>
-        <thead><tr><th>到期</th><th class="num">&lt; 550</th><th class="num">&lt; 600</th><th class="num">&lt; 650</th><th class="num">&lt; 690</th><th class="num">&gt; 750</th><th class="num">&gt; 800</th><th class="num">&gt; 900</th></tr></thead>
-        <tbody>
-          <tr><td class="mono">11/20</td><td class="num mono">88.9%</td><td class="num mono">76.5%</td><td class="num mono">60.4%</td><td class="num mono">46.9%</td><td class="num mono">28.9%</td><td class="num mono">17.8%</td><td class="num mono">5.5%</td></tr>
-          <tr><td class="mono">12/04</td><td class="num mono">82.7%</td><td class="num mono">70.7%</td><td class="num mono">57.1%</td><td class="num mono">46.2%</td><td class="num mono">31.7%</td><td class="num mono">22.0%</td><td class="num mono">9.5%</td></tr>
-          <tr><td class="mono">12/18</td><td class="num mono">78.3%</td><td class="num mono">67.0%</td><td class="num mono">55.0%</td><td class="num mono">45.7%</td><td class="num mono">33.2%</td><td class="num mono">24.5%</td><td class="num mono">12.5%</td></tr>
-          <tr><td class="mono">01/15/27</td><td class="num mono">72.5%</td><td class="num mono">62.5%</td><td class="num mono">52.5%</td><td class="num mono">44.8%</td><td class="num mono">34.5%</td><td class="num mono">27.3%</td><td class="num mono">16.3%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:11.5px;color:var(--dim2);margin-top:12px;line-height:1.7">注：以上为对数正态风险中性概率，使用各到期 ATM IV。由于 IV 处于 79–89% 的极端区间，所有"概率"都被放大——这是市场为波动付的钱，不等于真实世界的频率。左尾概率（&lt;600 达 55–70%）明显高于右尾，正是 25Δ 偏斜 +12pp 的价格体现。</p>
+  <div class="grid4">
+    <div class="kpi"><div class="l">开盘 / 最高 / 最低</div><div class="n" style="font-size:16px">708.35 / 724.80 / 676.00</div><div class="s">最高价 +10.43% → 收盘 +5.12%</div></div>
+    <div class="kpi"><div class="l">振幅 / 换手</div><div class="n">7.43% <span style="font-size:13px;color:var(--dim)">/ 3.94%</span></div><div class="s">ATR14 已升至 $62.28（9.03%）</div></div>
+    <div class="kpi"><div class="l">成交额</div><div class="n">$310.4 亿</div><div class="s">4,488.8 万股 · 10 日均量的 1.42×</div></div>
+    <div class="kpi"><div class="l">市值 / PE</div><div class="n">$7,807 亿</div><div class="s">TTM PE 9.29 · 前瞻 PE ≈ 3.8–3.9</div></div>
   </div>
-</section>
 
-<!-- ================= 6. TECH ================= -->
-<section>
-  <div class="wrap">
-    <div class="s-head">
-      <div class="s-num">06 / 技术面</div>
-      <h2>跌破 200 日线，趋势已从「回调」变「破位」</h2>
-      <div class="s-sub">MA200 = 756.73，现价 690 低于 8.8%。这是 2026 年 4 月以来第一次实质性跌破长期均线，也是本轮下跌最重要的技术事件。</div>
-    </div>
-
-    <div class="chart-card" style="margin-bottom:18px">
-      <div class="chart-h"><div class="chart-t">MU 近 120 个交易日（约 6 个月）· MA20 / MA60</div>
-        <div class="chart-s" style="display:flex;gap:14px;align-items:center">
-          <span><i style="display:inline-block;width:14px;height:2px;background:#f5f5f7;vertical-align:middle;margin-right:5px"></i>收盘</span>
-          <span><i style="display:inline-block;width:14px;height:2px;background:#ff9f0a;vertical-align:middle;margin-right:5px"></i>MA20</span>
-          <span><i style="display:inline-block;width:14px;height:2px;background:#bf5af2;vertical-align:middle;margin-right:5px"></i>MA60</span>
-        </div></div>
-      <div class="chart-wrap tall"><canvas id="chartDaily"></canvas></div>
-    </div>
-
-    <div class="chart-card" style="margin-bottom:18px">
-      <div class="chart-h"><div class="chart-t">11/06 分时（04:00 – 19:59 EST，含盘前与盘后）</div><div class="chart-s">SGT 17:00 → 次日 08:59</div></div>
-      <div class="chart-wrap"><canvas id="chartIntra"></canvas></div>
-    </div>
-
-    <div class="grid4">
-      <div class="card tight"><div class="stat-l">MA5 / MA20</div><div class="stat-v mono" style="font-size:20px">766 / 879</div><div class="stat-n">全线反压，无一收复</div></div>
-      <div class="card tight"><div class="stat-l">MA200</div><div class="stat-v mono" style="font-size:20px;color:#bf5af2">756.73</div><div class="stat-n">现价低于 8.8% · 牛熊分界</div></div>
-      <div class="card tight"><div class="stat-l">RSI6 / RSI14</div><div class="stat-v mono" style="font-size:20px">15.5 / 32.5</div><div class="stat-n">极度超卖，但未见底背离</div></div>
-      <div class="card tight"><div class="stat-l">ATR14</div><div class="stat-v mono" style="font-size:20px">58.85</div><div class="stat-n">占股价 8.53%（常态 4–5%）</div></div>
-    </div>
-
-    <div class="tw" style="margin-top:18px">
-      <table>
-        <thead><tr><th>指标</th><th class="num">数值</th><th>判读</th></tr></thead>
-        <tbody>
-          <tr><td>布林带 (20,2)</td><td class="num mono">713.95 / 879.01 / 1,044.06</td><td class="dim small">收盘 690 已跌破下轨 713.95，属极端偏离，历史上 3–5 日内回归概率高，但方向由消息决定</td></tr>
-          <tr><td>MACD (12,26,9)</td><td class="num mono">−63.22 / −40.01 / −46.43</td><td class="dim small">柱状体继续扩张，下跌动能未衰竭</td></tr>
-          <tr><td>HV5 / HV10 / HV20 / HV30</td><td class="num mono">135.5 / 116.0 / 91.0 / 78.6%</td><td class="dim small">短期实际波动 135%，为一年最高区间；HV30 处于一年 65 分位</td></tr>
-          <tr><td>HV60 / HV120</td><td class="num mono">68.6 / 91.5%</td><td class="dim small">中期波动中枢上移，波动率制度已改变</td></tr>
-          <tr><td>52 周区间</td><td class="num mono">192.59 – 1,255.00</td><td class="dim small">现价位于区间 47% 分位；距高点 −45.0%</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="chartbox">
+    <div class="ct"><b>11/06 日内 5 分钟路径（含盘前 / 盘后，ET 时间）</b><span>紫色虚线＝前收盘 656.39 · 青色虚线＝收盘 690.00</span></div>
+    <div class="cw tall"><canvas id="cIntra"></canvas></div>
+    <div class="legend"><span><i style="background:#0a84ff"></i>成交价</span>
+      <span><i style="background:#bf5af2"></i>前收盘 656.39</span>
+      <span><i style="background:#64d2ff"></i>收盘 690.00</span></div>
   </div>
-</section>
 
-<!-- ================= 7. LEVELS ================= -->
-<section id="level">
-  <div class="wrap">
-    <div class="s-head">
-      <div class="s-num">07 / 支撑与阻力</div>
-      <h2>一张图看清墙在哪</h2>
-      <div class="s-sub">横条长度 = 该价位 0–45 DTE 的 Call + Put 持仓总量。红色为阻力（含 Call 墙），绿色为支撑（含 Put 墙），紫色为长期均线，蓝色为现价。</div>
-    </div>
-    <div class="ladder"><div class='lvl lv-res'><span class='lk mono'>$900</span><span class='lbar'><i style='width:100%'></i></span><span class='lnote'>Call Wall 主力 · 正 Gamma +5.59</span></div><div class='lvl lv-res'><span class='lk mono'>$855</span><span class='lbar'><i style='width:0%'></i></span><span class='lnote'>11/20 Max Pain</span></div><div class='lvl lv-res'><span class='lk mono'>$850</span><span class='lbar'><i style='width:100%'></i></span><span class='lnote'>Put OI 16,678（已深度实值）</span></div><div class='lvl lv-res'><span class='lk mono'>$800</span><span class='lbar'><i style='width:100%'></i></span><span class='lnote'>Call OI 20,996 · 30 日 Max Pain · 核心磁吸</span></div><div class='lvl lv-ma'><span class='lk mono'>$756.73</span><span class='lbar'><i style='width:0%'></i></span><span class='lnote'>MA200 — 牛熊分界</span></div><div class='lvl lv-res'><span class='lk mono'>$750</span><span class='lbar'><i style='width:100%'></i></span><span class='lnote'>Put 14,717 / Call 8,778 · γ −6.58</span></div><div class='lvl lv-piv'><span class='lk mono'>$713.95</span><span class='lbar'><i style='width:0%'></i></span><span class='lnote'>BOLL 下轨（已失守）</span></div><div class='lvl lv-ah'><span class='lk mono'>$694.79</span><span class='lbar'><i style='width:0%'></i></span><span class='lnote'>盘后最新成交 19:59 EST</span></div><div class='lvl lv-spot'><span class='lk mono'>$690</span><span class='lbar'><i style='width:46%'></i></span><span class='lnote'>11/06 收盘</span></div><div class='lvl lv-sup'><span class='lk mono'>$676</span><span class='lbar'><i style='width:0%'></i></span><span class='lnote'>周五最低</span></div><div class='lvl lv-sup'><span class='lk mono'>$650</span><span class='lbar'><i style='width:86%'></i></span><span class='lnote'>Put OI 15,605 · γ −18.08 全场最负</span></div><div class='lvl lv-sup'><span class='lk mono'>$600</span><span class='lbar'><i style='width:100%'></i></span><span class='lnote'>Put Wall 19,149 · γ −16.02</span></div><div class='lvl lv-sup'><span class='lk mono'>$550</span><span class='lbar'><i style='width:51%'></i></span><span class='lnote'>次级 Put 聚集</span></div><div class='lvl lv-sup'><span class='lk mono'>$450</span><span class='lbar'><i style='width:95%'></i></span><span class='lnote'>尾部保护仓</span></div></div>
-
-    <div class="grid2" style="margin-top:18px">
-      <div class="card">
-        <div class="stat-l">阻力序列</div>
-        <div style="font-size:13.5px;line-height:1.9;color:var(--dim);margin-top:6px">
-          <b style="color:#fff">$713.95</b>（BOLL 下轨，已失守，转为第一道盖）→ <b style="color:#fff">$750</b>（Put 14,717 / Call 8,778，负 Gamma −6.58，反弹第一道坎）→ <b style="color:#fff">$756.73</b>（MA200，牛熊分界）→ <b style="color:#fff">$800</b>（Call 20,996，30 日 Max Pain，核心磁吸）→ <b style="color:#fff">$855</b>（11/20 Max Pain）→ <b style="color:#fff">$900</b>（Call Wall 27,607，正 Gamma 钉住）
-        </div>
-      </div>
-      <div class="card">
-        <div class="stat-l">支撑序列</div>
-        <div style="font-size:13.5px;line-height:1.9;color:var(--dim);margin-top:6px">
-          <b style="color:#fff">$676</b>（周五低点）→ <b style="color:#fff">$650</b>（Put 15,605，Gamma −18.08 全场最负 → 破位即加速）→ <b style="color:#fff">$600</b>（Put Wall 19,149，Gamma −16.02，最后的机构 Put 墙）→ <b style="color:#fff">$550</b>（次级聚集，Put 9,835）→ <b style="color:#fff">$450–500</b>（尾部保险仓，合计 3.4 万张，非交易性支撑）
-        </div>
-      </div>
-    </div>
+  <div class="note danger"><div class="nt">形态解读 · 三个必须看到的事实</div>
+    <p><b>① 最高点在 09:55 ET（$718.95–724.80），10:30 之前就砸到 $678.34。</b>半小时内回吐 5.7%，这不是获利了结的量级，是有人在新一轮下跌前抢跑。全天再没有站上 705。</p>
+    <p><b>② 盘前是从 706 一路下滑到 692 的。</b>04:00 ET 706.00 → 07:00 715.01（盘前高点）→ 09:00 692.38，开盘前已把 +9% 削到 +5.5%。隔夜情绪在亚洲时段就已经转弱。</p>
+    <p><b>③ 盘后没有继续修复。</b>19:59 ET 收在 694.79，仅比收盘高 0.69%，盘后区间 690.58–696.59。买盘没有在收盘后接力。</p>
   </div>
-</section>
 
-<!-- ================= 8. STRATEGY ================= -->
-<section id="strat">
-  <div class="wrap">
-    <div class="s-head">
-      <div class="s-num">08 / 30 日期权策略</div>
-      <h2>不猜方向，只做结构</h2>
-      <div class="s-sub">前提判断：<b>IV30（79.0%）≈ HV30（78.6%），期权不便宜也不贵——没有卖波动率的溢价可赚</b>。因此本报告不建议裸卖期权，全部采用定义风险结构。所有价格取 11/06 收盘中间价，实盘需按买卖价差（通常 3–6%）调整，建议用限价单在中间价 ±20% 内挂单。</div>
-    </div>
+  <h3>技术面：从"回调"升级为"破位"</h3>
+  <div class="tw"><table>
+    <thead><tr><th>指标</th><th>数值</th><th>距现价</th><th>状态</th><th>含义</th></tr></thead>
+    <tbody>
+      <tr><td>MA5</td><td>766.06</td><td class="neg">−9.93%</td><td><span class="tag">反压</span></td><td style="text-align:left;color:#a8a8ae">短均线全面在上方，无一次收复</td></tr>
+      <tr><td>MA10</td><td>846.50</td><td class="neg">−18.49%</td><td><span class="tag">反压</span></td><td style="text-align:left;color:#a8a8ae">10 日斜率 −27%/月，仍在加速下行</td></tr>
+      <tr><td>MA20</td><td>879.01</td><td class="neg">−21.50%</td><td><span class="tag">反压</span></td><td style="text-align:left;color:#a8a8ae">中期趋势确认转空</td></tr>
+      <tr><td>MA60</td><td>960.02</td><td class="neg">−28.13%</td><td><span class="tag">反压</span></td><td style="text-align:left;color:#a8a8ae">季线失守，机构成本区已远</td></tr>
+      <tr><td><b>MA200</b></td><td><b>756.73</b></td><td class="neg">−8.82%</td><td><span class="tag w">失守</span></td><td style="text-align:left;color:#ffc478">年线跌破且连续 3 日未收复 → 长期趋势受损</td></tr>
+      <tr><td>BOLL(20,2)</td><td>713.95 / 879.01 / 1,044.06</td><td class="neg">破下轨</td><td><span class="tag w">超卖</span></td><td style="text-align:left;color:#a8a8ae">现价低于下轨 3.4%，带宽极大（46.9%）</td></tr>
+      <tr><td>RSI6 / RSI14</td><td>15.5 / 32.5</td><td>—</td><td><span class="tag w">极度超卖</span></td><td style="text-align:left;color:#a8a8ae">RSI6 仅为 15.5，历史上极难持续</td></tr>
+      <tr><td>MACD</td><td>DIF -63.22 / DEA -40.01</td><td>柱 -46.43</td><td><span class="tag">空头</span></td><td style="text-align:left;color:#a8a8ae">零轴下方死叉，绿柱仍在放大</td></tr>
+      <tr><td>ATR14</td><td>$62.28 (9.03%)</td><td>—</td><td><span class="tag w">极高</span></td><td style="text-align:left;color:#a8a8ae">日均摆动 9 个百分点，任何短线止损都会被扫</td></tr>
+    </tbody>
+  </table></div>
 
-    <div class="tw">
-      <table>
-        <thead><tr><th>编号</th><th>类型</th><th>到期</th><th>结构</th><th class="num">净成本</th><th class="num">最大盈利</th><th class="num">盈亏平衡</th><th class="num">触发幅度</th><th class="num">盈亏比</th><th class="num">建议仓位</th></tr></thead>
-        <tbody><tr><td class='mono strong'>A1</td><td>反弹首选</td><td class='mono'>12/04</td><td>买 $720C / 卖 $800C</td><td class='num mono'>25.75</td><td class='num mono'>80.00</td><td class='num mono'>745.75</td><td class='num mono'>+8.1%</td><td class='num mono'>3.11 : 1</td><td class='num mono'>≤ 5%</td></tr><tr><td class='mono strong'>A2</td><td>短线反弹</td><td class='mono'>11/27</td><td>买 $700C / 卖 $800C</td><td class='num mono'>34.28</td><td class='num mono'>100.00</td><td class='num mono'>734.28</td><td class='num mono'>+6.4%</td><td class='num mono'>2.92 : 1</td><td class='num mono'>≤ 3%</td></tr><tr><td class='mono strong'>A3</td><td>财报博弈</td><td class='mono'>12/18</td><td>买 $800C 单腿</td><td class='num mono'>30.33</td><td class='num mono'>不限</td><td class='num mono'>830.33</td><td class='num mono'>+20.3%</td><td class='num mono'>—</td><td class='num mono'>≤ 2%</td></tr><tr><td class='mono strong'>B1</td><td>破位首选</td><td class='mono'>12/04</td><td>买 $650P / 卖 $580P</td><td class='num mono'>20.95</td><td class='num mono'>70.00</td><td class='num mono'>629.05</td><td class='num mono'>−8.8%</td><td class='num mono'>3.34 : 1</td><td class='num mono'>≤ 5%</td></tr><tr><td class='mono strong'>B2</td><td>尾部崩塌</td><td class='mono'>12/18</td><td>买 $600P / 卖 $500P</td><td class='num mono'>20.88</td><td class='num mono'>100.00</td><td class='num mono'>579.13</td><td class='num mono'>−16.1%</td><td class='num mono'>4.79 : 1</td><td class='num mono'>≤ 3%</td></tr><tr><td class='mono strong'>B3</td><td>破位追击</td><td class='mono'>12/04</td><td>买 $650P 单腿</td><td class='num mono'>41.25</td><td class='num mono'>不限</td><td class='num mono'>608.75</td><td class='num mono'>−11.8%</td><td class='num mono'>—</td><td class='num mono'>≤ 2%</td></tr><tr><td class='mono strong'>C1</td><td>持股对冲</td><td class='mono'>12/18</td><td>卖 $850C + 买 $600P</td><td class='num mono'>13.75</td><td class='num mono'>不限</td><td class='num mono'>—</td><td class='num mono'>锁定 600–850</td><td class='num mono'>—</td><td class='num mono'>持仓 1:1</td></tr><tr><td class='mono strong'>C2</td><td>收租</td><td class='mono'>12/04</td><td>卖 $580P 单腿</td><td class='num mono'>贷 20.30</td><td class='num mono'>不限</td><td class='num mono'>559.70</td><td class='num mono'>接货价 −18.9%</td><td class='num mono'>年化 ~38%</td><td class='num mono'>≤ 1/3</td></tr><tr><td class='mono strong'>D1</td><td>长线建仓</td><td class='mono'>01/15/27</td><td>买 $700C 单腿</td><td class='num mono'>84.03</td><td class='num mono'>不限</td><td class='num mono'>784.03</td><td class='num mono'>+13.6%</td><td class='num mono'>—</td><td class='num mono'>分三批</td></tr></tbody>
-      </table>
-    </div>
-    <p style="font-size:11.5px;color:var(--dim2);margin-top:12px;line-height:1.7">净成本为负表示收取权利金（贷方）。仓位按"单笔最大亏损占总资金比例"计。A/B 两组互斥，不应同时满仓；C1 适用于已有正股或等值多头敞口者。</p>
+  <h3>波动率的分裂：实现波动比隐含波动更疯</h3>
+  <div class="grid4">
+    <div class="kpi"><div class="l">HV5</div><div class="n amber">135.5%</div><div class="s">过去一周的真实日波动</div></div>
+    <div class="kpi"><div class="l">HV20</div><div class="n amber">91.0%</div><div class="s">与 11/20 ATM IV 91.4% 几乎重合</div></div>
+    <div class="kpi"><div class="l">HV30</div><div class="n">78.6%</div><div class="s">处于滚动分布 43 分位</div></div>
+    <div class="kpi"><div class="l">HV60</div><div class="n">68.6%</div><div class="s">两个月维度被严重低估过</div></div>
+  </div>
+  <p style="margin-top:16px">这个组合很重要：<b>HV5 135% &gt; HV20 91% &gt; HV30 78.6%</b>，说明波动是"最近三天才炸开"的。<em>11/20 的 ATM IV 91.4% 恰好等于 HV20</em>——期权市场并没有为这次崩盘额外加价，它只是被动跟上了现实。所以"IV 太高了应该卖"这个判断，在前端并不成立；真正贵的是<b>低行权价的 Put 斜度</b>（580P IV 102.2%），不是平值。</p>
 
-    <h3>A 组 · 反弹做多（目标 750 → 800）</h3>
-    <div class="grid2">
-      <div class="card">
-        <div class="stat-l">A1 · 首选 · 12/04 720/800 Call 价差</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.85;margin-top:6px">
-          买 $720C @46.48 / 卖 $800C @20.73，净支出 <b style="color:#fff">$25.75</b>，最大盈利 $80.00，盈亏比 <b style="color:#fff">3.11 : 1</b>，平衡点 <b style="color:#fff">$745.75（+8.1%）</b>。<br><br>
-          <b style="color:#fff">为什么是这个结构</b>：$800 是 Call 墙（20,996 张）与 30 日 Max Pain 的重合位，是整个结构中最难突破的一档；用卖出 800C 换取 3.1 倍杠杆，比单腿买 750C（成本 34.50、平衡点 784.50）效率高得多。
-        </div>
-      </div>
-      <div class="card">
-        <div class="stat-l">A3 · 事件博弈 · 12/18 800C 单腿</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.85;margin-top:6px">
-          $30.33，平衡点 $830.33（+20.3%）。12/18 是唯一覆盖 <b style="color:#fff">12/16 美光财报</b>的月度到期日，IV 75.1% 相对 HV30 78.6% 反而便宜。<br><br>
-          <b style="color:#fff">只做 2% 仓位</b>：这是彩票型头寸——需要财报 + 指引双超预期才能兑现，但一旦 AI capex 叙事修复，800 上方到 900 之间几乎没有 Gamma 阻力（−0.4 至 +1.0），会走得很快。
-        </div>
-      </div>
-    </div>
+  <div class="note warn"><div class="nt">一个容易被忽略的细节 · 年线在往上走</div>
+    <p>MA200 现为 <b>$756.73</b>，但它在过去 5 个交易日从 749.31 一路抬到 756.73，<b>日均上移约 1.7 点</b>。原因是 2025 年 9–12 月那段 122–207 美元的低价样本仍在这条均线的窗口里，随着它们被 690–900 的新样本替换，年线还会继续抬升。</p>
+    <p>含义很直接：<em>757.5 这个"GEX 翻转 + MA200 重合位"只在今天成立</em>。哪怕股价原地不动，三周后年线也会升到 <b>790 附近</b>——它是一道<b>会自己往上走的动态天花板</b>，不是可以等待的静态阻力。这就是为什么本报告把"收复 757.5"定义成有时限的动作，而不是"迟早会到"。</p>
+  </div>
 
-    <h3>B 组 · 破位做空（目标 650 → 600）</h3>
-    <div class="grid2">
-      <div class="card">
-        <div class="stat-l">B1 · 首选 · 12/04 650/580 Put 价差</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.85;margin-top:6px">
-          买 $650P @41.25 / 卖 $580P @20.30，净支出 <b style="color:#fff">$20.95</b>，最大盈利 $70.00，盈亏比 <b style="color:#fff">3.34 : 1</b>，平衡点 <b style="color:#fff">$629.05（−8.8%）</b>。<br><br>
-          <b style="color:#fff">为什么是 650/580</b>：650 是 Gamma −18.08 的加速位，破了之后 600 的 Put Wall 会成为下一个磁吸。用 580 做下限（低于 600 的 Put 墙，留出墙内空间），避免被 600 附近的钉住效应吃掉利润。
-        </div>
-      </div>
-      <div class="card">
-        <div class="stat-l">B2 · 尾部 · 12/18 600/500 Put 价差</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.85;margin-top:6px">
-          买 $600P @33.00 / 卖 $500P @12.13，净支出 <b style="color:#fff">$20.88</b>，最大盈利 $100.00，盈亏比 <b style="color:#fff">4.79 : 1</b>，平衡点 <b style="color:#fff">$579.13（−16.1%）</b>。<br><br>
-          <b style="color:#fff">这是本报告性价比最高的一笔</b>：4.8 倍盈亏比、覆盖财报、且 500 以下 Put 持仓稀薄（Gamma 真空），一旦触发会走得极快。成本仅 3% 股价，可作常备尾部保险。
-        </div>
-      </div>
-    </div>
+  <div class="chartbox">
+    <div class="ct"><b>近 90 个交易日收盘价与均线</b><span>MA20 / MA60 / MA200 · 现价已在四条均线之下</span></div>
+    <div class="cw tall"><canvas id="cPrice"></canvas></div>
+    <div class="legend"><span><i style="background:#f5f5f7"></i>收盘价</span>
+      <span><i style="background:#0a84ff"></i>MA20</span>
+      <span><i style="background:#bf5af2"></i>MA60</span>
+      <span><i style="background:#ff9f0a"></i>MA200</span></div>
+  </div>
 
-    <h3>C 组 · 持股者对冲 / 收租</h3>
-    <div class="grid2">
-      <div class="card">
-        <div class="stat-l">C1 · 领口 · 12/18 卖 850C + 买 600P</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.85;margin-top:6px">
-          收 $19.25（850C）/ 付 $33.00（600P），净支出 <b style="color:#fff">$13.75（2.0% 股价）</b>，42 天覆盖 NVDA 财报 + FOMC + MU 财报三大事件，锁定 <b style="color:#fff">600–850</b> 区间。<br><br>
-          卖 850C 而不是 800C：800 是墙，被钉住的概率高，卖 800C 容易在反弹中被"贴脸"；850 上方有 900 的正 Gamma 压制，安全性更好。
-        </div>
-      </div>
-      <div class="card">
-        <div class="stat-l">C2 · 收租 · 12/04 卖 580P</div>
-        <div style="font-size:13.5px;color:var(--dim);line-height:1.85;margin-top:6px">
-          收 $20.30（2.94% / 28 天，年化约 38%），接货价 <b style="color:#fff">$559.70</b>（对应 FY27 PE 3.6×）。<br><br>
-          <b style="color:#ff8f87">只在一种情况下做</b>：你真心愿意在 560 接货，且仓位 ≤1/3。当前 IV ≈ HV，<b style="color:#fff">没有波动率溢价可赚</b>，收租的唯一理由是"愿意低价买入"。<b style="color:#ff8f87">绝对不要卖 650P 或 600P</b>——那是负 Gamma 最集中的两档，跌破后 Delta 会瞬间爆炸。
-        </div>
-      </div>
-    </div>
+  <h3>关键价位阶梯</h3>
+  <div class="ladder"><div class="rung"><div class="lv">$757.50</div>
+      <div class="bar"><i class="mid"></i><i style="left:50%;width:32.61%;background:#ff9f0a"></i></div>
+      <div class="lb"><span class="pct">+9.8%</span> GEX 翻转 / MA200</div></div><div class="rung"><div class="lv">$713.95</div>
+      <div class="bar"><i class="mid"></i><i style="left:50%;width:11.57%;background:#bf5af2"></i></div>
+      <div class="lb"><span class="pct">+3.5%</span> BOLL 下轨</div></div><div class="rung spot"><div class="lv">$690.00</div>
+      <div class="bar"><i class="mid"></i><i style="left:50%;width:1.40%;background:#64d2ff"></i></div>
+      <div class="lb"><span class="pct">+0.0%</span> 周五收盘</div></div><div class="rung"><div class="lv">$676.00</div>
+      <div class="bar"><i class="mid"></i><i style="right:50%;width:6.76%;background:#30d158"></i></div>
+      <div class="lb"><span class="pct">-2.0%</span> 周五低点</div></div><div class="rung"><div class="lv">$650.00</div>
+      <div class="bar"><i class="mid"></i><i style="right:50%;width:19.32%;background:#30d158"></i></div>
+      <div class="lb"><span class="pct">-5.8%</span> Gamma 悬崖 / Put 墙</div></div><div class="rung"><div class="lv">$600.00</div>
+      <div class="bar"><i class="mid"></i><i style="right:50%;width:43.48%;background:#30d158"></i></div>
+      <div class="lb"><span class="pct">-13.0%</span> Put 墙</div></div></div>
+  <p style="font-size:12.5px;color:var(--dim)">中轴＝现价 690。条形向左为下方支撑、向右为上方阻力，长度按距现价百分比缩放（满格 ±15%）。</p>
 
-    <h3>D 组 · 长线建仓</h3>
+  <div class="grid3" style="margin-top:22px">
+    <div class="card"><div class="l" style="font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim2);margin-bottom:6px">近 5 日</div>
+      <div class="n mono down" style="font-size:22px;font-weight:600">-22.01%</div>
+      <div class="s" style="font-size:11.5px;color:var(--dim)">四连阴后一根长上影阳线</div></div>
+    <div class="card"><div class="l" style="font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim2);margin-bottom:6px">近 20 日</div>
+      <div class="n mono down" style="font-size:22px;font-weight:600">-32.94%</div>
+      <div class="s" style="font-size:11.5px;color:var(--dim)">10 月中旬以来单边下行</div></div>
+    <div class="card"><div class="l" style="font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim2);margin-bottom:6px">距 6/25 收盘纪录 1,213.56</div>
+      <div class="n mono neg" style="font-size:22px;font-weight:600">-43.14%</div>
+      <div class="s" style="font-size:11.5px;color:var(--dim)">YTD 仍 +141.8%（基数 285.41）</div></div>
+  </div>
+</div></section>
+
+
+<section id="news"><div class="wrap">
+  <div class="sec-h"><span class="sec-n">02</span><h2>新闻与叙事：价格在等资本给出答案</h2></div>
+  <p class="sec-sub">周末（11/07–11/08）没有新的财报，但有一条被低估的资本决策新闻：美光确认新加坡约 310 亿美元双项目全速推进，同时把台湾桃园 45 亿美元的 Fab 11E 实质停摆。同一个星期里，公司一边加码、一边踩刹车。</p>
+
+  <h3>公司层面 · 三条硬新闻</h3>
+  <div class="grid2">
     <div class="card">
-      <div class="stat-l">D1 · 1/15/27 700C（70 天）</div>
-      <div style="font-size:13.5px;color:var(--dim);line-height:1.85;margin-top:6px">
-        $84.03（12.2% 股价），Delta ≈ 0.55，平衡点 $784.03（+13.6%）。分三批：现价 1/3、若回踩 650 加 1/3、若站回 756（MA200）加最后 1/3。<b style="color:#fff">跌破 600 无条件离场</b>——那意味着 Put Wall 失守，周期叙事需要重估。<br><br>
-        若不愿承担时间价值损耗，可用 <b style="color:#fff">1/15/27 700/900 Call 价差</b>（成本约 $60.68，最大 $200，盈亏比 3.3:1）替代，代价是封顶在 900。
-      </div>
+      <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:8px">① 桃园 Fab 11E 实质停摆</div>
+      <p style="font-size:13.4px;margin-bottom:8px">美光已通知台湾地区官员与供应商，<b>停止桃园 Fab 11E 新厂建设</b>（7 月刚动土）。原计划投资 <b>30–45 亿美元</b>，生产 HBM 与先进 DRAM，2028 年起向英伟达等客户供货。彭博口径：现场仅剩零星安全作业。</p>
+      <p style="font-size:13.4px;margin-bottom:8px">直接原因是<b>桃园工会</b>要求将营业利润的 <b>15%</b> 分配给全球员工、并以现金为主发放奖金；约 70% 会员否决了公司方案。<b>11/06 的调解再次未达成协议</b>，桃园市府已安排下一轮（日期未公布）。台中工会已于 10 月单独签约。</p>
+      <p style="font-size:13.4px;margin-bottom:0">台湾占美光 DRAM 产出约 <b>60%</b>、HBM 产出的很大一部分。公司声明"台湾营运正常、客户交付不受影响"，但<b>没有回应施工是否停止</b>。</p>
+    </div>
+    <div class="card">
+      <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">② 新加坡 310 亿美元双项目确认推进</div>
+      <p style="font-size:13.4px;margin-bottom:8px">11/07 美光新加坡国家经理 Joshua Lee 确认两个项目进度符合预期：</p>
+      <ul style="margin-bottom:10px">
+        <li><b>HBM 先进封装厂：约 70 亿美元</b>，台湾以外<b>首座</b> HBM 封装基地，2027 年初首次产出，约 1,400 个岗位。</li>
+        <li><b>NAND 晶圆厂：约 240 亿美元 / 10 年</b>，新加坡首座双层晶圆厂，70 万平方英尺无尘室，<b>2028 下半年</b>投产，约 1,600 个岗位。</li>
+      </ul>
+      <p style="font-size:13.4px;margin-bottom:0">美光约 <b>98% 的 NAND 闪存</b>在新加坡生产。这意味着：<b>近端供给靠台湾既有厂（不动），远端增量靠新加坡（2027–2028 落地）</b>。</p>
     </div>
   </div>
-</section>
 
-<!-- ================= 9. SCENARIO ================= -->
-<section>
-  <div class="wrap">
-    <div class="s-head">
-      <div class="s-num">09 / 情景与风险</div>
-      <h2>三种路径，一个纪律</h2>
-    </div>
-    <div class="tw">
-      <table>
-        <thead><tr><th>情景</th><th>名称</th><th class="num">价格区间</th><th class="num">主观概率</th><th>触发逻辑</th><th>应对</th></tr></thead>
-        <tbody><tr><td class='mono strong'>①</td><td class='strong'>修复反弹</td><td class='num mono'>750 – 850</td><td class='num mono big'>30%</td><td class='dim small'>NVDA 11/17 财报强 + 中期选举政策未落地 → 空头回补，先补 713.95 缺口、再测 800 Call Wall</td><td class='small'>A1 为主，A3 小仓博财报</td></tr><tr><td class='mono strong'>②</td><td class='strong'>区间震荡</td><td class='num mono'>620 – 750</td><td class='num mono big'>40%</td><td class='dim small'>负 Gamma 区双向屠戮，波动率高但方向随机；合约价强、现货弱，多空都缺决定性催化</td><td class='small'>A1 减半 + B1 仅在 650 破位后启动</td></tr><tr><td class='mono strong'>③</td><td class='strong'>二次探底</td><td class='num mono'>< 620</td><td class='num mono big'>30%</td><td class='dim small'>德州/多州立法冻结数据中心落地，或 Kioxia/三星指引确认 NAND 见顶 → 估值再杀一轮</td><td class='small'>B1+B2，C1 领口保护现货</td></tr></tbody>
-      </table>
-    </div>
+  <div class="note"><div class="nt">为什么这条新闻比它看起来更重要</div>
+    <p>把两件事放在一起看，公司的资本语言非常清楚：<b>该加的地方加，该停的地方停</b>。新加坡的 NAND + HBM 封装是"需求确定性高、2028 才落地"的项目；桃园的 Fab 11E 是"2028 供货、但劳资谈不拢"的项目。停掉后者，短期对 2027 年的供给是<b>收紧</b>（利多价格），对 2028 年的出货量是<b>风险</b>（利空远期）。</p>
+    <p>这也解释了为什么股价在消息出来后没有继续崩——市场把它读成"管理层不愿意在成本失控的地方扩产"，而不是"需求崩了"。</p>
+  </div>
 
-    <h3 style="margin-top:36px">风险清单（按严重度排序）</h3>
-    <div class="risk crit">
-      <div class="risk-i">🔴</div>
-      <div><div class="risk-h">政策落地风险 · 最高优先级</div><div class="risk-b">德州州长承诺暂停新建数据中心，高盛测算倾向收紧的州占美国规划容量约 45%。若从"竞选表态"变成"立法/行政令"，AI capex 预期将被系统性下修——这不是估值问题，是需求曲线问题。观察窗口：11 月至次年 1 月的州议会预算法案。</div></div>
-    </div>
-    <div class="risk crit">
-      <div class="risk-i">🔴</div>
-      <div><div class="risk-h">负 Gamma 真空 · 650 是引信</div><div class="risk-b">净 GEX −$125.4M/1%，现价低于翻转位 8.7%。650（Gamma −18.08）与 600（−16.02）是全场最负两档，跌破 650 后做市商对冲将从"抑制"转为"助推"，650→600 可能在一个交易日内完成。</div></div>
-    </div>
-    <div class="risk high">
-      <div class="risk-i">🟠</div>
-      <div><div class="risk-h">现货与合约价背离 · 领先指标已转弱</div><div class="risk-b">512Gb TLC 晶圆现货连续两周 −9.19% / −4.33%，DDR4 16Gb 现货 $82.719 转跌，部分旧世代颗粒现货已低于合约价。合约价通常滞后现货 1–2 个季度——如果现货跌势延续，2027Q1 的合约涨幅会迅速收窄。</div></div>
-    </div>
-    <div class="risk high">
-      <div class="risk-i">🟠</div>
-      <div><div class="risk-h">30 天内三重事件叠加</div><div class="risk-b">11/17 NVDA 财报（共识营收 $1,088–1,090 亿、EPS $2.47、毛利率指引 73.5–74.5%）、12/08–09 FOMC（含点阵图，当前 3.75–4.00%，9 月已加息 25bp、10 月两名委员主张再加）、12/16 MU 财报（共识 EPS $38.22 / 营收 $618 亿）。任一项不及预期，都会在负 Gamma 区被放大。</div></div>
-    </div>
-    <div class="risk mid">
-      <div class="risk-i">🟡</div>
-      <div><div class="risk-h">分析师目标价严重滞后</div><div class="risk-b">共识 $1,561.91（+126%）仍停留在 10 月水平，最新动作是 10/22 的上调。本轮下跌后尚未出现集中下修——<b>一旦开始下修，会成为二次探底的催化剂</b>，而不是支撑。</div></div>
-    </div>
-    <div class="risk mid">
-      <div class="risk-i">🟡</div>
-      <div><div class="risk-h">杠杆 ETF 强制再平衡</div><div class="risk-b">SOXX 单日 −11%，单股杠杆 ETF（如 MULL 类产品）在标的单日跌 17% 时需强制减仓，形成机械性卖压。这类资金不计基本面，只在收盘前 30 分钟集中交易，会放大尾盘波动。</div></div>
-    </div>
+  <div class="card" style="margin-top:14px">
+    <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:8px">③ 一笔 1,250 万美元的 Call 大单</div>
+    <p style="font-size:13.4px;margin-bottom:8px">11/06 崩盘次日，有人在 <b>1/15/2027 到期、行权价 $600 的 Call</b> 上以 <b>卖价（at the ask）</b> 连续扫货，单笔权利金约 <b>1,250 万美元</b>；同一合约的重复成交把未平仓推升到 <b>5,000 张以上</b>。按我们自算的收盘链，该行权价全日成交 4,179 张、OI 5,029 张、权利金合计约 <b>5,834 万美元</b>。</p>
+    <p style="font-size:13.4px;margin-bottom:0">同时，1/15 的 <b>$850 / $860 Put</b> 也各有 811 / 965 张大额成交（合计约 <b>3,400 万美元</b>）。把这两条腿放在一起，等效于一个 <b>$522.55 / $927.45 的宽跨式</b>——买单的人押的不是方向，是<b>未来 70 天内 ±24% 以上的巨幅波动</b>。</p>
+  </div>
 
-    <h3 style="margin-top:36px">硬性否决项</h3>
-    <div class="card" style="border-color:rgba(255,69,58,.25);background:rgba(255,69,58,.04)">
-      <div style="font-size:13.5px;line-height:2;color:#d8d8dd">
-        ① 不在 650–690 区间裸卖 Put（负 Gamma 核心区，一次跳空可吞掉全年权利金）<br>
-        ② 不买 900 以上单腿 Call（Delta &lt; 0.15，需 30% 涨幅才回本，IV 68.9% 仍不便宜）<br>
-        ③ 不在 11/17 NVDA 财报前把单边仓位打满（这是全行业的方向变量）<br>
-        ④ 不做 11/09 到期的 0DTE（ATR 8.53%，日内 ±3% 是常态，纯赌）<br>
-        ⑤ 收盘跌破 600（Put Wall + 最后机构支撑）→ 所有多头结构无条件平仓，不摊平
-      </div>
+  <h3>基本面 · 多空双方各自的锚</h3>
+  <div class="tw"><table>
+    <thead><tr><th style="width:22%">维度</th><th style="text-align:left">多头锚点</th><th style="text-align:left">空头锚点</th></tr></thead>
+    <tbody>
+      <tr><td>产能承诺</td><td style="text-align:left">2027 年产出<b>超过 75% 已锁定</b>；长期客户承诺额（LTC）从 6 月的 <b>220 亿</b>升至 <b>320 亿美元</b></td><td style="text-align:left">新加坡 310 亿美元产能在 2027–2028 陆续落地，叠加三大原厂同步扩产</td></tr>
+      <tr><td>估值</td><td style="text-align:left">前瞻 PE 约 <b>3.8–3.9×</b>，为一年最低；同行希捷 12.4×</td><td style="text-align:left">低 PE 是周期股的常态陷阱——盈利预测基于 86% 毛利率，不可持续</td></tr>
+      <tr><td>价格</td><td style="text-align:left">TrendForce：Q4 常规 DRAM 合约 <b>+10~15%</b>、NAND <b>+15~20%</b>；10 月 DDR4 8Gb 合约 $27.5（+5.77% m/m，为 2016 年的 9.5 倍）</td><td style="text-align:left"><b>现货已连跌三周</b>：DDR4 芯片 $47.08（周 −2.4%）、DDR5 $60.17（周 −2.1%）、512Gb TLC 晶圆两周 −13.2%</td></tr>
+      <tr><td>需求</td><td style="text-align:left">服务器 RDIMM 合约价继续上行；HBM4 明年产能<b>已售罄</b>；三星称 2027 年供给售罄</td><td style="text-align:left">下游反噬：苹果称内存成本"史无前例"、PC 端 Q4 拉货转弱、双 11 未能提振消费级 SSD</td></tr>
+      <tr><td>卖方</td><td style="text-align:left">49 家覆盖：<b>9 强买 / 36 买 / 4 持有 / 0 卖出</b>，均值目标 <b>$1,588.85</b></td><td style="text-align:left">最低目标 <b>$1,200</b>——仍高于现价 <b>74%</b>。共识明显滞后于价格，参考价值有限</td></tr>
+      <tr><td>财报</td><td style="text-align:left">FQ1 FY27 指引 <b>营收 ~$615 亿 / 调整后 EPS ~$38.15</b></td><td style="text-align:left">下一份财报在 12/16–12/23（口径不一，公司未正式公告），<b>不在 30 日窗口内</b></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>行业层面 · 现货与合约的第一次分叉</h3>
+  <p>这是本报告认为<b>最值得盯住</b>的单一指标。存储周期的历史规律是：<b>现货先转，合约后转，模块最后转</b>。本周的数据第一次出现了方向不一致：</p>
+  <div class="grid3">
+    <div class="kpi"><div class="l">DDR5 芯片现货</div><div class="n">$60.17</div><div class="s">周 −2.1% / 月 <span class="up">+3.2%</span> · 距 40 周高点仅 0.6%</div></div>
+    <div class="kpi"><div class="l">DDR4 芯片现货</div><div class="n">$47.08</div><div class="s">周 −2.4% / 月 <span class="down">−3.6%</span> · <b>连续三周下跌</b></div></div>
+    <div class="kpi"><div class="l">512Gb TLC NAND 晶圆</div><div class="n">−13.2%</div><div class="s">两周累计（−9.19% 后 −4.33%）</div></div>
+  </div>
+  <div class="grid3" style="margin-top:11px">
+    <div class="kpi"><div class="l">Q4 DRAM 合约（TrendForce）</div><div class="n up">+10~15%</div><div class="s">QoQ 预期，尚未下修</div></div>
+    <div class="kpi"><div class="l">Q4 NAND 合约（TrendForce）</div><div class="n up">+15~20%</div><div class="s">QoQ 预期，尚未下修</div></div>
+    <div class="kpi"><div class="l">模块价格传导率</div><div class="n amber">25%</div><div class="s">DDR5 模块 4 周 +1.1% vs 芯片 +4.5%</div></div>
+  </div>
+  <div class="note warn" style="margin-top:18px"><div class="nt">解读 · 这不是"崩了"，是"斜率变了"</div>
+    <p>现货回落三周、合约仍在涨，说明<b>渠道在消化库存而不是需求消失</b>——TrendForce 的措辞是"成交停滞、买家预期回调、成交量萎缩"。合约价最新一次重置（RDIMM）还在往上，SO-DIMM 合约数据甚至停留在 9/30，已经 38 天没有新报价。</p>
+    <p>但方向是明确的：<b>现货是合约的领先指标，领先约一个季度</b>。如果现货在 11 月下旬仍继续走弱，2027Q1 的合约涨幅大概率被下修——那才是存储股真正的杀估值时点。这就是为什么 11/05 那份"史上最好季报"换来 −17.46% 的原因：市场不是在看 Q4，是在看 2027Q1 的斜率。</p>
+  </div>
+
+  <h3>宏观 · 12 月加息预期重新升温</h3>
+  <ul>
+    <li><b>10 月非农 +16.5 万</b>（预期 6.5 万），创 3 月以来新高；8、9 月合计上修 <b>+8.4 万</b>；失业率降至 <b>4.1%</b>；平均时薪同比 <b>+3.1%</b> 超预期。数据公布后，<b>12 月加息预期进一步升温</b>。</li>
+    <li>指数分化：<b>纳指 +1.09%、标普 +0.31%、道指 −0.46%</b>——资金回补高弹性芯片，放弃传统周期。<b>VIX 25.64（−9.01%）</b>、SKEW 153.55（+2.80%）。</li>
+    <li>对 MU 的含义：高 Beta（2.47）+ 高波动 + 加息预期回升，是三重不利组合。反弹要靠行业自身叙事，不能指望流动性。</li>
+  </ul>
+</div></section>
+
+
+<section id="sector"><div class="wrap">
+  <div class="sec-h"><span class="sec-n">03</span><h2>板块温度：反弹是"补涨"还是"换挡"</h2></div>
+  <p class="sec-sub">11/06 半导体全线收涨，费半（SOX）<b>+4.21% 至 9,390.25</b>，本周却仍跌 12.15%。重要的是排序：涨幅最大的是 AMD（+11.04%）与 INTC（+7.71%），而 MU 只有 +5.12%、NVDA +2.78%——<b>弹性最大的不是龙头，是跌得最惨的</b>。</p>
+  <div class="tw"><table>
+    <thead><tr><th>标的</th><th>11/06 收盘</th><th>涨跌</th><th style="text-align:left">备注</th></tr></thead>
+    <tbody><tr><td>AMD</td><td>$449.04</td><td class="pos">+11.04%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">本周崩盘后的最强反弹，弹性标的</td></tr><tr><td>INTC</td><td>$56.28</td><td class="pos">+7.71%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">前一日史上最大单日跌幅后的技术性修复</td></tr><tr><td>TSM</td><td>$375.44</td><td class="pos">+6.33%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">代工端跟随，12 月营收指引未变</td></tr><tr><td>MRVL</td><td>$449.00</td><td class="pos">+5.73%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">定制 ASIC 链</td></tr><tr><td>QCOM</td><td>—</td><td class="pos">+5.52%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">手机业务 −26% 后反弹</td></tr><tr style="background:rgba(10,132,255,.06)"><td>MU</td><td>$690.00</td><td class="pos">+5.12%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px"><b>本报告标的</b></td></tr><tr><td>ASML</td><td>—</td><td class="pos">+5.02%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">设备端，2027 订单能见度仍高</td></tr><tr><td>ARM</td><td>—</td><td class="pos">+4.74%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">IP 授权</td></tr><tr><td>SMH</td><td>$463.96</td><td class="pos">+3.62%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">半导体 ETF</td></tr><tr><td>SNDK</td><td>$835.06</td><td class="pos">+3.55%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">NAND 纯标的，弱于 MU</td></tr><tr><td>NVDA</td><td>$186.64</td><td class="pos">+2.78%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">市值重回 5 万亿，龙头涨幅落后</td></tr><tr><td>SKHY</td><td>$127.34</td><td class="pos">+2.78%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">ADR，韩国本土当日休市</td></tr><tr><td>STX</td><td>$460.99</td><td class="neg">-1.19%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">HDD，未参与反弹</td></tr><tr><td>WDC</td><td>$263.78</td><td class="neg">-1.44%</td><td style="text-align:left;color:#a8a8ae;font-size:12.2px">HDD/NAND 混合，最弱</td></tr></tbody>
+  </table></div>
+  <div class="note"><div class="nt">读法</div>
+    <p>存储链内部明显分层：<b>SNDK +3.55%、SKHY +2.78% 弱于 MU +5.12%，而 WDC −1.44%、STX −1.19% 直接收跌</b>。HDD 双雄不参与反弹，说明资金买的是"DRAM/HBM 叙事"，不是"存储整体"。</p>
+    <p>另一条要注意：<b>NVDA 只涨 2.78%</b>。当 AI 算力龙头在本轮修复中落后于二线芯片，通常意味着资金在做<b>空头回补</b>而不是新增配置。空头回补的反弹，寿命以天计。</p>
+  </div>
+</div></section>
+
+
+<section id="chain"><div class="wrap">
+  <div class="sec-h"><span class="sec-n">04</span><h2>期权结构：负 Gamma 里的两个悬崖</h2></div>
+  <p class="sec-sub">全链 3,886 张合约、17 个到期日、OI 合计 275.8 万张。表面上 P/C OI 0.927 是偏 Call 的，但把行权价摊开看，真正的重仓集中在三个位置：上方 $800–900 的 Call 堆、下方 $600–650 的 Put 堆，以及已经深度价内的 $850 Put 对冲层。</p>
+
+  <div class="grid4">
+    <div class="kpi"><div class="l">Call OI</div><div class="n">1,431,076</div><div class="s">全链 17 个到期</div></div>
+    <div class="kpi"><div class="l">Put OI</div><div class="n">1,326,918</div><div class="s">P/C = <b>0.927</b>（偏 Call）</div></div>
+    <div class="kpi"><div class="l">Call 成交</div><div class="n">316,837</div><div class="s">P/C 成交 0.909</div></div>
+    <div class="kpi"><div class="l">Put 成交</div><div class="n">287,978</div><div class="s">≤7DTE P/C 反而升至 <b>1.09</b></div></div>
+  </div>
+
+  <div class="note"><div class="nt">权利金的两套算法 · 差异很关键</div>
+  <p><b>全链口径：</b>Call $674.7M vs Put $1,150.8M，Put 占 <b>63.0%</b>——看起来极度恐慌。但这个数字被 <b>11/20 的 $1,300 / $1,200 深度价内 Put</b>（单笔权利金 $4,410 万 / $2,086 万）严重污染。</p>
+  <p><b>只算 OTM 口径：</b>Call <b>$481.0M</b> vs Put <b>$440.7M</b>，比值 <b>0.916</b>——<em>Call 一端反而更重</em>。结论：<b>这不是恐慌性抛售，是双向换手 + 长端看涨布局</b>。真正的看跌力量在低行权价斜度里，不在总量里。</p>
+  </div>
+
+  <h3>墙位：14 日 / 30 日 / 45 日 / 全链</h3>
+  <div class="grid2">
+    <div>
+      <div class="tw" style="margin-top:0"><table style="min-width:0">
+        <thead><tr><th>Call 墙（30 日内）</th><th>OI</th><th>距现价</th><th style="text-align:left">角色</th></tr></thead>
+        <tbody><tr><td>$900</td><td>17,863</td><td class="pos">+30.4%</td><td style="text-align:left;color:#a8a8ae">主要阻力</td></tr><tr><td>$1,000</td><td>15,747</td><td class="pos">+44.9%</td><td style="text-align:left;color:#a8a8ae">次级阻力</td></tr><tr><td>$800</td><td>14,972</td><td class="pos">+15.9%</td><td style="text-align:left;color:#a8a8ae">第三层阻力 · 双面墙</td></tr><tr><td>$1,050</td><td>11,894</td><td class="pos">+52.2%</td><td style="text-align:left;color:#a8a8ae">第三层阻力</td></tr><tr><td>$1,150</td><td>9,212</td><td class="pos">+66.7%</td><td style="text-align:left;color:#a8a8ae">远端尾部（彩票区）</td></tr><tr><td>$980</td><td>9,118</td><td class="pos">+42.0%</td><td style="text-align:left;color:#a8a8ae">第三层阻力</td></tr><tr><td>$910</td><td>8,767</td><td class="pos">+31.9%</td><td style="text-align:left;color:#a8a8ae">第三层阻力</td></tr></tbody>
+      </table></div>
+    </div>
+    <div>
+      <div class="tw" style="margin-top:0"><table style="min-width:0">
+        <thead><tr><th>Put 墙（30 日内）</th><th>OI</th><th>距现价</th><th style="text-align:left">角色</th></tr></thead>
+        <tbody><tr><td>$450</td><td>14,453</td><td class="neg">-34.8%</td><td style="text-align:left;color:#a8a8ae">远端尾部（彩票区）</td></tr><tr><td>$850</td><td>12,389</td><td class="pos">+23.2%</td><td style="text-align:left;color:#a8a8ae">价内对冲堆（非支撑）</td></tr><tr><td>$600</td><td>12,050</td><td class="neg">-13.0%</td><td style="text-align:left;color:#a8a8ae">次级支撑 · 最大 Put 墙</td></tr><tr><td>$500</td><td>10,822</td><td class="neg">-27.5%</td><td style="text-align:left;color:#a8a8ae">次级支撑</td></tr><tr><td>$650</td><td>10,754</td><td class="neg">-5.8%</td><td style="text-align:left;color:#a8a8ae">主要支撑 · Gamma 悬崖</td></tr><tr><td>$800</td><td>10,037</td><td class="pos">+15.9%</td><td style="text-align:left;color:#a8a8ae">价内对冲堆（非支撑） · 双面墙</td></tr><tr><td>$750</td><td>9,884</td><td class="pos">+8.7%</td><td style="text-align:left;color:#a8a8ae">价内对冲堆（非支撑）</td></tr></tbody>
+      </table></div>
     </div>
   </div>
-</section>
 
-<!-- ================= 10. CALENDAR ================= -->
-<section>
-  <div class="wrap">
-    <div class="s-head">
-      <div class="s-num">10 / 未来 30 日日历</div>
-      <h2>把事件排进仓位里</h2>
+  <div class="tw"><table>
+    <thead><tr><th>到期范围</th><th>Call 第一墙</th><th>Call OI</th><th>Put 第一墙（现价下方）</th><th>Put OI</th><th style="text-align:left">结构特征</th></tr></thead>
+    <tbody>
+      <tr><td>≤14 日（至 11/20）</td><td>$900</td><td>16,148</td><td>$600</td><td>11,080</td><td style="text-align:left;color:#a8a8ae">$750 双向重仓（Call 6,884 / Put 9,056）＝ 短期钉子位</td></tr>
+      <tr><td>≤30 日（至 12/04）</td><td>$900</td><td>17,863</td><td>$600</td><td>12,050</td><td style="text-align:left;color:#a8a8ae">$800 双面墙（Call 14,972 / Put 10,037）＝ 最强引力位</td></tr>
+      <tr><td>≤45 日（至 12/18）</td><td>$900</td><td>27,607</td><td>$600</td><td>19,149</td><td style="text-align:left;color:#a8a8ae">$1,000 Call 27,092 追平 $900；$850 Put 16,678 为价内对冲层</td></tr>
+      <tr><td>全链（至 2027/06）</td><td>$900</td><td>55,777</td><td>$800</td><td>42,228</td><td style="text-align:left;color:#a8a8ae">长端 $1,200 Call 42,924 与 $700 Put 32,215 构成远期双尾</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note warn"><div class="nt">必须纠正一个直觉 · $850 不是支撑</div>
+    <p>很多看板会把 Put OI 最大的行权价直接标成"Put Wall＝支撑"。当前 30 日内 $850 Put 有 12,389 张，但 $850 <b>高于</b>现价 690 —— 这些是<b>崩盘前建立的价内保护</b>，不是下方承接。把它们当支撑会导致严重误判。</p>
+    <p><b>有效的下方支撑是：$650（10,754 张）→ $600（12,050 张）→ $500（10,822 张）。</b>其中 $650 同时是 Gamma 悬崖（−18.08M/1%），跌破后做市商的对冲卖出会自我强化。</p>
+  </div>
+
+  <div class="chartbox">
+    <div class="ct"><b>30 日内 OI 行权价分布（Call vs Put）</b><span>青色线＝现价 690 · 橙色线＝GEX 翻转 757.5</span></div>
+    <div class="cw tall"><canvas id="cOI"></canvas></div>
+    <div class="legend"><span><i style="background:#ff453a"></i>Call 未平仓</span>
+      <span><i style="background:#30d158"></i>Put 未平仓</span>
+      <span><i style="background:#64d2ff"></i>现价 690</span>
+      <span><i style="background:#ff9f0a"></i>翻转位 757.5</span></div>
+  </div>
+
+  <h3>Gamma 结构：翻转位 757.50，现价在它下方 8.9%</h3>
+  <div class="grid3">
+    <div class="kpi"><div class="l">净 GEX（≤45DTE）</div><div class="n down">−$126.0M <span style="font-size:12px;color:var(--dim)">/1%</span></div><div class="s">做市商净空 Gamma</div></div>
+    <div class="kpi"><div class="l">GEX 翻转位</div><div class="n amber">$757.50</div><div class="s">现价低于 8.9% → 负 Gamma 区</div></div>
+    <div class="kpi"><div class="l">Gamma 极值</div><div class="n" style="font-size:17px">+$900 / −$650</div><div class="s">+5.40 / <b>−18.08</b>（百万美元 / 1%）</div></div>
+  </div>
+  <p style="margin-top:16px">负 Gamma 区的机制是：<b>下跌时做市商卖、上涨时做市商买</b>，波动被放大而不是被吸收。这意味着两件事——反弹一旦启动会比平时更猛（容易一柱擎天到 757），但一旦跌破 676 的前低，下方到 650 之间几乎没有缓冲。</p>
+  <div class="chartbox">
+    <div class="ct"><b>Gamma 敞口（GEX）随标的价格的扫描</b><span>单位：百万美元 / 1% 移动 · 由 45 日内全部合约自算</span></div>
+    <div class="cw tall"><canvas id="cGEX"></canvas></div>
+    <div class="legend"><span><i style="background:#ff453a"></i>正 Gamma（做市商买跌卖涨，抑制波动）</span>
+      <span><i style="background:#30d158"></i>负 Gamma（做市商卖跌买涨，放大波动）</span></div>
+  </div>
+
+  <h3>Max Pain：近月数字被"历史库存"污染，请打折看</h3>
+  <div class="tw"><table>
+    <thead><tr><th>到期日</th><th>DTE</th><th>Max Pain</th><th>距现价</th><th>Call OI</th><th>Put OI</th><th style="text-align:left">可信度评估</th></tr></thead>
+    <tbody>
+      <tr><td>11/09（周一）</td><td>3</td><td>$750.00</td><td class="pos">+8.7%</td><td>38,803</td><td>20,765</td><td style="text-align:left;color:#ffc478">低 · 仅 3 天，被 11/06 新建仓主导</td></tr>
+      <tr><td>11/13</td><td>7</td><td>$800.00</td><td class="pos">+15.9%</td><td>83,830</td><td>86,231</td><td style="text-align:left;color:#a8a8ae">中 · 双向 OI 均衡</td></tr>
+      <tr><td>11/20</td><td>14</td><td>$855.00</td><td class="pos">+23.9%</td><td>235,723</td><td>208,800</td><td style="text-align:left;color:#ff9d96"><b>低 · 被 9–10 月遗留的高位 Call 库存严重污染</b></td></tr>
+      <tr><td>11/27</td><td>21</td><td>$900.00</td><td class="pos">+30.4%</td><td>29,756</td><td>31,706</td><td style="text-align:left;color:#ff9d96">低 · 同样受污染，且含感恩节半日市</td></tr>
+      <tr><td>12/04</td><td>28</td><td>$860.00</td><td class="pos">+24.6%</td><td>10,309</td><td>11,429</td><td style="text-align:left;color:#a8a8ae">中</td></tr>
+      <tr><td>12/18</td><td>42</td><td>$770.00</td><td class="pos">+11.6%</td><td>260,965</td><td>293,579</td><td style="text-align:left;color:#7ee2a0"><b>较高 · 崩盘后新建仓位为主，最接近真实引力</b></td></tr>
+      <tr><td>1/15/27</td><td>70</td><td>$690.00</td><td>0.0%</td><td>345,472</td><td>300,582</td><td style="text-align:left;color:#7ee2a0"><b>高 · 恰好等于现价，长端资金认为这里是合理中枢</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note danger"><div class="nt">重要提醒 · 不要用 11/20 的 $855 Max Pain 做交易</div>
+    <p>11/20 到期在 9–10 月股价 900–1,000 区间时累积了大量 Call 库存，这些合约现在全部深度价内。Max Pain 算法会把"让这些 Call 归零"当成目标，于是算出 855 —— 但这需要股价两周内上涨 24%，在 ATR 9% 的环境下概率只有 <b>18%</b>。这不是引力，是历史遗留物的数学投影。</p>
+    <p><b>真正可用的 Max Pain 是 12/18 的 $770 与 1/15/27 的 $690。</b>前者对应 +11.6%（两周半内可能摸到），后者正是现价——说明长端资金已经把 690 当作新的价值中枢。</p>
+  </div>
+
+  <h3>波动率曲面：深度 Backwardation + Put 斜度极值</h3>
+  <div class="chartbox">
+    <div class="ct"><b>ATM 隐含波动率期限结构</b><span>近月 11/13 出现 101.8% 的事件尖峰</span></div>
+    <div class="cw"><canvas id="cTerm"></canvas></div>
+    <div class="legend"><span><i style="background:#bf5af2"></i>ATM IV (%)</span><span>横轴：到期日 · 括号内为 DTE</span></div>
+  </div>
+  <div class="grid3">
+    <div class="kpi"><div class="l">11/20 ATM IV</div><div class="n amber">91.4%</div><div class="s">vs HV20 91.0% → 几乎无溢价</div></div>
+    <div class="kpi"><div class="l">12/18 ATM IV</div><div class="n">75.7%</div><div class="s">42 天，已回落 15.7 个点</div></div>
+    <div class="kpi"><div class="l">1/15/27 ATM IV</div><div class="n">71.5%</div><div class="s">70 天，覆盖财报</div></div>
+  </div>
+  <p style="margin-top:16px">期限结构 <b>11/13 101.8% → 11/20 91.4% → 12/18 75.7% → 6/17/27 62.8%</b>，是典型的崩盘后形态：前端贵、长端便宜。对交易的含义是<b>日历价差极度不利</b>——卖近月买远月要付出巨大时间价值；反过来，<b>买远月卖近月的日历</b>成本很低，但需要近月快速降波才能赚钱。</p>
+
+  <div class="chartbox">
+    <div class="ct"><b>IV 微笑：11/20 vs 12/18</b><span>低行权价一端被买爆，580P 达 102.2%</span></div>
+    <div class="cw tall"><canvas id="cSmile"></canvas></div>
+    <div class="legend"><span><i style="background:#ff453a"></i>11/20 Call</span>
+      <span><i style="background:#ff9f0a"></i>11/20 Put</span>
+      <span><i style="background:#0a84ff"></i>12/18 Call</span>
+      <span><i style="background:#64d2ff"></i>12/18 Put</span></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>25Δ 风险逆转</th><th>25Δ Put</th><th>Put IV</th><th>25Δ Call</th><th>Call IV</th><th>RR (Put−Call)</th><th style="text-align:left">含义</th></tr></thead>
+    <tbody>
+      <tr><td>11/20（14D）</td><td>$620</td><td>97.1%</td><td>$780</td><td>84.7%</td><td class="pos">+12.4pp</td><td style="text-align:left;color:#a8a8ae">买 Put 溢价极高，卖 Put 收租最厚</td></tr>
+      <tr><td>11/27（21D）</td><td>$610</td><td>90.1%</td><td>$795</td><td>76.3%</td><td class="pos">+13.8pp</td><td style="text-align:left;color:#a8a8ae">斜度进一步陡化</td></tr>
+      <tr><td>12/04（28D）</td><td>$610</td><td>85.0%</td><td>$810</td><td>72.8%</td><td class="pos">+12.2pp</td><td style="text-align:left;color:#a8a8ae">30 日窗口内最优的收租区</td></tr>
+      <tr><td>12/18（42D）</td><td>$600</td><td>81.2%</td><td>$840</td><td>71.0%</td><td class="pos">+10.2pp</td><td style="text-align:left;color:#a8a8ae">斜度开始收敛</td></tr>
+      <tr><td>1/15/27（70D）</td><td>$590</td><td>74.8%</td><td>$880</td><td>67.2%</td><td class="pos">+7.6pp</td><td style="text-align:left;color:#a8a8ae">长端斜度正常化</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:12.5px;color:var(--dim)">RR 为正 = Put 隐含波动率高于 Call，即市场为下跌保护支付溢价。+12.4pp 属于历史高位（正常区间 −3 至 +6pp）。</p>
+
+  <h3>预期波动（ATM Straddle 定价）</h3>
+  <div class="tw"><table>
+    <thead><tr><th>到期</th><th>DTE</th><th>隐含波动幅度</th><th>下界</th><th>上界</th><th>对应 1σ 位置</th></tr></thead>
+    <tbody>
+      <tr><td>11/09</td><td>3</td><td>±5.5%</td><td>$652.0</td><td>$728.0</td><td>周一单日 / 三日合计</td></tr>
+      <tr><td>11/13</td><td>7</td><td>±10.7%</td><td>$616.2</td><td>$763.8</td><td>CPI 11/10 在内</td></tr>
+      <tr><td>11/20</td><td>14</td><td><b>±13.9%</b></td><td>$594.0</td><td>$786.0</td><td>本月主力周</td></tr>
+      <tr><td>11/27</td><td>21</td><td>±15.4%</td><td>$583.9</td><td>$796.1</td><td>含感恩节半日市</td></tr>
+      <tr><td>12/04</td><td>28</td><td>±17.4%</td><td>$570.0</td><td>$810.0</td><td><b>30 日窗口基准</b></td></tr>
+      <tr><td>12/18</td><td>42</td><td><b>±20.2%</b></td><td>$550.4</td><td>$829.6</td><td>财报前最后一个月到期</td></tr>
+      <tr><td>1/15/27</td><td>70</td><td>±24.7%</td><td>$519.8</td><td>$860.2</td><td>覆盖 12 月财报</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+
+<section id="flow"><div class="wrap">
+  <div class="sec-h"><span class="sec-n">05</span><h2>期权大单：大钱在做"双尾"，不是"单边"</h2></div>
+  <p class="sec-sub">以下榜单用 11/06 全链 3,886 张合约的成交量 × 中间价自算权利金，非第三方"异动扫描"口径。它会把深虚尾巴和真实的方向性下注混在一起，所以要看结构而不是看排名。</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>方向</th><th>到期</th><th>行权价</th><th>成交</th><th>OI</th><th>量/OI</th><th>中间价</th><th>IV</th><th>权利金</th></tr></thead>
+    <tbody><tr><td>1</td><td><span class="tag c">CALL</span></td><td>27/01-15</td>
+      <td>$600</td><td>4,179</td><td>5,029</td><td>0.8×</td>
+      <td>$139.60</td><td>75.5%</td><td><b>$58.3M</b></td></tr><tr><td>2</td><td><span class="tag p">PUT</span></td><td>26/11-20</td>
+      <td>$1,300</td><td>723</td><td>1,000</td><td>0.7×</td>
+      <td>$609.85</td><td>157.7%</td><td><b>$44.1M</b></td></tr><tr><td>3</td><td><span class="tag p">PUT</span></td><td>26/11-20</td>
+      <td>$1,200</td><td>410</td><td>125</td><td>3.3×</td>
+      <td>$508.75</td><td>120.9%</td><td><b>$20.9M</b></td></tr><tr><td>4</td><td><span class="tag p">PUT</span></td><td>27/01-15</td>
+      <td>$860</td><td>965</td><td>1,031</td><td>0.9×</td>
+      <td>$194.68</td><td>68.1%</td><td><b>$18.8M</b></td></tr><tr><td>5</td><td><span class="tag p">PUT</span></td><td>27/01-15</td>
+      <td>$850</td><td>811</td><td>5,716</td><td>0.1×</td>
+      <td>$187.85</td><td>69.2%</td><td><b>$15.2M</b></td></tr><tr><td>6</td><td><span class="tag p">PUT</span></td><td>26/11-09</td>
+      <td>$700</td><td>5,751</td><td>713</td><td>8.1×</td>
+      <td>$23.77</td><td>83.3%</td><td><b>$13.7M</b></td></tr><tr><td>7</td><td><span class="tag p">PUT</span></td><td>26/11-09</td>
+      <td>$690</td><td>7,354</td><td>494</td><td>14.9×</td>
+      <td>$18.55</td><td>84.7%</td><td><b>$13.6M</b></td></tr><tr><td>8</td><td><span class="tag c">CALL</span></td><td>27/01-15</td>
+      <td>$800</td><td>2,874</td><td>6,320</td><td>0.5×</td>
+      <td>$45.27</td><td>68.2%</td><td><b>$13.0M</b></td></tr><tr><td>9</td><td><span class="tag p">PUT</span></td><td>27/06-17</td>
+      <td>$800</td><td>616</td><td>4,356</td><td>0.1×</td>
+      <td>$190.60</td><td>62.4%</td><td><b>$11.7M</b></td></tr><tr><td>10</td><td><span class="tag p">PUT</span></td><td>26/12-18</td>
+      <td>$690</td><td>1,591</td><td>2,093</td><td>0.8×</td>
+      <td>$68.53</td><td>76.1%</td><td><b>$10.9M</b></td></tr><tr><td>11</td><td><span class="tag p">PUT</span></td><td>26/12-18</td>
+      <td>$680</td><td>1,706</td><td>2,376</td><td>0.7×</td>
+      <td>$63.12</td><td>76.0%</td><td><b>$10.8M</b></td></tr><tr><td>12</td><td><span class="tag p">PUT</span></td><td>26/12-18</td>
+      <td>$900</td><td>489</td><td>4,771</td><td>0.1×</td>
+      <td>$218.12</td><td>69.9%</td><td><b>$10.7M</b></td></tr></tbody>
+  </table></div>
+
+  <div class="grid2" style="margin-top:20px">
+    <div class="card" style="border-color:rgba(255,69,58,.24);background:rgba(255,69,58,.045)">
+      <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#ff9d96;margin-bottom:9px">看涨一侧</div>
+      <ul style="margin-bottom:0">
+        <li><b>1/15/27 $600C：</b>成交 4,179 张、OI 5,029 张、权利金 <b>$5,834 万</b>。其中单笔约 <b>1,250 万美元</b>在卖价成交，重复成簇 → 是信念而不是误单。</li>
+        <li><b>1/15/27 $800C：</b>2,874 张、OI 6,320 张、$1,300 万。</li>
+        <li><b>6/17/27 $800C：</b>1,079 张、$1,060 万 → 更远端的同向布局。</li>
+        <li><b>11/09 $700C：</b>6,769 张、OI 仅 761（8.9×）→ 周一的短线博弈盘。</li>
+      </ul>
     </div>
-    <div class="tw">
-      <table>
-        <thead><tr><th>日期（SGT）</th><th>事件</th><th>对本报告策略的意义</th></tr></thead>
-        <tbody>
-          <tr><td class="mono">11/09 周一 22:30</td><td>美股开盘 · 本周首个交易日</td><td class="dim small">重点看能否守住 676（周五低点）；若开盘直接补 713.95 缺口，A1 可提前建仓</td></tr>
-          <tr><td class="mono">11/13 周五</td><td>周度期权到期（P/C 1.03）</td><td class="dim small">11/13 持仓 8.6 万 Call / 8.6 万 Put，多空对峙最均衡的一个到期日</td></tr>
-          <tr style="background:rgba(10,132,255,.06)"><td class="mono">11/18 周三 05:20<span class="dim">（美东 11/17 16:20）</span></td><td><b>NVDA FQ3 财报</b>（盘后）</td><td class="dim small">全行业方向变量。共识营收 $1,088–1,090 亿、EPS $2.47、毛利率 73.5–74.5%。财报前 A/B 组均减半</td></tr>
-          <tr><td class="mono">11/20 周五</td><td>月度期权到期（OPEX）</td><td class="dim small">23.6 万 Call / 20.9 万 Put 到期，Max Pain 855（失真）。到期后 Gamma 结构会重置，是重新评估墙位的时点</td></tr>
-          <tr><td class="mono">11/26 周四</td><td>感恩节休市</td><td class="dim small">11/27 半日交易，流动性差，避免在此时段做大额建仓</td></tr>
-          <tr><td class="mono">11/27 周五（半日）</td><td>11/27 期权到期</td><td class="dim small">A2 到期日</td></tr>
-          <tr style="background:rgba(10,132,255,.06)"><td class="mono">12/10 周四 03:00<span class="dim">（美东 12/09 14:00）</span></td><td><b>FOMC 决议 + 点阵图</b></td><td class="dim small">当前 3.75–4.00%，9 月加息 25bp、10 月两名委员主张再加。点阵图若上移，成长股估值再压一轮</td></tr>
-          <tr style="background:rgba(255,159,10,.06)"><td class="mono">12/17 周四 05:00<span class="dim">（美东 12/16 16:00）</span></td><td><b>MU FQ1 FY27 财报</b>（盘后）</td><td class="dim small">共识 EPS $38.22 / 营收 $618 亿。12/18 到期是唯一覆盖此事件的月度合约（A3/B2/C1）</td></tr>
-          <tr><td class="mono">12/18 周五</td><td>月度期权到期</td><td class="dim small">A3 / B2 / C1 到期日</td></tr>
-        </tbody>
-      </table>
+    <div class="card" style="border-color:rgba(48,209,88,.24);background:rgba(48,209,88,.04)">
+      <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#7ee2a0;margin-bottom:9px">看跌一侧</div>
+      <ul style="margin-bottom:0">
+        <li><b>1/15/27 $850P / $860P：</b>811 / 965 张，权利金 <b>$1,523 万 / $1,879 万</b>。已深度价内 → 更像组合保护腿。</li>
+        <li><b>6/17/27 $800P：</b>616 张、OI 4,356、$1,170 万 → 半年期保险。</li>
+        <li><b>12/18 $680P / $690P：</b>1,706 / 1,591 张，合计 $2,170 万 → 12 月到期的下跌对冲。</li>
+        <li><b>11/09 $690P / $700P：</b>7,354 / 5,751 张，OI 仅 494 / 713 → <b>周一开盘前的全新看跌下注</b>。</li>
+        <li><b>11/20 $1,300P / $1,200P：</b>权利金 $4,410 万 / $2,086 万，但属深虚尾部彩票或平仓盘，不具备方向信息。</li>
+      </ul>
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="wrap">
-    <b>数据来源与口径</b><br>
-    行情：Yahoo Finance（日线 / 1 分钟含盘前盘后）；期权链：Nasdaq 公开期权链接口（3,886 个合约 / 17 个到期日，11/06 EOD）；新闻：Motley Fool、TheStreet、Barron's、TrendForce、Kiplinger；分析师共识：StockUpside / FMP / FundSpec 多源交叉。<br>
-    自算部分：隐含波动率由 Black-Scholes 二分法反解（r = 4.2%）；GEX = Σ(OI_call − OI_put) × Gamma × 100 × S² × 1%，限 0–45 DTE；Max Pain 为全行权价 min(总赔付) 解；25Δ 风险逆转由各到期链反解 Delta 后取最近 25Δ 合约。<br><br>
-    <b>时点声明</b>：本报告生成于 <span class="mono">2026-11-07 10:12 SGT</span> = <span class="mono">2026-11-06 21:12 EST</span>。美股周五已收盘、盘后交易已于 20:00 EST 结束、Blue Ocean 夜盘周五不开放、下一个盘前为 11/09 04:00 EST（SGT 17:00）。所有价格均为历史成交价，<b>不代表下周一开盘价</b>；周末若有重大新闻，周一开盘可能出现跳空，请以 09:30 EST 开盘后 30 分钟的实际价格重新校验所有结构。<br><br>
-    <b>免责声明</b>：本报告为个人研究与信息整理，不构成投资建议。期权交易具有高杠杆与全损风险，最大亏损可能超过本金（裸卖期权）。文中所有概率为风险中性隐含概率，非收益预测。请根据自身风险承受能力独立决策。<br><br>
-    华宝 · HUABAO ｜ MU 期权结构日报 ｜ 2026/11/07
+  <div class="note"><div class="nt">把腿拼起来看 · 1/15/27 的 600C + 850P</div>
+    <p>1/15/27 的 $600C（成交 4,179 张）与 $850P（成交 811 张）如果属于同一个账户，等效结构是：<b>买入 600C + 买入 850P</b>，成本 139.60 + 187.85 = <b>327.45</b>，到期内在价值 250（现价不动）。盈亏平衡点：<b>下跌侧 $522.55、上涨侧 $927.45</b>。</p>
+    <p>也就是说，这组大钱押的是<b>「70 天内向上 +34% 或向下 −24%」</b>，中间地带全部亏损 77 点。这与"看多美光"完全不是一回事——它在赌的是<b>波动率本身</b>，方向不重要。理解这一点，才能解释为什么 Put 和 Call 两端同时有大单，而 P/C 总额看起来矛盾。</p>
+    <p>另有旁证：11/06 早盘（09:45 ET）的异动口径显示，前 5 分钟级大单中 <b>94% 的权利金在 Put 一侧</b>（$510 万 Put vs $32.5 万 Call），其中 48% 是当日到期（0DTE）。当天的钱在赌"周五当天继续跌"，而长端的钱在赌"两个月内巨震"。<b>时间维度不同，不矛盾。</b></p>
   </div>
-</footer>
+</div></section>
+
+
+<section id="strategy"><div class="wrap">
+  <div class="sec-h"><span class="sec-n">06</span><h2>30 日期权行权价建议</h2></div>
+  <p class="sec-sub">窗口定义：2026/11/09 – 2026/12/08，对应到期 11/20（14D）、11/27（21D）、12/04（28D）。所有报价为 11/06 收盘中间价，按 100 股/张计算。概率由各到期 ATM IV 的对数正态分布估算，非真实概率，仅用于比较。</p>
+
+  <div class="note warn"><div class="nt">先明确三件事，再谈策略</div>
+    <p><b>① 30 日窗口内没有 MU 财报。</b>12/18 到期在财报（12/16–12/23，公司未正式公告具体日）之前。想赌财报必须用 <b>1/15/27</b>。把 12/18 当"财报票"是常见错误。</p>
+    <p><b>② 但窗口内有三个大事件：</b>11/10 十月 CPI、<b>11/17 盘后 NVDA 财报</b>（美东，11/18 SGT 05:20）、12/09 FOMC（12/10 03:00 SGT）。这三个都比美光自己的消息更能决定它的短期路径。</p>
+    <p><b>③ 11/11 是退伍军人节</b>——债券市场休市、股市正常开；<b>11/26 感恩节休市、11/27 半日市（13:00 EST 收）</b>。11/27 到期的合约有额外的假期时间价值衰减，实际持有天数比看上去少。</p>
+  </div>
+
+  <h3>情景划分</h3>
+  <div class="sc">
+    <div class="s1"><div class="p up">35%</div><div class="r">情景 ① 超卖反弹</div>
+      <div class="b">收复 713.95（BOLL 下轨）并向 <b>757.50</b>（GEX 翻转 + MA200）发起攻击。触发条件：CPI 温和 / NVDA 财报强劲 / DRAM 现货止跌。<br><br>路径：690 → 720 → 757。<b>757 上方才是趋势修复</b>。</div></div>
+    <div class="s1"><div class="p" style="color:var(--amber)">45%</div><div class="r">情景 ② 宽幅震荡</div>
+      <div class="b">在 <b>640–780</b> 之间来回，最大值钉在 <b>$800</b>（30 日内 Call 14,972 / Put 10,037 双面墙）与 <b>$750</b>（14 日内双向重仓）。<br><br>这是概率最高、也最难赚钱的路径。</div></div>
+    <div class="s1"><div class="p down">20%</div><div class="r">情景 ③ 破位加速</div>
+      <div class="b">跌破 676（周五低点）→ <b>650</b>（Gamma 悬崖 −18.08M/1%）无缓冲 → <b>600</b>（Put 墙 12,050）。负 Gamma 会放大跌幅。<br><br>触发：CPI 超预期 / NVDA 指引转弱 / 合约价下修。</div></div>
+  </div>
+
+  <h3>A 组 · 反弹（现价上方，方向性卫星仓）</h3>
+  <div class="stg">
+      <div class="hd"><span class="id ">A1</span><span class="ti">11/20 700 / 800 Call 价差</span></div>
+      <div class="mt"><div class="x"><div class="k">成本</div><div class="v">32.45</div></div><div class="x"><div class="k">占现价</div><div class="v">4.70%</div></div><div class="x"><div class="k">最大收益</div><div class="v">67.55</div></div><div class="x"><div class="k">盈亏比</div><div class="v">2.08×</div></div><div class="x"><div class="k">打平点</div><div class="v">732.45</div></div></div>
+      <div class="ds">买入 700C @43.68 / 卖出 800C @11.23。需要 14 天内涨到 732 以上（+6.2%）。P(盈利) ≈ <b>33.6%</b>，P(进入价内) ≈ 43.3%。<b>这是最"正"的反弹表达</b>——上界 800 正好是 30 日双面墙，用它换成本。风险：IV 90.8% 的双腿买入，若周一开盘即跌，Theta 每天吃掉约 3.1 点。仓位建议 ≤ 总仓 1/4。</div>
+    </div>
+  <div class="stg">
+      <div class="hd"><span class="id ">A2</span><span class="ti">12/04 750 / 850 Call 价差</span></div>
+      <div class="mt"><div class="x"><div class="k">成本</div><div class="v">22.95</div></div><div class="x"><div class="k">占现价</div><div class="v">3.33%</div></div><div class="x"><div class="k">最大收益</div><div class="v">77.05</div></div><div class="x"><div class="k">盈亏比</div><div class="v">3.36×</div></div><div class="x"><div class="k">打平点</div><div class="v">772.95</div></div></div>
+      <div class="ds">买入 750C @34.50 / 卖出 850C @11.55。<b>性价比最高的一档</b>：成本只有 3.33%，盈亏比 3.36×。但它要求股价站上 GEX 翻转 757.5 并继续走到 773 以上（+12.0%），P(盈利) ≈ <b>26.7%</b>。适合作为"如果 757 收复"的追涨票，而不是现在就买——建议<b>等价格先站上 714（BOLL 下轨）再进</b>。</div>
+    </div>
+  <div class="stg">
+      <div class="hd"><span class="id ">A3</span><span class="ti">1/15/27 600 Call 单腿（跟随大单）</span></div>
+      <div class="mt"><div class="x"><div class="k">成本</div><div class="v">139.60</div></div><div class="x"><div class="k">占现价</div><div class="v">20.2%</div></div><div class="x"><div class="k">打平点</div><div class="v">739.60</div></div><div class="x"><div class="k">Delta</div><div class="v">≈0.73</div></div><div class="x"><div class="k">P(盈利)</div><div class="v">35.3%</div></div></div>
+      <div class="ds">直接复制那笔 1,250 万美元大单的结构。本质是<b>用 20% 的资金获得 73 的 Delta 敞口</b>（相当于 3.6 倍杠杆的股票替代），最大亏损锁定在权利金。打平点 739.60 意味着即便不涨、只要 70 天内回到 740 以上就不亏。<b>但已深度价内，时间价值占 45%，IV 75.5% 并不便宜</b>——如果只是想拿多头敞口，不如分批买 11/20 的价差 + 保留现金。</div>
+    </div>
+
+  <h3>B 组 · 二次探底（现价下方）</h3>
+  <div class="stg">
+      <div class="hd"><span class="id p">B1</span><span class="ti">11/20 650 / 580 Put 价差</span></div>
+      <div class="mt"><div class="x"><div class="k">成本</div><div class="v">18.23</div></div><div class="x"><div class="k">占现价</div><div class="v">2.64%</div></div><div class="x"><div class="k">最大收益</div><div class="v">51.77</div></div><div class="x"><div class="k">盈亏比</div><div class="v">2.84×</div></div><div class="x"><div class="k">打平点</div><div class="v">631.77</div></div></div>
+      <div class="ds">买入 650P @30.68 / 卖出 580P @12.45。650 是 Gamma 悬崖 + 下方第一 Put 墙，是最可能被测试的位置。<b>打平 631.77（−8.4%）</b>，P(盈利) ≈ <b>34.3%</b>。注意：580P 的 IV 高达 102.2%，卖出它是本组策略的核心收益来源——你不是在"看空"，你是在用最贵的尾巴换成本。</div>
+    </div>
+  <div class="stg">
+      <div class="hd"><span class="id p">B2</span><span class="ti">12/04 600 / 500 Put 价差</span></div>
+      <div class="mt"><div class="x"><div class="k">成本</div><div class="v">17.10</div></div><div class="x"><div class="k">占现价</div><div class="v">2.48%</div></div><div class="x"><div class="k">最大收益</div><div class="v">82.90</div></div><div class="x"><div class="k">盈亏比</div><div class="v">4.85×</div></div><div class="x"><div class="k">打平点</div><div class="v">582.90</div></div></div>
+      <div class="ds"><b>本报告认为风险回报最好的一档</b>。成本仅 2.48%，盈亏比 4.85×，打平 582.90（−15.5%），P(盈利) ≈ 25.8%。它对应的正是情景 ③ 的第二目标（600 Put 墙）。500P 的 IV 96% 帮了大忙。<b>缺点是概率低——但它的赔率足够补偿</b>，适合作为组合的"尾部彩票"（建议 ≤ 1/10 仓位）。</div>
+    </div>
+  <div class="stg">
+      <div class="hd"><span class="id p">B3</span><span class="ti">12/18 650 / 550 Put 价差</span></div>
+      <div class="mt"><div class="x"><div class="k">成本</div><div class="v">29.63</div></div><div class="x"><div class="k">占现价</div><div class="v">4.29%</div></div><div class="x"><div class="k">最大收益</div><div class="v">70.38</div></div><div class="x"><div class="k">盈亏比</div><div class="v">2.38×</div></div><div class="x"><div class="k">打平点</div><div class="v">620.38</div></div></div>
+      <div class="ds">给它时间。42 天、打平 620.38，P(盈利) ≈ <b>38.8%</b>——三档里最高。代价是盈亏比只有 2.38×，因为长端 IV 已回落到 77/84%。如果判断"12 月 FOMC 前还有一轮杀估值"，这是持有体验最好的表达。</div>
+    </div>
+
+  <h3>C 组 · 收租与持仓保护（不赌方向）</h3>
+  <div class="stg">
+      <div class="hd"><span class="id w">C1</span><span class="ti">卖出 12/18 600 / 500 Put 价差</span></div>
+      <div class="mt"><div class="x"><div class="k">收权利金</div><div class="v">20.88</div></div><div class="x"><div class="k">占现价</div><div class="v">3.03%</div></div><div class="x"><div class="k">最大亏损</div><div class="v">79.12</div></div><div class="x"><div class="k">回报率</div><div class="v">26.4%</div></div><div class="x"><div class="k">打平点</div><div class="v">579.12</div></div></div>
+      <div class="ds">卖出 600P @33.00 / 买入 500P @12.13。<b>42 天收 3.03%，年化约 26%</b>，但只在股价不跌破 579（−16.1%）时全胜，P(全胜) ≈ <b>29.0%</b>。这不是"高胜率收租"——在 76% 波动率的世界里，1σ 的下界就是 550。<b>只在你有意接货（愿意在 600 附近持有正股）时才用</b>，且务必带上 500 的翅膀。裸卖 Put 属于本报告的硬否决项。</div>
+    </div>
+  <div class="stg">
+      <div class="hd"><span class="id w">C2</span><span class="ti">Collar（持仓者保护）：买 12/18 600P / 卖 12/18 850C</span></div>
+      <div class="mt"><div class="x"><div class="k">净支出</div><div class="v">13.75</div></div><div class="x"><div class="k">占现价</div><div class="v">1.99%</div></div><div class="x"><div class="k">下界</div><div class="v">600</div></div><div class="x"><div class="k">上界</div><div class="v">850</div></div><div class="x"><div class="k">区间宽度</div><div class="v">−13.0% / +23.2%</div></div></div>
+      <div class="ds">如果你手上有多头仓位且不愿在 690 割肉，这是<b>本报告最推荐的动作</b>。花 1.99% 的成本把下方锁在 600，同时把上方让到 850（−13.0% / +23.2%）。对比：单买 600P 要 4.78%，卖 850C 收回 2.79%——<b>用 850 这个 45 日 Call 墙之上的位置换掉一半保护成本，非常划算</b>。</div>
+    </div>
+  <div class="stg">
+      <div class="hd"><span class="id w">C3</span><span class="ti">卖出 11/20 620 / 540 Put 价差</span></div>
+      <div class="mt"><div class="x"><div class="k">收权利金</div><div class="v">13.73</div></div><div class="x"><div class="k">占现价</div><div class="v">1.99%</div></div><div class="x"><div class="k">最大亏损</div><div class="v">66.28</div></div><div class="x"><div class="k">回报率</div><div class="v">20.7%</div></div><div class="x"><div class="k">打平点</div><div class="v">606.27</div></div></div>
+      <div class="ds">14 天收 1.99%，年化 <b>59%</b>——短期最肥的一档，因为 620P 的 IV 是 97.1%。但只有 14 天，且下周就有 CPI（11/10）。<b>建议等 CPI 公布后再卖</b>（IV 通常会崩 10–15 个点，权利金会缩水，但风险也同步下降）。</div>
+    </div>
+
+  <h3>D 组 · 区间（低仓，仅限专业）</h3>
+  <div class="stg">
+      <div class="hd"><span class="id d">D1</span><span class="ti">11/27 550/620P + 800/880C 铁鹰</span></div>
+      <div class="mt"><div class="x"><div class="k">收权利金</div><div class="v">24.61</div></div><div class="x"><div class="k">最大亏损</div><div class="v">45.46</div></div><div class="x"><div class="k">回报率</div><div class="v">54.1%</div></div><div class="x"><div class="k">盈利区间</div><div class="v">605.3 – 809.9</div></div><div class="x"><div class="k">P(区间内)</div><div class="v">53.5%</div></div></div>
+      <div class="ds">卖 620P @26.35 / 买 550P @11.68；卖 800C @15.45 / 买 880C @5.53。<b>54% 的回报率配 53.5% 的成功率</b>，数学上是正期望。但它踩在两个风险上：① 感恩节半日市（11/27）流动性差，平仓滑点大；② 下端 620 距 Gamma 悬崖 650 太近，一旦破位会同时打穿。仓位 ≤ 1/10，且<b>必须在 11/20 之前评估是否提前平掉 Put 侧</b>。</div>
+    </div>
+
+  <h3>如果只让我选一个</h3>
+  <div class="vd">
+    <div class="h">单一最优解</div>
+    <div class="big">12/04 <em>600 / 500</em> Put 价差 + 12/04 <em>750 / 850</em> Call 价差<br>两腿各 1/3 仓位，合计成本 <em>5.81%</em> 的现价</div>
+    <p>理由：<b>在 IV 91%、RR +12.4pp、ATR 9% 的环境里，任何单边裸头寸都会被震荡洗掉。</b>而这组"双尾价差"用 5.81% 的成本同时覆盖情景 ① 与 ③，只要 28 天内波动超过 ±12% 就能赚钱，中间地带的亏损被严格锁定。这恰好复刻了 1/15/27 那笔 600C + 850P 大单的思想——<b>只不过我们用了更便宜的行权价和更短的期限</b>。</p>
+  </div>
+
+  <h3>硬否决清单（五条，不打折）</h3>
+  <div class="note danger"><div class="nt">Reject List · 违反任意一条即停止执行</div>
+    <ul style="margin-bottom:0">
+      <li><b>① 不许裸卖 Put。</b>ATR 9%、HV5 135%，一次跳空就能吃掉全年权利金。所有卖方头寸必须带翅膀。</li>
+      <li><b>② 不许用 11/20 的 $855 Max Pain 作为买 Call 的理由。</b>那是历史库存的数学投影，不是引力。真实概率 P(&gt;800) 只有 18%。</li>
+      <li><b>③ 不许在 11/10 CPI 之前重仓。</b>CPI 落在 11/13、11/20 两个到期之内，是这 30 天里第一个真正的二元事件。</li>
+      <li><b>④ 收盘跌破 $650 立即清掉所有多头期权。</b>650 是 Gamma 悬崖（−18.08M/1%），破位后负 Gamma 会自我强化到 600 才有 Put 墙。</li>
+      <li><b>⑤ 不许把 12/18 当财报票。</b>财报在 12/16–12/23，12/18 到期很可能在财报之前。要赌财报告必须用 1/15/27。</li>
+    </ul>
+  </div>
+</div></section>
+
+
+<section id="verdict"><div class="wrap">
+  <div class="sec-h"><span class="sec-n">07</span><h2>一页纸结论</h2></div>
+  <div class="vd">
+    <div class="h">Bottom Line</div>
+    <div class="big">这是一次<em>结构破裂后的技术性反弹</em>，<br>不是底部。价格在 690，但战场在 <em>757.50</em>。</div>
+    <p style="font-size:14.5px">周五 +5.12% 的收盘价掩盖了一个事实：涨幅在开盘 25 分钟内就到顶，全天再没站上 705。真正需要盯的不是 690 这个数字，而是 <b>757.50</b>——GEX 翻转位与 MA200 的重合点。在它下方，做市商净空 Gamma，任何反弹都会被 720–757 之间的卖压吸收；站上它，负 Gamma 转正，下跌才会真正停止。</p>
+  </div>
+
+  <div class="grid3" style="margin-bottom:18px">
+    <div class="kpi"><div class="l">支撑（由近到远）</div><div class="n" style="font-size:17px">676 → 650 → 600</div><div class="s">650 为 Gamma 悬崖，600 为 Put 墙</div></div>
+    <div class="kpi"><div class="l">阻力（由近到远）</div><div class="n" style="font-size:17px">714 → 757.5 → 800</div><div class="s">714 BOLL 下轨 / 757.5 翻转 / 800 双面墙</div></div>
+    <div class="kpi"><div class="l">中枢（长端资金答案）</div><div class="n" style="font-size:17px">$690</div><div class="s">1/15/27 Max Pain 恰等于现价</div></div>
+  </div>
+
+  <h4>五条判断，按确定性排序</h4>
+  <ul>
+    <li><b>确定性最高：波动会继续很大。</b>HV5 135%、ATR 9%、11/20 IV 91.4%，且现价深在负 Gamma 区。任何"低波动"假设都会错。</li>
+    <li><b>确定性高：757.50 是本轮的分水岭。</b>它不是画线画出来的，是 45 日内全部合约的 Gamma 净额为零的位置，同时叠加 MA200 756.73。两个独立方法给出同一个数字，可信度显著提升。</li>
+    <li><b>确定性中：现货 DRAM 连跌三周是周期的第一道裂缝。</b>合约价还在涨，但现货领先合约约一个季度。如果 11 月下旬现货继续走弱，2027Q1 的合约涨幅会被下修——那才是真正的杀估值。</li>
+    <li><b>确定性中：期权的钱在做"双尾"而非"单边"。</b>OTM 权利金 Call $481M &gt; Put $441M，长端同时买 600C 与 850P，等效 522/927 宽跨式。不要把它误读成"机构看空"或"机构看多"。</li>
+    <li><b>确定性最低：方向。</b>情景 ① 35% / ② 45% / ③ 20%。<b>所以策略必须以"宽幅双尾 + 定义风险"为核心，而不是押单边。</b></li>
+  </ul>
+
+  <h4>下一个交易日的具体观察点（11/09 周一）</h4>
+  <ul>
+    <li><b>17:00 SGT 盘前开始</b>——看是否延续盘后 694.79 的水位，还是被周末桃园停工消息压回 680 以下。</li>
+    <li><b>22:30 SGT 开盘 30 分钟</b>——这是唯一有效的确认窗口。周五的教训就是"开盘 25 分钟定全天"。</li>
+    <li><b>11/09 到期的看跌大单</b>：$690P 成交 7,354 张（OI 仅 494）、$700P 5,751 张（OI 713）。这些是周五新建的、赌周一继续跌的仓位。<b>如果周一开盘不跌，这些 Put 会快速归零，反过来成为反弹的燃料</b>。</li>
+    <li>同样的逻辑在 Call 侧：$700C 成交 6,769 张（OI 761）。周一是一个"双向新建仓对决"的到期日。</li>
+  </ul>
+</div></section>
+
+
+<footer><div class="wrap">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;margin-bottom:22px">
+    <div class="logo"><div class="logo-mark">华</div>
+      <div class="logo-txt">华宝 <span>HUABAO · Equity Derivatives Desk</span></div></div>
+    <div style="text-align:right;font-size:11.5px;color:var(--dim2)">
+      MU 期权结构日报 · 2026/11/08<br>数据锚定 11/06 收盘（EST）· 生成 11/08 09:15 SGT
+    </div>
+  </div>
+  <p><b style="color:var(--dim)">数据来源：</b>Nasdaq 公开期权链 API（3,886 张合约 / 17 个到期，EOD 11/06）· Yahoo Finance Chart API（日线 / 5 分钟线含盘前盘后）· CNBC Quote API（财务比率）· 新浪财经（成交额 / 换手）· TrendForce / DRAMeXchange（现货与合约价）· DDRWatcher Week 2026-45 · 公司公告与新加坡 / 台湾地区媒体报道 · Ainvest / edgeX 期权流水分层。所有 IV、Gamma、GEX、Max Pain、墙位、预期波动均由本报告自行反解计算，非数据商口径。</p>
+  <p><b style="color:var(--dim)">口径与限制：</b>周末美股完全休市，全部价格为 11/06 收盘与盘后结算值，不构成实时报价；期权 OI 为 11/06 结算值，周末若有新的大宗安排不会反映；概率估算基于各到期 ATM IV 的对数正态分布，无漂移假设，仅供横向比较，不代表真实胜率；成交量在不同数据源间存在 0.7% 差异，已取 Nasdaq 合并口径。</p>
+  <p><b style="color:var(--dim)">免责声明：</b>本报告为量化数据整理与结构分析，不构成任何投资建议或要约。期权交易可能导致本金全部损失，卖出期权可能产生超过初始保证金的亏损。文中所有策略均为结构示例，执行前请自行核实报价与希腊值。作者可能持有文中提及的标的头寸。市场有风险，决策请独立。</p>
+  <p style="margin-top:18px;color:var(--dim2)">© 2026 华宝 · 内部研究用途 · 未经授权请勿转载</p>
+</div></footer>
 
 <script>
-const D = {"intra": [["04:00", 696.0, "pre"], ["04:01", 698.67, "pre"], ["04:02", 699.08, "pre"], ["04:03", 704.39, "pre"], ["04:04", 706.0, "pre"], ["04:05", 704.51, "pre"], ["04:06", 704.0, "pre"], ["04:07", 708.0, "pre"], ["04:08", 706.5, "pre"], ["04:09", 704.61, "pre"], ["04:10", 704.0, "pre"], ["04:11", 705.76, "pre"], ["04:12", 705.88, "pre"], ["04:13", 705.0, "pre"], ["04:14", 705.91, "pre"], ["04:15", 706.42, "pre"], ["04:16", 706.66, "pre"], ["04:17", 706.45, "pre"], ["04:18", 708.5, "pre"], ["04:19", 709.58, "pre"], ["04:20", 709.2, "pre"], ["04:21", 712.6, "pre"], ["04:22", 712.41, "pre"], ["04:23", 713.43, "pre"], ["04:24", 712.0, "pre"], ["04:25", 711.99, "pre"], ["04:26", 712.09, "pre"], ["04:27", 710.78, "pre"], ["04:28", 710.4, "pre"], ["04:29", 712.3, "pre"], ["04:30", 713.88, "pre"], ["04:31", 714.21, "pre"], ["04:32", 713.18, "pre"], ["04:33", 712.99, "pre"], ["04:34", 711.01, "pre"], ["04:35", 712.1, "pre"], ["04:36", 711.94, "pre"], ["04:37", 713.41, "pre"], ["04:38", 711.15, "pre"], ["04:39", 709.52, "pre"], ["04:40", 709.95, "pre"], ["04:41", 710.01, "pre"], ["04:42", 711.3, "pre"], ["04:43", 711.79, "pre"], ["04:44", 712.93, "pre"], ["04:45", 713.5, "pre"], ["04:46", 714.8, "pre"], ["04:47", 712.0, "pre"], ["04:48", 711.91, "pre"], ["04:49", 712.4, "pre"], ["04:50", 710.97, "pre"], ["04:51", 711.12, "pre"], ["04:52", 711.86, "pre"], ["04:53", 709.73, "pre"], ["04:54", 708.0, "pre"], ["04:55", 708.27, "pre"], ["04:56", 709.74, "pre"], ["04:57", 710.4, "pre"], ["04:58", 710.26, "pre"], ["04:59", 708.0, "pre"], ["05:00", 707.11, "pre"], ["05:01", 708.5, "pre"], ["05:02", 707.39, "pre"], ["05:03", 707.01, "pre"], ["05:04", 707.27, "pre"], ["05:05", 709.88, "pre"], ["05:06", 710.74, "pre"], ["05:07", 709.01, "pre"], ["05:08", 709.36, "pre"], ["05:09", 709.39, "pre"], ["05:10", 708.6, "pre"], ["05:11", 708.59, "pre"], ["05:12", 711.5, "pre"], ["05:13", 711.73, "pre"], ["05:14", 711.15, "pre"], ["05:15", 710.2, "pre"], ["05:16", 708.6, "pre"], ["05:17", 710.0, "pre"], ["05:18", 710.0, "pre"], ["05:19", 710.12, "pre"], ["05:20", 709.51, "pre"], ["05:21", 709.5, "pre"], ["05:22", 707.64, "pre"], ["05:23", 707.0, "pre"], ["05:24", 705.51, "pre"], ["05:25", 705.0, "pre"], ["05:26", 705.59, "pre"], ["05:27", 705.39, "pre"], ["05:28", 706.97, "pre"], ["05:29", 707.26, "pre"], ["05:30", 707.0, "pre"], ["05:31", 707.62, "pre"], ["05:32", 708.5, "pre"], ["05:33", 707.0, "pre"], ["05:34", 706.73, "pre"], ["05:35", 706.69, "pre"], ["05:36", 706.58, "pre"], ["05:37", 709.05, "pre"], ["05:38", 707.78, "pre"], ["05:39", 709.0, "pre"], ["05:40", 710.0, "pre"], ["05:41", 709.46, "pre"], ["05:42", 710.83, "pre"], ["05:43", 711.48, "pre"], ["05:44", 711.27, "pre"], ["05:45", 710.61, "pre"], ["05:46", 709.74, "pre"], ["05:47", 710.61, "pre"], ["05:48", 710.59, "pre"], ["05:49", 711.01, "pre"], ["05:50", 708.68, "pre"], ["05:51", 707.66, "pre"], ["05:52", 707.65, "pre"], ["05:53", 708.95, "pre"], ["05:54", 708.82, "pre"], ["05:55", 709.0, "pre"], ["05:56", 708.5, "pre"], ["05:57", 709.75, "pre"], ["05:58", 707.11, "pre"], ["05:59", 706.1, "pre"], ["06:00", 705.59, "pre"], ["06:01", 707.01, "pre"], ["06:02", 707.38, "pre"], ["06:03", 707.38, "pre"], ["06:04", 706.98, "pre"], ["06:05", 706.18, "pre"], ["06:06", 705.7, "pre"], ["06:07", 706.52, "pre"], ["06:08", 707.46, "pre"], ["06:09", 707.2, "pre"], ["06:10", 708.99, "pre"], ["06:11", 709.07, "pre"], ["06:12", 709.4, "pre"], ["06:13", 709.3, "pre"], ["06:14", 709.0, "pre"], ["06:15", 708.0, "pre"], ["06:16", 707.45, "pre"], ["06:17", 707.96, "pre"], ["06:18", 707.48, "pre"], ["06:19", 707.5, "pre"], ["06:20", 707.46, "pre"], ["06:21", 708.0, "pre"], ["06:22", 711.63, "pre"], ["06:23", 710.91, "pre"], ["06:24", 710.93, "pre"], ["06:25", 710.9, "pre"], ["06:26", 710.65, "pre"], ["06:27", 710.5, "pre"], ["06:28", 709.77, "pre"], ["06:29", 710.39, "pre"], ["06:30", 710.02, "pre"], ["06:31", 710.03, "pre"], ["06:32", 709.52, "pre"], ["06:33", 710.37, "pre"], ["06:34", 711.98, "pre"], ["06:35", 715.23, "pre"], ["06:36", 716.68, "pre"], ["06:37", 715.81, "pre"], ["06:38", 716.75, "pre"], ["06:39", 716.21, "pre"], ["06:40", 718.75, "pre"], ["06:41", 718.91, "pre"], ["06:42", 718.4, "pre"], ["06:43", 718.94, "pre"], ["06:44", 718.6, "pre"], ["06:45", 719.76, "pre"], ["06:46", 719.93, "pre"], ["06:47", 717.68, "pre"], ["06:48", 717.16, "pre"], ["06:49", 717.24, "pre"], ["06:50", 717.31, "pre"], ["06:51", 721.5, "pre"], ["06:52", 719.73, "pre"], ["06:53", 718.66, "pre"], ["06:54", 718.24, "pre"], ["06:55", 716.93, "pre"], ["06:56", 715.79, "pre"], ["06:57", 715.3, "pre"], ["06:58", 715.28, "pre"], ["06:59", 715.91, "pre"], ["07:00", 714.73, "pre"], ["07:01", 715.01, "pre"], ["07:02", 714.23, "pre"], ["07:03", 716.8, "pre"], ["07:04", 715.01, "pre"], ["07:05", 715.8, "pre"], ["07:06", 716.56, "pre"], ["07:07", 715.61, "pre"], ["07:08", 716.04, "pre"], ["07:09", 714.5, "pre"], ["07:10", 713.7, "pre"], ["07:11", 714.31, "pre"], ["07:12", 712.03, "pre"], ["07:13", 713.25, "pre"], ["07:14", 714.56, "pre"], ["07:15", 715.05, "pre"], ["07:16", 713.5, "pre"], ["07:17", 712.09, "pre"], ["07:18", 711.0, "pre"], ["07:19", 710.8, "pre"], ["07:20", 711.83, "pre"], ["07:21", 712.97, "pre"], ["07:22", 711.69, "pre"], ["07:23", 713.8, "pre"], ["07:24", 713.68, "pre"], ["07:25", 714.38, "pre"], ["07:26", 715.8, "pre"], ["07:27", 715.31, "pre"], ["07:28", 714.98, "pre"], ["07:29", 714.98, "pre"], ["07:30", 713.31, "pre"], ["07:31", 712.34, "pre"], ["07:32", 710.9, "pre"], ["07:33", 709.61, "pre"], ["07:34", 709.73, "pre"], ["07:35", 711.12, "pre"], ["07:36", 712.01, "pre"], ["07:37", 711.0, "pre"], ["07:38", 712.5, "pre"], ["07:39", 713.88, "pre"], ["07:40", 713.38, "pre"], ["07:41", 713.5, "pre"], ["07:42", 713.52, "pre"], ["07:43", 713.02, "pre"], ["07:44", 713.03, "pre"], ["07:45", 712.8, "pre"], ["07:46", 712.02, "pre"], ["07:47", 708.17, "pre"], ["07:48", 707.12, "pre"], ["07:49", 706.5, "pre"], ["07:50", 707.49, "pre"], ["07:51", 708.0, "pre"], ["07:52", 708.9, "pre"], ["07:53", 708.0, "pre"], ["07:54", 707.5, "pre"], ["07:55", 707.53, "pre"], ["07:56", 706.16, "pre"], ["07:57", 706.99, "pre"], ["07:58", 705.44, "pre"], ["07:59", 705.27, "pre"], ["08:00", 707.5, "pre"], ["08:01", 706.34, "pre"], ["08:02", 703.0, "pre"], ["08:03", 703.57, "pre"], ["08:04", 702.92, "pre"], ["08:05", 703.0, "pre"], ["08:06", 701.04, "pre"], ["08:07", 701.99, "pre"], ["08:08", 701.14, "pre"], ["08:09", 701.5, "pre"], ["08:10", 700.26, "pre"], ["08:11", 701.04, "pre"], ["08:12", 700.11, "pre"], ["08:13", 703.0, "pre"], ["08:14", 702.7, "pre"], ["08:15", 702.33, "pre"], ["08:16", 703.6, "pre"], ["08:17", 704.44, "pre"], ["08:18", 705.08, "pre"], ["08:19", 707.0, "pre"], ["08:20", 707.0, "pre"], ["08:21", 708.0, "pre"], ["08:22", 707.76, "pre"], ["08:23", 708.8, "pre"], ["08:24", 707.5, "pre"], ["08:25", 706.0, "pre"], ["08:26", 707.36, "pre"], ["08:27", 708.74, "pre"], ["08:28", 709.0, "pre"], ["08:29", 708.87, "pre"], ["08:30", 707.19, "pre"], ["08:31", 705.37, "pre"], ["08:32", 711.3, "pre"], ["08:33", 710.0, "pre"], ["08:34", 709.25, "pre"], ["08:35", 703.0, "pre"], ["08:36", 703.0, "pre"], ["08:37", 702.83, "pre"], ["08:38", 703.0, "pre"], ["08:39", 704.89, "pre"], ["08:40", 703.27, "pre"], ["08:41", 705.5, "pre"], ["08:42", 707.49, "pre"], ["08:43", 705.5, "pre"], ["08:44", 705.02, "pre"], ["08:45", 706.21, "pre"], ["08:46", 706.88, "pre"], ["08:47", 706.01, "pre"], ["08:48", 709.8, "pre"], ["08:49", 708.25, "pre"], ["08:50", 708.99, "pre"], ["08:51", 707.41, "pre"], ["08:52", 708.52, "pre"], ["08:53", 708.87, "pre"], ["08:54", 709.45, "pre"], ["08:55", 707.9, "pre"], ["08:56", 708.5, "pre"], ["08:57", 707.1, "pre"], ["08:58", 707.72, "pre"], ["08:59", 708.15, "pre"], ["09:00", 704.93, "pre"], ["09:01", 697.64, "pre"], ["09:02", 692.86, "pre"], ["09:03", 685.31, "pre"], ["09:04", 692.38, "pre"], ["09:05", 687.25, "pre"], ["09:06", 687.81, "pre"], ["09:07", 690.0, "pre"], ["09:08", 694.32, "pre"], ["09:09", 697.58, "pre"], ["09:10", 696.99, "pre"], ["09:11", 696.66, "pre"], ["09:12", 697.84, "pre"], ["09:13", 699.0, "pre"], ["09:14", 704.62, "pre"], ["09:15", 701.3, "pre"], ["09:16", 700.59, "pre"], ["09:17", 698.88, "pre"], ["09:18", 704.2, "pre"], ["09:19", 702.48, "pre"], ["09:20", 703.24, "pre"], ["09:21", 704.26, "pre"], ["09:22", 704.65, "pre"], ["09:23", 707.45, "pre"], ["09:24", 708.16, "pre"], ["09:25", 711.18, "pre"], ["09:26", 709.5, "pre"], ["09:27", 712.9, "pre"], ["09:28", 711.8, "pre"], ["09:29", 709.29, "pre"], ["09:30", 698.91, "reg"], ["09:31", 699.66, "reg"], ["09:32", 692.01, "reg"], ["09:33", 692.38, "reg"], ["09:34", 694.03, "reg"], ["09:35", 690.11, "reg"], ["09:36", 697.64, "reg"], ["09:37", 702.81, "reg"], ["09:38", 700.74, "reg"], ["09:39", 707.63, "reg"], ["09:40", 711.8, "reg"], ["09:41", 715.77, "reg"], ["09:42", 713.41, "reg"], ["09:43", 711.77, "reg"], ["09:44", 713.47, "reg"], ["09:45", 720.05, "reg"], ["09:46", 724.41, "reg"], ["09:47", 719.38, "reg"], ["09:48", 719.61, "reg"], ["09:49", 718.31, "reg"], ["09:50", 723.28, "reg"], ["09:51", 722.1, "reg"], ["09:52", 716.55, "reg"], ["09:53", 719.18, "reg"], ["09:54", 714.98, "reg"], ["09:55", 711.88, "reg"], ["09:56", 711.62, "reg"], ["09:57", 717.45, "reg"], ["09:58", 719.99, "reg"], ["09:59", 718.95, "reg"], ["10:00", 719.3, "reg"], ["10:01", 713.0, "reg"], ["10:02", 713.47, "reg"], ["10:03", 713.36, "reg"], ["10:04", 713.27, "reg"], ["10:05", 711.2, "reg"], ["10:06", 709.45, "reg"], ["10:07", 709.67, "reg"], ["10:08", 707.96, "reg"], ["10:09", 707.68, "reg"], ["10:10", 708.08, "reg"], ["10:11", 702.08, "reg"], ["10:12", 703.87, "reg"], ["10:13", 703.27, "reg"], ["10:14", 703.24, "reg"], ["10:15", 701.66, "reg"], ["10:16", 698.35, "reg"], ["10:17", 696.83, "reg"], ["10:18", 700.26, "reg"], ["10:19", 703.78, "reg"], ["10:20", 704.6, "reg"], ["10:21", 700.28, "reg"], ["10:22", 702.47, "reg"], ["10:23", 697.35, "reg"], ["10:24", 698.29, "reg"], ["10:25", 699.13, "reg"], ["10:26", 695.45, "reg"], ["10:27", 693.54, "reg"], ["10:28", 690.51, "reg"], ["10:29", 691.44, "reg"], ["10:30", 684.13, "reg"], ["10:31", 682.23, "reg"], ["10:32", 685.69, "reg"], ["10:33", 682.81, "reg"], ["10:34", 678.34, "reg"], ["10:35", 676.66, "reg"], ["10:36", 680.27, "reg"], ["10:37", 681.51, "reg"], ["10:38", 681.01, "reg"], ["10:39", 681.37, "reg"], ["10:40", 684.04, "reg"], ["10:41", 681.87, "reg"], ["10:42", 685.39, "reg"], ["10:43", 683.21, "reg"], ["10:44", 682.92, "reg"], ["10:45", 684.84, "reg"], ["10:46", 691.29, "reg"], ["10:47", 688.9, "reg"], ["10:48", 690.54, "reg"], ["10:49", 692.17, "reg"], ["10:50", 694.12, "reg"], ["10:51", 696.43, "reg"], ["10:52", 695.63, "reg"], ["10:53", 693.39, "reg"], ["10:54", 692.49, "reg"], ["10:55", 692.35, "reg"], ["10:56", 694.31, "reg"], ["10:57", 693.18, "reg"], ["10:58", 690.29, "reg"], ["10:59", 689.78, "reg"], ["11:00", 686.84, "reg"], ["11:01", 685.84, "reg"], ["11:02", 686.59, "reg"], ["11:03", 687.04, "reg"], ["11:04", 690.32, "reg"], ["11:05", 687.05, "reg"], ["11:06", 687.55, "reg"], ["11:07", 688.8, "reg"], ["11:08", 687.97, "reg"], ["11:09", 686.98, "reg"], ["11:10", 686.03, "reg"], ["11:11", 685.66, "reg"], ["11:12", 683.69, "reg"], ["11:13", 685.04, "reg"], ["11:14", 687.8, "reg"], ["11:15", 689.09, "reg"], ["11:16", 689.78, "reg"], ["11:17", 686.85, "reg"], ["11:18", 686.35, "reg"], ["11:19", 687.83, "reg"], ["11:20", 687.28, "reg"], ["11:21", 691.05, "reg"], ["11:22", 688.2, "reg"], ["11:23", 693.99, "reg"], ["11:24", 696.15, "reg"], ["11:25", 694.84, "reg"], ["11:26", 694.29, "reg"], ["11:27", 692.19, "reg"], ["11:28", 692.53, "reg"], ["11:29", 694.48, "reg"], ["11:30", 694.34, "reg"], ["11:31", 698.1, "reg"], ["11:32", 698.3, "reg"], ["11:33", 701.1, "reg"], ["11:34", 700.12, "reg"], ["11:35", 698.8, "reg"], ["11:36", 698.29, "reg"], ["11:37", 697.67, "reg"], ["11:38", 698.6, "reg"], ["11:39", 699.53, "reg"], ["11:40", 697.79, "reg"], ["11:41", 697.08, "reg"], ["11:42", 696.38, "reg"], ["11:43", 695.4, "reg"], ["11:44", 694.4, "reg"], ["11:45", 693.53, "reg"], ["11:46", 695.48, "reg"], ["11:47", 695.25, "reg"], ["11:48", 694.45, "reg"], ["11:49", 695.47, "reg"], ["11:50", 695.96, "reg"], ["11:51", 694.93, "reg"], ["11:52", 697.98, "reg"], ["11:53", 698.6, "reg"], ["11:54", 697.74, "reg"], ["11:55", 696.42, "reg"], ["11:56", 696.53, "reg"], ["11:57", 695.88, "reg"], ["11:58", 697.34, "reg"], ["11:59", 697.63, "reg"], ["12:00", 696.48, "reg"], ["12:01", 695.5, "reg"], ["12:02", 695.31, "reg"], ["12:03", 694.31, "reg"], ["12:04", 693.56, "reg"], ["12:05", 694.03, "reg"], ["12:06", 696.48, "reg"], ["12:07", 695.56, "reg"], ["12:08", 694.72, "reg"], ["12:09", 695.93, "reg"], ["12:10", 695.38, "reg"], ["12:11", 696.58, "reg"], ["12:12", 696.3, "reg"], ["12:13", 694.96, "reg"], ["12:14", 695.85, "reg"], ["12:15", 695.34, "reg"], ["12:16", 695.51, "reg"], ["12:17", 695.77, "reg"], ["12:18", 697.6, "reg"], ["12:19", 697.12, "reg"], ["12:20", 693.77, "reg"], ["12:21", 695.72, "reg"], ["12:22", 697.22, "reg"], ["12:23", 695.74, "reg"], ["12:24", 695.64, "reg"], ["12:25", 695.2, "reg"], ["12:26", 696.27, "reg"], ["12:27", 696.07, "reg"], ["12:28", 695.78, "reg"], ["12:29", 696.25, "reg"], ["12:30", 695.8, "reg"], ["12:31", 694.09, "reg"], ["12:32", 692.18, "reg"], ["12:33", 691.35, "reg"], ["12:34", 693.87, "reg"], ["12:35", 692.25, "reg"], ["12:36", 689.36, "reg"], ["12:37", 685.07, "reg"], ["12:38", 685.95, "reg"], ["12:39", 686.29, "reg"], ["12:40", 685.71, "reg"], ["12:41", 685.52, "reg"], ["12:42", 683.8, "reg"], ["12:43", 683.82, "reg"], ["12:44", 684.78, "reg"], ["12:45", 684.88, "reg"], ["12:46", 684.13, "reg"], ["12:47", 682.28, "reg"], ["12:48", 681.32, "reg"], ["12:49", 680.92, "reg"], ["12:50", 682.09, "reg"], ["12:51", 683.4, "reg"], ["12:52", 682.37, "reg"], ["12:53", 681.9, "reg"], ["12:54", 680.85, "reg"], ["12:55", 682.97, "reg"], ["12:56", 684.04, "reg"], ["12:57", 685.83, "reg"], ["12:58", 686.85, "reg"], ["12:59", 686.84, "reg"], ["13:00", 683.24, "reg"], ["13:01", 682.01, "reg"], ["13:02", 681.92, "reg"], ["13:03", 682.5, "reg"], ["13:04", 681.5, "reg"], ["13:05", 682.74, "reg"], ["13:06", 683.68, "reg"], ["13:07", 684.37, "reg"], ["13:08", 684.04, "reg"], ["13:09", 684.39, "reg"], ["13:10", 683.32, "reg"], ["13:11", 682.06, "reg"], ["13:12", 682.71, "reg"], ["13:13", 682.93, "reg"], ["13:14", 683.67, "reg"], ["13:15", 682.44, "reg"], ["13:16", 681.24, "reg"], ["13:17", 680.17, "reg"], ["13:18", 681.42, "reg"], ["13:19", 681.18, "reg"], ["13:20", 681.15, "reg"], ["13:21", 680.58, "reg"], ["13:22", 682.48, "reg"], ["13:23", 683.04, "reg"], ["13:24", 682.14, "reg"], ["13:25", 681.86, "reg"], ["13:26", 681.36, "reg"], ["13:27", 681.17, "reg"], ["13:28", 681.6, "reg"], ["13:29", 682.63, "reg"], ["13:30", 682.34, "reg"], ["13:31", 685.01, "reg"], ["13:32", 687.99, "reg"], ["13:33", 687.86, "reg"], ["13:34", 688.64, "reg"], ["13:35", 688.6, "reg"], ["13:36", 687.28, "reg"], ["13:37", 686.39, "reg"], ["13:38", 685.91, "reg"], ["13:39", 685.68, "reg"], ["13:40", 685.93, "reg"], ["13:41", 686.47, "reg"], ["13:42", 687.41, "reg"], ["13:43", 688.58, "reg"], ["13:44", 687.76, "reg"], ["13:45", 688.05, "reg"], ["13:46", 688.39, "reg"], ["13:47", 689.02, "reg"], ["13:48", 689.18, "reg"], ["13:49", 688.8, "reg"], ["13:50", 688.49, "reg"], ["13:51", 687.22, "reg"], ["13:52", 689.05, "reg"], ["13:53", 689.49, "reg"], ["13:54", 689.48, "reg"], ["13:55", 689.19, "reg"], ["13:56", 689.21, "reg"], ["13:57", 689.99, "reg"], ["13:58", 691.51, "reg"], ["13:59", 692.21, "reg"], ["14:00", 691.0, "reg"], ["14:01", 691.49, "reg"], ["14:02", 690.55, "reg"], ["14:03", 692.23, "reg"], ["14:04", 693.5, "reg"], ["14:05", 692.65, "reg"], ["14:06", 692.53, "reg"], ["14:07", 692.09, "reg"], ["14:08", 692.72, "reg"], ["14:09", 692.61, "reg"], ["14:10", 692.59, "reg"], ["14:11", 693.9, "reg"], ["14:12", 694.68, "reg"], ["14:13", 694.86, "reg"], ["14:14", 694.49, "reg"], ["14:15", 692.78, "reg"], ["14:16", 692.59, "reg"], ["14:17", 693.23, "reg"], ["14:18", 693.07, "reg"], ["14:19", 691.93, "reg"], ["14:20", 690.68, "reg"], ["14:21", 691.81, "reg"], ["14:22", 690.3, "reg"], ["14:23", 691.32, "reg"], ["14:24", 691.62, "reg"], ["14:25", 691.28, "reg"], ["14:26", 692.04, "reg"], ["14:27", 691.62, "reg"], ["14:28", 691.23, "reg"], ["14:29", 691.24, "reg"], ["14:30", 690.58, "reg"], ["14:31", 690.69, "reg"], ["14:32", 690.67, "reg"], ["14:33", 690.99, "reg"], ["14:34", 690.21, "reg"], ["14:35", 690.81, "reg"], ["14:36", 690.92, "reg"], ["14:37", 690.72, "reg"], ["14:38", 689.43, "reg"], ["14:39", 689.93, "reg"], ["14:40", 689.86, "reg"], ["14:41", 690.74, "reg"], ["14:42", 691.59, "reg"], ["14:43", 691.69, "reg"], ["14:44", 691.69, "reg"], ["14:45", 690.87, "reg"], ["14:46", 691.5, "reg"], ["14:47", 691.4, "reg"], ["14:48", 690.81, "reg"], ["14:49", 691.25, "reg"], ["14:50", 690.97, "reg"], ["14:51", 690.99, "reg"], ["14:52", 690.8, "reg"], ["14:53", 690.34, "reg"], ["14:54", 688.72, "reg"], ["14:55", 689.94, "reg"], ["14:56", 690.91, "reg"], ["14:57", 691.19, "reg"], ["14:58", 693.17, "reg"], ["14:59", 693.6, "reg"], ["15:00", 693.36, "reg"], ["15:01", 693.11, "reg"], ["15:02", 692.43, "reg"], ["15:03", 692.11, "reg"], ["15:04", 691.39, "reg"], ["15:05", 690.56, "reg"], ["15:06", 691.94, "reg"], ["15:07", 692.93, "reg"], ["15:08", 693.77, "reg"], ["15:09", 695.25, "reg"], ["15:10", 694.86, "reg"], ["15:11", 695.34, "reg"], ["15:12", 695.19, "reg"], ["15:13", 695.67, "reg"], ["15:14", 693.26, "reg"], ["15:15", 691.5, "reg"], ["15:16", 692.82, "reg"], ["15:17", 691.27, "reg"], ["15:18", 690.67, "reg"], ["15:19", 689.59, "reg"], ["15:20", 690.76, "reg"], ["15:21", 691.27, "reg"], ["15:22", 691.01, "reg"], ["15:23", 690.76, "reg"], ["15:24", 690.1, "reg"], ["15:25", 690.23, "reg"], ["15:26", 691.17, "reg"], ["15:27", 691.98, "reg"], ["15:28", 692.43, "reg"], ["15:29", 693.27, "reg"], ["15:30", 693.86, "reg"], ["15:31", 691.36, "reg"], ["15:32", 690.67, "reg"], ["15:33", 691.26, "reg"], ["15:34", 692.38, "reg"], ["15:35", 692.07, "reg"], ["15:36", 690.55, "reg"], ["15:37", 690.29, "reg"], ["15:38", 689.94, "reg"], ["15:39", 690.88, "reg"], ["15:40", 691.29, "reg"], ["15:41", 691.42, "reg"], ["15:42", 689.9, "reg"], ["15:43", 689.2, "reg"], ["15:44", 689.32, "reg"], ["15:45", 689.2, "reg"], ["15:46", 688.84, "reg"], ["15:47", 689.2, "reg"], ["15:48", 689.04, "reg"], ["15:49", 688.3, "reg"], ["15:50", 687.68, "reg"], ["15:51", 688.58, "reg"], ["15:52", 688.49, "reg"], ["15:53", 687.52, "reg"], ["15:54", 687.82, "reg"], ["15:55", 687.61, "reg"], ["15:56", 686.55, "reg"], ["15:57", 690.36, "reg"], ["15:58", 690.57, "reg"], ["15:59", 689.42, "reg"], ["16:00", 690.95, "post"], ["16:01", 690.24, "post"], ["16:02", 691.0, "post"], ["16:03", 692.65, "post"], ["16:04", 692.64, "post"], ["16:05", 694.75, "post"], ["16:06", 694.3, "post"], ["16:07", 694.18, "post"], ["16:08", 693.25, "post"], ["16:09", 693.69, "post"], ["16:10", 692.86, "post"], ["16:11", 693.5, "post"], ["16:12", 694.47, "post"], ["16:13", 693.2, "post"], ["16:14", 694.5, "post"], ["16:15", 693.18, "post"], ["16:16", 693.95, "post"], ["16:17", 693.6, "post"], ["16:18", 694.5, "post"], ["16:19", 695.0, "post"], ["16:20", 694.3, "post"], ["16:21", 694.42, "post"], ["16:22", 693.93, "post"], ["16:23", 693.49, "post"], ["16:24", 692.92, "post"], ["16:25", 692.65, "post"], ["16:26", 692.2, "post"], ["16:27", 691.76, "post"], ["16:28", 691.96, "post"], ["16:29", 691.7, "post"], ["16:30", 691.41, "post"], ["16:31", 690.98, "post"], ["16:32", 691.66, "post"], ["16:33", 691.8, "post"], ["16:34", 692.45, "post"], ["16:35", 691.69, "post"], ["16:36", 691.66, "post"], ["16:37", 691.68, "post"], ["16:38", 692.7, "post"], ["16:39", 692.96, "post"], ["16:40", 692.86, "post"], ["16:41", 692.08, "post"], ["16:42", 692.01, "post"], ["16:43", 692.97, "post"], ["16:44", 692.72, "post"], ["16:45", 692.77, "post"], ["16:46", 692.13, "post"], ["16:47", 692.57, "post"], ["16:48", 692.35, "post"], ["16:49", 692.45, "post"], ["16:50", 693.18, "post"], ["16:51", 692.8, "post"], ["16:52", 692.72, "post"], ["16:53", 692.96, "post"], ["16:54", 692.98, "post"], ["16:55", 693.07, "post"], ["16:56", 693.56, "post"], ["16:57", 693.03, "post"], ["16:58", 693.48, "post"], ["16:59", 693.23, "post"], ["17:00", 692.82, "post"], ["17:01", 692.99, "post"], ["17:02", 693.27, "post"], ["17:03", 693.84, "post"], ["17:04", 693.96, "post"], ["17:05", 693.0, "post"], ["17:06", 693.0, "post"], ["17:07", 693.02, "post"], ["17:08", 692.57, "post"], ["17:09", 692.45, "post"], ["17:10", 692.67, "post"], ["17:11", 693.74, "post"], ["17:12", 693.66, "post"], ["17:13", 693.02, "post"], ["17:14", 693.05, "post"], ["17:15", 692.6, "post"], ["17:16", 693.5, "post"], ["17:17", 693.19, "post"], ["17:18", 692.71, "post"], ["17:19", 692.29, "post"], ["17:20", 692.22, "post"], ["17:21", 692.5, "post"], ["17:22", 692.44, "post"], ["17:23", 692.03, "post"], ["17:24", 692.11, "post"], ["17:25", 692.11, "post"], ["17:26", 692.02, "post"], ["17:27", 692.25, "post"], ["17:28", 692.5, "post"], ["17:29", 693.24, "post"], ["17:30", 693.6, "post"], ["17:31", 693.45, "post"], ["17:32", 693.85, "post"], ["17:33", 693.06, "post"], ["17:34", 693.27, "post"], ["17:35", 693.0, "post"], ["17:36", 692.76, "post"], ["17:37", 692.67, "post"], ["17:38", 693.28, "post"], ["17:39", 693.22, "post"], ["17:40", 693.3, "post"], ["17:41", 693.24, "post"], ["17:42", 693.1, "post"], ["17:43", 693.3, "post"], ["17:44", 693.09, "post"], ["17:45", 692.75, "post"], ["17:46", 692.76, "post"], ["17:47", 693.0, "post"], ["17:48", 692.75, "post"], ["17:49", 692.5, "post"], ["17:50", 692.34, "post"], ["17:51", 692.0, "post"], ["17:52", 691.59, "post"], ["17:53", 691.96, "post"], ["17:54", 692.4, "post"], ["17:55", 692.0, "post"], ["17:56", 692.0, "post"], ["17:57", 692.2, "post"], ["17:58", 692.26, "post"], ["17:59", 692.22, "post"], ["18:00", 692.1, "post"], ["18:01", 691.59, "post"], ["18:02", 691.55, "post"], ["18:03", 691.02, "post"], ["18:04", 691.23, "post"], ["18:05", 691.23, "post"], ["18:06", 691.33, "post"], ["18:07", 691.79, "post"], ["18:08", 691.89, "post"], ["18:09", 691.83, "post"], ["18:10", 691.8, "post"], ["18:11", 691.8, "post"], ["18:12", 692.0, "post"], ["18:13", 691.65, "post"], ["18:14", 692.0, "post"], ["18:15", 692.23, "post"], ["18:16", 692.3, "post"], ["18:17", 692.05, "post"], ["18:18", 692.2, "post"], ["18:19", 691.6, "post"], ["18:20", 691.5, "post"], ["18:21", 691.44, "post"], ["18:22", 691.52, "post"], ["18:23", 691.75, "post"], ["18:24", 691.7, "post"], ["18:25", 691.8, "post"], ["18:26", 691.91, "post"], ["18:27", 691.5, "post"], ["18:28", 691.27, "post"], ["18:29", 690.2, "post"], ["18:30", 690.19, "post"], ["18:31", 689.4, "post"], ["18:32", 689.22, "post"], ["18:33", 689.0, "post"], ["18:34", 689.78, "post"], ["18:35", 689.9, "post"], ["18:36", 690.5, "post"], ["18:37", 690.32, "post"], ["18:38", 690.67, "post"], ["18:39", 690.9, "post"], ["18:40", 690.85, "post"], ["18:41", 690.42, "post"], ["18:42", 689.84, "post"], ["18:43", 690.01, "post"], ["18:44", 689.53, "post"], ["18:45", 689.64, "post"], ["18:46", 690.0, "post"], ["18:47", 690.83, "post"], ["18:48", 690.82, "post"], ["18:49", 691.2, "post"], ["18:50", 691.0, "post"], ["18:51", 690.69, "post"], ["18:52", 690.81, "post"], ["18:53", 690.75, "post"], ["18:54", 690.5, "post"], ["18:55", 689.85, "post"], ["18:56", 690.29, "post"], ["18:57", 690.25, "post"], ["18:58", 690.68, "post"], ["18:59", 691.17, "post"], ["19:00", 691.17, "post"], ["19:01", 691.96, "post"], ["19:02", 692.29, "post"], ["19:03", 692.47, "post"], ["19:04", 692.49, "post"], ["19:05", 692.35, "post"], ["19:06", 692.34, "post"], ["19:07", 692.0, "post"], ["19:08", 692.0, "post"], ["19:09", 692.5, "post"], ["19:10", 692.96, "post"], ["19:11", 692.61, "post"], ["19:12", 692.0, "post"], ["19:13", 691.9, "post"], ["19:14", 691.95, "post"], ["19:15", 691.9, "post"], ["19:16", 691.84, "post"], ["19:17", 691.5, "post"], ["19:18", 691.5, "post"], ["19:19", 690.75, "post"], ["19:20", 690.95, "post"], ["19:21", 690.7, "post"], ["19:22", 690.91, "post"], ["19:23", 690.81, "post"], ["19:24", 690.58, "post"], ["19:25", 691.03, "post"], ["19:26", 691.12, "post"], ["19:27", 691.43, "post"], ["19:28", 691.36, "post"], ["19:29", 691.46, "post"], ["19:30", 691.0, "post"], ["19:31", 691.0, "post"], ["19:32", 691.75, "post"], ["19:33", 691.28, "post"], ["19:34", 691.48, "post"], ["19:35", 691.45, "post"], ["19:36", 691.58, "post"], ["19:37", 690.93, "post"], ["19:38", 690.58, "post"], ["19:39", 690.88, "post"], ["19:40", 690.77, "post"], ["19:41", 690.88, "post"], ["19:42", 691.26, "post"], ["19:43", 690.71, "post"], ["19:44", 691.5, "post"], ["19:45", 691.19, "post"], ["19:46", 691.34, "post"], ["19:47", 691.72, "post"], ["19:48", 692.21, "post"], ["19:49", 692.48, "post"], ["19:50", 692.98, "post"], ["19:51", 692.9, "post"], ["19:52", 692.77, "post"], ["19:53", 692.53, "post"], ["19:54", 692.89, "post"], ["19:55", 692.97, "post"], ["19:56", 693.27, "post"], ["19:57", 694.5, "post"], ["19:58", 694.71, "post"], ["19:59", 694.79, "post"], ["19:59", 694.79, "post"]], "daily": [["05/19", 698.74], ["05/20", 731.99], ["05/21", 762.1], ["05/22", 751.0], ["05/26", 895.88], ["05/27", 928.41], ["05/28", 923.52], ["05/29", 971.0], ["06/01", 1035.5], ["06/02", 1064.1], ["06/03", 1079.57], ["06/04", 996.0], ["06/05", 864.01], ["06/08", 949.28], ["06/09", 935.89], ["06/10", 891.88], ["06/11", 995.87], ["06/12", 981.61], ["06/15", 1087.99], ["06/16", 1020.76], ["06/17", 1043.19], ["06/18", 1133.99], ["06/22", 1211.38], ["06/23", 1051.77], ["06/24", 1048.51], ["06/25", 1213.56], ["06/26", 1132.33], ["06/29", 1145.28], ["06/30", 1154.29], ["07/01", 1032.28], ["07/02", 975.56], ["07/06", 984.75], ["07/07", 938.38], ["07/08", 948.8], ["07/09", 991.64], ["07/10", 979.3], ["07/13", 937.0], ["07/14", 983.12], ["07/15", 904.28], ["07/16", 853.2], ["07/17", 848.95], ["07/20", 865.46], ["07/21", 970.82], ["07/22", 959.48], ["07/23", 990.21], ["07/24", 920.95], ["07/27", 900.2], ["07/28", 820.53], ["07/29", 739.0], ["07/30", 874.66], ["07/31", 823.03], ["08/03", 829.5], ["08/04", 892.67], ["08/05", 893.19], ["08/06", 881.47], ["08/07", 877.57], ["08/10", 861.0], ["08/11", 868.52], ["08/12", 911.29], ["08/13", 949.83], ["08/14", 971.66], ["08/17", 1011.75], ["08/18", 940.76], ["08/19", 937.11], ["08/20", 974.33], ["08/21", 966.78], ["08/24", 910.43], ["08/25", 932.97], ["08/26", 938.4], ["08/27", 935.39], ["08/28", 932.86], ["08/31", 958.73], ["09/01", 933.44], ["09/02", 956.08], ["09/03", 958.16], ["09/04", 1016.59], ["09/08", 1000.26], ["09/09", 1027.77], ["09/10", 977.41], ["09/11", 975.26], ["09/14", 924.03], ["09/15", 927.6], ["09/16", 926.55], ["09/17", 977.5], ["09/18", 1015.8], ["09/21", 1043.96], ["09/22", 1096.16], ["09/23", 1071.88], ["09/24", 1080.53], ["09/25", 1082.28], ["09/28", 1053.98], ["09/29", 1065.08], ["09/30", 1065.11], ["10/01", 1097.39], ["10/02", 1074.89], ["10/05", 1063.96], ["10/06", 1045.56], ["10/07", 1088.0], ["10/08", 1035.84], ["10/09", 1029.0], ["10/12", 989.04], ["10/13", 953.19], ["10/14", 914.13], ["10/15", 931.24], ["10/16", 878.84], ["10/19", 904.9], ["10/20", 896.07], ["10/21", 913.67], ["10/22", 856.49], ["10/23", 877.55], ["10/26", 903.7], ["10/27", 928.76], ["10/28", 983.23], ["10/29", 934.27], ["10/30", 884.74], ["11/02", 833.59], ["11/03", 855.1], ["11/04", 795.23], ["11/05", 656.39], ["11/06", 690.0]], "oi": [[350, 811, 8175], [360, 601, 14929], [370, 289, 9457], [380, 1533, 8466], [390, 695, 8117], [400, 1200, 15700], [410, 567, 2507], [420, 1939, 7588], [430, 1035, 3672], [440, 1462, 2643], [450, 2013, 17974], [460, 1090, 2449], [470, 666, 1757], [480, 1035, 3068], [490, 905, 4967], [500, 2688, 16950], [510, 906, 3511], [520, 1099, 4670], [530, 570, 3395], [540, 656, 6215], [550, 963, 9835], [560, 426, 2991], [570, 1860, 5258], [580, 3179, 9622], [590, 1143, 7927], [600, 2256, 19149], [610, 950, 6501], [620, 1486, 5121], [630, 878, 4432], [640, 1348, 5071], [650, 2520, 15605], [660, 1398, 8206], [670, 3049, 7826], [680, 2222, 7228], [690, 2587, 7126], [700, 8946, 12320], [710, 2859, 5143], [720, 3703, 5642], [730, 3690, 5574], [740, 3620, 8802], [750, 8778, 14717], [760, 5089, 4969], [770, 2342, 5034], [780, 3015, 5345], [790, 2743, 7174], [800, 20996, 18614], [810, 3791, 5573], [820, 5374, 6318], [830, 3446, 5256], [840, 4178, 5574], [850, 10492, 16678], [860, 4322, 5509], [870, 3066, 4231], [880, 5609, 7672], [890, 4906, 5329], [900, 27607, 13301], [910, 11167, 4119], [920, 5902, 4868], [930, 6046, 5300], [940, 5265, 2858], [950, 10932, 6748], [960, 4154, 3251], [970, 4091, 3002], [980, 10002, 3426], [990, 4531, 1990], [1000, 27092, 6590], [1010, 4353, 1346], [1020, 8809, 1826], [1030, 5799, 772], [1040, 4542, 850], [1050, 15246, 1545], [1060, 3488, 712], [1070, 4504, 838], [1080, 2907, 1428], [1090, 2877, 299], [1100, 12746, 991]], "sweep": [[448, -106.56], [453, -109.17], [458, -111.82], [463, -114.49], [468, -117.19], [473, -119.92], [478, -122.69], [483, -125.48], [488, -128.29], [493, -131.13], [498, -134.0], [503, -136.88], [508, -139.78], [513, -142.68], [518, -145.59], [523, -148.49], [528, -151.37], [533, -154.23], [538, -157.04], [543, -159.8], [548, -162.48], [553, -165.08], [558, -167.56], [563, -169.91], [568, -172.11], [573, -174.14], [578, -175.97], [583, -177.59], [588, -178.96], [593, -180.07], [598, -180.89], [603, -181.4], [608, -181.58], [613, -181.42], [618, -180.88], [623, -179.97], [628, -178.64], [633, -176.91], [638, -174.74], [643, -172.14], [648, -169.08], [653, -165.57], [658, -161.61], [663, -157.18], [668, -152.28], [673, -146.93], [678, -141.13], [683, -134.87], [688, -128.18], [693, -121.06], [698, -113.52], [703, -105.58], [708, -97.26], [713, -88.56], [718, -79.53], [723, -70.16], [728, -60.5], [733, -50.56], [738, -40.37], [743, -29.95], [748, -19.34], [753, -8.55], [758, 2.37], [763, 13.42], [768, 24.56], [773, 35.78], [778, 47.05], [783, 58.35], [788, 69.67], [793, 80.99], [798, 92.31], [803, 103.61], [808, 114.89], [813, 126.13], [818, 137.33], [823, 148.49], [828, 159.6], [833, 170.65], [838, 181.64], [843, 192.56], [848, 203.4], [853, 214.16], [858, 224.83], [863, 235.4], [868, 245.85], [873, 256.19], [878, 266.39], [883, 276.45], [888, 286.36], [893, 296.11], [898, 305.68], [903, 315.06], [908, 324.25], [913, 333.24], [918, 342.02], [923, 350.58], [928, 358.91], [933, 367.02], [938, 374.89], [943, 382.52], [948, 389.91], [953, 397.06], [958, 403.97], [963, 410.63], [968, 417.05], [973, 423.22], [978, 429.16], [983, 434.86], [988, 440.32], [993, 445.55], [998, 450.56]], "term": [["11-09", 76.3, 3, 5.5, 690], ["11-11", 94.5, 5, 8.8, 690], ["11-13", 96.9, 7, 10.7, 690], ["11-16", 87.8, 10, 11.6, 690], ["11-18", 87.7, 12, 12.7, 690], ["11-20", 89.2, 14, 13.9, 690], ["11-27", 80.5, 21, 15.4, 690], ["12-04", 79.0, 28, 17.4, 690], ["12-11", 77.1, 35, 19.0, 690], ["12-18", 75.1, 42, 20.2, 690], ["12-24", 74.2, 48, 21.4, 690], ["01-15", 71.2, 70, 24.7, 690], ["02-19", 67.3, 105, 28.5, 690], ["03-19", 65.9, 133, 31.3, 690], ["04-16", 65.0, 161, 33.7, 680], ["05-21", 63.1, 196, 36.2, 690], ["06-17", 62.7, 223, 38.3, 690]], "smile": [[450, 130.2], [460, 129.7], [470, 126.8], [480, 124.5], [490, 117.7], [500, 114.2], [510, 113.9], [520, 111.9], [530, 108.4], [540, 107.4], [550, 105.0], [560, 103.4], [570, 101.3], [580, 100.4], [590, 98.6], [600, 96.7], [610, 96.7], [620, 95.9], [630, 93.9], [640, 93.9], [650, 92.2], [660, 90.3], [670, 89.1], [680, 89.3], [690, 89.2], [700, 87.2], [710, 87.6], [720, 86.4], [730, 85.7], [740, 84.3], [750, 83.7], [760, 83.3], [770, 82.2], [780, 82.9], [790, 83.5], [800, 82.2], [810, 81.6], [820, 81.3], [830, 81.2], [840, 78.8], [845, 80.6], [850, 80.2], [855, 81.8], [860, 81.7], [865, 82.0], [870, 77.9], [875, 81.8], [880, 81.0], [885, 79.8], [890, 81.7], [895, 83.0], [900, 82.7], [905, 81.4], [910, 83.6], [915, 82.7], [920, 85.4], [925, 80.8], [930, 84.1]], "S": 690.0, "AH": 694.79, "prev": 656.39};
-Chart.defaults.color = '#86868b';
-Chart.defaults.font.family = '-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC",sans-serif';
-Chart.defaults.font.size = 11;
-const GRID = 'rgba(255,255,255,0.055)';
-const baseOpts = {
-  responsive: true, maintainAspectRatio: false,
-  interaction: { mode: 'index', intersect: false },
-  plugins: {
-    legend: { display: false },
-    tooltip: {
-      backgroundColor: 'rgba(18,18,20,.94)', borderColor: 'rgba(255,255,255,.14)', borderWidth: 1,
-      titleColor: '#f5f5f7', bodyColor: '#c9c9ce', padding: 10, cornerRadius: 8, displayColors: false
-    }
-  },
-  scales: {
-    x: { grid: { color: GRID, drawTicks: false }, border: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
-    y: { grid: { color: GRID, drawTicks: false }, border: { display: false }, ticks: { padding: 6 } }
-  }
-};
-const clone = o => JSON.parse(JSON.stringify(o));
 
-try {
-  // ---- GEX ----
-  const sx = D.sweep.map(p => p[0]), sy = D.sweep.map(p => p[1]);
-  new Chart(document.getElementById('chartGex'), {
-    type: 'line',
-    data: { labels: sx, datasets: [{
-      data: sy, borderWidth: 2, pointRadius: 0, tension: .25, fill: true,
-      borderColor: '#8e8e93',
-      backgroundColor: 'rgba(255,255,255,.045)',
-      segment: { borderColor: c => (c.p0.parsed.y + c.p1.parsed.y) / 2 >= 0 ? '#ff453a' : '#30d158' }
-    }]},
-    options: Object.assign(clone(baseOpts), {
-      plugins: Object.assign(clone(baseOpts.plugins), {
-        tooltip: Object.assign(clone(baseOpts.plugins.tooltip), {
-          callbacks: { label: c => `净 GEX $${c.parsed.y}M / 1%`, title: t => `MU $${t[0].label}` }
-        })
-      }),
-      scales: {
-        x: Object.assign(clone(baseOpts.scales.x), { ticks: { maxRotation: 0, maxTicksLimit: 9, callback: (v, i) => '$' + sx[i] } }),
-        y: Object.assign(clone(baseOpts.scales.y), { ticks: { callback: v => v + 'M' } })
-      }
-    })
-  });
+const PRICE={"labels": ["07/02", "07/06", "07/07", "07/08", "07/09", "07/10", "07/13", "07/14", "07/15", "07/16", "07/17", "07/20", "07/21", "07/22", "07/23", "07/24", "07/27", "07/28", "07/29", "07/30", "07/31", "08/03", "08/04", "08/05", "08/06", "08/07", "08/10", "08/11", "08/12", "08/13", "08/14", "08/17", "08/18", "08/19", "08/20", "08/21", "08/24", "08/25", "08/26", "08/27", "08/28", "08/31", "09/01", "09/02", "09/03", "09/04", "09/08", "09/09", "09/10", "09/11", "09/14", "09/15", "09/16", "09/17", "09/18", "09/21", "09/22", "09/23", "09/24", "09/25", "09/28", "09/29", "09/30", "10/01", "10/02", "10/05", "10/06", "10/07", "10/08", "10/09", "10/12", "10/13", "10/14", "10/15", "10/16", "10/19", "10/20", "10/21", "10/22", "10/23", "10/26", "10/27", "10/28", "10/29", "10/30", "11/02", "11/03", "11/04", "11/05", "11/06"], "close": [975.56, 984.75, 938.38, 948.8, 991.64, 979.3, 937.0, 983.12, 904.28, 853.2, 848.95, 865.46, 970.82, 959.48, 990.21, 920.95, 900.2, 820.53, 739.0, 874.66, 823.03, 829.5, 892.67, 893.19, 881.47, 877.57, 861.0, 868.52, 911.29, 949.83, 971.66, 1011.75, 940.76, 937.11, 974.33, 966.78, 910.43, 932.97, 938.4, 935.39, 932.86, 958.73, 933.44, 956.08, 958.16, 1016.59, 1000.26, 1027.77, 977.41, 975.26, 924.03, 927.6, 926.55, 977.5, 1015.8, 1043.96, 1096.16, 1071.88, 1080.53, 1082.28, 1053.98, 1065.08, 1065.11, 1097.39, 1074.89, 1063.96, 1045.56, 1088.0, 1035.84, 1029.0, 989.04, 953.19, 914.13, 931.24, 878.84, 904.9, 896.07, 913.67, 856.49, 877.55, 903.7, 928.76, 983.23, 934.27, 884.74, 833.59, 855.1, 795.23, 656.39, 690.0], "ma20": [1043.27, 1042.71, 1046.43, 1046.4, 1049.19, 1053.56, 1050.62, 1050.69, 1041.51, 1033.13, 1023.42, 1009.99, 997.96, 993.35, 990.43, 975.8, 964.2, 947.96, 927.2, 919.31, 911.69, 903.93, 901.64, 898.86, 893.35, 888.26, 884.46, 878.73, 879.09, 883.92, 890.05, 897.37, 895.86, 894.75, 893.95, 896.24, 896.75, 902.38, 912.35, 915.38, 920.87, 927.34, 929.37, 932.52, 936.35, 943.3, 950.27, 958.23, 961.54, 962.81, 960.43, 956.22, 955.51, 957.53, 959.6, 963.46, 972.75, 979.69, 986.8, 994.14, 1000.2, 1005.52, 1012.1, 1019.16, 1025.0, 1027.37, 1029.64, 1032.65, 1035.57, 1038.25, 1041.51, 1042.78, 1042.16, 1039.85, 1033.0, 1026.05, 1016.05, 1008.14, 996.93, 986.7, 979.18, 972.37, 968.27, 960.12, 950.61, 939.09, 929.57, 914.93, 895.96, 879.01], "ma60": [783.53, 793.16, 801.78, 810.58, 820.0, 828.56, 836.57, 845.34, 852.82, 859.57, 866.23, 872.53, 880.68, 888.39, 896.15, 903.1, 909.46, 914.52, 917.8, 922.77, 925.81, 928.53, 932.63, 935.07, 936.5, 938.35, 939.31, 940.85, 943.96, 948.43, 952.98, 957.65, 960.62, 963.72, 965.03, 965.67, 965.45, 964.82, 963.2, 961.06, 958.61, 957.99, 959.15, 959.26, 959.63, 961.71, 961.78, 962.55, 960.71, 959.95, 957.97, 954.53, 949.78, 948.54, 948.0, 945.17, 944.57, 943.34, 942.11, 942.95, 944.25, 945.59, 947.7, 950.18, 951.57, 952.98, 954.79, 956.54, 958.73, 961.66, 963.99, 965.46, 964.51, 964.04, 962.18, 961.92, 961.85, 963.4, 965.36, 965.41, 966.75, 968.41, 969.92, 970.6, 970.65, 969.92, 969.82, 968.6, 964.35, 960.02], "ma200": [444.34, 448.47, 452.37, 456.27, 460.41, 464.48, 468.34, 472.44, 476.18, 479.66, 483.09, 486.58, 490.52, 494.4, 498.41, 502.06, 505.63, 508.75, 511.49, 514.95, 518.1, 521.31, 524.82, 528.27, 531.67, 535.02, 538.31, 541.67, 545.19, 548.84, 552.6, 556.55, 560.12, 563.69, 567.44, 571.1, 574.56, 578.04, 581.54, 585.03, 588.42, 592.01, 595.45, 599.05, 602.61, 606.48, 610.34, 614.35, 618.23, 622.07, 625.57, 629.08, 632.56, 636.27, 640.15, 644.17, 648.48, 652.7, 656.92, 661.1, 665.11, 669.11, 673.15, 677.43, 681.61, 685.77, 689.87, 694.07, 697.92, 701.68, 705.24, 708.58, 711.72, 714.91, 717.84, 720.94, 723.84, 726.85, 729.41, 732.1, 734.99, 737.9, 741.09, 744.07, 746.83, 749.31, 751.78, 753.93, 755.26, 756.73]};
+const INTRA={"labels": ["04:00", "04:05", "04:10", "04:15", "04:20", "04:25", "04:30", "04:35", "04:40", "04:45", "04:50", "04:55", "05:00", "05:05", "05:10", "05:15", "05:20", "05:25", "05:30", "05:35", "05:40", "05:45", "05:50", "05:55", "06:00", "06:05", "06:10", "06:15", "06:20", "06:25", "06:30", "06:35", "06:40", "06:45", "06:50", "06:55", "07:00", "07:05", "07:10", "07:15", "07:20", "07:25", "07:30", "07:35", "07:40", "07:45", "07:50", "07:55", "08:00", "08:05", "08:10", "08:15", "08:20", "08:25", "08:30", "08:35", "08:40", "08:45", "08:50", "08:55", "09:00", "09:05", "09:10", "09:15", "09:20", "09:25", "09:30", "09:35", "09:40", "09:45", "09:50", "09:55", "10:00", "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45", "11:50", "11:55", "12:00", "12:05", "12:10", "12:15", "12:20", "12:25", "12:30", "12:35", "12:40", "12:45", "12:50", "12:55", "13:00", "13:05", "13:10", "13:15", "13:20", "13:25", "13:30", "13:35", "13:40", "13:45", "13:50", "13:55", "14:00", "14:05", "14:10", "14:15", "14:20", "14:25", "14:30", "14:35", "14:40", "14:45", "14:50", "14:55", "15:00", "15:05", "15:10", "15:15", "15:20", "15:25", "15:30", "15:35", "15:40", "15:45", "15:50", "15:55", "16:00", "16:05", "16:10", "16:15", "16:20", "16:25", "16:30", "16:35", "16:40", "16:45", "16:50", "16:55", "17:00", "17:05", "17:10", "17:15", "17:20", "17:25", "17:30", "17:35", "17:40", "17:45", "17:50", "17:55", "18:00", "18:05", "18:10", "18:15", "18:20", "18:25", "18:30", "18:35", "18:40", "18:45", "18:50", "18:55", "19:00", "19:05", "19:10", "19:15", "19:20", "19:25", "19:30", "19:35", "19:40", "19:45", "19:50", "19:55", "19:59"], "close": [706.0, 704.61, 705.91, 709.58, 712.0, 712.3, 711.01, 709.52, 712.93, 712.4, 708.0, 708.0, 707.27, 709.39, 711.15, 710.12, 705.51, 707.26, 706.73, 709.0, 711.27, 711.01, 708.82, 706.1, 706.98, 707.2, 709.0, 707.5, 710.93, 710.39, 711.98, 716.21, 718.6, 717.24, 718.24, 715.91, 715.01, 714.5, 714.56, 710.8, 713.68, 714.98, 709.73, 713.88, 713.03, 706.5, 707.5, 705.27, 702.92, 701.5, 702.7, 707.0, 707.5, 708.87, 709.25, 704.89, 705.02, 708.25, 709.45, 708.15, 692.38, 697.58, 704.62, 702.48, 708.16, 709.29, 694.03, 707.63, 713.47, 718.31, 714.98, 718.95, 713.27, 707.68, 703.24, 703.78, 698.29, 691.44, 678.34, 681.37, 682.92, 692.17, 692.49, 689.78, 690.32, 686.98, 687.8, 687.83, 696.15, 694.48, 700.12, 699.53, 694.4, 695.47, 697.74, 697.63, 693.56, 695.93, 695.85, 697.12, 695.64, 696.25, 693.87, 686.29, 684.78, 680.92, 680.85, 686.84, 681.5, 684.39, 683.67, 681.18, 682.14, 682.63, 688.64, 685.68, 687.76, 688.8, 689.48, 692.21, 693.5, 692.61, 694.49, 691.93, 691.62, 691.24, 690.21, 689.93, 691.69, 691.25, 688.72, 693.6, 691.39, 695.25, 693.26, 689.59, 690.1, 693.27, 692.38, 690.88, 689.32, 688.3, 687.82, 689.42, 692.64, 693.69, 694.5, 695.0, 692.92, 691.7, 692.45, 692.96, 692.72, 692.45, 692.98, 693.23, 693.96, 692.45, 693.05, 692.29, 692.11, 693.24, 693.27, 693.22, 693.09, 692.5, 692.4, 692.22, 691.23, 691.83, 692.0, 691.6, 691.7, 690.2, 689.78, 690.9, 689.53, 691.2, 690.5, 691.17, 692.49, 692.5, 691.95, 690.75, 690.58, 691.46, 691.48, 690.88, 691.5, 692.48, 692.89, 694.79, 694.79]};
+const OIL={"labels": ["400", "410", "420", "430", "440", "450", "460", "470", "480", "490", "500", "510", "520", "530", "540", "550", "560", "570", "580", "590", "600", "610", "620", "630", "635", "640", "645", "650", "655", "660", "665", "670", "675", "680", "685", "690", "695", "700", "705", "710", "715", "720", "725", "730", "735", "740", "745", "750", "755", "760", "765", "770", "775", "780", "785", "790", "795", "800", "805", "810", "815", "820", "825", "830", "835", "840", "845", "850", "855", "860", "865", "870", "875", "880", "885", "890", "895", "900", "905", "910", "915", "920", "925", "930", "935", "940", "945", "950", "955", "960", "965", "970", "975", "980", "985", "990", "995", "1000"], "call": [1200, 567, 1939, 1035, 1462, 2013, 1090, 666, 1035, 905, 2688, 906, 1099, 570, 656, 963, 426, 1860, 3179, 1143, 2256, 950, 1486, 878, 1, 1348, 4, 2520, 96, 1398, 202, 3049, 406, 2222, 1175, 2587, 655, 8946, 433, 2859, 797, 3703, 1119, 3690, 814, 3620, 536, 8778, 585, 5089, 555, 2342, 961, 3015, 631, 2743, 1201, 20996, 745, 3791, 1611, 5374, 1455, 3446, 810, 4178, 1993, 10492, 2689, 4322, 2160, 3066, 2610, 5609, 2250, 4906, 1849, 27607, 1680, 11167, 1474, 5902, 2975, 6046, 1355, 5265, 1549, 10932, 1125, 4154, 1367, 4091, 2281, 10002, 1161, 4531, 757, 27092], "put": [15700, 2507, 7588, 3672, 2643, 17974, 2449, 1757, 3068, 4967, 16950, 3511, 4670, 3395, 6215, 9835, 2991, 5258, 9622, 7927, 19149, 6501, 5121, 4432, 50, 5071, 31, 15605, 122, 8206, 580, 7826, 470, 7228, 1240, 7126, 377, 12320, 660, 5143, 352, 5642, 689, 5574, 392, 8802, 607, 14717, 631, 4969, 480, 5034, 917, 5345, 1007, 7174, 1641, 18614, 1695, 5573, 1010, 6318, 2190, 5256, 951, 5574, 1840, 16678, 2108, 5509, 2307, 4231, 2387, 7672, 1494, 5329, 1708, 13301, 1121, 4119, 1283, 4868, 953, 5300, 542, 2858, 468, 6748, 221, 3251, 204, 3002, 441, 3426, 794, 1990, 356, 6590]};
+const GEXD={"labels": ["500", "505", "510", "515", "520", "525", "530", "535", "540", "545", "550", "555", "560", "565", "570", "575", "580", "585", "590", "595", "600", "605", "610", "615", "620", "625", "630", "635", "640", "645", "650", "655", "660", "665", "670", "675", "680", "685", "690", "695", "700", "705", "710", "715", "720", "725", "730", "735", "740", "745", "750", "755", "760", "765", "770", "775", "780", "785", "790", "795", "800", "805", "810", "815", "820", "825", "830", "835", "840", "845", "850", "855", "860", "865", "870", "875", "880", "885", "890", "895", "900", "905", "910", "915", "920", "925", "930", "935", "940", "945", "950", "955", "960", "965", "970", "975", "980", "985", "990", "995", "1000"], "data": [-135.0, -137.9, -140.8, -143.7, -146.6, -149.5, -152.4, -155.2, -158.0, -160.8, -163.4, -166.0, -168.4, -170.7, -172.9, -174.9, -176.6, -178.2, -179.5, -180.5, -181.2, -181.6, -181.7, -181.4, -180.7, -179.7, -178.2, -176.4, -174.1, -171.3, -168.1, -164.5, -160.3, -155.8, -150.7, -145.2, -139.3, -132.9, -126.0, -118.8, -111.1, -103.1, -94.7, -85.9, -76.8, -67.4, -57.7, -47.7, -37.5, -27.1, -16.5, -5.7, 5.2, 16.3, 27.4, 38.6, 49.9, 61.2, 72.6, 84.0, 95.3, 106.7, 118.0, 129.3, 140.6, 151.8, 163.0, 174.1, 185.1, 196.1, 207.0, 217.8, 228.5, 239.1, 249.6, 260.0, 270.2, 280.3, 290.2, 300.0, 309.6, 319.0, 328.2, 337.1, 345.9, 354.5, 362.8, 370.9, 378.7, 386.3, 393.7, 400.8, 407.6, 414.2, 420.6, 426.7, 432.6, 438.2, 443.6, 448.8, 453.7]};
+const TERMD={"labels": ["11-09", "11-11", "11-13", "11-16", "11-18", "11-20", "11-27", "12-04", "12-11", "12-18", "12-24", "01-15", "02-19", "03-19", "04-16", "05-21", "06-17"], "iv": [86.5, 101.6, 101.8, 90.8, 90.3, 91.4, 81.8, 80.0, 77.8, 75.7, 74.7, 71.5, 67.5, 66.0, 65.1, 63.2, 62.8], "dte": [3, 5, 7, 10, 12, 14, 21, 28, 35, 42, 48, 70, 105, 133, 161, 196, 223]};
+const SMILED={"labels": [380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 845, 850, 855, 860, 865, 870, 875, 880, 885, 890, 895, 900, 905, 910, 915, 920, 925, 930, 935, 940, 950, 960, 970, 980, 990, 1000, 1010, 1020, 1030, 1040, 1050, 1060], "c20": [173.4, 152.9, 160.9, 161.3, 156.5, 144.8, 144.9, 139.3, 138.8, 136.0, 134.1, 123.9, 118.2, 119.7, 117.9, 112.4, 111.8, 108.7, 107.3, 104.1, 103.6, 102.0, 100.1, 100.0, 99.5, 97.0, 97.6, 94.0, 93.0, 91.2, 91.3, 90.7, 90.8, 90.0, 89.1, 88.2, 87.1, 86.6, 85.4, 85.1, 84.7, 84.2, 82.7, 82.8, 82.8, 82.4, 82.4, 82.4, 83.2, 82.1, 82.6, 82.7, 83.1, 83.4, 83.4, 83.4, 83.7, 83.4, 83.8, 84.1, 84.6, 85.1, 85.3, 85.9, 85.6, 86.3, 86.3, 86.9, 87.6, 89.1, 89.3, 90.2, 91.4, 92.6, 93.3, 93.9, 95.2, 97.4, 98.1], "p20": [148.7, 146.9, 141.5, 140.0, 136.2, 133.4, 130.6, 127.7, 127.1, 124.1, 121.4, 117.5, 116.1, 113.9, 111.6, 110.0, 108.4, 106.7, 104.7, 103.6, 102.2, 100.1, 98.1, 98.3, 97.1, 95.5, 94.9, 95.0, 92.1, 91.4, 91.7, 92.1, 88.0, 89.6, 88.0, 87.3, 85.7, 85.0, 85.3, 83.2, 85.2, 86.9, 85.7, 84.3, 83.7, 83.7, 78.9, 82.6, 81.0, 85.4, 84.6, 85.1, 76.2, 83.9, 82.3, 79.9, 83.4, 86.4, 85.3, 82.1, 86.3, 83.9, 89.4, 78.9, 86.3, 77.6, 89.3, 86.8, 84.6, 87.0, 89.4, 90.0, 94.7, 100.5, 92.9, 104.8, 91.7, 90.0, 77.9], "c18": [111.6, 108.9, 105.9, 106.3, 100.6, 101.2, 98.1, 93.6, 92.8, 93.1, 91.6, 89.8, 89.6, 87.1, 88.0, 88.3, 85.6, 84.3, 84.1, 83.2, 84.0, 82.5, 81.9, 80.3, 80.4, 79.1, 78.5, 78.7, 77.0, 76.7, 75.9, 75.3, 75.4, 74.8, 74.8, 74.1, 74.1, 72.9, 72.5, 72.3, 72.3, 71.6, 71.6, 71.9, 70.6, 71.4, 71.0, 70.1, 70.4, 69.8, 69.7, 69.6, 69.5, 69.3, 69.3, 69.6, 69.8, 69.9, 70.0, 70.3, 70.5, 70.6, 70.6, 71.1, 71.1, 71.5, 71.7, 72.8, 72.3], "p18": [106.7, 105.2, 102.3, 101.3, 99.6, 99.3, 97.0, 94.6, 92.9, 91.9, 90.7, 89.6, 88.9, 87.9, 86.7, 85.7, 84.7, 84.1, 83.7, 83.0, 81.7, 81.7, 81.2, 79.6, 79.1, 78.6, 77.8, 77.3, 76.3, 76.8, 76.0, 76.1, 75.2, 75.0, 74.3, 73.7, 74.0, 73.1, 72.8, 73.3, 72.7, 72.5, 71.0, 72.1, 71.0, 72.4, 71.2, 71.0, 70.9, 72.7, 72.8, 68.9, 69.9, 71.9, 72.8, 71.2, 73.8, 73.6, 73.3, 75.0, 74.6, 76.5, 75.4, 76.6, 76.7, 79.8, 79.8, 79.0, 82.2]};
 
-  // ---- term ----
-  const tl = D.term.map(t => t[0]), tv = D.term.map(t => t[1]);
-  new Chart(document.getElementById('chartTerm'), {
-    type: 'line',
-    data: { labels: tl, datasets: [{ data: tv, borderColor: '#64d2ff', backgroundColor: 'rgba(100,210,255,.12)', fill: true, borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#64d2ff', tension: .3 }]},
-    options: Object.assign(clone(baseOpts), {
-      plugins: Object.assign(clone(baseOpts.plugins), { tooltip: Object.assign(clone(baseOpts.plugins.tooltip), { callbacks: { label: c => c.parsed.y + '%' } }) }),
-      scales: { x: Object.assign(clone(baseOpts.scales.x), { ticks: { maxRotation: 0, maxTicksLimit: 10 } }), y: Object.assign(clone(baseOpts.scales.y), { ticks: { callback: v => v + '%' } }) }
-    })
-  });
+Chart.defaults.color='#86868b';
+Chart.defaults.font.family='-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC",sans-serif';
+Chart.defaults.font.size=10.5;
+const GRID='rgba(255,255,255,.055)';
+const TT={backgroundColor:'rgba(14,14,16,.96)',titleColor:'#f5f5f7',bodyColor:'#c8c8cd',borderColor:'rgba(255,255,255,.12)',borderWidth:1,padding:11,cornerRadius:9,displayColors:false,titleFont:{size:11.5},bodyFont:{size:12}};
 
-  // ---- smile ----
-  new Chart(document.getElementById('chartSmile'), {
-    type: 'line',
-    data: { labels: D.smile.map(p => '$' + p[0]), datasets: [{ data: D.smile.map(p => p[1]), borderColor: '#bf5af2', backgroundColor: 'rgba(191,90,242,.14)', fill: true, borderWidth: 2, pointRadius: 2, tension: .3 }]},
-    options: Object.assign(clone(baseOpts), {
-      plugins: Object.assign(clone(baseOpts.plugins), { tooltip: Object.assign(clone(baseOpts.plugins.tooltip), { callbacks: { label: c => c.parsed.y + '%' } }) }),
-      scales: { x: Object.assign(clone(baseOpts.scales.x), { ticks: { maxRotation: 0, maxTicksLimit: 7 } }), y: Object.assign(clone(baseOpts.scales.y), { ticks: { callback: v => v + '%' } }) }
-    })
-  });
+/* 1 intraday */
+new Chart(document.getElementById('cIntra'),{
+  type:'line',
+  data:{labels:INTRA.labels,datasets:[
+    {label:'价格',data:INTRA.close,borderColor:'#0a84ff',borderWidth:1.6,pointRadius:0,tension:.15,fill:true,
+      backgroundColor:(c)=>{const g=c.chart.ctx.createLinearGradient(0,0,0,320);g.addColorStop(0,'rgba(10,132,255,.22)');g.addColorStop(1,'rgba(10,132,255,0)');return g;}},
+    {label:'前收 656.39',data:INTRA.labels.map(()=>656.39),borderColor:'rgba(191,90,242,.65)',borderWidth:1,borderDash:[5,4],pointRadius:0},
+    {label:'收盘 690',data:INTRA.labels.map(()=>690),borderColor:'rgba(100,210,255,.55)',borderWidth:1,borderDash:[3,4],pointRadius:0}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:900},
+    plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:i=>'$'+i.parsed.y.toFixed(2)}}},
+    scales:{y:{grid:{color:GRID},ticks:{callback:v=>'$'+v}},
+      x:{grid:{display:false},ticks:{maxRotation:0,minRotation:0,autoSkip:true,maxTicksLimit:10}}}}
+});
 
-  // ---- OI ----
-  new Chart(document.getElementById('chartOI'), {
-    type: 'bar',
-    data: { labels: D.oi.map(p => p[0]), datasets: [
-      { label: 'Call OI', data: D.oi.map(p => p[1]), backgroundColor: 'rgba(10,132,255,.75)', borderRadius: 2, barPercentage: .9 },
-      { label: 'Put OI', data: D.oi.map(p => p[2]), backgroundColor: 'rgba(255,159,10,.75)', borderRadius: 2, barPercentage: .9 }
-    ]},
-    options: Object.assign(clone(baseOpts), {
-      plugins: { legend: { display: true, position: 'top', align: 'end', labels: { boxWidth: 8, boxHeight: 8, usePointStyle: true, pointStyle: 'circle', padding: 14 } }, tooltip: baseOpts.plugins.tooltip },
-      scales: { x: Object.assign(clone(baseOpts.scales.x), { stacked: false, ticks: { maxRotation: 0, maxTicksLimit: 12, callback: (v, i) => '$' + D.oi[i][0] } }), y: Object.assign(clone(baseOpts.scales.y), { ticks: { callback: v => (v / 1000) + 'K' } }) }
-    })
-  });
+/* 2 price */
+new Chart(document.getElementById('cPrice'),{
+  type:'line',
+  data:{labels:PRICE.labels,datasets:[
+    {label:'收盘',data:PRICE.close,borderColor:'#f5f5f7',borderWidth:1.9,pointRadius:0,tension:.1},
+    {label:'MA20',data:PRICE.ma20,borderColor:'#0a84ff',borderWidth:1.2,pointRadius:0,tension:.1,borderDash:[4,3]},
+    {label:'MA60',data:PRICE.ma60,borderColor:'#bf5af2',borderWidth:1.2,pointRadius:0,tension:.1,borderDash:[4,3]},
+    {label:'MA200',data:PRICE.ma200,borderColor:'#ff9f0a',borderWidth:1.4,pointRadius:0,tension:.1}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:1000},
+    plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:i=>i.dataset.label+': $'+(i.parsed.y||0).toFixed(2)}}},
+    scales:{y:{grid:{color:GRID},ticks:{callback:v=>'$'+v}},
+      x:{grid:{display:false},ticks:{maxRotation:0,minRotation:0,autoSkip:true,maxTicksLimit:9}}}}
+});
 
-  // ---- intraday ----
-  const il = D.intra.map(p => p[0]), iv = D.intra.map(p => p[1]);
-  new Chart(document.getElementById('chartIntra'), {
-    type: 'line',
-    data: { labels: il, datasets: [
-      { data: iv, borderColor: '#0a84ff', borderWidth: 2, pointRadius: 0, tension: .1, fill: true,
-        backgroundColor: ctx => {
-          const {ctx: c, chartArea: a} = ctx.chart;
-          if (!a) return 'rgba(10,132,255,.1)';
-          const g = c.createLinearGradient(0, a.top, 0, a.bottom);
-          g.addColorStop(0, 'rgba(10,132,255,.28)'); g.addColorStop(1, 'rgba(10,132,255,0)');
-          return g;
-        } },
-      { data: il.map(() => D.prev), borderColor: 'rgba(255,255,255,.28)', borderWidth: 1, borderDash: [4, 4], pointRadius: 0 },
-      { data: il.map(() => D.S), borderColor: 'rgba(255,69,58,.45)', borderWidth: 1, borderDash: [2, 3], pointRadius: 0 }
-    ]},
-    options: Object.assign(clone(baseOpts), {
-      plugins: Object.assign(clone(baseOpts.plugins), { tooltip: Object.assign(clone(baseOpts.plugins.tooltip), { callbacks: { label: c => c.datasetIndex === 0 ? '$' + c.parsed.y : (c.datasetIndex === 1 ? '前收 656.39' : '收盘 690.00') } }) }),
-      scales: { x: Object.assign(clone(baseOpts.scales.x), { ticks: { maxRotation: 0, maxTicksLimit: 8 } }), y: Object.assign(clone(baseOpts.scales.y), { ticks: { callback: v => '$' + v } }) }
-    })
-  });
+/* 3 OI */
+new Chart(document.getElementById('cOI'),{
+  type:'bar',
+  data:{labels:OIL.labels,datasets:[
+    {label:'Call OI',data:OIL.call,backgroundColor:'rgba(255,69,58,.62)',borderRadius:2,barPercentage:.82},
+    {label:'Put OI',data:OIL.put,backgroundColor:'rgba(48,209,88,.62)',borderRadius:2,barPercentage:.82}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:900},
+    plugins:{legend:{display:false},tooltip:{...TT,mode:'index',intersect:false,
+      callbacks:{title:i=>'行权价 $'+i[0].label,label:i=>i.dataset.label+': '+i.parsed.y.toLocaleString()}}},
+    scales:{x:{type:'category',grid:{display:false},ticks:{maxRotation:0,minRotation:0,autoSkip:true,maxTicksLimit:11,callback:function(v){return '$'+this.getLabelForValue(v)}}},
+      y:{grid:{color:GRID},ticks:{callback:v=>v>=1000?(v/1000)+'k':v}}}}
+});
 
-  // ---- daily + MA ----
-  const cl = D.daily.map(p => p[1]);
-  const lb = D.daily.map(p => p[0]);
-  const ma = (arr, n, i) => { if (i < n - 1) return null; let s = 0; for (let k = i - n + 1; k <= i; k++) s += arr[k]; return +(s / n).toFixed(2); };
-  const ma20 = cl.map((_, i) => ma(cl, 20, i));
-  const ma60 = cl.map((_, i) => ma(cl, 60, i));
-  new Chart(document.getElementById('chartDaily'), {
-    type: 'line',
-    data: { labels: lb, datasets: [
-      { label: 'MU 收盘', data: cl, borderColor: '#f5f5f7', borderWidth: 2, pointRadius: 0, tension: .15 },
-      { label: 'MA20', data: ma20, borderColor: '#ff9f0a', borderWidth: 1.4, pointRadius: 0, borderDash: [5, 3], tension: .2 },
-      { label: 'MA60', data: ma60, borderColor: '#bf5af2', borderWidth: 1.4, pointRadius: 0, borderDash: [5, 3], tension: .2 }
-    ]},
-    options: Object.assign(clone(baseOpts), {
-      plugins: { legend: { display: false }, tooltip: baseOpts.plugins.tooltip },
-      scales: { x: Object.assign(clone(baseOpts.scales.x), { ticks: { maxRotation: 0, maxTicksLimit: 8 } }), y: Object.assign(clone(baseOpts.scales.y), { ticks: { callback: v => '$' + v } }) }
-    })
-  });
-} catch (e) { console.error('chart error', e); }
+/* 4 GEX */
+const gx=GEXD.labels, gy=GEXD.data;
+const gPos=gy.map(v=>v>=0?v:null), gNeg=gy.map(v=>v<0?v:null);
+new Chart(document.getElementById('cGEX'),{
+  type:'line',
+  data:{labels:gx,datasets:[
+    {label:'正 GEX',data:gPos,borderColor:'#ff453a',borderWidth:2,pointRadius:0,tension:.15,
+      fill:'origin',backgroundColor:'rgba(255,69,58,.17)',spanGaps:true},
+    {label:'负 GEX',data:gNeg,borderColor:'#30d158',borderWidth:2,pointRadius:0,tension:.15,
+      fill:'origin',backgroundColor:'rgba(48,209,88,.17)',spanGaps:true}]},
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:900},
+    plugins:{legend:{display:false},tooltip:{...TT,callbacks:{title:i=>'标的价格 $'+i[0].label,label:i=>'净 GEX: $'+i.parsed.y+'M / 1%'}}},
+    scales:{y:{grid:{color:GRID},ticks:{callback:v=>'$'+v+'M'}},
+      x:{type:'category',grid:{display:false},ticks:{maxRotation:0,minRotation:0,autoSkip:true,maxTicksLimit:10,callback:function(v){return '$'+this.getLabelForValue(v)}}}}}
+});
+
+/* 5 term */
+new Chart(document.getElementById('cTerm'),{
+  type:'line',
+  data:{labels:TERMD.labels.map((l,i)=>l+' ('+TERMD.dte[i]+'d)'),datasets:[
+    {label:'ATM IV',data:TERMD.iv,borderColor:'#bf5af2',borderWidth:2,pointRadius:2.5,pointBackgroundColor:'#bf5af2',tension:.28,
+      fill:true,backgroundColor:(c)=>{const g=c.chart.ctx.createLinearGradient(0,0,0,260);g.addColorStop(0,'rgba(191,90,242,.2)');g.addColorStop(1,'rgba(191,90,242,0)');return g;}}]},
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:900},
+    plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:i=>'ATM IV: '+i.parsed.y+'%'}}},
+    scales:{y:{grid:{color:GRID},ticks:{callback:v=>v+'%'}},
+      x:{grid:{display:false},ticks:{maxRotation:0,minRotation:0,autoSkip:true,maxTicksLimit:9,font:{size:9.5}}}}}
+});
+
+/* 6 smile */
+new Chart(document.getElementById('cSmile'),{
+  type:'line',
+  data:{labels:SMILED.labels,datasets:[
+    {label:'11/20 Call',data:SMILED.c20,borderColor:'#ff453a',borderWidth:1.6,pointRadius:0,tension:.3,spanGaps:true},
+    {label:'11/20 Put',data:SMILED.p20,borderColor:'#ff9f0a',borderWidth:1.6,pointRadius:0,tension:.3,spanGaps:true,borderDash:[5,3]},
+    {label:'12/18 Call',data:SMILED.c18,borderColor:'#0a84ff',borderWidth:1.6,pointRadius:0,tension:.3,spanGaps:true},
+    {label:'12/18 Put',data:SMILED.p18,borderColor:'#64d2ff',borderWidth:1.6,pointRadius:0,tension:.3,spanGaps:true,borderDash:[5,3]}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:900},
+    plugins:{legend:{display:false},tooltip:{...TT,mode:'index',intersect:false,
+      callbacks:{title:i=>'行权价 $'+i[0].label,label:i=>i.dataset.label+': '+(i.parsed.y===null?'—':i.parsed.y+'%')}}},
+    scales:{y:{grid:{color:GRID},ticks:{callback:v=>v+'%'}},
+      x:{grid:{display:false},ticks:{maxRotation:0,minRotation:0,autoSkip:true,maxTicksLimit:14,callback:v=>'$'+v}}}}
+});
 </script>
-</body>
-</html>
+</body></html>

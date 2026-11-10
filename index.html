@@ -384,18 +384,19 @@ footer p{font-size:11.5px;color:var(--dim2);margin-bottom:8px;line-height:1.6}
   </div>
   <div class="chartbox"><canvas id="chPrice"></canvas><div class="chart-cap">图 4 · MU 近 7 个交易日收盘价：11/05 单日 −15.5% 崩塌 → 两日修复 12%</div></div>
   <div class="ladder">
-    <div class="lv"><div class="lb"><b>$1,000</b> Call 墙 2 · Gamma Max 区</div><div class="bar up" style="left:50%;right:-2%"></div></div>
-    <div class="lv"><div class="lb"><b>$900</b> 30D Call 墙 1（16,656 张）· Max Pain 11/27</div><div class="bar up" style="left:50%;right:22%"></div></div>
-    <div class="lv"><div class="lb"><b>$850</b> Max Pain 11/20 · ITM Put 防御墙 11,212 张</div><div class="bar" style="left:50%;right:36%"></div></div>
-    <div class="lv"><div class="lb"><b>$770</b> Max Pain 11/13 · 11/13 Call 密集成交带</div><div class="bar" style="left:50%;right:45%"></div></div>
-    <div class="lv hl"><div class="lb"><b>$758–763</b> ★ 双重反压带：MA200 $758.39 + GEX 翻转位 $763 + MA5 $746</div><div class="bar alert" style="left:50%;right:48%"></div></div>
-    <div class="lv now"><div class="lb"><b>$733.15</b> 现价（收盘）· 盘后 $728.53</div></div>
-    <div class="lv"><div class="lb"><b>$715</b> Max Pain 11/11（明日 0DTE pin 位）</div><div class="bar" style="left:47%;right:50%"></div></div>
-    <div class="lv"><div class="lb"><b>$693–700</b> BOLL 下轨 $693.25 + 负 Gamma 悬崖 $700 · 心理关口</div><div class="bar dn" style="left:43%;right:50%"></div></div>
-    <div class="lv"><div class="lb"><b>$650</b> 负 Gamma 深渊 1（−$18.6M）· 11/11 0DTE Put 密集区</div><div class="bar dn" style="left:35%;right:50%"></div></div>
-    <div class="lv"><div class="lb"><b>$600</b> 负 Gamma 深渊 2（−$10.9M）· Put 墙 11,102 张 · 硬止损线</div><div class="bar dn" style="left:27%;right:50%"></div></div>
-    <div class="lv"><div class="lb"><b>$550</b> 卖 Put 收租安全带起点（策略 C1）</div><div class="bar dn" style="left:21%;right:50%"></div></div>
+    <div class="rung"><div class="lv">$1,000</div><div class="bar"><i class="mid"></i><i style="left:50%;width:100%;background:#ff453a"></i></div><div class="lb"><span class="pct">+36.4%</span> Call 墙 2（15,839 张）· Gamma 支柱 +11.8M · Max Pain 12/11 附近</div></div>
+    <div class="rung"><div class="lv">$900</div><div class="bar"><i class="mid"></i><i style="left:50%;width:100%;background:#ff453a"></i></div><div class="lb"><span class="pct">+22.8%</span> 主 Call 墙（16,656 张）· Gamma 最大 +22.3M · Max Pain 11/27</div></div>
+    <div class="rung"><div class="lv">$850</div><div class="bar"><i class="mid"></i><i style="left:50%;width:100%;background:#ff9f0a"></i></div><div class="lb"><span class="pct">+15.9%</span> Max Pain 11/20 · ITM Put 防御墙 11,212 张 · 磁吸减速带</div></div>
+    <div class="rung"><div class="lv">$770</div><div class="bar"><i class="mid"></i><i style="left:50%;width:33.5%;background:#bf5af2"></i></div><div class="lb"><span class="pct">+5.0%</span> Max Pain 11/13 · 11/13 Call 密集成交带（690–805C）</div></div>
+    <div class="rung"><div class="lv">$758–763</div><div class="bar"><i class="mid"></i><i style="left:50%;width:25%;background:#bf5af2"></i></div><div class="lb"><span class="pct">+3.4~4.1%</span> ★ 双重反压带：MA200 $758.39 + GEX 翻转位 $763 + MA5 $746</div></div>
+    <div class="rung spot"><div class="lv">$733.15</div><div class="bar"><i class="mid"></i><i style="left:50%;width:1.2%;background:#64d2ff"></i></div><div class="lb"><span class="pct">0.0%</span> 周一收盘 · 盘后最新 $728.53（19:59 EST）</div></div>
+    <div class="rung"><div class="lv">$715</div><div class="bar"><i class="mid"></i><i style="right:50%;width:16.5%;background:rgba(255,214,10,.55)"></i></div><div class="lb"><span class="pct">-2.5%</span> Max Pain 11/11（明日 0DTE pin 位 · 尾盘下拉风险）</div></div>
+    <div class="rung"><div class="lv">$693–700</div><div class="bar"><i class="mid"></i><i style="right:50%;width:30.2%;background:#30d158"></i></div><div class="lb"><span class="pct">-4.5~5.5%</span> BOLL 下轨 $693.25 + 负 Gamma 悬崖 $700 · 硬止损观察线</div></div>
+    <div class="rung"><div class="lv">$650</div><div class="bar"><i class="mid"></i><i style="right:50%;width:75.3%;background:#30d158"></i></div><div class="lb"><span class="pct">-11.3%</span> 悬崖一 · GEX −18.6M 全链最负 · 11/13 0DTE Put 密集区</div></div>
+    <div class="rung"><div class="lv">$600</div><div class="bar"><i class="mid"></i><i style="right:50%;width:100%;background:rgba(48,209,88,.75)"></i></div><div class="lb"><span class="pct">-18.2%</span> 悬崖二 · GEX −10.9M · Put 墙 11,102 张 · 破位全部清仓线</div></div>
+    <div class="rung"><div class="lv">$550</div><div class="bar"><i class="mid"></i><i style="right:50%;width:100%;background:rgba(134,134,139,.45)"></i></div><div class="lb"><span class="pct">-25.0%</span> 卖 Put 收租安全带起点（策略 B1/C1 接货区）</div></div>
   </div>
+  <p style="font-size:12.5px;color:var(--dim)">中轴＝周一收盘 $733.15。条形向右为上方阻力、向左为下方支撑，长度按距现价百分比缩放（满格 ±15%，超出截断）。</p>
 </div></section>
 
 <section id="strategy"><div class="wrap">

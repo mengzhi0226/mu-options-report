@@ -1,8 +1,9 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MU 期权结构日报 · 2026/11/21 · 恐慌定价的周末</title>
+<title>MU 期权结构日报 · 2026/11/22 · 周末版 · 腰斩之后的期权坐标</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
+
 :root{
   --bg:#000; --bg2:#08080a; --card:rgba(255,255,255,.038); --card2:rgba(255,255,255,.062);
   --stroke:rgba(255,255,255,.085); --stroke2:rgba(255,255,255,.17);
@@ -192,533 +193,765 @@ footer p{font-size:11.5px;color:var(--dim2);margin-bottom:8px;line-height:1.6}
   .wrap{padding:0 20px}
   .sc{grid-template-columns:1fr}
 }
-</style>
-<style>.rung{grid-template-columns:82px 1fr 302px}.rung .lb{line-height:1.45}</style></head><body>
 
-<nav class="nav"><div class="wrap">
-  <div class="logo"><div class="logo-mark">华</div>
-    <div class="logo-txt">华宝 <span>MU · 期权结构日报</span></div></div>
+/* overrides 1122 */
+.tw table{min-width:660px;table-layout:auto}
+.tw table td,.tw table th{white-space:normal;word-break:break-word;line-height:1.5;vertical-align:top}
+.tw table td{padding:10px 12px;font-size:12.4px}
+.tw table th{padding:10px 12px}
+.tw table td:first-child{font-weight:600}
+.tw table td:last-child,.tw table th:last-child{min-width:172px}
+.tw table td:nth-child(2),.tw table th:nth-child(2){min-width:108px}
+.tw table.l3 td:nth-child(n+3),.tw table.l3 th:nth-child(n+3){text-align:left}
+.tw table.l4 td:nth-child(n+4),.tw table.l4 th:nth-child(n+4){text-align:left}
+.tw table.l5 td:nth-child(n+5),.tw table.l5 th:nth-child(n+5){text-align:left}
+.tw table.l5 td:nth-child(4),.tw table.l5 th:nth-child(4){min-width:84px}
+.rung{grid-template-columns:88px 1fr 300px}
+.rung .lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wk{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:16px 0}
+.wk .c{border:1px solid var(--stroke);border-radius:14px;padding:14px 16px;background:var(--card)}
+.wk .c .k{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);margin-bottom:5px}
+.wk .c .v{font-size:20px;font-weight:600;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+.wk .c .s{font-size:11px;color:var(--dim);margin-top:2px}
+.tick{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:12px 0}
+.tick .t{border:1px solid var(--stroke);border-radius:11px;padding:11px 12px;background:rgba(255,255,255,.025);text-align:center}
+.tick .t .h{font-size:9.5px;color:var(--dim2);letter-spacing:.06em;margin-bottom:4px}
+.tick .t .p{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+@media(max-width:980px){.wk,.tick{grid-template-columns:repeat(2,1fr)}.rung{grid-template-columns:70px 1fr 140px}}
+</style></head><body>
+
+<div class="nav"><div class="wrap">
+  <div class="logo"><div class="logo-mark">华</div><div class="logo-txt">华宝 · HUABAO<span>MU Options Desk</span></div></div>
   <div class="navlinks">
-    <a href="#s1">隔夜</a><a href="#s2">行业</a><a href="#s3">技术面</a>
-    <a href="#s4">期权结构</a><a href="#s5">大单</a><a href="#s6">墙位</a><a href="#s7">30日策略</a><a href="#s8">情景</a>
-    <span class="nav-tag">SAT · 2026/11/21</span>
+    <a href="#s1">结论</a><a href="#s2">公司</a><a href="#s3">行业</a><a href="#s4">行情</a>
+    <a href="#s5">期权结构</a><a href="#s6">支撑阻力</a><a href="#s7">大单</a><a href="#s8">建议</a><a href="#s9">风险</a>
+    <span class="nav-tag">周末版 · 休市</span>
   </div>
-</div></nav>
+</div></div>
 
 <div class="wrap">
 
+<!-- HERO -->
 <div class="hero">
-  <div class="eyebrow">MICRON TECHNOLOGY · NASDAQ: MU · SATURDAY WEEKEND EDITION · SGT 11/21 09:25 · V2 盘后终值</div>
+  <div class="eyebrow">MICRON TECHNOLOGY · NASDAQ: MU · WEEKEND EDITION</div>
   <div class="hero-grid">
     <div>
-      <h1>恐慌定价的周末<em>收 594.51 −13.89% · 盘后终值 610.60 +2.71%<br>IV30 95.8% ≈ HV30 96.2% · 卖方折价首次归零</em></h1>
+      <h1>腰斩之后的<br>期权坐标
+        <em>2026/11/22 09:15 SGT 生成 · 美股已休市 24 小时以上 · 全部报价定格于 11/20 收盘与盘后终值</em>
+      </h1>
       <div class="priceblock">
         <div class="price"><small>$</small>594.51</div>
-        <div class="delta"><b class="down">−95.93 / −13.89%</b><span>11/20 官方收盘 · 16:00 EST ＝ 11/21 05:00 SGT</span></div>
+        <div class="delta"><b class="down">−95.93</b><span class="down">−13.89% · 周五收盘</span></div>
       </div>
       <div class="chips">
-        <span class="chip">盘后终值 <b>$610.60</b> <b class="up">+2.71%</b>（19:59 EST）</span>
-        <span class="chip">日内低点 <b class="down">$585.25</b> · 振幅 <b>14.1%</b></span>
-        <span class="chip warn">GEX Flip <b>$700</b> · 现价低 <b>14.6%</b></span>
-        <span class="chip alert">净 GEX <b>−$104.0M</b> / 1%</span>
-        <span class="chip">IV30 <b>95.8%</b> vs HV30 <b>96.2%</b> · 折价归零</span>
-        <span class="chip">12/18 Max Pain <b>750</b>（遗留 Call 拉高，仅参考）</span>
+        <span class="chip">周线 <b class="down">−23.62%</b></span>
+        <span class="chip">距 6/25 高点 <b class="down">−52.6%</b></span>
+        <span class="chip alert">净 GEX <b>−$105.9M / 1%</b></span>
+        <span class="chip warn">GEX Flip <b>$735</b>（现价低 19.1%）</span>
+        <span class="chip">IV30 <b>96.9%</b> ≈ HV30 <b>97.9%</b></span>
+        <span class="chip">25Δ 偏斜 <b>+21.1pp</b>（put 极贵）</span>
+        <span class="chip warn">财报 <b>12/17 盘后</b>（在 12/18 到期内）</span>
+        <span class="chip">VIX <b>35.89</b></span>
       </div>
     </div>
     <div class="clock">
-      <div class="cell hl"><div class="k">① 11/20 官方收盘</div><div class="v">$594.51 <span class="down" style="font-size:14px">−13.89%</span></div>
-        <div class="t">16:00 EST ＝ 11/21 05:00 SGT · O 665.63 / L 585.25 · 量 5,909 万股</div></div>
-      <div class="cell"><div class="k">② 盘后终值（收盘后报价，已收）</div><div class="v">$610.60 <span class="up" style="font-size:14px">+2.71%</span></div>
-        <div class="t">19:59 EST ＝ 08:59 SGT · 区间 599.82–612.10 · 盘后量 190.3 万股</div></div>
-      <div class="cell"><div class="k">③ 夜盘／期指（周末休市）</div><div class="v">NQ 25,291 <span class="down" style="font-size:14px">−4.92%</span></div>
-        <div class="t">CME 周五 17:00 EST 收市 · ES −3.20% / YM −1.61% · MU 无夜盘报价</div></div>
-      <div class="cell"><div class="k">④ 下次盘前／开盘</div><div class="v">17:00 SGT / 22:30 SGT</div>
-        <div class="t">11/23 周一 04:00 EST 盘前 · 09:30 EST 开盘</div></div>
+      <div class="cell">
+        <div class="k">收盘 · 11/20 16:00 EST</div>
+        <div class="v down">$594.51 −13.89%</div>
+        <div class="t">= 11/21 05:00 SGT · 量 5,909 万（1.85× 均量）</div>
+      </div>
+      <div class="cell hl">
+        <div class="k">盘后终值 · 11/20 19:59 EST</div>
+        <div class="v up">$610.60 +2.71%</div>
+        <div class="t">= 11/21 08:59 SGT · 盘后量 190.3 万股 · 区间 590.13–623.24</div>
+      </div>
+      <div class="cell">
+        <div class="k">期指定格 · 11/20 16:59 EST</div>
+        <div class="v down">NQ 25,126.5 −5.54%</div>
+        <div class="t">ES 6,935.0 −3.65% / YM 48,216 −1.96% · CME 休市至周日 18:00 EST</div>
+      </div>
+      <div class="cell">
+        <div class="k">下次盘前 · 11/23 04:00 EST</div>
+        <div class="v dim">未开盘 · 无盘前报价</div>
+        <div class="t">= 11/23 17:00 SGT · 夜盘（Blue Ocean 20:00–04:00 EST）MU 无公开报价</div>
+      </div>
     </div>
   </div>
 </div>
 
-<section id="s0">
-  <div class="sec-h"><div class="sec-n">00</div><h2>数据口径与时点声明</h2></div>
-  <p class="sec-sub">本报告生成于 <b>SGT 11/21 09:25 ＝ EST 11/20 20:25</b>：11/20 常规时段与盘后时段均已结束（盘后 20:00 EST 正式收，最后一笔 19:59 EST），CME 期指 17:00 EST 起进入周末休市，Blue Ocean 夜盘周五夜间不开放。<b>因此本报告只有一个实时数据（盘后终值），其余全部是 EOD 口径。</b></p>
-
+<!-- S0 时点声明 -->
+<section style="padding-top:0">
   <div class="note warn">
-    <div class="nt">三个价格、三个含义 —— 请勿互相替代</div>
-    <p><b>① 官方收盘 $594.51</b>（11/20 16:00 EST）＝ 期权链的定价基准，本报告所有 EOD 口径的希腊值与价差成本都基于这个价。<b>② 盘后终值 $610.60</b>（19:59 EST 最后一笔，+2.71%，+$16.09）＝ 收盘后的连续竞价，低吸盘把 −13.89% 的跌幅收回了约五分之一，盘后成交量 190.3 万股（相当于常规时段的 3.2%，属异常活跃），<b>它不是 11/23 的盘前价</b>——从盘后到下一个开盘之间隔着一整个周末，历史缺口可达 3–7%。<b>③ 期指定格价</b>：CME 于周五 17:00 EST 收市，NQ 最后成交 25,291（较周四结算 −4.92%）、ES 6,966.75（−3.20%）、YM 48,391（−1.61%）——这是本周末能拿到的最后一份指数读数，周一 18:00 EST（SGT 周一 07:00）才重新开盘。</p>
-    <p><b>11/23 盘前（04:00 EST ＝ 17:00 SGT）尚未到来，周末任何标着「MU 盘前」的数字都是伪造或过期缓存。</b>盘后 610.60 与周一开盘之间的缺口，就是本报告所有策略都要求「开盘 30 分钟后确认再动手」的原因。</p>
+    <div class="nt">数据时点与口径声明（请先读这一段）</div>
+    <p><b>本报告生成于 2026/11/22（周日）09:15 SGT = 2026/11/21（周六）20:15 EST。</b>美股现货已连续休市 24 小时以上，CME 股指期货于 11/20 17:00 EST 收盘后停盘，直到 <b>11/23（周日）18:00 EST</b> 才重开。因此本报告<b>不存在"盘前实时报价"</b>，也<b>不存在 MU 的夜盘报价</b>（Blue Ocean ATS 虽有 20:00–04:00 EST 夜盘，但 MU 无公开撮合报价）。</p>
+    <p>所有价格分三类严格区分：<span class="tag">①</span> <b>常规时段收盘价 $594.51</b>（11/20 16:00 EST）——唯一被期权链、希腊值、GEX 采用的基准价；<span class="tag">②</span> <b>收盘后报价 $610.60</b>（11/20 19:59 EST 盘后最后一笔，+2.71%）——仅代表盘后流动性下的边际成交，未参与期权定价；<span class="tag">③</span> <b>期指定格价</b>（11/20 16:59 EST）——代表机构对下周开盘的最后一个定价锚。周一开盘的实际价格可能与本报告任何数字存在大幅偏离，<b>盘前变动剧烈，请以 11/23 17:00 SGT 之后的实时报价为准</b>。</p>
   </div>
+</section>
 
-  <div class="grid4">
-    <div class="kpi"><div class="l">官方收盘</div><div class="n down">594.51</div><div class="s down">−95.93 / −13.89%</div></div>
-    <div class="kpi"><div class="l">日内区间 / 振幅</div><div class="n">585.25–668.99</div><div class="s">14.1% · 收在区间 13% 分位</div></div>
-    <div class="kpi"><div class="l">成交量 / 换手</div><div class="n">5,909 万股</div><div class="s">30 日均 1.98× · 恐慌放量</div></div>
-    <div class="kpi"><div class="l">盘后终值</div><div class="n up">610.60</div><div class="s up">+16.09 / +2.71% @19:59 EST</div></div>
-  </div>
+<!-- S1 结论 -->
+<section id="s1">
+  <div class="sec-h"><span class="sec-n">01</span><h2>今日结论</h2></div>
+  <p class="sec-sub">一句话：<b>趋势已破、波动率已贵、偏斜已极端</b>。这一周不是估值的重新定价，是仓位结构的强制出清。当 put 比 call 贵 21 个百分点、而 IV 与 HV 已经打平时，"买保险"是最贵的动作，"卖保险"是最危险的动作，<b>唯一还便宜的东西是 call 的凸性</b>。</p>
 
   <div class="vd">
-    <div class="big">这是本轮 AI 重定价的总爆发日<em>——道指与标普同日进入回调区，纳指抹去年内涨幅，而期权的恐慌定价第一次打满。</em></div>
-    <p>① <b>指数层面：道指 −1.93%、标普 −3.70%、纳指 −5.28%，双双满足「回调」定义（自高点 −10%）；纳指 100 盘中一度自高点回撤超 20% 进入技术性熊市，全年涨幅清零（YTD −2.7%）。</b>个股端更惨烈：NVDA −14.0%、AMD −13.2%（固件安全 + 涉华实体传闻）、AVGO −12.2%、SNDK −16.0%（标普当日最差）、WDC −12.0%、STX −12.3%、TSM −9.5%。避险资产同步崩溃：比特币跌破 $60,000、黄金 −3.7% 至 $3,547——股、币、金三杀是典型的全面去杠杆。</p>
-    <p>② <b>TrendForce 在 11/20 一天发了两份报告，正式给「存储 2027 叙事」降级</b>：NAND 因中国 CSP 缩减企业级 SSD 采购 + 消费电子降规，<b>过剩时点提前、合约价转跌</b>；DRAM 仍短缺但<b>涨幅逐季收窄</b>，2027 年存储营收增长动能显著放缓。美光的 NAND 分部（约占 26% 营收）从「涨价资产」变成「负债」，这是估值杀的直接燃料。<b>TrendForce 11/20 报告的真正增量是「中系 CSP 下修企业级 SSD 与部分服务器 DRAM 采购」——这是第一次把需求端（而非只有供给端）写进下调理由。</b></p>
-    <p>③ <b>但期权市场给出三个教科书级信号</b>：25Δ Put Skew 12/18 达 <b>+21.1pp</b>（全期限链最贵的一段）；<b>IV30 95.8% 与 HV30 96.2% 首次平价</b>——过去三周卖方一直享受的 15pp 折价已经消失，恐慌被完整定价；同时 <b>OTM 权利金 Call $583M vs Put $426M（0.73 偏 Call）</b>，暴跌日反而是 Call 权利金占优——抄底盘在买反弹，保护盘在买 Put，两边都很满。<b>结论：恐慌已定价，但净 Gamma −$104M、Flip 700 未收复之前，任何多头表达只能是价差。</b></p>
+    <div class="h">Positioning Verdict · 本周期权定位</div>
+    <div class="big">不做方向判断，做<em>凸性套利</em>：<br>买被压到 86.6% IV 的 call 翼，卖被抬到 107.7% IV 的 put 翼。</div>
+    <p>11/20 收盘的期权曲面出现了一个罕见的错位：25Δ 看跌隐含波动率 <b>107.7%</b>，25Δ 看涨只有 <b>86.6%</b>，两者相差 <b>21.1 个百分点</b>——这是 2026 年全周期最宽的读值。市场愿为"再跌 20%"付 21 个点的溢价，却只肯为"涨回 20%"付 86.6%。在现货已经跌掉 52.6%、RSI6 归零、价格贴住布林下轨的位置上，这个定价结构意味着<b>下行保护已被过度购买，上行凸性被系统性低估</b>。</p>
+    <p>同时，净 GEX 为 <b>−$105.9M / 1%</b>，负伽马最重的三个价位全部落在 <b>600 / 650 / 590</b>——正好压在现价上下 2%–9% 的区间。做市商在这个区间是<b>追涨杀跌</b>的，任何方向的突破都会被机械放大。这不是"温和反弹"的结构，是"要么快速弹回 650 以上、要么直接测 550"的结构。所以本报告的所有建议都是<b>价差</b>而不是单腿，且全部带触发条件。</p>
   </div>
-</section>
 
-<section id="s1">
-  <div class="sec-h"><div class="sec-n">01</div><h2>隔夜：AI 重定价的总爆发日</h2></div>
-  <p class="sec-sub">11/20 的下跌不是单一事件，而是「融资端收缩 + 盈利兑现质疑 + NAND 基本面裂缝」三股力量在同一根 K 线里合流。盘后 MU 低吸盘把价格一路拉回 610.60（+2.71%），但没有人知道周末会发生什么。</p>
+  <div class="grid4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:18px 0">
+    <div class="kpi"><div class="l">趋势（日线）</div><div class="n down">空头排列</div><div class="s">MA5/10/20/60/200 全在价格上方</div></div>
+    <div class="kpi"><div class="l">超卖（短线）</div><div class="n amber">极端</div><div class="s">RSI6 = 0.0 / RSI14 = 30.3</div></div>
+    <div class="kpi"><div class="l">波动率定价</div><div class="n">无溢价</div><div class="s">IV30 96.9% vs HV30 97.9%（−1.0pp）</div></div>
+    <div class="kpi"><div class="l">偏斜（30D）</div><div class="n amber">极端 put 贵</div><div class="s">25Δ RR +21.1pp，全周期最高</div></div>
+  </div>
 
-  <h3>① 当日全景：存储链是震中</h3>
-  <div class="tw"><table>
-    <tr><th>指数 / 个股</th><th>收盘</th><th>单日</th><th>备注</th></tr>
-    <tr><td>道琼斯</td><td class="mono">48,147.33</td><td class="down mono">−1.93%</td><td>自高点 −10%+，进入回调区</td></tr>
-    <tr><td>标普 500</td><td class="mono">6,910.39</td><td class="down mono">−3.70%</td><td>跌破 7,000 关口，进入回调区；<b>跌破 200 日均线</b></td></tr>
-    <tr><td>纳斯达克综合</td><td class="mono">22,617.73</td><td class="down mono">−5.28%</td><td><b>年内涨幅清零（YTD −2.7%）</b></td></tr>
-    <tr><td>费城半导体</td><td class="mono">8,408.59</td><td class="down mono">−10.74%</td><td>单日两位数跌幅，周线 −17.1%</td></tr>
-    <tr><td><b>美光 MU</b></td><td class="mono">594.51</td><td class="down mono">−13.89%</td><td>自 6/25 高点 −51.0%，距 52 周低点 201.37 尚远</td></tr>
-    <tr><td>英伟达 NVDA</td><td class="mono">125.53</td><td class="down mono">−14.0%</td><td>财报后一周连跌，HBM 采购承诺无法对冲估值杀</td></tr>
-    <tr><td>AMD</td><td class="mono">424.39</td><td class="down mono">−13.2%</td><td>固件安全问题 + 涉黑名单中企传闻</td></tr>
-    <tr><td>闪迪 SNDK</td><td class="mono">79.24</td><td class="down mono">−16.0%</td><td><b>标普当日最差</b>；1拆8 拆股首日 + TrendForce NAND 警告双重打击</td></tr>
-    <tr><td>西数 WDC / 希捷 STX</td><td class="mono">261.11 / 457.01</td><td class="down mono">−12.0% / −12.3%</td><td>存储硬件全线两位数</td></tr>
-    <tr><td>SK 海力士 ADR / 台积电</td><td class="mono">103.57 / 318.71</td><td class="down mono">−13.1% / −9.5%</td><td>亚洲存储 / 代工链同步重挫</td></tr>
-    <tr><td>VIX</td><td class="mono">35.89</td><td class="up mono">+26.2%</td><td>日内一度 40.03，2024/8 以来高位区</td></tr>
-    <tr><td>美债 10Y / 金 / BTC</td><td class="mono">4.912% / $3,547 / &lt;$60K</td><td class="up mono">−13.8bp / −3.7% / 破位</td><td>股币金三杀 = 全面去杠杆特征</td></tr>
+  <div class="tw"><table class="l4">
+    <thead><tr><th>维度</th><th>读数</th><th>信号</th><th>对期权的含义</th></tr></thead>
+    <tbody>
+      <tr><td>价格结构</td><td>594.51，跌破全部均线，距 MA200 低 23.1%</td><td><span class="tag p">空</span></td><td>不追多，但做空赔率已差（离均线太远）</td></tr>
+      <tr><td>短线动量</td><td>五连阴，RSI6 = 0.0，RSI14 = 30.3</td><td><span class="tag w">超卖</span></td><td>反弹概率上升，但反弹≠反转</td></tr>
+      <tr><td>布林带</td><td>582.90 / 786.65 / 990.40，价格距下轨仅 +2.0%</td><td><span class="tag w">贴轨</span></td><td>下轨 582.90 是多空第一分界</td></tr>
+      <tr><td>做市商 Gamma</td><td>净 GEX −$105.9M / 1%，Flip $735</td><td><span class="tag p">放大器</span></td><td>双向波动被放大，价差优于单腿</td></tr>
+      <tr><td>波动率水平</td><td>IV30 96.9% ≈ HV30 97.9%，IV Rank 83</td><td><span class="tag">中性</span></td><td>卖方无顺风，买方无逆风</td></tr>
+      <tr><td>波动率偏斜</td><td>25Δ Put 107.7% vs Call 86.6%（+21.1pp）</td><td><span class="tag c">错位</span></td><td>卖 put 翼 / 买 call 翼 = 结构套利</td></tr>
+      <tr><td>大单资金流</td><td>大额成交 P/C 3.24（put $57.9M vs call $17.9M）</td><td><span class="tag p">机构对冲</span></td><td>机构在买保险，散户在买彩票</td></tr>
+      <tr><td>OTM 权利金</td><td>Call $583.8M vs Put $425.6M（0.729）</td><td><span class="tag c">偏多</span></td><td>成交层面 call 反而更活跃（抄底盘）</td></tr>
+      <tr><td>事件</td><td>11/25 PCE · 11/26 感恩节 · 12/9 FOMC · 12/17 财报</td><td><span class="tag w">密集</span></td><td>12/18 到期内含财报，裸卖不可取</td></tr>
+    </tbody>
   </table></div>
-
-  <h3>② 下跌的三条主线</h3>
-  <div class="grid3">
-    <div class="card">
-      <p><b>① AI 融资端收缩</b></p>
-      <p class="sec-sub" style="margin:6px 0 0">Anthropic 挂牌第二日 −8.5%，吐回首日 +17% 的大部分涨幅——「史上最大 IPO」没有成为 AI 情绪的接力棒，反而成了「卖事实」的导火索。Treasury Partners 的 Saperstein 概括了主线：市场正在对 AI 进行<b>重定价</b>——数据中心建设放缓、AI 项目融资来源减少、科技盈利增长轨迹放慢。</p>
-    </div>
-    <div class="card">
-      <p><b>② 存储基本面裂缝公开化</b></p>
-      <p class="sec-sub" style="margin:6px 0 0">TrendForce 11/19 的 NAND 合约价 Q1 2027 转跌预警 + 11/20 的正式报告（详见下一节），把「存储短缺到 2028」的叙事撕开。投资者开始追问：<b>AI 基建繁荣能不能持续支撑存储行业的历史性利润？</b>美光自高点 −51%、闪迪 −73% 之后，「低 PE」不再被视为安全垫。</p>
-    </div>
-    <div class="card">
-      <p><b>③ 全面去杠杆</b></p>
-      <p class="sec-sub" style="margin:6px 0 0">比特币跌破 $60,000、黄金 −3.7%、股币金三杀，10Y 收益率反而下行 14bp 至 4.91%——资金在离开一切风险资产而不是轮动。<b>KOSPI 周五 −5.21%（4,869.96）、日经 −5.06%：亚洲交易日已经先跌过一轮</b>，美股只是补完。</p>
-    </div>
-  </div>
-
-  <h3>③ 盘后四小时：低吸盘从试探变成持续买入</h3>
-  <p>盘后完整轨迹（EST）：<b>16:00 首笔 600.72（+1.04%）→ 18:15 全天最低 599.82（+0.89%）→ 19:00 冲至 612.10（+2.96%，盘后最高）→ 19:59 收在 610.60（+2.71%）</b>。整段盘后成交 <b>190.3 万股</b>，是常规时段 5,909 万股的 3.2%——对一只日均换手接近 2× 的高波动股来说，这个盘后量属于「机构在收盘后继续建仓」的级别，而不是散户的零散挂单。</p>
-  <p>读法要克制：<b>盘后涨幅 2.71% 只是把 −13.89% 修回五分之一</b>，与 11/17 NVDA 财报夜的 +4.69% 相比仍属温和；且这四小时的买盘<b>没有对应的新闻催化</b>——它更像「3.4× 前瞻 PE + 3.9× FY27 一致预期」触发的机械式价值承接，加上周一 2.8 万张 Put 保护到期前的 Delta 回补。期指定格在 NQ −4.92%，<b>周一 18:00 EST 重开之前的任何情绪变化都不会留下数据痕迹——周末的消息真空本身就是本周一最大的风险</b>。</p>
+  <p class="src">信号口径：GEX 为 ≤45DTE 全链重定价（S=594.51，网格 380–900 步长 5）；IV 为自算 Black-Scholes 反解中价（r=4.0%，q=0）；偏斜取 25Δ 最近行权价。</p>
 </section>
 
+<!-- S2 公司新闻 -->
 <section id="s2">
-  <div class="sec-h"><div class="sec-n">02</div><h2>半导体行业：TrendForce 一天两报，给 2027 叙事降级</h2></div>
-  <p class="sec-sub">11/20 当天，TrendForce 发布「Memory Outlook」与「3Q26 DRAM 供应商营收排名」两份报告。这是本轮存储周期里<b>第一次有权威机构把「过剩」写进正式标题</b>。</p>
+  <div class="sec-h"><span class="sec-n">02</span><h2>MU 最新新闻与公司面</h2></div>
+  <p class="sec-sub">过去 72 小时美光自身没有一条坏消息。跌的是仓位，不是订单。这一点决定了"跌到哪"由资金决定，"能不能回来"由 12/17 的毛利率决定。</p>
 
-  <div class="grid2">
-    <div class="card">
-      <div class="tw"><table>
-        <tr><th>DRAM 侧（仍是美光的资产）</th><th>读数</th></tr>
-        <tr><td>TrendForce 定性</td><td class="up">仍供不应求，但<b>涨幅逐季收窄</b></td></tr>
-        <tr><td>Q4 合约价</td><td class="up mono">PC DRAM +13–18% QoQ（11/11 口径）</td></tr>
-        <tr><td>3Q26 格局</td><td class="mono">北美 CSP 长协定案后追加 RDIMM 订单，<b>SK 海力士份额显著上升</b></td></tr>
-        <tr><td>Q4 增长来源</td><td class="mono">主要靠出货量，<b>价格几乎没有再加价空间</b></td></tr>
-        <tr><td>DDR5 16Gb 现货（11/20）</td><td class="up mono">$61.26 / 颗 · 30 日 +4.66% · 同比 +484%</td></tr>
-        <tr><td>DDR4 8Gb 现货（11/20）</td><td class="up mono">$47.45 / 颗 · 同比 +856%</td></tr>
-        <tr><td>SK 海力士 / 三星产能</td><td class="mono">2027 HBM 售罄、DRAM+HBM 实际售罄至 2029</td></tr>
-      </table></div>
-    </div>
-    <div class="card">
-      <div class="tw"><table>
-        <tr><th>NAND 侧（美光的负债）</th><th>读数</th></tr>
-        <tr><td>TrendForce 11/20 定性</td><td class="down"><b>过剩时点提前、合约价转跌</b></td></tr>
-        <tr><td>触发因素 ①</td><td class="down">中国 CSP 缩减企业级 SSD 采购</td></tr>
-        <tr><td>触发因素 ②</td><td class="down">消费电子降规（spec downgrade）</td></tr>
-        <tr><td>2027 展望</td><td class="down">价格可能「逐季下探」</td></tr>
-        <tr><td>DRAM 2027 营收</td><td class="down">增长动能显著放缓（涨价收窄 + 中国 CSP 缩量拖累）</td></tr>
-        <tr><td>闪迪当日</td><td class="down mono">−16.0%，标普最差 · 自高点 −73%</td></tr>
-        <tr><td>美光 NAND 敞口</td><td class="down">约占营收 26% —— 从资产变负债</td></tr>
-      </table></div>
-    </div>
+  <div class="grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0">
+    <div class="kpi"><div class="l">FQ4 FY26 营收</div><div class="n">$542.3 亿</div><div class="s">同比 +379%（去年 $113.2 亿）</div></div>
+    <div class="kpi"><div class="l">FY26 全年营收</div><div class="n">$1,331.9 亿</div><div class="s">FY25 为 $374 亿，TTM 净利 $849.7 亿</div></div>
+    <div class="kpi"><div class="l">FQ1 FY27 指引</div><div class="n">$615 亿</div><div class="s">毛利率指引 86.25% · 管理层称"FY27 的底部季度"</div></div>
   </div>
 
-  <h3>现货价格：跌的是 NAND 和消费级 DRAM，AI 服务器 DRAM 仍在高位</h3>
-  <div class="tw"><table>
-    <tr><th>现货品种（TrendForce / MemoryIndex）</th><th>11/17–20 报价</th><th>对比 11/03</th><th>含义</th></tr>
-    <tr><td>DDR5 16Gb（AI 服务器主力）</td><td class="mono">$60.33</td><td class="down mono">−1.90%（自 $61.50）</td><td>仍处历史高位，<b>只是止涨</b></td></tr>
-    <tr><td>DDR4 8Gb（PC 通用）</td><td class="mono">$46.04</td><td class="down mono">−4.48%（自 $48.20）</td><td>PC 厂砍单传导，跌幅大于 DDR5</td></tr>
-    <tr><td>512Gb TLC NAND 晶圆</td><td class="mono">$14.27</td><td class="down mono">−15.49%（自 $16.88）</td><td><b>两周内 −20%（美银口径 −32%），NAND 已确认转向</b></td></tr>
-    <tr><td>256Gb TLC NAND 晶圆</td><td class="mono">$18.14</td><td class="down mono">−1.21%</td><td>跌幅远小于大容量，说明是服务器侧先松</td></tr>
-    <tr><td>GDDR6 8Gb（显卡）</td><td class="mono">$12.54</td><td class="up mono">+0.52%</td><td>唯一仍在涨的品类，与 AI 需求无关</td></tr>
+  <div class="tw"><table class="l3">
+    <thead><tr><th>时间</th><th>事项</th><th>数字 / 细节</th><th>对股价的方向性含义</th></tr></thead>
+    <tbody>
+      <tr><td>11/20</td><td>TrendForce 下修 NAND 合约价</td><td>2027Q1 NAND 合约价<b>环比持平至 −5%</b>（中国 CSP 削减企业级 SSD 采购）</td><td><span class="tag p">直接触发</span> NAND 约占美光营收 1/4，但 SNDK（纯 NAND）当日 −16.05% 才是主受害</td></tr>
+      <tr><td>11/20</td><td>Reuters：SEC 审查英伟达会计问题</td><td>NVDA 单日 −14.01%，为 2025/01 以来最差</td><td><span class="tag p">情绪主导</span> 与美光基本面无直接关系，但 AI 链整体折价</td></tr>
+      <tr><td>11/18–20</td><td>CEO Mehrotra 于 TomorrowX 峰会表态</td><td><b>2027 年产出已售出 75%</b>；已签 <b>26 份</b>战略客户协议，由 <b>$320 亿</b>客户预付现金与财务承诺支撑，多数延长至 5 年以上；正洽谈 2028 年供货</td><td><span class="tag c">强多</span> 收入能见度已从"季度"拉到"多年"，这是周期股没有过的结构</td></tr>
+      <tr><td>11/18</td><td>RBC 重申 Outperform</td><td>目标价维持 <b>$1,500</b>（Pajjuri：2027–2028 供给比 2026 更紧）</td><td><span class="tag c">偏多</span></td></tr>
+      <tr><td>11/20</td><td>新加坡 HBM 先进封装厂首台设备进厂</td><td>$70 亿投资，首批产出目标 <b>2027 年初</b>，约 1,400 个岗位；新加坡晶圆厂 2028 下半年投产</td><td><span class="tag c">中性偏多</span> 2027 HBM 产能落地，但也意味着 CapEx 前置</td></tr>
+      <tr><td>11/20</td><td>桃园厂劳资争议</td><td>细节未披露，被列为扩产计划风险项</td><td><span class="tag w">小负面</span> 影响有限但需跟踪</td></tr>
+      <tr><td>11/14</td><td>DRAM 反垄断集体诉讼获准继续</td><td>法官裁定针对美光、三星、SK 海力士"减产抬价"的集体诉讼可进入实体审理</td><td><span class="tag w">尾部风险</span> 与"供给紧张"叙事正相关，长期法律成本</td></tr>
+      <tr><td>12/17</td><td>FQ1 FY27 财报（盘后）</td><td>共识营收 <b>$619 亿</b>；关键看 <b>毛利率能否守住 86%</b> 与 2027 长约价格条款</td><td><span class="tag w">决定性事件</span> 在 12/18 到期内</td></tr>
+    </tbody>
   </table></div>
-  <p style="color:#86868b;font-size:13px"><b>口径说明</b>：上表 DDR5 / DDR4 取 TrendForce 11/17 报价（对比 11/03）；MemoryIndex 11/20 口径为 DDR5 16Gb $61.26（30 日 +4.66%）、DDR4 8Gb $47.45，与 TrendForce 属不同采集源，绝对水平差约 $1，<b>方向一致（自 11 月初高点回落），报告中两处数字并存时不矛盾，请以趋势读而非点位读</b>。</p>
-  <p><b>关键分化：涨价周期结束 ≠ 价格下跌。</b>DDR5 现货只跌 1.90%、合约价 Q4 仍 +10–15%，但 NAND 现货已经 −15% 到 −20%——美光营收里 DRAM 占 74%（HBM4 + 服务器 DDR5 是护城河）、NAND 占 26%（正在变成拖累）。<b>市场用「NAND 的斜率」给「整家公司」定价，这是本轮杀估值的核心错配，也是 12/16 财报 NAND 分部毛利率会成为单一最大变量的原因。</b></p>
 
-  <h3>TrendForce 11/18 韩国路演：HBM4 涨一倍，NAND 从 Q2 转跌</h3>
-  <div class="tw"><table>
-    <tr><th>口径</th><th>2026 Q4</th><th>2027 Q1</th><th>Q2</th><th>Q3 / Q4</th></tr>
-    <tr><td>通用 DRAM 合约价（QoQ）</td><td class="up mono">+10–15%</td><td class="up mono">+5–10%</td><td class="up mono">+3–8%</td><td class="mono">0–5% / 0–5%</td></tr>
-    <tr><td>NAND 合约价（QoQ）</td><td class="up mono">+15–20%</td><td class="mono">≈0%（涨幅归零）</td><td class="down mono">转跌</td><td class="down mono">逐季下探</td></tr>
-    <tr><td>HBM4 单价（$/Gb）</td><td colspan="4" class="mono">2026 年 &gt;$2.05 → 2027 年 <b class="up">$3.00–5.50（+100% 以上）</b>；HBM4E 已 &gt;$5.00，2027 上半年定价落地</td></tr>
-    <tr><td>HBM 占 DRAM 晶圆投入</td><td colspan="4" class="mono">2026 约 23% → 2027 约 30%（同容量 HBM 耗晶圆是通用 DRAM 的 3–4 倍）</td></tr>
-    <tr><td>2028 供给潮</td><td colspan="4" class="down mono">三星平泽 P5 两期各 20 万片/月 · SK 海力士龙仁 30 万片/月 · 长鑫 10–20 万片/月 —— <b>2028 才是真正的供需转折点</b></td></tr>
-  </table></div>
-  <p><b>这张表同时给了多头和空头弹药：</b>HBM4 单价翻倍、DRAM 全年不转跌是美光 2027 利润的底；NAND Q2 转跌 + 2028 供给潮是市场不愿意给 2027 EPS 高倍数的理由。<b>两件事同时成立，这就是「3.9× 前瞻 PE 还能再跌」的机制——不是估值错，是市场在给 2028 的顶部定价。</b></p>
-
-  <h3>为什么这份报告的杀伤力比上周的美银报告更大</h3>
-  <p>美银 11/18 的口径还是「现货先跌、合约后跌」——把下跌限制在现货端。TrendForce 11/20 直接说<b>合约价要转跌</b>：这意味着 12/16 美光财报里的 NAND 分部将面对「量增价跌」的组合，而市场对这种组合的容忍度，10/30 闪迪财报已经演示过一遍（营收 +378%、毛利率 85.1%、指引超预期，盘后照样跌）。</p>
-  <p>同时要注意<b>DRAM 一侧并没有变坏</b>：现货价还在涨（DDR5 30 日 +4.66%）、SK 海力士与三星的 2027 产能售罄状态未变、移动 DRAM 谈判停滞（11/18 报告）只是品牌方在等价格回落——供给侧的故事没有破产，破产的是「涨价斜率永远不减」的预期。<b>美光的正确读法：HBM4/HBM4E + 服务器 DRAM 是护城河（收入占比 74%），NAND 是拖累（26%）——估值杀杀的是后者和前者的「斜率」，不是前者的「存量」。</b></p>
-  <div class="note">
-    <div class="nt">一个必须写清楚的估值陷阱</div>
-    <p>594.51 对应 FY27 EPS 一致预期 $176.50 只有 <b>3.4× 前瞻 PE</b>（盘后 610.60 对应 3.46×）、PB 已跌回周期股低位区；横向对比 <b>SK 海力士 ADR 3.1×、三星电子 2.5×</b>——三大存储厂全部跌到自身历史最低估值带，而标普 500 成分股普遍在 15–20×。<b>卖方共识目标价隐含约 +150% 空间（49–57 家覆盖、压倒性买入）</b>，但这恰恰是危险信号：目标价是「按 2027 EPS × 合理倍数」算出来的，而市场现在怀疑的正是那个 EPS。但存储行业的历史规律没变：<b>峰值毛利率不可持续，市场对峰值利润给低倍数是正确的</b>。这个 EPS 建立在 86–87% 的毛利率上，而 FY28 EPS 预期区间跨度仍有 2 倍以上——<b>买美光的人买的不是 3.4× PE，而是「2028 年不会崩」这个假设。TrendForce 今天动摇的正是这个假设的 NAND 部分。</b></p>
+  <div class="grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px">
+    <div class="card" style="background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:22px">
+      <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:12px">卖方共识（11/20 口径）</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div><div style="font-size:28px;font-weight:600;letter-spacing:-.03em">$1,561.91</div><div style="font-size:11.5px;color:var(--dim)">共识目标价 · 较收盘 <span class="up">+162.7%</span></div></div>
+        <div><div style="font-size:28px;font-weight:600;letter-spacing:-.03em">50 家</div><div style="font-size:11.5px;color:var(--dim)">36 买入 / 9 增持 / 4 持有 / 1 无意见</div></div>
+      </div>
+      <p style="font-size:12.8px;color:#b0b0b6;margin-top:14px;line-height:1.6">目标价区间 <b>$361–$3,000</b>——离散度 8.3 倍，是全标普最高的分歧之一。Zacks 11/16 将评级下调至 Hold、目标价 $755，是唯一明显低于共识的近期动作。<b>共识目标价的意义已经不大</b>：绝大多数是在 6 月高点附近给出的"旧地图"，真正的定价权在 12/17 的毛利率。</p>
+    </div>
+    <div class="card" style="background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:22px">
+      <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:12px">估值坐标（为什么"便宜"救不了股价）</div>
+      <div class="tw" style="margin:0"><table style="min-width:0">
+        <tbody>
+          <tr><td>市值</td><td>$6,726 亿</td></tr>
+          <tr><td>TTM 净利 / EPS</td><td>$849.7 亿 / $74.33</td></tr>
+          <tr><td>TTM P/E</td><td>8.0×</td></tr>
+          <tr><td>FY28 共识归一化 EPS</td><td>$207.76（3 个月上调 23%）</td></tr>
+          <tr><td>前瞻 P/E（FY28）</td><td><b>≈ 2.9×</b></td></tr>
+          <tr><td>12 年季度末最低前瞻 P/E</td><td>3.7×（2017–18 周期顶）</td></tr>
+          <tr><td>P/B (mrq)</td><td>≈ 4.8×</td></tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:12.8px;color:#b0b0b6;margin-top:10px;line-height:1.6">市场不是在否认 2.9× 这个数字，是在否认 <b>FY28 的 $207.76 能实现</b>。美光 GAAP 毛利率曾从 FY22 的 45.2% 掉到一年后的 <b>2.7%</b>——这个记忆比任何目标价都更有定价权。</p>
+    </div>
   </div>
 </section>
 
+<!-- S3 行业 -->
 <section id="s3">
-  <div class="sec-h"><div class="sec-n">03</div><h2>美光自身：−13.89%，RSI6 归零的极端超卖</h2></div>
-  <p class="sec-sub">11/20 的 K 线是本轮下跌以来最大的一根实体：跳空低开 −3.5%、盘中最低 585.25、收在区间最底部附近。<b>这是恐慌放量日，不是消化日。</b></p>
+  <div class="sec-h"><span class="sec-n">03</span><h2>半导体行业最新资讯</h2></div>
+  <p class="sec-sub">行业正在分裂成两条线：<b>合约价还在涨，现货价已经开始跌</b>。KB 证券 11/20 给出的现货—合约价差已扩大到 20% 以上，这是本轮周期第一个真正意义上的转向信号。</p>
 
-  <div class="chartbox">
-    <div class="ct"><b>MU 近 60 个交易日</b> · 收盘价（左轴，美元）与成交量（右轴，百万股）· 截至 11/20 收盘</div>
-    <div class="cw"><canvas id="c1"></canvas></div>
-    <div class="legend"><span><i style="background:#0a84ff"></i>收盘价</span><span><i style="background:rgba(255,159,10,.6)"></i>成交量</span></div>
+  <div class="tw"><table>
+    <thead><tr><th>颗粒 / 品类</th><th>11/21 现货价</th><th>30 日</th><th>同比</th><th>读数</th></tr></thead>
+    <tbody>
+      <tr><td>DDR5 16Gb (2G×8) 4800/5600</td><td>$60.96</td><td class="pos">+6.27%</td><td class="pos">+484%</td><td>仍在涨，是整条链唯一的强势品种</td></tr>
+      <tr><td>DDR4 8Gb 3200</td><td>$47.45</td><td class="pos">+1.35%</td><td class="pos">+856%</td><td>涨幅趋缓，退役节点供给永久收缩</td></tr>
+      <tr><td>DDR4 16Gb</td><td>$82.59</td><td class="neg">−1.57%</td><td class="pos">+686%</td><td><b>首次 30 日转负</b>，老节点先见顶</td></tr>
+      <tr><td>NAND TLC 512Gb</td><td>$16.29</td><td class="neg">−3.53%</td><td>—</td><td>TrendForce 下修的直接体现</td></tr>
+      <tr><td>NAND TLC 1Tb</td><td>$18.04</td><td class="pos">+1.83%</td><td>—</td><td>容量分层分化，大容量仍紧</td></tr>
+      <tr><td>DRAM 现货（KB 口径，月内）</td><td>—</td><td class="neg">−5%</td><td>—</td><td rowspan="2">现货—合约价差 <b>&gt;20%</b>，消费端已转向，大客户长单仍按旧价签</td></tr>
+      <tr><td>NAND 现货（KB 口径，月内）</td><td>—</td><td class="neg">−20%</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">双源口径：MemoryIndex（11/21 12:00Z，DDR5 $60.96）与 DRAMeXchange/TrendForce（11/21，DDR5 $61.16）。两源差 $0.20（0.3%），属正常报价区间差异；本报告统一采用 $60.96 并在图表外标注区间。</p>
+
+  <div class="grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
+    <div class="note">
+      <div class="nt">供给端：所有人都在说"售罄"</div>
+      <ul style="list-style:none">
+        <li>· <b>美光</b>：2027 产出 75% 已售，26 份协议、$320 亿预付与承诺，谈到 2028</li>
+        <li>· <b>三星</b>：明年（2027）供应已售罄</li>
+        <li>· <b>SK 海力士</b>：HBM4 明年出货量与价格已议定，14 家客户长约覆盖 2027–28 逾半产能</li>
+        <li>· <b>铠侠</b>：2026 年 NAND 产能全部售罄</li>
+        <li>· <b>希捷</b>：2026 售罄，已开始接 2027 上半年订单</li>
+        <li>· <b>HBM4 合约价</b>：$2.05/Gb → <b>$3.0–5.5</b>（TrendForce，+100% 量级）</li>
+      </ul>
+    </div>
+    <div class="note danger">
+      <div class="nt">需求端：三个数字开始变坏</div>
+      <ul style="list-style:none">
+        <li>· <b>韩国 10 月半导体出口</b>：金额同比 +264.3%、单价 +159.8%、<b>出货量环比 −12.2%</b>（本轮第一个负值）</li>
+        <li>· <b>Counterpoint</b>：2026 全球手机出货 <b>−14.3%</b>，2027 再 −1.4%，2028 才恢复；内存涨价逼得 2027 旗舰继续用 3nm</li>
+        <li>· <b>华强北</b>：16GB DDR5 内存条较高点回落近三成（同比仍贵 5–6 倍）</li>
+        <li>· <b>TrendForce 11/19</b>：2027Q1 NAND 合约价持平至 −5%</li>
+        <li>· <b>GF Securities</b>：警示 NAND 2027 供过于求</li>
+        <li>· <b>BofA</b>：NAND 现货自 10 月中下旬已 −20%</li>
+      </ul>
+    </div>
   </div>
 
-  <h3>① 价格结构：全部均线在上方，唯一支撑只剩布林下轨</h3>
-  <div class="tw"><table>
-    <tr><th>指标</th><th>数值</th><th>距现价</th><th>含义</th></tr>
-    <tr><td>收盘 / 11/20 区间</td><td class="mono">594.51 · 585.25–668.99</td><td>—</td><td>振幅 14.1%，开在 665.63 一路阴跌，收在区间 13% 分位</td></tr>
-    <tr><td>MA5 / MA10</td><td class="mono">684.33 / 726.80</td><td class="down">+15.1% / +22.2%</td><td>短线均线全部在上方成为压力</td></tr>
-    <tr><td>MA20 / <b>MA200</b></td><td class="mono">786.65 / 772.54</td><td class="down">+32.3% / +29.9%</td><td><b>MA200 已失守 23%，长期趋势彻底走坏</b></td></tr>
-    <tr><td>MA60 / MA120</td><td class="mono">922.50 / 941.78</td><td class="down">+55.1% / +58.4%</td><td>中期均线在 50% 以上，反弹空间巨大但路很长</td></tr>
-    <tr><td>BOLL(20,2)</td><td class="mono">582.90 / 786.65 / 990.40</td><td>距下轨 +2.0%</td><td><b>价格贴着下轨运行——582.9 是技术面最后一道防线</b></td></tr>
-    <tr><td>RSI6 / RSI14</td><td class="mono">0.0 / 30.3</td><td>—</td><td><b>RSI6 归零（连续 5 根阴线）＝短线极端超卖；RSI14 刚触超卖线</b></td></tr>
-    <tr><td>ATR14</td><td class="mono">68.34</td><td>11.49%</td><td>日均真实波幅 11.5%，价差必须按此定价</td></tr>
-    <tr><td>HV20 / HV30</td><td class="mono">111.3% / 96.2%</td><td>—</td><td>实现波动曲线倒挂（短期远高于长期）＝恐慌峰值特征</td></tr>
-    <tr><td>YTD / 本周 / 距 6/25 高点</td><td class="mono">+108.3% / −23.6% / −51.0%</td><td>—</td><td>年内仍翻倍，但腰斩回撤已发生；52 周低点 201.37</td></tr>
-  </table></div>
-
-  <h3>② 基本面底稿没有变，变的是「斜率预期」</h3>
-  <p>FQ4（9/30 结束）仍是周期史上最好的单季：<b>营收 $542.3 亿（+379.3%）、毛利率 86.8%、自由现金流充足、FQ1 FY27 指引营收 $615 亿 ±15 亿、毛利率 86% 左右</b>；2027 财年超过 75% 出货量已由 26 份战略客户协议（SCA，覆盖至 2030）锁定，HBM4 量产爬坡中、HBM4E 2027 年量产。这些没有变化。<b>但合约结构要看仔细：截至 9/3 锁定的约 $1,340 亿最低收入承诺里，只有约 1/4 在 12 个月内落地——合约锁的是「量」而不是「价」</b>（对比闪迪 10-Q：$889 亿合约收入中仅约 20% 在一年内到期，其 85.1% 的毛利率几乎全靠现货价）。<b>这就是为什么「订单能见度到 2030」与「股价按 2028 衰退定价」可以同时成立。</b></p>
-  <p>变化的是预期斜率：DRAM 涨幅逐季收窄（TrendForce）、NAND 合约价转跌、中国 CSP 缩量。<b>卖方目标价还没有成批下调</b>——共识仍停在 $1,561.91 一带（RBC 11/18 重申 $1,500），但按本轮周期「财报前 6–8 周下修目标价」的历史节奏，<b>未来两周大概率出现一波 1,200–1,400 区间的目标价下调，每一次下调都是一次结构性压力测试</b>。</p>
+  <div class="note" style="margin-top:18px">
+    <div class="nt">其余关键行业事件（11/17–11/21）</div>
+    <p><b>① 英伟达 FQ3（11/17）：</b>营收 $1,158.4 亿 +103.1%，FQ4 指引 $1,300 亿（高于共识），但毛利率指引 71–72% 下滑；<b>新增供应承诺 $1,110 亿，其中大部分是存储</b>——这是对美光最直接的利多，却没能撑住股价。SEC 正审查其潜在会计问题（Reuters，NVDA 未置评）。</p>
+    <p><b>② 费城半导体指数（SOX）：</b>11/20 单日 <b>−10.73%</b> 至 8,408.59，全周 <b>−17.13%</b>，为 <b>2001 年 9 月以来最差单周</b>；较 6/22 历史高点回撤 <b>42.54%</b>，成分股一周蒸发约 $2.3 万亿市值。前瞻 P/E 从 27.1× 压缩到 <b>13.4×</b>。</p>
+    <p><b>③ 晶圆代工涨价传导至封测：</b>Microchip CEO 明确主要代工与封测供应商将从 <b>2027 年 1 月</b>起新一轮涨价（其 65% 营收依赖外部代工）；英飞凌、恩智浦、意法半导体同步转嫁成本。8 英寸产能利用率 2026 年预计 88%，下半年升至 90%——历史阈值之上，报价节奏将从年度谈变季度谈。</p>
+    <p><b>④ Anthropic 上市（11/19）：</b>募资约 $904 亿，首日开盘 +34%、收盘 +17%，次日 <b>−8.50%</b>，较 $83 发行价仅高约 7%。这轮 IPO 从存量 AI 仓位里抽走了资金，是本周流动性收紧的隐形推手。</p>
+    <p><b>⑤ SK 海力士（SKHY）：</b>周内 −21%，创 52 周新低；其 ADR 相对首尔正股溢价从 7 月上市的 13% 扩大到 11/13 的约 <b>48%</b>，已有基金经理押注溢价收窄——这是"美股存储溢价"这一层额外的估值风险。</p>
+  </div>
 </section>
 
+<!-- S4 行情 -->
 <section id="s4">
-  <div class="sec-h"><div class="sec-n">04</div><h2>期权结构：恐慌打满，负 Gamma 仍未解除</h2></div>
-  <p class="sec-sub">11/20 EOD 全链 <b>4,097 个有效合约 / 19 个到期日</b>，IV、Gamma、GEX、Max Pain、风险中性概率全部自算（Black-Scholes，r = 4.0%）。这一期的核心变化：<b>卖方的波动率折价消失了，恐慌第一次被完整定价。</b></p>
+  <div class="sec-h"><span class="sec-n">04</span><h2>盘前 / 夜盘 / 盘后实时数据</h2></div>
+  <p class="sec-sub">周末休市。以下为 11/20 最后一个交易日完整轨迹，以及周线横向对比——用于判断周一开盘的"缺口基准"。</p>
 
-  <div class="grid4">
-    <div class="kpi"><div class="l">净 GEX（≤45DTE）</div><div class="n down">−$104.0M</div><div class="s">每 1% 变动 · 负 Gamma 区</div></div>
-    <div class="kpi"><div class="l">GEX Flip</div><div class="n">$700</div><div class="s">现价低 14.6%（盘后口径）· 上穿才转正</div></div>
-    <div class="kpi"><div class="l">30D OI（Call / Put）</div><div class="n">44.4万 / 43.6万</div><div class="s">P/C 0.983 · 近中性</div></div>
-    <div class="kpi"><div class="l">IV30 vs HV30</div><div class="n">95.8%</div><div class="s">vs HV30 96.2% · <b class="down">折价归零</b></div></div>
+  <div class="wk">
+    <div class="c"><div class="k">开盘（11/20 09:30 EST）</div><div class="v down">$665.46</div><div class="s">低开 −3.61%，直接破 11/19 低点 689.28</div></div>
+    <div class="c"><div class="k">日内高点（09:27 EST）</div><div class="v">$669.00</div><div class="s">开盘 3 分钟内完成，此后单边下行</div></div>
+    <div class="c"><div class="k">日内低点（15:56 EST）</div><div class="v down">$585.25</div><div class="s">尾盘 4 分钟创低，收盘前小幅回抽</div></div>
+    <div class="c"><div class="k">收盘（16:00 EST）</div><div class="v down">$594.51</div><div class="s">全天振幅 $83.75（14.1%），VWAP $615.95</div></div>
   </div>
 
-  <div class="chartbox">
-    <div class="ct"><b>Gamma 敞口分布（≤45DTE，按行权价）</b> · 单位：百万美元 / 标的每变动 1% · 红 = 正 Gamma（做市商托价），绿 = 负 Gamma（做市商助跌）</div>
-    <div class="cw tall"><canvas id="c2"></canvas></div>
-    <div class="legend"><span><i style="background:rgba(255,69,58,.85)"></i>正 Gamma（托价）</span><span><i style="background:rgba(48,209,88,.85)"></i>负 Gamma（助跌）</span></div>
+  <div class="tick">
+    <div class="t"><div class="h">16:00 EST 盘后首笔</div><div class="p">600.72</div></div>
+    <div class="t"><div class="h">18:15 EST 盘后低</div><div class="p down">590.13</div></div>
+    <div class="t"><div class="h">19:00 EST 盘后高</div><div class="p up">623.24</div></div>
+    <div class="t"><div class="h">19:59 EST 盘后终值</div><div class="p up">610.60</div></div>
+    <div class="t"><div class="h">盘后量</div><div class="p">190.3 万股</div></div>
+    <div class="t"><div class="h">占常规时段</div><div class="p">3.6%</div></div>
   </div>
 
-  <h3>① Gamma 剖面：600–650 是深渊，700 是闸门</h3>
-  <p>把全部 ≤45DTE 合约在 400–900 的现货网格上重新定价：<b>现价 594.51 处净值为 −$104.0M/1%，曲线一直到 $700 才穿越零轴（+1.0M），750 处 +$37.3M 为正区峰值，800 以上因库存性 Put/Call 结构再度转负</b>。负 Gamma 最重的单档是 <b>600（−13.1M）、650（−10.0M）、590（−7.3M）、550（−6.3M）、540（−5.1M）</b>；正 Gamma 最重的是 <b>900（+2.4M）、1000（+2.1M）、910（+1.3M）、720（+1.2M）、850（+1.1M）</b>。</p>
-  <p><b>700 之下，做市商是「跌了卖、涨了买」的顺势盘</b>——每一次反弹到 650 都会遇到被动卖压，每一次跌破 590 都会被对冲流放大。这与上周的结构相同，只是<b> Flip 从 755 下移到了 700</b>：做市商把对冲锚整个下移了一个台阶，等于承认新价格中枢。上行的第一块踏板因此变成 <b>700（Flip + Put OI 11,512 + 正 Gamma 起点）</b>，第二块是 720（正 Gamma +1.2M）。</p>
+  <div class="chartbox"><div class="ct">MU 近 90 个交易日收盘价与成交量</div><div class="cc"><canvas id="cPrice"></canvas></div>
+  <p class="src">数据：Yahoo Finance 日线（截至 11/20）。成交量单位：百万股。</p></div>
 
-  <h3>② 墙位：Call 墙全部是遗留库存，Put 墙贴身防守</h3>
-  <div class="tw"><table>
-    <tr><th>类型</th><th>第一墙</th><th>第二墙</th><th>第三墙</th><th>备注</th></tr>
-    <tr><td><b>30D Call 墙</b></td><td class="mono">1,000 · 19,532</td><td class="mono">900 · 16,462</td><td class="mono">800 · 14,698</td><td>1,200（10,407）/ 1,150 / 1,500 为 9–10 月遗留库存，<b>全部远在 +40% 以上，不构成现实阻力</b></td></tr>
-    <tr><td><b>30D Put 墙</b></td><td class="mono">600 · 13,471</td><td class="mono">800 · 13,027（价内防御）</td><td class="mono">700 · 11,512</td><td>400（15,000）/ 360（11,531）为遗留尾部，不作支撑；<b>650（10,666）/ 590（8,471）是新增贴身墙</b></td></tr>
-    <tr><td>3DTE Call（11/23）</td><td class="mono">700 · OI 556</td><td class="mono">650 · OI 51</td><td class="mono">—</td><td>近月 Call OI 几乎清空，纯流量市场</td></tr>
-    <tr><td>3DTE Put（11/23）</td><td class="mono">600 · 成交 8,151</td><td class="mono">580 · 成交 7,158</td><td class="mono">620 · 成交 4,137</td><td><b>周一到期的保护盘洪水：周五一天新开约 2.8 万张 Put</b></td></tr>
+  <div class="chartbox"><div class="ct">本周横向对比 · 半导体链与指数（11/13 → 11/20）</div><div class="cc"><canvas id="cPeers"></canvas></div>
+  <p class="src">MU −23.62% / SNDK −21.65% / NVDA −19.60% / SOX −17.13% / AMD −15.84% / SKHY −15.23% / TSM −14.66%。存储链跌幅≈指数 1.4 倍，是本轮 beta 最高的板块。</p></div>
+
+  <div class="tw"><table class="l5">
+    <thead><tr><th>标的</th><th>11/20 收盘</th><th>单日</th><th>本周</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td>MU 美光</td><td>594.51</td><td class="neg">−13.89%</td><td class="neg">−23.62%</td><td>五连阴，距 52 周高 −52.6%</td></tr>
+      <tr><td>SNDK 闪迪</td><td>79.24</td><td class="neg">−16.05%</td><td class="neg">−21.65%</td><td>纯 NAND，TrendForce 下修最大受害</td></tr>
+      <tr><td>SKHY 海力士 ADR</td><td>103.57</td><td class="neg">−13.11%</td><td class="neg">−15.23%</td><td>52 周新低，ADR 溢价 48%</td></tr>
+      <tr><td>NVDA 英伟达</td><td>125.53</td><td class="neg">−14.01%</td><td class="neg">−19.60%</td><td>SEC 会计审查传闻 + 毛利率下滑</td></tr>
+      <tr><td>AMD</td><td>424.39</td><td class="neg">−13.25%</td><td class="neg">−15.84%</td><td>—</td></tr>
+      <tr><td>AVGO 博通</td><td>304.41</td><td class="neg">−12.19%</td><td class="neg">−8.70%</td><td>谷歌削减 AI 芯片采购传闻</td></tr>
+      <tr><td>WDC / STX</td><td>261.11 / 457.01</td><td class="neg">−12.02% / −12.35%</td><td class="neg">−7.06% / −8.41%</td><td>HDD 侧跟随，跌幅小于 NAND</td></tr>
+      <tr><td>TSM / ASML</td><td>318.71 / 1,266.22</td><td class="neg">−9.48% / −6.63%</td><td class="neg">−14.66% / −9.99%</td><td>设备与代工相对抗跌</td></tr>
+      <tr><td>SOX 费半</td><td>8,408.59</td><td class="neg">−10.73%</td><td class="neg">−17.13%</td><td>2001/09 以来最差单周，距高点 −42.54%</td></tr>
+      <tr><td>NDX 纳指 100</td><td>25,028.98</td><td class="neg">−5.61%</td><td class="neg">−11.18%</td><td>纳指综合 22,617.73 −5.28%，年内涨幅归零</td></tr>
+      <tr><td>S&amp;P 500</td><td>6,910.39</td><td class="neg">−3.70%</td><td class="neg">−8.61%</td><td>七连跌，与道指同入技术性回调</td></tr>
+      <tr><td>VIX</td><td>35.89</td><td class="pos">+26.20%</td><td class="pos">+72.30%</td><td>日高 40.03，年内新高</td></tr>
+      <tr><td>NQ 期货（16:59 EST）</td><td>25,126.5</td><td class="neg">−5.54%</td><td>—</td><td>vs 周四结算 26,600.25</td></tr>
+      <tr><td>ES / YM 期货</td><td>6,935.0 / 48,216</td><td class="neg">−3.65% / −1.96%</td><td>—</td><td>CME 周日 18:00 EST 重开</td></tr>
+    </tbody>
   </table></div>
-  <p><b>读法只有一句话：结构性 Call 墙（900/1000）已经失去现实意义，所有真实的博弈压缩在 550–700 这 150 美元里。</b>600 一档 Call OI 1,265 + Put OI 13,471（净 −13.1M 最重负 Gamma），是「破位加速带」的起点；650 是 A1 价差的下沿与 C1 卖 Put 的上沿；700 是 Flip 与修复行情的分界线。</p>
-
-  <div class="chartbox">
-    <div class="ct"><b>30D 未平仓量分布（按行权价）</b> · 单位：千张 · 蓝 = Call OI，橙 = Put OI</div>
-    <div class="cw"><canvas id="c3"></canvas></div>
-    <div class="legend"><span><i style="background:#0a84ff"></i>Call OI</span><span><i style="background:#ff9f0a"></i>Put OI</span></div>
-  </div>
-
-  <h3>③ Max Pain：全部到期日挤在 725–750，比现价高 22–26%</h3>
-  <div class="tw"><table>
-    <tr><th>到期日</th><th>DTE</th><th>Max Pain</th><th>距收盘 594.51</th><th>可信度</th></tr>
-    <tr><td>11/23（周一）</td><td class="mono">3</td><td class="mono up">725</td><td class="up">+22.0%</td><td>低（近月 OI 清空，被遗留库存主导）</td></tr>
-    <tr><td>11/27（感恩节半日市）</td><td class="mono">7</td><td class="mono up">745</td><td class="up">+25.3%</td><td>低</td></tr>
-    <tr><td>11/30 / 12/02</td><td class="mono">10 / 12</td><td class="mono up">740</td><td class="up">+24.5%</td><td>低</td></tr>
-    <tr><td>12/04 / 12/11</td><td class="mono">14 / 21</td><td class="mono up">750</td><td class="up">+26.2%</td><td>低</td></tr>
-    <tr><td><b>12/18（月度到期，主战场）</b></td><td class="mono">28</td><td class="mono up">750</td><td class="up">+26.2%</td><td>中（28.3 万 Call / 27.4 万 Put，但仍被 800–1,200 遗留 Call 拉高）</td></tr>
-  </table></div>
-  <div class="note warn">
-    <div class="nt">Max Pain 高出现价 26%，这次怎么读？</div>
-    <p>过去两周的教训必须先摆出来：11/17 报告时 11/20 到期的 Max Pain 是 800、现价 719，三天后价格掉到 594——<b>引力不但没兑现，方向还反了</b>。Max Pain 的机制是「做市商赔付最少」的位置：本期所有到期日的 MP 都被 800–1,200 的遗留 Call OI 拉到 725–750，<b>它反映的是「存量库存希望价格回去」，而不是「价格会回去」</b>。正确的用法只有两个：给上行价差设上沿（C2 的 850 就是为此设计）、以及在反弹真正启动后把它当作「/story 第一目标位」的粗略参考。<b>它不构成任何做多理由。</b></p>
-  </div>
-
-  <h3>④ 波动率：backwardation 消失，恐慌被完整定价</h3>
-  <div class="chartbox">
-    <div class="ct"><b>ATM 隐含波动率期限结构</b> · 按到期日排列 · 橙虚线 = HV30（96.2%）</div>
-    <div class="cw"><canvas id="c4"></canvas></div>
-    <div class="legend"><span><i style="background:#0a84ff"></i>ATM IV</span><span><i style="background:rgba(255,159,10,.9)"></i>HV30</span></div>
-  </div>
-  <div class="tw"><table>
-    <tr><th>到期</th><th>DTE</th><th>ATM IV</th><th>25Δ Skew（Put−Call）</th><th>期望波动 ±</th><th>区间（1σ）</th></tr>
-    <tr><td>11/23（周一）</td><td class="mono">3</td><td class="mono down">107.4%</td><td class="mono">+25.9pp</td><td class="mono">±9.2%</td><td class="mono">540–650</td></tr>
-    <tr><td>11/25</td><td class="mono">5</td><td class="mono down">114.4%</td><td class="mono">+29.9pp</td><td class="mono">±13.3%</td><td class="mono">515–674</td></tr>
-    <tr><td>11/27</td><td class="mono">7</td><td class="mono down">105.3%</td><td class="mono">+25.7pp</td><td class="mono">±15.2%</td><td class="mono">504–685</td></tr>
-    <tr><td>11/30</td><td class="mono">10</td><td class="mono down">96.6%</td><td class="mono">+23.7pp</td><td class="mono">±17.2%</td><td class="mono">492–697</td></tr>
-    <tr><td><b>12/18</b></td><td class="mono">28</td><td class="mono">95.8%</td><td class="mono down">+21.1pp</td><td class="mono">±21.4%</td><td class="mono"><b>467–722</b></td></tr>
-    <tr><td>12/31</td><td class="mono">41</td><td class="mono">88.9%</td><td class="mono">+19.8pp</td><td class="mono">±26.3%</td><td class="mono">438–751</td></tr>
-    <tr><td>01/15/27</td><td class="mono">56</td><td class="mono">86.9%</td><td class="mono">+17.2pp</td><td class="mono">±31.1%</td><td class="mono">410–780</td></tr>
-    <tr><td>02/19/27</td><td class="mono">91</td><td class="mono">78.8%</td><td class="mono">+15.6pp</td><td class="mono">±39.6%</td><td class="mono">359–830</td></tr>
-    <tr><td>03/19/27</td><td class="mono">119</td><td class="mono">75.8%</td><td class="mono">+14.2pp</td><td class="mono">±44.9%</td><td class="mono">328–861</td></tr>
-  </table></div>
-  <p><b>三个可操作的读数：</b><br>
-  ① <b>IV30 95.8% ≈ HV30 96.2%，三周来的卖方折价正式归零。</b>过去三周「买期权比实现波动便宜 15pp」的顺风没有了——从今天起，买方与卖方都在为同样的恐慌付全价。<b>这直接压缩了收租类策略的边际优势，所有 C 组仓位必须降级到更严格的纪律。</b><br>
-  ② <b>25Δ Skew 12/18 +21.1pp 是全期限链最贵的一段</b>（12/18 510P 的 IV 107.7% vs 720C 的 86.6%）。卖 Put 价差（C1）卖的就是这段最贵的 skew——但代价是 BE 距离盘后价 610.60 有 19.6% 而已，安全垫远没有表面上 25% 的回报率那么厚。<br>
-  ③ <b>期望波动区间以 594.51 为基准；若以盘后 610.60 重算，12/18 的 1σ 区间为 480–741</b>（±21.4% 不变），策略卡的盈亏平衡请对照这个区间读。<br>
-  ④ <b>近月 IV 曲线异常：11/25（114.4%）比 11/23（107.4%）更贵</b>——市场在为「周一反弹之后周二周三的二次探底」定价。这与 0DTE 保护盘洪水（下一节）互相印证：<b>近月已变成纯事件保险市场，不做单腿。</b></p>
+  <p class="src">报价时点：现货为 11/20 16:00 EST 官方收盘；期货为 11/20 16:59 EST 定格（CME 17:00 EST 收盘）。所有数字对应 SGT 11/21 05:00–06:00，<b>不是实时报价</b>。</p>
 </section>
 
+<!-- S5 期权结构 -->
 <section id="s5">
-  <div class="sec-h"><div class="sec-n">05</div><h2>期权大单与资金流：保护洪水 + 抄底 Call 双向满仓</h2></div>
-  <p class="sec-sub">11/20 全链成交 <b>Call 430,896 张 / Put 372,462 张（P/C 0.864）</b>。暴跌日 Call 成交量反而更大——但拆开看，<b>Call 的钱在 600–700 的近月与 2027 年 2 月，Put 的钱在 500–600 的周一保险</b>，两拨人交易的不是同一个时间维度。</p>
+  <div class="sec-h"><span class="sec-n">05</span><h2>期权结构：负伽马、双墙与偏斜错位</h2></div>
+  <p class="sec-sub">全链 4,097 个合约、19 个到期，自算 BS 隐含波动率并重定价希腊值。结论：<b>净 GEX −$105.9M / 1%</b>，做市商在 590–650 区间是净空 gamma，任何突破都会被追涨杀跌放大。</p>
 
-  <h3>① 当日成交榜</h3>
-  <div class="tw"><table>
-    <tr><th>合约</th><th>成交量</th><th>原 OI</th><th>倍数</th><th>中价</th><th>IV</th><th>解读</th></tr>
-    <tr><td>12/18 <b>600P</b></td><td class="mono">8,314</td><td class="mono">8,556</td><td class="mono">1.0×</td><td class="mono">$66.65</td><td class="mono">97.7%</td><td>价内保护滚仓，$5,540 万权利金</td></tr>
-    <tr><td>11/23 <b>600P</b></td><td class="mono">8,151</td><td class="mono">317</td><td class="mono up">25.7×</td><td class="mono">$24.77</td><td class="mono">102.0%</td><td><b>周一到期保护洪水的主力：新开仓</b></td></tr>
-    <tr><td>2/19/27 <b>780C</b></td><td class="mono">9,228</td><td class="mono">471</td><td class="mono up">19.6×</td><td class="mono">$32.60</td><td class="mono">71.7%</td><td rowspan="2"><b>与 850C 等量成交 → 教科书级 780/850 Call 价差（2027/2），成本约 $12.10，机构「2027 恢复」头寸，当日最大单笔结构</b></td></tr>
-    <tr><td>2/19/27 <b>850C</b></td><td class="mono">9,105</td><td class="mono">9,724</td><td class="mono">0.9×</td><td class="mono">$20.50</td><td class="mono">69.9%</td></tr>
-    <tr><td>11/23 <b>580P</b></td><td class="mono">7,158</td><td class="mono">524</td><td class="mono up">13.7×</td><td class="mono">$17.54</td><td class="mono">110.8%</td><td>周一 580 以下保险，新开仓</td></tr>
-    <tr><td>12/18 <b>900C</b></td><td class="mono">8,438</td><td class="mono">8,169</td><td class="mono">1.0×</td><td class="mono">$3.10</td><td class="mono">88.1%</td><td>$2.6M 彩票 + 遗留库存换手，两可</td></tr>
-    <tr><td>12/18 <b>800C</b></td><td class="mono">7,038</td><td class="mono">6,605</td><td class="mono">1.1×</td><td class="mono">$7.95</td><td class="mono">85.7%</td><td>与 900C 构成 800/900 彩票价差带</td></tr>
-    <tr><td>11/27 <b>650C</b></td><td class="mono">6,048</td><td class="mono">203</td><td class="mono up">29.8×</td><td class="mono">$12.27</td><td class="mono">95.2%</td><td><b>opex 后首日反弹押注，29.8× 纯新开</b></td></tr>
-    <tr><td>12/18 <b>500P</b></td><td class="mono">5,427</td><td class="mono">5,741</td><td class="mono">0.9×</td><td class="mono">$28.75</td><td class="mono">108.0%</td><td>深价内保护（对应 C1 卖侧）</td></tr>
-    <tr><td>11/23 <b>620C</b> / <b>620P</b></td><td class="mono">5,202 / 4,137</td><td class="mono">0 / 125</td><td class="mono">—</td><td class="mono">$11.30 / $38.07</td><td class="mono">98.6% / 102.4%</td><td><b>周一 620 双向 pin 博弈：Call 买方与 Put 买方同一时刻开仓</b></td></tr>
-    <tr><td>12/18 <b>400P</b></td><td class="mono">4,075</td><td class="mono">7,801</td><td class="mono">0.5×</td><td class="mono">$10.20</td><td class="mono">125.6%</td><td>黑天鹅尾部，遗留为主</td></tr>
-  </table></div>
-  <p><b>这 11 行是一张完整的恐慌地图：</b>① 周一（11/23）到期的 Put 洪水（600P 25.7× / 580P 13.7× / 620P，合计约 2.8 万张新开保护）说明<b>机构不愿裸过周末，但也只愿意为 3 天付保险费</b>——这正是「恐慌但未绝望」的形态；② 2/19/27 的 780/850 Call 价差（约 $1,150 万权利金）是<b>全场唯一的机构级多头结构</b>，买的是「2027 年 2 月回到 850 并封顶」；③ 11/27 650C 的 29.8× 新开与 11/23 620 的双向 pin 说明<b>短线资金在赌 opex 后的技术性反抽，而不是趋势反转</b>。</p>
-
-  <h3>② 权利金结构：暴跌日反而是 Call 权利金占优</h3>
-  <div class="tw"><table>
-    <tr><th>口径</th><th>Call</th><th>Put</th><th>P/C</th><th>说明</th></tr>
-    <tr><td>成交量（张）</td><td class="mono">430,896</td><td class="mono">372,462</td><td class="mono">0.864</td><td>暴跌日 Call 成交量占优——反抽赌注 + 价差腿占量</td></tr>
-    <tr><td>全链权利金</td><td class="mono">$787.8M</td><td class="mono">$2,238.9M</td><td class="mono down">2.842</td><td><b>被 400P / 450P / 500P 等深度价内 Put 的陈旧报价值污染，不可用</b></td></tr>
-    <tr><td><b>仅 OTM 权利金</b></td><td class="mono">$583.4M</td><td class="mono">$425.7M</td><td class="mono up">0.730</td><td><b>正确口径：偏 Call。暴跌日 OTM Call 权利金反而多 37% —— 抄底盘在真金白银买反弹</b></td></tr>
-  </table></div>
-  <p>OTM 权利金 0.730 偏 Call 与上周的 0.704 同向且更极端：<b>方向性资金在跌势里持续加注反弹</b>。但要诚实地指出反面：这部分 Call 大多买在 600–700 的近月与 2027 年 2 月，<b>它们是「回归交易」而不是「趋势交易」</b>——只要价格停在 Flip 700 之下，这些仓位同样会被负 Gamma 的卖压磨掉。</p>
-</section>
-
-<section id="s6">
-  <div class="sec-h"><div class="sec-n">06</div><h2>墙位、支撑与阻力阶梯</h2></div>
-  <p class="sec-sub">以 <b>594.51 官方收盘</b>为百分比基准（白色两档分别是官方收盘 594.51 与盘后终值 610.60），把 30D 的 Gamma 峰、Call / Put 墙、均线、期望波动叠在一张阶梯上。红色 = 阻力，绿色 = 支撑，青色 = 结构关键位，白色 = 两个已发生的价格。</p>
-
-  <div class="ladder"><div class="rung"><div class="lv">$1,000</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:50.0%;background:linear-gradient(90deg,rgba(255,69,58,.85),rgba(255,69,58,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+68.2%</span>最大 Call 墙 19,532 张（9-10 月遗留库存，+40% 以上，非现实阻力）</div></div>
-<div class="rung"><div class="lv">$900</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:50.0%;background:linear-gradient(90deg,rgba(255,69,58,.85),rgba(255,69,58,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+51.4%</span>Call 墙 16,462 · 全链最强正伽马 +2.4M</div></div>
-<div class="rung"><div class="lv">$850</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:50.0%;background:linear-gradient(90deg,rgba(255,69,58,.85),rgba(255,69,58,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+43.0%</span>Call OI 9,029 · A2 上沿 · 2027/2 机构价差上沿</div></div>
-<div class="rung"><div class="lv">$800</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:50.0%;background:linear-gradient(90deg,rgba(255,159,10,.85),rgba(255,159,10,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+34.6%</span>Call 14,698 / Put 13,027 双墙（价内防御）</div></div>
-<div class="rung"><div class="lv">$786.65</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:50.0%;background:linear-gradient(90deg,rgba(255,159,10,.85),rgba(255,159,10,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+32.3%</span>MA20</div></div>
-<div class="rung"><div class="lv">$772.54</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:50.0%;background:linear-gradient(90deg,rgba(100,210,255,.85),rgba(100,210,255,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+29.9%</span>MA200 · 已失守 23.0%</div></div>
-<div class="rung"><div class="lv">$750</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:50.0%;background:linear-gradient(90deg,rgba(100,210,255,.85),rgba(100,210,255,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+26.2%</span>★ 12/18 Max Pain（被遗留 Call 拉高，仅参考）</div></div>
-<div class="rung"><div class="lv">$726.80</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:50.0%;background:linear-gradient(90deg,rgba(100,210,255,.85),rgba(100,210,255,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+22.3%</span>MA10</div></div>
-<div class="rung"><div class="lv">$720</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:50.0%;background:linear-gradient(90deg,rgba(100,210,255,.85),rgba(100,210,255,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+21.1%</span>正 Gamma +1.2M · 上行第二踏板</div></div>
-<div class="rung"><div class="lv">$700</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:49.3%;background:linear-gradient(90deg,rgba(100,210,255,.85),rgba(100,210,255,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+17.7%</span>★ GEX Flip · 上穿才进正 Gamma 区 · Put 11,512</div></div>
-<div class="rung"><div class="lv">$684.33</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:42.0%;background:linear-gradient(90deg,rgba(48,209,88,.85),rgba(48,209,88,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+15.1%</span>MA5</div></div>
-<div class="rung"><div class="lv">$665.63</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:33.2%;background:linear-gradient(90deg,rgba(245,245,247,.55),rgba(245,245,247,.14))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+12.0%</span>11/20 开盘价（跳空 −3.5% 起点）</div></div>
-<div class="rung"><div class="lv">$650</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:25.9%;background:linear-gradient(90deg,rgba(48,209,88,.85),rgba(48,209,88,.32))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+9.3%</span>★ 负伽马 −10.0M · Put 10,666 · A1 下沿 / 反弹减速带</div></div>
-<div class="rung spot"><div class="lv">$610.60</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:7.5%;background:linear-gradient(90deg,rgba(245,245,247,.85),rgba(245,245,247,.28))"></i></div><div class="lb"><span class="pct" style="color:#ff9d96">+2.7%</span>★ 11/20 盘后终值 19:59 EST（+2.71%）· 区间 599.82–612.10</div></div>
-<div class="rung"><div class="lv">$600</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:2.6%;background:linear-gradient(90deg,rgba(48,209,88,.85),rgba(48,209,88,.32))"></i></div><div class="lb"><span class="pct" style="color:#f5f5f7">+0.9%</span>★ 负伽马 −13.1M（最重单档）· Put 墙 13,471</div></div>
-<div class="rung spot"><div class="lv">$594.51</div><div class="bar"><i class="mid"></i><i style="left:50%%;width:0.0%;background:linear-gradient(90deg,rgba(245,245,247,.55),rgba(245,245,247,.14))"></i></div><div class="lb"><span class="pct" style="color:#f5f5f7">+0.0%</span>11/20 官方收盘（−13.89%）· 全日区间 585.25–668.99</div></div>
-<div class="rung"><div class="lv">$590</div><div class="bar"><i class="mid"></i><i style="right:50%%;width:2.1%;background:linear-gradient(90deg,.32),88,209,rgba(48,.85),88,209,rgba(48)"></i></div><div class="lb"><span class="pct" style="color:#f5f5f7">-0.8%</span>负伽马 −7.3M · Put 8,471 · 周一 0DTE pin 位</div></div>
-<div class="rung"><div class="lv">$585.25</div><div class="bar"><i class="mid"></i><i style="right:50%%;width:4.3%;background:linear-gradient(90deg,.32),88,209,rgba(48,.85),88,209,rgba(48)"></i></div><div class="lb"><span class="pct" style="color:#f5f5f7">-1.6%</span>11/20 日内低点 · B1 触发线</div></div>
-<div class="rung"><div class="lv">$582.90</div><div class="bar"><i class="mid"></i><i style="right:50%%;width:5.4%;background:linear-gradient(90deg,.2),139,134,rgba(134,.6),139,134,rgba(134)"></i></div><div class="lb"><span class="pct" style="color:#f5f5f7">-2.0%</span>BOLL 下轨 · 技术面最后一道防线</div></div>
-<div class="rung"><div class="lv">$550</div><div class="bar"><i class="mid"></i><i style="right:50%%;width:20.8%;background:linear-gradient(90deg,.32),88,209,rgba(48,.85),88,209,rgba(48)"></i></div><div class="lb"><span class="pct" style="color:#7ee2a4">-7.5%</span>负伽马 −6.3M · Put 8,265 · C1 卖 Put 位 / 全平线</div></div>
-<div class="rung"><div class="lv">$500</div><div class="bar"><i class="mid"></i><i style="right:50%%;width:44.2%;background:linear-gradient(90deg,.2),139,134,rgba(134,.6),139,134,rgba(134)"></i></div><div class="lb"><span class="pct" style="color:#7ee2a4">-15.9%</span>Put 8,284 · B2 下沿 · C1 BE 之下</div></div>
-<div class="rung"><div class="lv">$467</div><div class="bar"><i class="mid"></i><i style="right:50%%;width:50.0%;background:linear-gradient(90deg,.2),139,134,rgba(134,.6),139,134,rgba(134)"></i></div><div class="lb"><span class="pct" style="color:#7ee2a4">-21.4%</span>12/18 期望波动 −1σ（−21.4%）</div></div></div>
-
-  <div class="grid3">
-    <div class="kpi"><div class="l">最近阻力</div><div class="n">650 / 700</div><div class="s">A1 下沿 → GEX Flip</div></div>
-    <div class="kpi"><div class="l">结构分界</div><div class="n up">700 / 720</div><div class="s up">Flip + 正 Gamma 起点</div></div>
-    <div class="kpi"><div class="l">最近支撑</div><div class="n">590 / 585</div><div class="s">负 Gamma 簇 → 11/20 低点 → BOLL 下轨 582.9</div></div>
+  <div class="wk">
+    <div class="c"><div class="k">净 GEX（≤45DTE）</div><div class="v amber">−$105.9M</div><div class="s">每 1% 波动，做市商需反向对冲 1.06 亿美元</div></div>
+    <div class="c"><div class="k">GEX Flip</div><div class="v">$735</div><div class="s">现价低 19.1%，735–797 为反复穿越带</div></div>
+    <div class="c"><div class="k">负伽马最重</div><div class="v">600 / 650 / 590</div><div class="s">−13.1M / −10.0M / −7.3M（每 1%）</div></div>
+    <div class="c"><div class="k">正伽马最重</div><div class="v">900 / 1000</div><div class="s">+2.3M / +2.1M，极弱，不足以构成吸引力</div></div>
   </div>
-  <p><b>三条使用规则：</b><br>
-  ① <b>700 是「开关」不是「目标」</b>：日收盘站上 700 且次日不破，才允许 A 组按趋势仓处理；在 700 之下，A 组只能是「回归 650–700」的短线交易。<br>
-  ② <b>650 是「减速带」</b>：650 之上有正 Gamma 720/755 簇接应，之下是 −10.0M 的深渊。反弹第一次触及 650 大概率被卖回，第二次才是真突破的观察点。<br>
-  ③ <b>585–590 是「买入区的下沿」而不是「买入区」</b>：11/20 低点 585.25 + BOLL 下轨 582.90 + 负 Gamma −7.3M 三者重叠，跌破 585 会直接加速到 550（−6.3M）。所以 B 组要等「收破 585」再进，而不是在 590 抄底。</p>
+
+  <div class="chartbox"><div class="ct">按行权价分解的净 Gamma 敞口（≤45DTE，$M / 1% 波动）</div><div class="cc"><canvas id="cGex"></canvas></div>
+  <p class="src">红柱为负（做市商空 gamma → 追涨杀跌），绿柱为正（做多 gamma → 抑制波动）。虚线为现价 594.51。600 与 650 两个负峰正好夹住现价，构成"双悬崖"结构。</p></div>
+
+  <div class="grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px">
+    <div class="chartbox" style="margin:0"><div class="ct">ATM 隐含波动率期限结构（%）</div><div class="cc"><canvas id="cIv"></canvas></div>
+    <p class="src">11/25 的 117.4% 是全链最高点（PCE 前夜 + 感恩节前的短周期事件溢价），12/18 回落至 97.6%，1/15 87.0%，3/19 76.2%——深度 backwardation，说明市场把风险全部集中在一个月内。</p></div>
+    <div class="chartbox" style="margin:0"><div class="ct">30 日内到期的未平仓量分布（张）</div><div class="cc"><canvas id="cOi"></canvas></div>
+    <p class="src">Call 侧 1000（26,524 张，全链最高）、900、800 三层堆叠；Put 侧 600 是唯一密集的近价堆（26,194 张），400/360 为尾部彩票（合计 2.6 万张，忽略）。</p></div>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>到期</th><th>DTE</th><th>ATM IV</th><th>1σ 预期波动</th><th>1σ 区间</th><th>Max Pain</th><th>Max Pain 距收盘</th></tr></thead>
+    <tbody>
+      <tr><td>11/23（周一）</td><td>3</td><td>108.8%</td><td>±$58.6（9.9%）</td><td>535.9 – 653.1</td><td>$725.0</td><td class="pos">+21.9%</td></tr>
+      <tr><td>11/25（周三）</td><td>5</td><td><b>117.4%</b></td><td>±$81.7（13.7%）</td><td>512.8 – 676.2</td><td>$730.0</td><td class="pos">+22.8%</td></tr>
+      <tr><td>11/27（周五·半日）</td><td>7</td><td>108.0%</td><td>±$88.9（15.0%）</td><td>505.6 – 683.4</td><td>$775.0</td><td class="pos">+30.4%</td></tr>
+      <tr><td>12/04</td><td>14</td><td>102.7%</td><td>±$119.5（20.1%）</td><td>475.0 – 714.0</td><td>$790.0</td><td class="pos">+32.9%</td></tr>
+      <tr><td>12/11</td><td>21</td><td>99.2%</td><td>±$141.4（23.8%）</td><td>453.1 – 735.9</td><td>$800.0</td><td class="pos">+34.6%</td></tr>
+      <tr><td><b>12/18（含财报）</b></td><td>28</td><td><b>97.6%</b></td><td>±$160.7（27.0%）</td><td>433.8 – 755.2</td><td><b>$750.0</b></td><td class="pos">+26.2%</td></tr>
+      <tr><td>12/31</td><td>41</td><td>90.1%</td><td>±$179.5（30.2%）</td><td>415.0 – 774.0</td><td>$790.0</td><td class="pos">+32.9%</td></tr>
+      <tr><td>1/15/27</td><td>56</td><td>87.0%</td><td>±$202.6（34.1%）</td><td>391.9 – 797.1</td><td>—</td><td>—</td></tr>
+      <tr><td>3/19/27</td><td>119</td><td>76.2%</td><td>±$258.7（43.5%）</td><td>335.8 – 853.2</td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">Max Pain 全部高于现价 22%–35%，是<b>遗留 Call 库存 + 深度实值 Put 保险迁移</b>共同造成的系统性上偏，<b>不可作为反弹目标价</b>，只能作为"到期日磁吸方向"的弱参考。12/18 的 $750 对应 +26.2%，在不出现新的利空前提下具备一定牵引力。</p>
+
+  <div class="note warn">
+    <div class="nt">三个必须记住的定价事实</div>
+    <p><b>① IV = HV，卖方没有顺风。</b>IV30 96.9% vs HV30 97.9%，差 −1.0pp；IV Rank 83、百分位 85（过去 246 天里 85% 的日子 IV 更低）。这意味着"卖波动率"不再是免费午餐——过去两个月的收租逻辑已经失效。</p>
+    <p><b>② 偏斜极端到 21.1pp。</b>12/18 的 25Δ 510P 报 107.7%，25Δ 720C 报 86.6%。市场为下行付的钱是上行的 1.24 倍。<b>买 550P 单腿 = 用 107% 的波动率买已经跌了 52% 的股票</b>，这是本报告最明确的一条否决项。</p>
+    <p><b>③ 成交结构与大单结构相反。</b>全链 OTM 权利金 Call $583.8M vs Put $425.6M（0.729，偏 Call），但单笔 ≥$10k 的大额成交 P/C 达 <b>3.24</b>（put $57.9M vs call $17.9M）。翻译：<b>散户与量化在买便宜的 OTM call，机构在买贵的 put 做对冲</b>。两股力量方向相反，这正是偏斜被推到极端的微观原因。</p>
+  </div>
 </section>
 
-<section id="s7">
-  <div class="sec-h"><div class="sec-n">07</div><h2>30 日策略矩阵（12/18 为主战场）</h2></div>
-  <p class="sec-sub">全部为<b>触发式价差</b>：先看信号、再下单；禁裸卖、禁裸买深虚。每个策略给出「EOD 594 口径」与「IF611 口径」（保持各合约 11/20 IV 不变、标的代入盘后终值 <b>610.60</b> 的 BS 重估；标签中的 611 为 610.60 的取整写法），<b>两者都不是可成交价，周一开盘后必须用实时盘口复核</b>。</p>
+<!-- S6 支撑阻力 -->
+<section id="s6">
+  <div class="sec-h"><span class="sec-n">06</span><h2>看跌墙 / 看涨墙：支撑与阻力地图</h2></div>
+  <p class="sec-sub">把 OI 墙、Gamma 峰、技术位、Max Pain 四套坐标叠在一起，得到下周的价位地图。<b>红色在上为阻力，绿色在下为支撑</b>，条长表示距现价的百分比距离。</p>
 
-  <div class="stg"><div class="hd"><span class="id ">A1</span><span class="ti">12/18 650 / 800 Call Spread</span><span class="tag b">首选进攻</span></div><div class="mt"><div class="x"><div class="k">成本（EOD 594 / IF611）</div><div class="v ">$30.78 / $35.47</div></div><div class="x"><div class="k">最大收益</div><div class="v up">$119.22 / $114.53</div></div><div class="x"><div class="k">盈亏比</div><div class="v ">3.87 : 1 / 3.23 : 1</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">680.80 / 685.47</div></div><div class="x"><div class="k">风险占现价</div><div class="v ">5.18% / 5.81%</div></div></div><div class="ds"><b>买 650C（$39.20，IV 91.1%）、卖 800C（$8.43）。</b>下沿 650 是「负 Gamma 深渊（−10.0M）的顶沿」：价格只有真正站回 650 之上、进入 720/755 正 Gamma 簇的射程，做市商才会从顺势卖压转为托价。<b>盈亏平衡 680.8 恰好落在 Flip 700 之下 3% 的位置</b>——它要求的是「接近修复完成」而不是「V 型反转」，这正是负 Gamma 区里唯一诚实的多头结构。P(12/18 &gt; 681) ≈ 29.7%（按盘后 610.60），与 3.87 的赔率匹配。<b>触发条件：日收盘 &gt; 650 且次日回踩不破 620；同时期指周一重开后不再创新低。</b>仓位：A 组主体，不超过总风险预算的 40%。</div></div>
-  <div class="stg"><div class="hd"><span class="id d">A2</span><span class="ti">12/18 700 / 850 Call Spread</span><span class="tag c">高赔率卫星</span></div><div class="mt"><div class="x"><div class="k">成本（EOD 594 / IF611）</div><div class="v ">$18.82 / $22.39</div></div><div class="x"><div class="k">最大收益</div><div class="v up">$131.18 / $127.61</div></div><div class="x"><div class="k">盈亏比</div><div class="v ">6.97 : 1 / 5.70 : 1</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">718.80 / 722.39</div></div><div class="x"><div class="k">风险占现价</div><div class="v ">3.16% / 3.67%</div></div></div><div class="ds"><b>买 700C（$23.70，IV 87.5%）、卖 850C（$4.88）。</b>这是全场<b>数学最优</b>的一组：成本只有 A1 的 61%，最大收益却是 A1 的 1.10 倍——因为 700 恰好是 GEX Flip、Put OI 11,512 与正 Gamma 起点的三重叠合位，<b>它的 Delta 对「收复 Flip」这个单一事件最敏感</b>。<b>盈亏平衡 718.8 本身就是过滤器</b>：只有反弹真的越过闸门它才开始赚钱，天然排除了「贴着 650 的假反弹」。P(12/18 &gt; 719) ≈ 23.1%（按盘后 610.60）。仓位 ≤ A1 的 1/2；若 12 月上旬站上 720，先平 60%。</div></div>
-  <div class="stg"><div class="hd"><span class="id d">A3</span><span class="ti">11/27 650 / 750 Call Spread</span><span class="tag c">9 日动量</span></div><div class="mt"><div class="x"><div class="k">成本（EOD 594 / IF611）</div><div class="v ">$11.17 / $15.34</div></div><div class="x"><div class="k">最大收益</div><div class="v up">$88.83 / $84.66</div></div><div class="x"><div class="k">盈亏比</div><div class="v ">7.95 : 1 / 5.52 : 1</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">661.17 / 665.34</div></div><div class="x"><div class="k">风险占现价</div><div class="v ">1.88% / 2.51%</div></div></div><div class="ds"><b>买 650C（$12.27，IV 95.2%）、卖 750C（$1.10）。</b>11/27 的 650C 周五成交 6,048 张（OI 只有 203，<b>29.8× 纯新开</b>）——这是 opex 后首日反弹押注的聚集地，与 D1 的逻辑同源但更贴身。注意两个陷阱：<b>① 11/27 是感恩节半日市，13:00 EST 就收盘结算，流动性极差；② 7DTE 的 IV 105.3%、25Δ Skew +25.7pp，买方的单位成本比 12/18 贵 10%。</b>把它当彩票：仓位 ≤ 1%，错了不补。</div></div>
-  <div class="stg"><div class="hd"><span class="id p">B1</span><span class="ti">12/18 550 / 450 Put Spread</span><span class="tag p">破位主力</span></div><div class="mt"><div class="x"><div class="k">成本（EOD 594 / IF611）</div><div class="v ">$26.48 / $23.65</div></div><div class="x"><div class="k">最大收益</div><div class="v up">$73.53 / $76.35</div></div><div class="x"><div class="k">盈亏比</div><div class="v ">2.78 : 1 / 3.23 : 1</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">523.52 / 526.35</div></div><div class="x"><div class="k">风险占现价</div><div class="v ">4.45% / 3.87%</div></div></div><div class="ds"><b>买 550P（$44.25，IV 102.9%）、卖 450P（$17.77）。</b>550 是「负 Gamma 深渊的底沿」：550 之下是 −6.3M → −5.1M 的连续负 Gamma 带 + BOLL 下轨失守后的真空区，<b>一旦 585（触发线）和 550（本价差下沿）相继破位，跌速会显著快于本周</b>。与上周不同，这组是<b>「越跌越该买」结构的买方版本</b>——标的跌到 560 时它反而更便宜、Delta 更高。<b>触发条件：日收盘 &lt; 585.25（11/20 低点）。</b>P(12/18 &lt; 523.5) ≈ 32.3%（按盘后 610.60），赔率 2.78 合理。注意：550P 略价内、买卖价差宽，<b>IF611 口径反而更便宜（$23.65），周一反弹时它是更好的买点</b>——「越涨越买保护」在这里同样成立。</div></div>
-  <div class="stg"><div class="hd"><span class="id ">B2</span><span class="ti">12/18 500 / 400 Put Spread</span><span class="tag p">尾部凸性</span></div><div class="mt"><div class="x"><div class="k">成本（EOD 594 / IF611）</div><div class="v ">$17.32 / $15.24</div></div><div class="x"><div class="k">最大收益</div><div class="v up">$82.67 / $84.76</div></div><div class="x"><div class="k">盈亏比</div><div class="v ">4.77 : 1 / 5.56 : 1</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">482.68 / 484.76</div></div><div class="x"><div class="k">风险占现价</div><div class="v ">2.91% / 2.50%</div></div></div><div class="ds"><b>买 500P（$27.77，IV 108.0%）、卖 400P（$10.45）。</b>这是「目标价下修潮 + 12 月加息落地 + NAND 合约价确认转跌」三重尾部同时落地的对冲。<b>482 的盈亏平衡对应自高点 −60%，历史上只有 2008 / 2000 级别的存储熊市才到过这里</b>——它不是方向预测，是凸性保险：价格只有 B1 的 65%，赔率却是 4.78。即使 MU 什么都不发生，最大损失 2.9% 现价也可接受。</div></div>
-  <div class="stg"><div class="hd"><span class="id w">C1</span><span class="ti">12/18 500 / 450 Put Credit Spread</span><span class="tag w">收租首选</span></div><div class="mt"><div class="x"><div class="k">权利金（EOD 594 / IF611）</div><div class="v up">$10.00 / $8.80</div></div><div class="x"><div class="k">最大损失</div><div class="v ">$40.00 / $41.20</div></div><div class="x"><div class="k">回报 / 风险</div><div class="v ">25.0% / 21.4%</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">490.00 / 491.20</div></div><div class="x"><div class="k">30 日年化（简）</div><div class="v up">326% / 279%</div></div></div><div class="ds"><b>卖 500P（IV 108.0%）、买 450P（IV 117.3%）。</b>卖的是全周期最贵的一段 skew——但必须诚实：25Δ Skew +21pp 说明<b>卖方收取的溢价与承担的尾部风险已经重新平衡</b>，上周那种「白捡」的折价没有了。500 距盘后价 610.60 为 18.1%，等于 12/18 期望波动（±21.4%）的 85%。<b>但必须接受三个事实：① P(12/18 &lt; 490) ≈ 23.9%（按盘后 610.60），约四次一次会亏；② 净 GEX 为负，500 一旦破位亏损是线性的；③ 本周刚发生 −13.89%，接飞刀的赔率结构不支持重仓。</b>纪律：仓位 ≤ 收租预算 1/3；<b>12/11 之前必须了结（财报在 12/16）</b>；标的日内跌破 520 即平；周一开盘若跳空低开直接放弃。</div></div>
-  <div class="stg"><div class="hd"><span class="id w">C2</span><span class="ti">12/18 700 / 850 Call Credit Spread</span><span class="tag w">反弹上限</span></div><div class="mt"><div class="x"><div class="k">权利金（EOD 594 / IF611）</div><div class="v up">$18.82 / $22.39</div></div><div class="x"><div class="k">最大损失</div><div class="v ">$131.18 / $127.61</div></div><div class="x"><div class="k">回报 / 风险</div><div class="v ">14.4% / 17.5%</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">718.80 / 722.39</div></div><div class="x"><div class="k">30 日年化（简）</div><div class="v up">188% / 229%</div></div></div><div class="ds"><b>卖 700C、买 850C。</b>给持有正股（或持 A2 对冲）的人用的：<b>12/18 收盘价超过 718.8 的风险中性概率只有 21.0%</b>，而 700 上方是 Flip + 正 Gamma 簇，850 上方是 2027/2 机构价差的封顶位。<b>用 850 当上限，等于用最小成本封住「超卖修复走成 V 型」的极端情形。</b>不建议单独做空——<b>单卖 700C 在负 Gamma 区等于给做空加杠杆</b>，必须配 850C。若情景 ① 兑现（价格真冲到 700–720），这一组与 A2 是对冲关系，组合的最大损失已被 A2 的收益覆盖。</div></div>
-  <div class="stg"><div class="hd"><span class="id w">C3</span><span class="ti">12/18 Iron Condor 500/450 + 700/850</span><span class="tag w">全中性</span></div><div class="mt"><div class="x"><div class="k">权利金（EOD 594 / IF611）</div><div class="v up">$28.82 / $31.19</div></div><div class="x"><div class="k">最大损失</div><div class="v ">$121.18 / $118.81</div></div><div class="x"><div class="k">回报 / 风险</div><div class="v ">23.8% / 26.3%</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">471.18 – 728.82 / 468.81 – 731.19</div></div><div class="x"><div class="k">30 日年化（简）</div><div class="v up">311% / 342%</div></div></div><div class="ds"><b>C1 + C2 的组合。</b>区间宽度 471–729，相当于 ±21.6% 的容忍度，正好覆盖 12/18 期望波动 ±21.4% 的整个 1σ 区间。<b>这是对「情景 ② 震荡筑底（45%）」最直接的表达。</b>但铁鹰在负 Gamma 区的最大问题是<b>两端同时被测试时保证金占用大（每张 $12,118 风险）且调整困难</b>。建议：<b>11/23 开盘确认方向后再建仓（不在周末赌方向）</b>、<b>12/11 前平仓</b>（避开财报）、仓位 ≤ 收租预算 1/3。</div></div>
-  <div class="stg"><div class="hd"><span class="id d">D1</span><span class="ti">11/23 620 / 700 Call Spread</span><span class="tag c">3 日周一</span></div><div class="mt"><div class="x"><div class="k">成本（EOD 594 / IF611）</div><div class="v ">$10.75 / $16.40</div></div><div class="x"><div class="k">最大收益</div><div class="v up">$69.25 / $63.60</div></div><div class="x"><div class="k">盈亏比</div><div class="v ">6.44 : 1 / 3.88 : 1</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">630.75 / 636.40</div></div><div class="x"><div class="k">风险占现价</div><div class="v ">1.81% / 2.69%</div></div></div><div class="ds"><b>买 620C（$11.30，IV 98.6%）、卖 700C（$0.55）。</b>周一（11/23）的 620 双向 pin 是周五盘面最清晰的结构：620C 成交 5,202 张、620P 成交 4,137 张、<b>两者 OI 都接近零（纯新开）</b>——短线资金在赌「周一围绕 620 定价」。<b>620 距现价 +4.3%，正好是 3DTE 期望波动（±9.2%）的一半</b>，低吸盘若延续（盘后已 +2.3%），这个价差是成本最低的跟随方式。注意：<b>3DTE 的 IV 107.4% 且 25Δ Skew +25.9pp，不要买太多</b>；仓位 ≤ 1%，把它当彩票。</div></div>
-  <div class="stg"><div class="hd"><span class="id p">D2</span><span class="ti">11/27 550 / 500 Put Spread</span><span class="tag p">7 日回撤</span></div><div class="mt"><div class="x"><div class="k">成本（EOD 594 / IF611）</div><div class="v ">$10.90 / $8.72</div></div><div class="x"><div class="k">最大收益</div><div class="v up">$39.10 / $41.28</div></div><div class="x"><div class="k">盈亏比</div><div class="v ">3.59 : 1 / 4.74 : 1</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">539.10 / 541.28</div></div><div class="x"><div class="k">风险占现价</div><div class="v ">1.83% / 1.43%</div></div></div><div class="ds"><b>买 550P（$18.95，IV 117.8%）、卖 500P（$8.05）。</b>如果周末出现新利空、或周一保护洪水到期结算引发二次抛售，D2 是成本最低的应对。<b>同样地：标的越高，这个价差越便宜（$10.90 → $8.72），赔率从 3.59 升到 4.74。</b><b>D1 与 D2 是对冲关系，可同时持有</b>（合计成本约 $21.65，相当于 3.6% 现价），构成一个「11/23–27 双向 straddle 替代品」——比直接买 11/23 620 的 straddle（约 $50）便宜 57%，且两端都有明确的最大损失。</div></div>
-  <div class="stg"><div class="hd"><span class="id d">E1</span><span class="ti">01/15/27 650 / 850 Call Spread</span><span class="tag b">跨财报核心</span></div><div class="mt"><div class="x"><div class="k">成本（EOD 594 / IF611）</div><div class="v ">$45.02 / $50.23</div></div><div class="x"><div class="k">最大收益</div><div class="v up">$154.97 / $149.77</div></div><div class="x"><div class="k">盈亏比</div><div class="v ">3.44 : 1 / 2.98 : 1</div></div><div class="x"><div class="k">盈亏平衡</div><div class="v ">695.02 / 700.23</div></div><div class="x"><div class="k">风险占现价</div><div class="v ">7.57% / 8.23%</div></div></div><div class="ds"><b>买 650C（$56.30，IV 82.3%）、卖 850C（$11.28，IV 74.2%），2027/1/15 到期（56 天）。</b>这是本报告<b>唯一建议「不设触发、直接分批」</b>的仓位——因为它同时跨越 <b>12/9–10 FOMC、12/16 美光财报、12/09 回购解禁、以及目标价下修潮的出清</b>，而 56 天的 IV（86.9%）反而低于 12/18（95.8%）与 11/25（114.4%）。<b>买更长期限，是用更低的单位波动率买更高的确定性。</b>上沿 850 对应 1/15 的约 +0.9σ，同时是 2027/2 机构价差（780/850）的封顶区，说明「聪明钱认为 850 是 2027 年上半年的合理上限」。<b>分三批：周一开盘建 1/3、财报前一周建 1/3、财报后确认方向建 1/3。</b></div></div>
+  <div class="tw"><table class="l4">
+    <thead><tr><th>类型</th><th>价位</th><th>距现价</th><th>依据</th><th>强度</th></tr></thead>
+    <tbody>
+      <tr><td>看涨墙 #1</td><td>1000</td><td class="pos">+68.2%</td><td>Call OI 26,524 张（全链最高）</td><td><span class="tag">库存性 · 无效</span></td></tr>
+      <tr><td>看涨墙 #2</td><td>900</td><td class="pos">+51.4%</td><td>Call OI 15,571 张 + 正 Gamma +2.3M</td><td><span class="tag">库存性 · 弱</span></td></tr>
+      <tr><td>看涨墙 #3</td><td>800</td><td class="pos">+34.6%</td><td>Call OI 14,354 张；12/18 单期 6,605 张</td><td><span class="tag c">有效阻力</span></td></tr>
+      <tr><td>MA200</td><td>772.54</td><td class="pos">+30.0%</td><td>年线，11/20 收盘失守 23.1%</td><td><span class="tag w">中期分界</span></td></tr>
+      <tr><td>Max Pain（12/18）</td><td>750</td><td class="pos">+26.2%</td><td>到期磁吸点</td><td><span class="tag w">弱牵引</span></td></tr>
+      <tr><td><b>GEX Flip</b></td><td><b>735</b></td><td class="pos">+23.6%</td><td>净 Gamma 由负转正的首个穿越点（735–797 反复带）</td><td><span class="tag c">结构分界</span></td></tr>
+      <tr><td>前低 / 整数</td><td>700</td><td class="pos">+17.7%</td><td>Call OI 8,046 张 / Put OI 11,224 张（双向最密）</td><td><span class="tag c">强阻力</span></td></tr>
+      <tr><td>MA5</td><td>684.33</td><td class="pos">+15.1%</td><td>五日均线，五连阴后首次反压</td><td><span class="tag w">短线阻力</span></td></tr>
+      <tr><td>11/20 日内高</td><td>669.00</td><td class="pos">+12.5%</td><td>周五开盘 3 分钟内高点</td><td><span class="tag w">缺口上沿</span></td></tr>
+      <tr><td>Gamma 负峰 #2</td><td>650</td><td class="pos">+9.3%</td><td>−10.0M/1%，Put OI 10,222 张</td><td><span class="tag c">强阻力</span></td></tr>
+      <tr><td>盘后高</td><td>623.24</td><td class="pos">+4.8%</td><td>11/20 19:00 EST 盘后高点</td><td><span class="tag w">短线阻力</span></td></tr>
+      <tr><td>盘后终值</td><td>610.60</td><td class="pos">+2.7%</td><td>11/20 19:59 EST 最后一笔</td><td><span class="tag">开盘基准</span></td></tr>
+      <tr><td><b>周五收盘（基准价）</b></td><td><b>594.51</b></td><td>0.0%</td><td>期权链、Greeks、GEX 的定价基准</td><td><span class="tag b">现价</span></td></tr>
+      <tr><td>日内低</td><td>585.25</td><td class="neg">−1.6%</td><td>11/20 15:56 EST，尾盘创低</td><td><span class="tag c">第一支撑</span></td></tr>
+      <tr><td>布林下轨</td><td>582.90</td><td class="neg">−2.0%</td><td>20 日 −2σ（MA20 786.65，σ 101.88）</td><td><span class="tag c">统计支撑</span></td></tr>
+      <tr><td>Gamma 负峰 #3</td><td>590</td><td class="neg">−0.8%</td><td>−7.3M/1%，Put OI 8,399 张</td><td><span class="tag c">即时支撑</span></td></tr>
+      <tr><td>Put 墙 #1（近价）</td><td>600</td><td class="pos">+0.9%</td><td>Put OI 26,194 张，负 Gamma 最重 −13.1M</td><td><span class="tag c">双刃 · 钉住/崩塌</span></td></tr>
+      <tr><td>Put 墙 #2</td><td>550</td><td class="neg">−7.5%</td><td>Put OI 8,067 张 + A1 盈亏平衡 523.5 上方</td><td><span class="tag c">关键支撑</span></td></tr>
+      <tr><td>Put 墙 #3</td><td>500</td><td class="neg">−15.9%</td><td>Put OI 7,976 张；12/18 单期 5,427 张</td><td><span class="tag w">心理关口</span></td></tr>
+      <tr><td>深虚尾部</td><td>450 / 400</td><td class="neg">−24.3% / −32.7%</td><td>Put OI 3,427 / 7,801 张（12/18 结构）</td><td><span class="tag">尾部</span></td></tr>
+    </tbody>
+  </table></div>
 
-  <div class="chartbox">
-    <div class="ct"><b>到期损益曲线（12/18）</b> · 蓝 = A1 650/800 Call Spread（成本 $30.78），绿 = B1 550/450 Put Spread（成本 $26.48）</div>
-    <div class="cw"><canvas id="c5"></canvas></div>
-    <div class="legend"><span><i style="background:#0a84ff"></i>A1 看涨价差</span><span><i style="background:#30d158"></i>B1 看跌价差</span></div>
+  <div class="ladder">
+    <div class="rung"><div class="lv">900</div><div class="bar"><i style="left:50%;width:44.2%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+51.4%</span>看涨墙 #2 · Call OI 15,571</div></div>
+    <div class="rung"><div class="lv">850</div><div class="bar"><i style="left:50%;width:37.0%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+43.0%</span>Call 翼 OI 8,635</div></div>
+    <div class="rung"><div class="lv">800</div><div class="bar"><i style="left:50%;width:29.7%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+34.6%</span>看涨墙 #3 · Call OI 14,354</div></div>
+    <div class="rung"><div class="lv">772.54</div><div class="bar"><i style="left:50%;width:25.8%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+29.9%</span>MA200 年线（失守 23.1%）</div></div>
+    <div class="rung"><div class="lv">750</div><div class="bar"><i style="left:50%;width:22.5%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+26.2%</span>Max Pain 12/18</div></div>
+    <div class="rung"><div class="lv">735</div><div class="bar"><i style="left:50%;width:20.3%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+23.6%</span>GEX Flip · 结构分界</div></div>
+    <div class="rung"><div class="lv">700</div><div class="bar"><i style="left:50%;width:15.3%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+17.7%</span>双向最密 · Call 8,046 / Put 11,224</div></div>
+    <div class="rung"><div class="lv">684.33</div><div class="bar"><i style="left:50%;width:13.0%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+15.1%</span>MA5 五日均线</div></div>
+    <div class="rung"><div class="lv">669</div><div class="bar"><i style="left:50%;width:10.8%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+12.5%</span>11/20 日内高</div></div>
+    <div class="rung"><div class="lv">650</div><div class="bar"><i style="left:50%;width:8.0%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+9.3%</span>负 Gamma −10.0M · Put OI 10,222</div></div>
+    <div class="rung"><div class="lv">623.24</div><div class="bar"><i style="left:50%;width:4.2%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+4.8%</span>11/20 盘后高</div></div>
+    <div class="rung"><div class="lv">610.6</div><div class="bar"><i style="left:50%;width:2.3%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+2.7%</span>盘后终值 +2.71%</div></div>
+    <div class="rung"><div class="lv">600</div><div class="bar"><i style="left:50%;width:0.8%;background:rgba(255,69,58,.55)"></i></div><div class="lb"><span class="pct up">+0.9%</span>Put 墙 #1 · 26,194 张 · 负 Gamma −13.1M</div></div>
+    <div class="rung spot"><div class="lv">594.51</div><div class="bar"><i style="left:0;right:0;width:100%%;background:rgba(100,210,255,.85)"></i></div><div class="lb"><span class="pct ">0.0%</span>现价（基准）</div></div>
+    <div class="rung"><div class="lv">590</div><div class="bar"><i style="right:50%;width:0.7%;background:rgba(48,209,88,.55)"></i></div><div class="lb"><span class="pct down">-0.8%</span>负 Gamma −7.3M · Put OI 8,399</div></div>
+    <div class="rung"><div class="lv">585.25</div><div class="bar"><i style="right:50%;width:1.3%;background:rgba(48,209,88,.55)"></i></div><div class="lb"><span class="pct down">-1.6%</span>11/20 日内低</div></div>
+    <div class="rung"><div class="lv">582.9</div><div class="bar"><i style="right:50%;width:1.7%;background:rgba(48,209,88,.55)"></i></div><div class="lb"><span class="pct down">-2.0%</span>布林下轨 −2σ</div></div>
+    <div class="rung"><div class="lv">550</div><div class="bar"><i style="right:50%;width:6.4%;background:rgba(48,209,88,.55)"></i></div><div class="lb"><span class="pct down">-7.5%</span>Put 墙 #2 · 8,067 张</div></div>
+    <div class="rung"><div class="lv">500</div><div class="bar"><i style="right:50%;width:13.7%;background:rgba(48,209,88,.55)"></i></div><div class="lb"><span class="pct down">-15.9%</span>Put 墙 #3 · 7,976 张</div></div>
+    <div class="rung"><div class="lv">450</div><div class="bar"><i style="right:50%;width:20.9%;background:rgba(48,209,88,.55)"></i></div><div class="lb"><span class="pct down">-24.3%</span>12/18 深虚 Put OI 3,427</div></div>
+    <div class="rung"><div class="lv">437.38</div><div class="bar"><i style="right:50%;width:22.7%;background:rgba(48,209,88,.55)"></i></div><div class="lb"><span class="pct down">-26.4%</span>C2 盈亏平衡</div></div>
+    <div class="rung"><div class="lv">400</div><div class="bar"><i style="right:50%;width:28.1%;background:rgba(48,209,88,.55)"></i></div><div class="lb"><span class="pct down">-32.7%</span>尾部 Put OI 7,801</div></div>
   </div>
 
   <div class="note">
-    <div class="nt">怎么在这 11 个里做选择（一张决策表）</div>
-    <p><b>若周一开盘平开或高开（≥600）且 NQ 重开后不创新低：</b>先建 A1 的 1/2 + D1 的 1/2（回归 + 动量各一半），B 组全部取消。<br>
-    <b>若开盘在 570–600 之间震荡：</b>什么都不做，等 650 收复或 585 收破任一信号——区间里唯一可做的是 C1 的 1/3 仓位（必须 12/11 前了结）。<br>
-    <b>若开盘跌破 585：</b>B1 建 1/2、A 组全部取消；<b>不要在 585–590 抢反弹</b>（负 Gamma −7.3M 的顺势卖压就在这个价位带）。<br>
-    <b>若周一出现跳空 +8% 以上的极端反弹：</b>追高禁止，改用 A2（700/850 CS）表达——它的 BE 718.8 恰好要求「反弹越过 Flip」这个条件，本身就是对追高的过滤。</p>
+    <div class="nt">怎么用这张地图</div>
+    <p><b>多头角度：</b>590–600 是"必须守住"的位置。600 的 Put 墙 26,194 张 + 负 Gamma 最重 −13.1M 意味着：守住则做市商买回对冲（钉住效应），失守则同一批对冲盘反手卖出（崩塌效应）。<b>收在 585.25 以下，等于 600 那道墙从支撑变成天花板。</b></p>
+    <p><b>空头角度：</b>650 与 700 是两道真实阻力。650 有 10,222 张 Put + 负 Gamma −10.0M，700 有双向最密 OI（Call 8,046 / Put 11,224）。反弹到 650 附近遇到的是"解套盘 + 做市商卖压"的叠加。</p>
+    <p><b>结构角度：</b>735 是这轮下跌的性质分界。站回 735 以上 = 做市商转为做多 Gamma = 波动被抑制 = 可以持有多头过夜；735 以下 = 波动被放大 = 必须用价差。</p>
   </div>
 </section>
 
-<section id="s8">
-  <div class="sec-h"><div class="sec-n">08</div><h2>情景推演与硬否决</h2></div>
-  <p class="sec-sub">观察窗 11/23 → 12/18（26 个自然日、17 个交易日）。概率分配依据：RSI6 归零 + 价格贴 BOLL 下轨 + OTM 权利金偏 Call（短线反弹动能）、但负 Gamma −$104M + Flip 700 未收复 + TrendForce NAND 降级 + 目标价下修潮未至（中期压力）。</p>
+<!-- S7 大单 -->
+<section id="s7">
+  <div class="sec-h"><span class="sec-n">07</span><h2>期权大单与资金流</h2></div>
+  <p class="sec-sub">11/20 单日追踪到的异动权利金 $75.8 万美元级别样本共 $7,580 万，<b>大额方向 P/C 3.24</b>。但拆开看，机构在买 put、散户在买 call，两股力量在同一个价位上对撞。</p>
 
-  <div class="sc">
-    <div class="s1"><div class="p">25%</div><div class="r">情景 ① 收复 650 → 700–750</div>
-      <div class="b">超卖修复 + 周一低吸盘延续，MU 两周内站回 Flip 700，向 Max Pain 750 靠拢但被遗留 Call 库存区挡住。<b>操作：A1 兑现 60%，A2 留一半，C2 在 720 上方开。</b></div></div>
-    <div class="s1"><div class="p">45%</div><div class="r">情景 ② 550–650 震荡筑底（基准）</div>
-      <div class="b">负 Gamma 把每一次反弹卖回、把每一次下跌接住，价格在 BOLL 下轨与 650 之间磨底，等 12/16 财报给方向。D 组双向小额、C1 小仓收租、E1 分批。<b>这是本报告投入仓位最重的路径。</b></div></div>
-    <div class="s1"><div class="p">30%</div><div class="r">情景 ③ 收破 585 → 550 / 500</div>
-      <div class="b">触发点：周末利空 + 目标价下修潮 + NAND 合约价确认转跌。585 破位后 590–550 之间负 Gamma 连续（−7.3M → −6.3M），跌速快、中间无有效接盘。<b>操作：B1 全仓、B2 加半、A 组清零。</b></div></div>
+  <div class="wk">
+    <div class="c"><div class="k">追踪权利金</div><div class="v">$75.8M</div><div class="s">500 笔最新异动（单日）</div></div>
+    <div class="c"><div class="k">Call / Put 权利金</div><div class="v">$17.9M / $57.9M</div><div class="s">大额口径 P/C = 3.24</div></div>
+    <div class="c"><div class="k">净权利金</div><div class="v down">−$17.9M</div><div class="s">偏空；扫单占比 28%</div></div>
+    <div class="c"><div class="k">Delta 40–60 带</div><div class="v down">Put 74%</div><div class="s">Call $265M vs Put $738M（方向性最强的一段）</div></div>
+  </div>
+
+  <div class="tw"><table class="l5">
+    <thead><tr><th>时间（EST）</th><th>合约</th><th>方向</th><th>规模</th><th>解读</th></tr></thead>
+    <tbody>
+      <tr><td>11/20 09:42</td><td>1/15/27 <b>660P</b></td><td><span class="tag p">卖出</span></td><td><b>$21.1M</b></td><td>当日最大单笔。在崩盘日卖出一年期 660 put（现价下方 11%）——典型的"用极端偏斜收租"，赌 12 个月内不会跌到 660 以下。注意：这也可能是价差的一腿。</td></tr>
+      <tr><td>11/20 15:32</td><td>1/15/27 <b>550P</b></td><td><span class="tag c">买入·扫单</span></td><td>$7.65M</td><td>与上一笔方向相反：买一年期 550 put 做尾部保护（另一口径记录为 $5.8M 单笔扫单）。同一天里既有 660P 卖出、又有 550P 买入，指向<b>1/15 660/550 put 价差</b>（卖高买低，收权利金同时锁定左尾）。</td></tr>
+      <tr><td>11/20 09:31</td><td>2/19/27 <b>700C</b></td><td><span class="tag c">买入·扫单</span></td><td>$8.29M</td><td>跌 14% 的第二个分钟就在买 2027 年 2 月的 700 call（现价上方 17.7%）。这是"跌下来才敢买"的机构建仓节奏。</td></tr>
+      <tr><td>11/20</td><td>2/19/27 <b>780C / 850C</b></td><td><span class="tag c">价差</span></td><td>9,228 / 9,105 张</td><td>780/850 call 价差，成本约 $2.10。2027 年恢复头寸，用等量双翼把成本压到 2 块钱——这是本周唯一结构清晰的多头大单。</td></tr>
+      <tr><td>11/20</td><td>12/18 <b>900C</b></td><td><span class="tag">成交</span></td><td>8,438 张（OI 8,169）</td><td>OI 与成交量几乎相等 = 几乎全部新开。900 是 +51% 的位置，属于低成本彩票。</td></tr>
+      <tr><td>11/20</td><td>12/18 <b>800C / 600P</b></td><td><span class="tag">成交</span></td><td>7,038 / 8,314 张</td><td>12/18 双翼主力。600P 的 8,314 张中 OI 已 8,556，属于持续加仓的"财报保护"。</td></tr>
+      <tr><td>11/20</td><td>11/23 <b>600P / 620C / 580P</b></td><td><span class="tag w">3DTE</span></td><td>8,151 / 5,202 / 7,158 张</td><td>周一到期的保护性买入集中爆发，合计约 2 万张全新开仓。这批仓位周一收盘全部归零或兑现，<b>周一 15:30–16:00 EST 会有明显的 pin/平仓扰动</b>。</td></tr>
+      <tr><td>持续</td><td>1/15/27 <b>1000C</b></td><td><span class="tag">滚仓</span></td><td>4,510 张（OI 13,065）</td><td>长期看涨彩票的滚动仓位，OI 已累积到 1.3 万张，象征意义大于实际对冲意义。</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note warn">
+    <div class="nt">从大单里能读出、也确实可交易的三件事</div>
+    <p><b>① 机构在 1/15 上做 put 价差（卖 660 / 买 550），不是单纯看空。</b>卖 660 收权利金、买 550 锁左尾——这是"我看不到 550 以下，但 660 附近我愿意接货"的表达。<b>这条信息支持"550 是机构认可的价值区"这一判断</b>，也解释了为什么 550 的 Put 墙（8,067 张）在暴跌日还在加厚。</p>
+    <p><b>② 780/850 的 2027 等量 call 价差是本周期最干净的多头结构。</b>成本 $2.10、最大 $70、33 倍赔率，说明有资金在为"2027 年回到 780–850"付钱，但不肯为"回到 900 以上"付钱。这给了一个免费的目标区间参考。</p>
+    <p><b>③ 0DTE/3DTE 的 2 万张保护仓会在周一集中平仓。</b>周一开盘前 30 分钟和收盘前 30 分钟的成交会严重失真，<b>不要在这两个窗口用市价单</b>。</p>
+  </div>
+</section>
+
+<!-- S8 建议 -->
+<section id="s8">
+  <div class="sec-h"><span class="sec-n">08</span><h2>30 日 Call / Put 行权价建议</h2></div>
+  <p class="sec-sub">主战场是 <b>12/18（28 DTE，内含 12/17 财报）</b>，辅助是 11/27（短打）、12/11（财报前收租）、1/15/27（跨财报与 FOMC）。所有价格按 <b>11/20 收盘中间价</b>计算，以 $594.51 为基准；若周一开盘在 610.60 附近，实际成交价会整体上移约 3%–8%（见 D 组敏感性说明）。</p>
+
+  <div class="vd" style="padding:24px 28px">
+    <div class="h">Core Allocation · 四笔核心</div>
+    <div class="big" style="font-size:22px">A1 买 12/18 650/800 call 价差 · B1 买 12/18 550/450 put 价差 · C1 卖 12/11 500/450 put 价差 · A4 买 1/15/27 700/900 call 价差</div>
+    <p>结构逻辑：<b>买便宜的 call 翼（86.6% IV）＋ 卖昂贵的 put 翼（107.7% IV）＝ 用一个负偏斜的偏斜头寸，赚回偏斜均值回归的钱</b>。这四笔的组合在"反弹到 680""横在 590""跌到 520"三种情形下都不会同时亏损，且最大损失锁定。</p>
+  </div>
+
+  <h3 style="font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:26px 0 12px">A 组 · 看涨（买被低估的 Call 凸性）</h3>
+
+  <div class="stg">
+    <div class="hd"><span class="id w">A1 ★核心</span><span class="ti">12/18 650 / 800 牛市看涨价差（买 650C 卖 800C）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$30.78</div></div>
+      <div class="x"><div class="k">最大收益</div><div class="v up">$119.22</div></div>
+      <div class="x"><div class="k">赔率</div><div class="v">3.87×</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$680.78</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">26%</div></div>
+    </div>
+    <div class="ds">边距 $150，成本 $30.78（占边距 20.5%）。买入腿 IV 91.1%、卖出腿 IV 85.7%——<b>买的是相对贵的腿，但绝对水平在 91%，是全周期最便宜的 30 日 call 之一</b>。触发条件：<b>收复 623.24（盘后高）且回踩 585.25 不破</b>。若 12/18 收在 650 以下则损失 100%。仓位建议 ≤1.5%。<b>不要因为"跌太多了"就买——必须等价格站回 5 日线 684 附近再考虑加第二档。</b></div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id">A2</span><span class="ti">12/18 700 / 850 牛市看涨价差</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$18.83</div></div>
+      <div class="x"><div class="k">最大收益</div><div class="v up">$131.17</div></div>
+      <div class="x"><div class="k">赔率</div><div class="v">6.97×</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$718.83</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">20%</div></div>
+    </div>
+    <div class="ds">成本仅 $18.83 换来 6.97 倍赔率，是 A 组里"赔率/概率"最平衡的一笔。BE 718.83 要求 +20.9%，对应"回到 GEX Flip 735 下方"。与 A1 二选一或各半仓：<b>A1 稳、A2 赔率高</b>。触发条件同 A1，但更依赖 12/17 财报超预期（毛利率 ≥86.5%）。</div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id">A3</span><span class="ti">11/27 650 / 750 牛市看涨价差（感恩节短打）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$11.61</div></div>
+      <div class="x"><div class="k">最大收益</div><div class="v up">$88.39</div></div>
+      <div class="x"><div class="k">赔率</div><div class="v">7.61×</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$661.61</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">21.5%</div></div>
+    </div>
+    <div class="ds">7 DTE，IV 108%——<b>这是"超跌反弹"最纯粹的赌注，也是最容易被时间价值吃掉的一笔</b>。只在周一开盘出现"高开 + 站稳 610"时才做，且必须在 11/25 收盘前平掉一半（PCE 数据 11/25 08:30 EST 公布，当日即可兑现或止损）。<b>感恩节前半日流动性极差（11/27 13:00 EST 收市），不要持有到期。</b></div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id w">A4 ★核心</span><span class="ti">1/15/27 700 / 900 牛市看涨价差（跨财报 + FOMC）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$31.07</div></div>
+      <div class="x"><div class="k">最大收益</div><div class="v up">$168.93</div></div>
+      <div class="x"><div class="k">赔率</div><div class="v">5.44×</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$731.07</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">22%</div></div>
+    </div>
+    <div class="ds">56 DTE，IV 79.4%/74.9%，<b>是全部建议里唯一"不用管下周 PCE、不用管感恩节流动性"的一笔</b>。它同时跨过 12/9 FOMC、12/17 财报、1 月 CES。分三批建仓：周一 1/3、12/11 前 1/3、财报后 1/3。<b>这是本报告最推荐的中期头寸。</b></div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id">A5</span><span class="ti">12/18 800 Call 单腿（小仓位彩票）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$8.43</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$808.43</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">10.2%</div></div>
+      <div class="x"><div class="k">IV</div><div class="v">85.7%</div></div>
+      <div class="x"><div class="k">建议仓位</div><div class="v">≤0.3%</div></div>
+    </div>
+    <div class="ds">$843 一张，赌 +36% 到 800。IV 85.7% 是整条链最便宜的一段（深度 OTM call 被系统性低估）。<b>仅作为 A1/A2 的补充，不单独作为策略。</b>若 12/18 前涨到 700 以上，这张会快速翻 3–5 倍，可提前了结。</div>
+  </div>
+
+  <h3 style="font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:26px 0 12px">B 组 · 看跌 / 保护（只用价差，不买单腿 Put）</h3>
+
+  <div class="stg">
+    <div class="hd"><span class="id p">B1 ★核心</span><span class="ti">12/18 550 / 450 熊市看跌价差（买 550P 卖 450P）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$26.48</div></div>
+      <div class="x"><div class="k">最大收益</div><div class="v up">$73.52</div></div>
+      <div class="x"><div class="k">赔率</div><div class="v">2.78×</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$523.52</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">37%</div></div>
+    </div>
+    <div class="ds">这是"不买贵 Put、但要留保险"的标准做法：买 550P（IV 102.9%）的同时卖出 450P（IV 117.3%）——<b>卖掉的腿 IV 更高，等于把最贵的那段偏斜卖回给市场</b>，成本从 44.25 压到 26.48。<b>同时它也是 A1/A4 的对冲腿</b>：若组合里同时持有 A1 + B1，最大损失被锁定在一个可接受区间。仓位 ≤1%。</div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id p">B2</span><span class="ti">12/18 500 / 400 熊市看跌价差</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$17.32</div></div>
+      <div class="x"><div class="k">最大收益</div><div class="v up">$82.68</div></div>
+      <div class="x"><div class="k">赔率</div><div class="v">4.78×</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$482.68</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">26%</div></div>
+    </div>
+    <div class="ds">BE 482.68 要求 −18.8%，是"二次探底到 500"的赌注。与 B1 相比：B1 更容易兑现（37%），B2 赔率更高（4.78×）。<b>若 PCE（11/25）核心环比 ≥0.4%，B2 是最直接的表达。</b>触发条件：11/25 数据公布后 5 分钟内不追，等 15 分钟确认方向。</div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id p">B3</span><span class="ti">11/27 550 / 500 熊市看跌价差</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$10.90</div></div>
+      <div class="x"><div class="k">最大收益</div><div class="v up">$39.10</div></div>
+      <div class="x"><div class="k">赔率</div><div class="v">3.59×</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$539.10</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">28%</div></div>
+    </div>
+    <div class="ds">7 DTE 的对冲，专门针对"周一低开破 585.25 → 直奔 550"的路径。价格便宜（$1,090/张），但 IV 117.8%/126.5% 极贵——<b>仅在周一盘中跌破 585 后作为"追空工具"使用，不作为事前埋伏</b>。</div>
+  </div>
+
+  <h3 style="font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:26px 0 12px">C 组 · 卖波动率（只卖 Put 翼，只在无财报的到期）</h3>
+
+  <div class="stg">
+    <div class="hd"><span class="id d">C1 ★核心</span><span class="ti">12/11 500 / 450 Put Credit Spread（卖 500P 买 450P）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净收入</div><div class="v up">$9.00</div></div>
+      <div class="x"><div class="k">最大亏损</div><div class="v down">$41.00</div></div>
+      <div class="x"><div class="k">回报率</div><div class="v">21.95%</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$491.00</div></div>
+      <div class="x"><div class="k">亏损概率</div><div class="v">25%</div></div>
+    </div>
+    <div class="ds"><b>这是全表唯一"结构上明显划算"的收租交易</b>：卖出腿 IV 111.6%、买入腿 IV 121.4%——把最贵的偏斜卖回市场；且 <b>12/11 到期完全避开 12/17 财报</b>（这是最关键的一点：12/18 的收租交易等于裸卖财报波动率）。21 DTE、21.95% 回报率，年化约 380%。<b>风险：若跌破 491 即开始亏损，跌破 450 亏满 $4,100/张。</b>仓位 ≤1%。</div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id d">C2</span><span class="ti">12/18 450 / 350 Put Credit Spread（深度虚值，可跨财报）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净收入</div><div class="v up">$12.62</div></div>
+      <div class="x"><div class="k">最大亏损</div><div class="v down">$87.38</div></div>
+      <div class="x"><div class="k">回报率</div><div class="v">14.45%</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$437.38</div></div>
+      <div class="x"><div class="k">亏损概率</div><div class="v">16%</div></div>
+    </div>
+    <div class="ds">BE 437.38（−26.4%），是"即便财报暴雷也大概率安全"的位置。卖 450P（IV 117.3%）买 350P（IV 131.1%），偏斜价差 13.8pp。<b>代价是回报率只有 14.45%。</b>适合作为 C1 到期后的滚动仓位，或作为 A1/A4 的"资金效率型"对冲。</div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id d">C3</span><span class="ti">12/18 Iron Condor 450/350 + 850/1000（不推荐重仓）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净收入</div><div class="v up">$15.83</div></div>
+      <div class="x"><div class="k">最大亏损</div><div class="v down">$134.17</div></div>
+      <div class="x"><div class="k">回报率</div><div class="v">11.8%</div></div>
+      <div class="x"><div class="k">盈利区间</div><div class="v">434.2–865.8</div></div>
+      <div class="x"><div class="k">区间内概率</div><div class="v">78%</div></div>
+    </div>
+    <div class="ds">看起来很美，但 <b>Call 翼（850/1000）只收到 $3.21，占边距 2.1%</b>——因为 call 侧 IV 只有 85%/93%，卖它等于用 85% 的波动率卖波动率。<b>结论：这个 IC 的 Call 翼是负期望的，只做 Put 翼（C2）或 C1 更好。</b>如果一定要做，把 Call 翼抬高到 950/1100。</div>
+  </div>
+
+  <h3 style="font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:26px 0 12px">D 组 · 持仓管理与跨期</h3>
+
+  <div class="stg">
+    <div class="hd"><span class="id">D1</span><span class="ti">12/18 领口：卖 800C 买 550P（净支出 $35.83）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$35.83</div></div>
+      <div class="x"><div class="k">保护成本</div><div class="v">6.0%</div></div>
+      <div class="x"><div class="k">下行保护</div><div class="v">至 550（−7.5%）</div></div>
+      <div class="x"><div class="k">上行封顶</div><div class="v">800（+34.6%）</div></div>
+      <div class="x"><div class="k">适用</div><div class="v">持股者</div></div>
+    </div>
+    <div class="ds">为持有 100 股 MU 的人设计：用 800C 收到的 $843 抵掉 550P 的 $4,425 中的一部分，净付 $3,583 买到 12/18 前 550 的下行保护。<b>6.0% 的保护成本在 VIX 35.89 的环境里其实不算贵</b>，但注意 12/17 财报当晚的 gamma 风险——领口在财报夜不能提供连续保护。</div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id">D2</span><span class="ti">12/24 650 / 800 牛市看涨价差（财报后）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$32.57</div></div>
+      <div class="x"><div class="k">最大收益</div><div class="v up">$117.43</div></div>
+      <div class="x"><div class="k">赔率</div><div class="v">3.61×</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$682.57</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">26.5%</div></div>
+    </div>
+    <div class="ds">34 DTE，<b>跨过财报但主要在财报之后兑现</b>（12/18 → 12/24 只有 4 个交易日）。IV 87.0%/81.2%，比 12/18 便宜 10 个点。适合"我信财报，但不想承担财报当晚的 gamma"的人：<b>财报后再建这一笔，比财报前建 12/18 更聪明</b>。</div>
+  </div>
+
+  <div class="stg">
+    <div class="hd"><span class="id">D3</span><span class="ti">12/31 700 / 850 牛市看涨价差（跨年 + 税损反转）</span></div>
+    <div class="mt">
+      <div class="x"><div class="k">净支出</div><div class="v">$22.57</div></div>
+      <div class="x"><div class="k">最大收益</div><div class="v up">$127.43</div></div>
+      <div class="x"><div class="k">赔率</div><div class="v">5.65×</div></div>
+      <div class="x"><div class="k">盈亏平衡</div><div class="v">$722.57</div></div>
+      <div class="x"><div class="k">到期概率</div><div class="v">21%</div></div>
+    </div>
+    <div class="ds">41 DTE，IV 81.6%/79.0%。额外逻辑：<b>12 月底是税损收割（tax-loss harvesting）高峰</b>，MU 年内仍 +108%，但近一个月 −32%，会有"卖出亏损仓位、买入错杀品种"的季节性资金流。适合作为 A4 的短期替代（若不想占用 56 天资金）。</div>
   </div>
 
   <div class="note danger">
-    <div class="nt">硬否决（7 条，不因任何单日行情放宽）</div>
-    <p><b>1.</b> <b>不在 700 之下裸买 Call。</b>净 Gamma −$104M/1% 的区域里，每一次反弹都会被对冲流卖回；多头表达只能是价差。<br>
-    <b>2.</b> <b>周一开盘 30 分钟内不下单。</b>盘后 610.60 与收盘 594.51 之间隔着一个消息真空的周末，且期指周五定格 −4.92%——开盘方向、缺口方向都未确认前，任何价格都可能偏差 5% 以上。<br>
-    <b>3.</b> <b>不在 550–650 裸卖 Put。</b>这是负 Gamma 最密集的地带（−13.1M / −10.0M / −7.3M / −6.3M），且 25Δ Skew +21pp 说明卖方收取的溢价与承担的尾部风险已经平衡——C1 只按价差、只按纪律执行。<br>
-    <b>4.</b> <b>11/23 与 11/25（IV 107% / 114%）不买任何单腿。</b>近月已是纯事件保险市场，买卖两边都不占优，只做价差且只做当日了结。<br>
-    <b>5.</b> <b>12/09 之后不开 12/18 的新单腿；12/16 财报前清掉所有裸单腿。</b>12/9–10 FOMC + 12/16 财报同时压在这张期权上。<br>
-    <b>6.</b> <b>收破 585.25（11/20 低点）清空所有多头价差；收破 550 全部平仓，不摊平、不网格。</b><br>
-    <b>7.</b> <b>任何单一策略的最大损失 ≤ 账户 1.5%。</b>ATR14 是 68.34（11.5%），单日移动一个 ATR 现在是常态，仓位必须按 ATR 而非按百分比定价。</p>
+    <div class="nt">价格敏感性：如果周一开盘在 610.60 而不是 594.51</div>
+    <p>盘后终值 610.60 比收盘高 2.71%。若周一在此附近开盘，全部策略的实际成交价会整体上移：<b>A1 由 30.78 → 约 33.5（+8.8%）</b>、A2 由 18.83 → 约 20.9、B1 由 26.48 → 约 24.8（保险变便宜 6%）、C1 由收 9.00 → 约收 8.3。<b>结论：反弹开盘时买 call 变贵、买 put 变便宜，正是"卖 put 翼 / 买 call 翼"结构开始失效的信号。</b>如果周一高开超过 +5%（>625），<b>放弃 A1/A2，改做 C1（收租）并等回踩</b>。</p>
   </div>
+
+  <div class="chartbox"><div class="ct">12/18 到期：不同价位以上的概率（%）</div><div class="cc"><canvas id="cProb"></canvas></div>
+  <p class="src">基于 12/18 ATM IV 97.6%、28 DTE 的对数正态假设（非真实分布，仅作相对比较）。P(S≥594.51) = 50%。A1 的 BE 680.78 对应约 26%，A2 的 718.83 对应约 20%，B1 的 523.52 对应约 37%（下跌到该位以下的概率）。</p></div>
 </section>
 
+<!-- S9 风险 -->
 <section id="s9">
-  <div class="sec-h"><div class="sec-n">09</div><h2>日历与风险清单</h2></div>
-  <p class="sec-sub">未来 30 天排期（SGT 为新加坡时间，EST 为纽约时间）。<b>12/18 这张期权同时承载 12/9–10 FOMC 与 12/16 美光财报</b>——这是本期所有策略都强调「价差 + 财报前了结」的原因。</p>
+  <div class="sec-h"><span class="sec-n">09</span><h2>情景推演与硬否决</h2></div>
+  <p class="sec-sub">三种路径，权重按"负 Gamma + 感恩节流动性 + PCE 事件"三者叠加给出。所有情景都在 12/18 前兑现。</p>
 
-  <div class="tw"><table>
-    <tr><th>日期（SGT）</th><th>日期（EST）</th><th>事件</th><th>对 MU 的影响</th></tr>
-    <tr><td class="mono">11/23 17:00 / 22:30</td><td class="mono">11/23 04:00 / 09:30</td><td><b>周末后首个盘前与开盘</b>：3DTE 保护洪水（约 2.8 万张新开 Put）到期结算</td><td>开盘缺口是本周最大变量；11/23 IV 107.4%</td></tr>
-    <tr><td class="mono">11/24 05:00</td><td class="mono">11/23 16:00 盘后</td><td><b>HPE 财报</b>（AI 服务器 / 企业级存储需求风向标）</td><td class="up">本季最直接的「AI 基建需求是否延续」读数，直接影响 MU 的服务器 DRAM 叙事</td></tr>
-    <tr><td class="mono">11/25 21:00</td><td class="mono">11/24 08:00</td><td>ADI 财报（模拟芯片，工业 / 汽车需求）</td><td>非直接，但影响 SOX 情绪</td></tr>
-    <tr><td class="mono">11/25</td><td class="mono">11/25（周三）</td><td>5DTE 到期，IV 114.4%（全链最高）</td><td class="down">事件保险日，只做价差</td></tr>
-    <tr><td class="mono">11/26–27</td><td class="mono">11/26–27</td><td><b>感恩节休市 + 11/27 半日市（13:00 EST 收盘）</b></td><td>11/27 到期的期权在 13:00 结算，流动性极差</td></tr>
-    <tr><td class="mono">12/09 22:30</td><td class="mono">12/09 09:30</td><td><b>回购窗口解禁</b>（$350 亿授权，FY27 或达 $1,000 亿）</td><td class="up">跌 51% 之后，这是公司层面最确定的一段买盘</td></tr>
-    <tr><td class="mono">12/10 03:00</td><td class="mono">12/09 14:00</td><td><b>FOMC 决议</b>（10 月纪要：几乎所有与会者支持进一步加息）</td><td class="down">实际利率上行直接压估值</td></tr>
-    <tr><td class="mono">12/17 05:00</td><td class="mono">12/16 16:00 盘后</td><td><b>美光 FQ1 FY27 财报</b>（指引营收 $615 亿 ±15 亿、毛利率 ~86%）</td><td><b>12/18 到期前 2 天 · 最大单一风险；重点看 NAND 分部毛利率</b></td></tr>
-    <tr><td class="mono">12/01 21:00</td><td class="mono">12/01 08:00</td><td>Marvell（MRVL）财报</td><td>定制 ASIC + HBM 配套需求，存储链情绪参考</td></tr>
-    <tr><td class="mono">12/18</td><td class="mono">12/18（周五）</td><td><b>12/18 月度到期 + 四巫日</b></td><td>主战场，OI 28.3 万 Call / 27.4 万 Put</td></tr>
-    <tr><td class="mono">待定</td><td class="mono">12/07 / 2027-01-12</td><td>DRAM 反垄断集体诉讼：12/7 答辩、2027/1/12 案件管理会议</td><td class="down">长期尾部风险</td></tr>
-  </table></div>
+  <div class="sc">
+    <div class="s1"><div class="p up">25%</div><div class="r">情景 A · 超跌反弹</div><div class="b">周一高开，站回 610 → 623，11/25 PCE 温和（核心 +0.2%），感恩节前空头回补，12 月初回到 <b>650–700</b>。触发：周一收盘 > 610.60 且成交量 < 4,000 万股。<br><b>受益：A1（+至 119）· A3（+至 88）· A4</b></div></div>
+    <div class="s1"><div class="p amber">45%</div><div class="r">情景 B · 高波动横盘</div><div class="b">在 <b>550–620</b> 之间反复，600 的 Put 墙形成钉住效应，做市商双向对冲。PCE 数据中性，成交量逐步萎缩至 2,500 万股以下。12/17 财报成为唯一变量。<br><b>受益：C1 · C2 · B1 部分 · A1/A2 亏损但有限</b></div></div>
+    <div class="s1"><div class="p down">30%</div><div class="r">情景 C · 二次探底</div><div class="b">周一低开破 585.25 → 布林下轨 582.90 失守 → 550，PCE 核心 ≥0.4% 或 12 月加息 50bp 预期升温，CTA 继续机械减仓。目标 <b>500–520</b>。<br><b>受益：B1（+73）· B2（+82）· B3；A 组全部归零</b></div></div>
+  </div>
 
-  <div class="grid2">
-    <div class="card">
-      <h3 style="margin-top:0">上行风险（会打穿本报告假设的事件）</h3>
-      <p>① <b>周末无新利空 + 周一低吸盘放大</b>（盘后 +2.71% 且盘后量 190 万股只是开头，空头回补在 VIX 35 的环境下威力巨大）；<br>
-      ② <b>12/09 回购解禁后公司加速执行</b>（$1,000 亿 / 年 ≈ 当前市值 15%）；<br>
-      ③ <b>DRAM Q1 合约价谈判落地超预期</b>（涨幅收窄 ≠ 下跌，现货 30 日仍 +4.66%）；<br>
-      ④ <b>分析师目标价下修潮反而提前结束</b>（利空出尽）。<br>
-      <b>应对：A1 触发后留一半仓位不设上限，A2 用来接「V 型反弹」情形。</b></p>
-    </div>
-    <div class="card">
-      <h3 style="margin-top:0">下行风险（会让 B 组兑现的事件）</h3>
-      <p>① <b>目标价下修潮 + 12 月加息落地</b>（双杀）；<br>
-      ② <b>12/16 财报 NAND 分部毛利率环比下滑 &gt; 3pp</b> 或 FQ2 指引不及预期；<br>
-      ③ <b>AI 相关债务出现第一例违约</b>（FOMC 纪要点名表外租赁与循环融资，高盛估算 2027 AI CapEx 见顶）；<br>
-      ④ <b>中国 CSP 缩量扩大到 DRAM 采购</b>（TrendForce 11/20 报告的 DRAM 版本）。<br>
-      <b>应对：B1 触发线 585.25，B2 为尾部凸性，两者合计成本约 7.4% 现价。</b></p>
-    </div>
+  <div class="note danger">
+    <div class="nt">硬否决 · 七条（违反任意一条，本报告全部建议失效）</div>
+    <p><b>① 735（GEX Flip）以下不裸买 Call 单腿。</b>负 Gamma 区里，任何反弹都会被做市商的对冲卖压压回。要买就用价差。</p>
+    <p><b>② 不买 550–650 区间的裸 Put 单腿。</b>25Δ put IV 107.7%，比 call 贵 21.1pp，是整条链最贵的东西。买它 = 用最高价买保险。</p>
+    <p><b>③ 不在 550–650 区间裸卖 Put。</b>负 Gamma 最重的三个价位（600 / 650 / 590）全在这个区间，一旦破位，裸卖 put 的亏损是指数级的。</p>
+    <p><b>④ 不做 12/18 的裸卖波动率。</b>12/17 财报在到期内，12/18 的 IV 97.6% 里有相当一部分是财报溢价。要收租就去 12/11。</p>
+    <p><b>⑤ 周一（11/23）开盘后 30 分钟内不下任何市价单，11/27（半日市）收盘前 30 分钟不平仓。</b>0DTE 有 2 万张新开保护仓会在周一集中平仓，感恩节半日市流动性只有正常日的 1/3。</p>
+    <p><b>⑥ 单笔风险敞口 ≤1.5% 总资产；A 组累计 ≤4%；C 组累计 ≤2%。</b>ATR14 已达 $68.34（11.49%），单日 8% 波动是常态。</p>
+    <p><b>⑦ 收盘跌破 585.25 → 平掉所有 A 组；收盘跌破 550 → 平掉所有多头，只留 B 组；收盘站回 735 → 平掉所有 B 组，A 组可加至满仓。</b></p>
+  </div>
+
+  <div class="note">
+    <div class="nt">下周关键日历（SGT 换算后）</div>
+    <p><b>11/23（周一）22:45 SGT</b> — 美国 11 月 Markit 制造业/服务业 PMI 初值（EST 09:45）。日本休市（勤劳感谢日）。</p>
+    <p><b>11/25（周三）21:30 SGT</b> — <b>10 月 PCE 物价指数</b>（EST 08:30）。共识：整体与核心环比均 +0.3%，核心同比 3.2%（Bowman 称可能 3.3%，牛津经济研究院看整体 3.8%）。同日 21:30 SGT 公布 Q3 GDP 二次预估，次日 03:00 SGT 公布美联储褐皮书。</p>
+    <p><b>11/26（周四）</b> — 感恩节，美股全天休市。</p>
+    <p><b>11/27（周五）02:00 SGT 收市</b> — 黑色星期五，美股提前至 EST 13:00 收盘（= SGT 11/28 02:00）。流动性极差。</p>
+    <p><b>12/09（周三）</b> — FOMC 决议（SGT 12/10 03:00）。当前 25bp 加息概率约 97%，Waller 提及 50bp 可能。</p>
+    <p><b>12/17（周四）05:00 SGT</b> — <b>美光 FQ1 FY27 财报</b>（EST 12/16 16:00 盘后）。共识营收 $619 亿，关键看毛利率是否守住 86%。</p>
+    <p><b>12/19（周六）</b> — 美股四巫日（12/18 为季度期权到期），本报告 A1/A2/B1/B2/C2/C3/D1 全部在此日到期。</p>
   </div>
 </section>
+
+<footer>
+  <p><b>报告信息</b> · 生成时间 2026/11/22 09:15 SGT（= 2026/11/21 20:15 EST，周六休市）· 数据基准：NASDAQ 官方期权链 11/20 EOD（4,097 个合约 / 19 个到期）· 现货基准 $594.51（11/20 16:00 EST 收盘）· 盘后终值 $610.60（11/20 19:59 EST）</p>
+  <p><b>方法</b> · 隐含波动率由中价 Black-Scholes 反解（r = 4.0%，q = 0，80 次二分逼近）；净 GEX = Σ(Γ × OI × 100 × S² × 0.01)，Call 为正、Put 为负，口径 ≤45DTE；GEX Flip 在 380–900 网格（步长 5）上全链重定价求零点；Max Pain 按到期日各行权价的总赔付最小化求解；25Δ 偏斜取最近 25 delta 的行权价，RR = Put IV − Call IV；预期波动为 1σ 对数正态区间。</p>
+  <p><b>已知数据限制</b> · ① 部分深实值 Put 中价存在倒挂（bid-ask 过宽），相关行权价的 IV 反解可能偏高，故 GEX 与偏斜在 700 以下的读数仅作相对比较；② Max Pain 全部高于现价 22%–35%，主因遗留 Call 库存与深度实值 Put 保险迁移，已按"弱参考"处理；③ 11/20 收盘价为官方收盘，1 分钟末笔为 594.39，差 $0.12 属正常收盘交叉；④ 期权大单数据来自第三方延迟盘（20:00 ET 更新），可能存在价差组合误判为单腿的情况。</p>
+  <p><b>免责声明</b> · 本报告为个人研究与信息整理，不构成任何投资建议或买卖要约。期权交易具有高杠杆特性，最大损失可能超过本金。所有策略均假设以中间价成交，实际滑点、佣金、指派风险未计入。请根据自身风险承受能力独立决策。</p>
+  <p class="src" style="margin-top:14px">数据来源：NASDAQ API（期权链）· Yahoo Finance（日线 / 分钟线 / 盘后 tick）· CME（期货定格）· MemoryIndex & DRAMeXchange/TrendForce（存储现货）· TrendForce（合约价与 HBM）· KB 证券（现货-合约价差）· Longbridge / Zacks / Yahoo（分析师共识）· OptionsSentimentScreener / Stocknear / Tru-Sentiment（大单与净权利金）· Reuters / AP / 财联社 / 腾讯新闻 / 经济通（新闻）</p>
+</footer>
 
 </div>
 
-<footer class="wrap">
-  <div class="sec-h" style="margin-top:70px"><div class="sec-n">10</div><h2>口径、来源与免责</h2></div>
-  <p><b>数据时点</b>：SGT 2026/11/21 09:25 ＝ EST 2026/11/20 20:25。<b>【本版为 09:25 更新版】盘后时段已于 20:00 EST 正式结束，本版把 19:22 的盘后快照替换为 19:59 的盘后终值，并新增现货价格表、TrendForce 11/18 HBM4 定价与 HPE / ADI / MRVL 财报排期。</b><b>① 官方收盘 $594.51</b>（16:00 EST ＝ 05:00 SGT；O 665.63 / H 668.99 / L 585.25 / 量 5,908.8 万股 · 30 日均 1.98×）。<b>② 盘后终值 $610.60</b>（19:59 EST ＝ 08:59 SGT，+2.71% / +$16.09；盘后区间 599.82（18:15 EST）–612.10（19:00 EST）；盘后成交量 190.3 万股；盘后时段 20:00 EST 已正式收）。<b>③ 期指定格</b>：CME 周五 17:00 EST 收市进入周末休市，NQ 最后 25,291（较周四结算 −4.92%）/ ES 6,966.75（−3.20%）/ YM 48,391（−1.61%）；Blue Ocean 周五夜间不开放，MU 无夜盘报价。<b>④ 11/23 周一盘前 04:00 EST ＝ 17:00 SGT；开盘 09:30 EST ＝ 22:30 SGT；CME 期指周一 18:00 EST（SGT 07:00）重开。</b></p>
-  <p><b>期权口径</b>：Nasdaq 11/20 EOD 期权链快照（<b>4,097 个有效合约 / 19 个到期日</b>）。IV 由 Black-Scholes 反解中价（r = 4.0%、q = 0、ACT/365）；GEX = Γ × OI × 100 × S² × 1%，做市商视为期权净卖方（Call 正、Put 负）；GEX Flip 通过在 400–900 网格上以 5 美元步长重新定价全部合约的 Gamma、求解净值为零的现货价得到（结果 $700；800 以上因库存结构再度转负）；Max Pain 按 OI 加权行权损失最小化求解；25Δ Skew 取 |Δ| 最接近 0.25 的 Call 与 Put 的 IV 之差；风险中性概率用 lognormal 解析式（IV 95.8%）。<b>以上均非 CBOE / Barchart / SpotGamma 官方口径，与第三方平台存在系统性差异属正常。</b>全链权利金口径被深度价内 Put 的陈旧报价值污染，本报告以 <b>OTM-only 权利金</b>（Call $583.4M / Put $425.7M）为准。深度价内 Put 的买卖价差陈旧导致价内 Put 价差组合的理论成本可能倒挂，本报告已全部避开价内 Put 价差结构。</p>
-  <p><b>策略报价</b>：每个策略给出两套——「EOD 594 口径」= 11/20 收盘链中价（S = 594.51）；「IF611 口径」= 保持各合约 11/20 隐含波动率不变、将标的代入盘后终值 610.60 的 BS 理论价。<b>两者都不是可成交价：盘后 610.60 与周一开盘之间隔着整个周末的消息真空，历史缺口可达 3–7%。下单前必须以实时 bid/ask 复核。</b></p>
-  <p><b>新闻来源</b>：Yahoo Finance / UPI（11/20 收盘综述：道指与标普进入回调区）、The Motley Fool 盘中综述（11/20）、Gate / Coinpaper（MU 与 SNDK 暴跌专题）、TrendForce Memory Outlook 与 3Q26 DRAM 供应商营收排名（11/20）、TrendForce NAND 合约价预警（11/19）、MemoryIndex 现货指数（11/20）、SK 海力士 / 三星产能售罄报道、Anthropic IPO 次日表现报道、NVIDIA FQ3 财报（11/17）、美银证券存储价格报告（11/18）、RBC Capital Markets（11/18，PT $1,500）、TipRanks / TIKR 分析师分布、Yahoo Finance、Nasdaq 期权链 API。</p>
-  <p><b>免责声明</b>：本报告由自动化程序生成，用于个人研究与信息整理，<b>不构成任何投资建议、要约或招揽</b>。期权交易可能导致全部本金损失；价差策略的最大损失虽可预先计算，但在流动性不足或跳空情形下实际成交可能显著劣于理论值。文中所有价格、概率、GEX、Max Pain 均为模型推算，可能与实际市场存在偏差。<b>请自行独立判断并承担全部交易后果。</b>报告作者可能持有文中提及标的的相关仓位。</p>
-  <p style="margin-top:22px;color:var(--dim2);font-size:12px">华宝 · MU 期权结构日报 · 2026/11/21 · 自动化生成</p>
-</footer>
-
 <script>
-const D = {"pxL":["08/28","08/31","09/01","09/02","09/03","09/04","09/08","09/09","09/10","09/11","09/14","09/15","09/16","09/17","09/18","09/21","09/22","09/23","09/24","09/25","09/28","09/29","09/30","10/01","10/02","10/05","10/06","10/07","10/08","10/09","10/12","10/13","10/14","10/15","10/16","10/19","10/20","10/21","10/22","10/23","10/26","10/27","10/28","10/29","10/30","11/02","11/03","11/04","11/05","11/06","11/09","11/10","11/11","11/12","11/13","11/16","11/17","11/18","11/19","11/20"],"pxC":[932.86,958.73,933.44,956.08,958.16,1016.59,1000.26,1027.77,977.41,975.26,924.03,927.6,926.55,977.5,1015.8,1043.96,1096.16,1071.88,1080.53,1082.28,1053.98,1065.08,1065.11,1097.39,1074.89,1063.96,1045.56,1088.0,1035.84,1029.0,989.04,953.19,914.13,931.24,878.84,904.9,896.07,913.67,856.49,877.55,903.7,928.76,983.23,934.27,884.74,833.59,855.1,795.23,656.39,690.0,733.15,725.11,811.3,798.44,778.31,719.02,712.42,705.27,690.44,594.51],"pxV":[22.9,22.6,27.8,21.4,24.2,35.2,26.6,23.8,26.2,21.7,27.1,20.4,20.2,22.1,35.8,28.2,29.2,21.6,22.1,20.9,22.2,19.7,31.1,45.7,27.3,18.3,21.8,30.9,29.9,19.9,24.0,29.2,27.8,39.1,30.5,25.7,20.3,21.0,32.2,21.2,22.8,23.2,30.7,22.4,30.9,29.9,21.3,35.9,77.9,44.9,32.2,28.4,36.7,27.6,27.9,27.1,33.5,27.5,35.4,59.1],"gK":[480,482.5,485,487.5,490,492.5,495,497.5,500,502.5,505,507.5,510,512.5,515,517.5,520,522.5,525,527.5,530,532.5,535,537.5,540,542.5,545,547.5,550,552.5,555,557.5,560,562.5,565,567.5,570,572.5,575,577.5,580,582.5,585,587.5,590,592.5,595,597.5,600,602.5,605,607.5,610,612.5,615,617.5,620,622.5,625,627.5,630,632.5,635,637.5,640,642.5,645,647.5,650,652.5,655,657.5,660,662.5,665,667.5,670,672.5,675,677.5,680,682.5,685,687.5,690,692.5,695,697.5,700,702.5,705,707.5,710,712.5,715,717.5,720,722.5,725,727.5,730,732.5,735,737.5,740,742.5,745,747.5,750,755,760,765,770,775,780,785,790,795,800],"gV":[-0.8,0.0,-0.0,0.0,-2.7,0.0,-0.1,0.0,-4.3,0.0,-0.0,0.0,-1.2,0.0,-0.0,0.0,-2.1,0.0,-0.0,0.0,-1.8,0.0,-0.1,0.0,-5.1,0.0,-0.4,0.0,-6.3,0.0,-0.3,0.0,-2.1,0.0,-0.4,0.0,-2.0,0.0,-0.2,0.0,-4.6,0.0,-0.3,0.0,-7.3,0.0,-0.8,0.0,-13.1,0.0,-0.8,0.0,-3.9,0.0,-0.4,0.0,-3.5,0.0,-1.6,0.0,-4.5,0.0,-1.4,0.0,-3.1,0.0,-1.2,0.0,-10.0,0.0,-1.6,0.0,-4.2,0.0,-1.5,0.0,-3.6,-0.1,-1.7,-0.1,-3.2,-0.1,-0.7,-0.1,-2.1,-0.1,0.3,-0.1,-2.6,0.3,0.0,-0.1,-1.0,0.0,-0.0,-0.0,1.2,0.1,0.2,0.3,-0.7,0.0,0.6,0.2,-0.6,0.1,0.1,0.0,-1.1,0.9,-0.5,0.0,-0.7,0.3,0.6,0.2,-0.2,0.1,-0.9],"oiK":[480,482.5,485,487.5,490,492.5,495,497.5,500,502.5,505,507.5,510,512.5,515,517.5,520,522.5,525,527.5,530,532.5,535,537.5,540,542.5,545,547.5,550,552.5,555,557.5,560,562.5,565,567.5,570,572.5,575,577.5,580,582.5,585,587.5,590,592.5,595,597.5,600,602.5,605,607.5,610,612.5,615,617.5,620,622.5,625,627.5,630,632.5,635,637.5,640,642.5,645,647.5,650,652.5,655,657.5,660,662.5,665,667.5,670,672.5,675,677.5,680,682.5,685,687.5,690,692.5,695,697.5,700,702.5,705,707.5,710,712.5,715,717.5,720,722.5,725,727.5,730,732.5,735,737.5,740,742.5,745,747.5,750,755,760,765,770,775,780,785,790,795,800,805,807.5,810,812.5,815,817.5,820],"oiC":[0.8,0.0,0.0,0.0,0.6,0.0,0.0,0.0,1.6,0.0,0.0,0.0,0.7,0.0,0.0,0.0,0.9,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.7,0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.7,0.0,0.0,0.0,3.2,0.0,0.0,0.0,0.5,0.0,0.0,0.0,1.6,0.0,0.0,0.0,0.6,0.0,0.0,0.0,1.2,0.0,0.1,0.0,0.4,0.0,0.1,0.0,0.6,0.0,0.1,0.0,2.0,0.0,0.1,0.0,0.6,0.0,0.1,0.0,0.7,0.1,0.4,0.0,1.2,0.0,0.2,0.0,1.5,0.2,1.0,0.4,8.3,0.7,0.8,0.3,2.7,0.2,0.6,0.3,4.8,0.2,1.4,0.5,3.9,0.2,2.3,0.9,5.2,0.2,0.8,0.2,7.0,2.7,3.0,0.9,2.4,1.0,4.6,1.0,3.9,1.0,14.7,1.4,0.2,2.4,0.1,0.8,0.1,3.1],"oiP":[2.2,0.0,0.0,0.0,5.3,0.0,0.1,0.0,8.3,0.0,0.0,0.0,2.3,0.0,0.1,0.0,3.7,0.0,0.0,0.0,2.4,0.0,0.1,0.0,7.0,0.0,0.3,0.0,8.3,0.0,0.2,0.0,2.3,0.0,0.3,0.0,2.7,0.0,0.1,0.0,7.1,0.0,0.2,0.0,8.5,0.0,0.4,0.0,13.5,0.0,0.3,0.0,3.9,0.0,0.2,0.0,4.0,0.0,1.1,0.0,3.9,0.0,0.9,0.0,3.4,0.0,1.0,0.0,10.7,0.0,1.3,0.0,4.8,0.0,1.3,0.0,4.4,0.1,2.0,0.1,4.5,0.1,1.1,0.1,3.9,0.4,0.9,0.5,11.5,0.4,1.0,0.4,4.1,0.3,0.7,0.3,3.9,0.1,1.4,0.1,5.6,0.2,1.1,0.1,5.5,0.2,0.7,0.1,7.8,1.2,3.4,1.0,3.6,0.5,2.6,0.2,4.1,0.8,13.0,0.6,0.0,2.9,0.0,0.5,0.0,3.5],"ivL":["11/23","11/25","11/27","11/30","12/02","12/04","12/11","12/18","12/24","12/31","01/15","02/19"],"ivV":[107.4,114.4,105.3,96.6,98.6,100.0,97.4,95.8,92.6,88.9,86.9,78.8],"hv":[96.2,96.2,96.2,96.2,96.2,96.2,96.2,96.2,96.2,96.2,96.2,96.2],"aX":[480,485,490,495,500,505,510,515,520,525,530,535,540,545,550,555,560,565,570,575,580,585,590,595,600,605,610,615,620,625,630,635,640,645,650,655,660,665,670,675,680,685,690,695,700,705,710,715,720,725,730,735,740,745,750,755],"aY":[-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-30.78,-25.78,-20.78,-15.78,-10.78,-5.78,-0.78,4.22,9.22,14.22,19.22,24.22,29.22,34.22,39.22,44.22,49.22,54.22,59.22,64.22,69.22,74.22],"bY":[43.52,38.52,33.52,28.52,23.52,18.52,13.52,8.52,3.52,-1.48,-6.48,-11.48,-16.48,-21.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48,-26.48]};
+const D = {"price":{"dates":["2026-07-17","2026-07-20","2026-07-21","2026-07-22","2026-07-23","2026-07-24","2026-07-27","2026-07-28","2026-07-29","2026-07-30","2026-07-31","2026-08-03","2026-08-04","2026-08-05","2026-08-06","2026-08-07","2026-08-10","2026-08-11","2026-08-12","2026-08-13","2026-08-14","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-21","2026-09-22","2026-09-23","2026-09-24","2026-09-25","2026-09-28","2026-09-29","2026-09-30","2026-10-01","2026-10-02","2026-10-05","2026-10-06","2026-10-07","2026-10-08","2026-10-09","2026-10-12","2026-10-13","2026-10-14","2026-10-15","2026-10-16","2026-10-19","2026-10-20","2026-10-21","2026-10-22","2026-10-23","2026-10-26","2026-10-27","2026-10-28","2026-10-29","2026-10-30","2026-11-02","2026-11-03","2026-11-04","2026-11-05","2026-11-06","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-16","2026-11-17","2026-11-18","2026-11-19","2026-11-20"],"close":[848.95,865.46,970.82,959.48,990.21,920.95,900.2,820.53,739.0,874.66,823.03,829.5,892.67,893.19,881.47,877.57,861.0,868.52,911.29,949.83,971.66,1011.75,940.76,937.11,974.33,966.78,910.43,932.97,938.4,935.39,932.86,958.73,933.44,956.08,958.16,1016.59,1000.26,1027.77,977.41,975.26,924.03,927.6,926.55,977.5,1015.8,1043.96,1096.16,1071.88,1080.53,1082.28,1053.98,1065.08,1065.11,1097.39,1074.89,1063.96,1045.56,1088.0,1035.84,1029.0,989.04,953.19,914.13,931.24,878.84,904.9,896.07,913.67,856.49,877.55,903.7,928.76,983.23,934.27,884.74,833.59,855.1,795.23,656.39,690.0,733.15,725.11,811.3,798.44,778.31,719.02,712.42,705.27,690.44,594.51],"vol":[63.3,37.7,49.4,31.6,40.2,40.8,47.6,61.0,69.8,63.1,54.5,42.6,37.5,34.7,35.8,34.6,27.8,29.4,36.8,36.7,27.9,33.4,37.3,26.9,25.2,21.8,30.0,19.2,18.7,28.8,22.9,22.6,27.8,21.4,24.2,35.2,26.6,23.8,26.2,21.7,27.1,20.4,20.2,22.1,35.8,28.2,29.2,21.6,22.1,20.9,22.2,19.7,31.1,45.7,27.3,18.3,21.8,30.9,29.9,19.9,24.0,29.2,27.8,39.1,30.5,25.7,20.3,21.0,32.2,21.2,22.8,23.2,30.7,22.4,30.9,29.9,21.3,35.9,77.9,44.9,32.2,28.4,36.7,27.6,27.9,27.1,33.5,27.5,35.4,59.1]},"gex":{"strikes":[375,400,425,450,475,500,525,550,575,600,625,650,675,700,725,750,775,800,825,850,875,900,925,950,975,1000,1025,1050,1075,1100],"vals":[-0.85,-4.13,-1.63,-2.8,-1.24,-8.18,-4.07,-14.13,-7.5,-25.77,-11.4,-20.14,-10.94,-5.4,1.71,-0.8,0.43,-0.99,-0.09,1.47,0.21,3.68,0.93,1.07,0.1,2.56,0.91,0.69,0.05,0.72],"spot":594.51,"flip":734.9450884030672,"net":-105.9},"ivterm":{"labels":["11/23\n3D","11/25\n5D","11/27\n7D","11/30\n10D","12/02\n12D","12/04\n14D","12/11\n21D","12/18\n28D","12/24\n34D","12/31\n41D","01/15\n56D","02/19\n91D","03/19\n119D","04/16\n147D"],"dte":[3,5,7,10,12,14,21,28,34,41,56,91,119,147],"iv":[108.8,117.4,108.0,99.0,101.3,102.7,99.2,97.6,94.2,90.1,87.0,79.6,76.2,74.0]},"oi":{"strikes":[400,425,450,475,500,525,550,575,600,625,650,675,700,725,750,775,800,825,850,875,900,925,950,975,1000],"call":[1763,1693,2260,1213,2932,1165,1328,3885,2489,1664,3345,2579,15710,13390,19330,9047,23045,8444,16832,8483,25959,11736,14137,5803,26524],"put":[19174,6309,9698,3515,15589,6087,17612,10189,26194,9377,20402,13198,22599,12756,17393,7583,20179,6755,12191,6908,10480,5434,5761,3206,4932]},"prob":{"marks":[400,450,483,500,523.5,550,585,594.51,620,650,681,700,719,750,800,850,900],"vals":[90.8,81.5,73.7,69.3,63.1,56.1,47.0,44.6,38.6,32.1,26.2,23.0,20.1,16.0,10.9,7.2,4.8]},"peers":{"labels":["MU","SNDK","SKHY","NVDA","AMD","AVGO","WDC","STX","TSM","ASML","INTC","SOX"],"vals":[-23.62,-21.65,-15.23,-19.6,-15.84,-8.7,-7.06,-8.41,-14.66,-9.99,-7.55,-17.13]}};
+
 Chart.defaults.color = '#86868b';
-Chart.defaults.font.family = '-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",sans-serif';
+Chart.defaults.font.family = '-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC",sans-serif';
 Chart.defaults.font.size = 11;
-const GRID = 'rgba(255,255,255,.055)';
-const TT = {backgroundColor:'rgba(0,0,0,.92)',borderColor:'rgba(255,255,255,.14)',borderWidth:1,padding:10};
+const grid = {color:'rgba(255,255,255,.055)',drawTicks:false};
+const noGrid = {display:false};
 
-new Chart(document.getElementById('c1'), {
-  data: { labels: D.pxL, datasets: [
-    { type:'line', label:'收盘', data:D.pxC, borderColor:'#0a84ff', backgroundColor:'rgba(10,132,255,.09)',
-      borderWidth:2, pointRadius:0, tension:.18, fill:true, yAxisID:'y' },
-    { type:'bar', label:'量', data:D.pxV, backgroundColor:'rgba(255,159,10,.26)',
-      borderWidth:0, yAxisID:'y1' }
+// 1 price
+new Chart(document.getElementById('cPrice'), {
+  data:{labels:D.price.dates,datasets:[
+    {type:'line',label:'收盘价',data:D.price.close,borderColor:'#64d2ff',borderWidth:1.6,
+     pointRadius:0,tension:.18,yAxisID:'y',fill:false},
+    {type:'bar',label:'成交量（百万股）',data:D.price.vol,backgroundColor:'rgba(134,134,139,.30)',
+     borderRadius:1,yAxisID:'y1',barPercentage:1,categoryPercentage:.9}
   ]},
-  options:{ responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false},
-    plugins:{legend:{display:false}, tooltip:TT},
-    scales:{
-      x:{grid:{color:GRID,drawTicks:false}, ticks:{maxRotation:0,autoSkip:true,maxTicksLimit:12}},
-      y:{position:'left', grid:{color:GRID}, ticks:{callback:v=>'$'+v}},
-      y1:{position:'right', grid:{display:false}, ticks:{callback:v=>v+'M'}, max:80}
-    }}
+  options:{responsive:true,maintainAspectRatio:false,animation:{duration:900},
+    plugins:{legend:{display:true,labels:{boxWidth:8,boxHeight:8,usePointStyle:true,pointStyle:'rect',padding:14}},
+      tooltip:{mode:'index',intersect:false,backgroundColor:'rgba(10,10,12,.94)',borderColor:'rgba(255,255,255,.12)',borderWidth:1,padding:10}},
+    scales:{x:{grid:noGrid,ticks:{maxTicksLimit:9,color:'#5b5b60'}},
+      y:{position:'left',grid:grid,ticks:{callback:v=>'$'+v},suggestedMin:460},
+      y1:{position:'right',grid:noGrid,ticks:{callback:v=>v+'M',color:'#5b5b60'}}}}
 });
 
-const gcol = D.gV.map(v => v >= 0 ? 'rgba(255,69,58,.82)' : 'rgba(48,209,88,.82)');
-new Chart(document.getElementById('c2'), {
+// 2 peers weekly
+const pv = D.peers.vals.map(v=>Math.abs(v));
+new Chart(document.getElementById('cPeers'), {
   type:'bar',
-  data:{ labels:D.gK.map(v=>'$'+v), datasets:[{ data:D.gV, backgroundColor:gcol, borderWidth:0, barPercentage:.94 }]},
-  options:{ responsive:true, maintainAspectRatio:false,
-    plugins:{legend:{display:false}, tooltip:Object.assign({},TT,{callbacks:{label:c=>'Gamma '+(c.raw>0?'+':'')+c.raw+'M /1%'}})},
-    scales:{ x:{grid:{display:false}, ticks:{maxRotation:0,autoSkip:true,maxTicksLimit:20}},
-      y:{grid:{color:GRID}, ticks:{callback:v=>(v>0?'+':'')+v+'M'}} }}
+  data:{labels:D.peers.labels,datasets:[{data:pv,
+    backgroundColor:pv.map(v=>v>=15?'rgba(48,209,88,.78)':'rgba(48,209,88,.40)'),
+    borderRadius:4,barPercentage:.74}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:c=>'跌幅 −'+c.raw.toFixed(2)+'%'}}},
+    scales:{x:{grid:grid,beginAtZero:true,suggestedMax:26,ticks:{callback:v=>'−'+v+'%'}},
+      y:{grid:noGrid,ticks:{color:'#c8c8cd',font:{size:11}}}}}
 });
 
-new Chart(document.getElementById('c3'), {
+// 3 GEX
+const gv = D.gex.vals;
+new Chart(document.getElementById('cGex'), {
   type:'bar',
-  data:{ labels:D.oiK.map(v=>'$'+v), datasets:[
-    { label:'Call OI', data:D.oiC, backgroundColor:'rgba(10,132,255,.80)', borderWidth:0, barPercentage:.86 },
-    { label:'Put OI', data:D.oiP, backgroundColor:'rgba(255,159,10,.80)', borderWidth:0, barPercentage:.86 }
-  ]},
-  options:{ responsive:true, maintainAspectRatio:false,
-    plugins:{legend:{display:false}, tooltip:Object.assign({},TT,{callbacks:{label:c=>c.dataset.label+' '+(c.raw*1000).toLocaleString()+' 张'}})},
-    scales:{ x:{grid:{display:false}, stacked:false, ticks:{maxRotation:0,autoSkip:true,maxTicksLimit:18}},
-      y:{grid:{color:GRID}, ticks:{callback:v=>v+'K'}} }}
+  data:{labels:D.gex.strikes,datasets:[{data:gv,
+    backgroundColor:gv.map(v=>v<0?'rgba(255,69,58,.72)':'rgba(48,209,88,.72)'),
+    borderColor:gv.map(v=>v<0?'rgba(255,69,58,1)':'rgba(48,209,88,1)'),borderWidth:0,borderRadius:2,barPercentage:.86}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'$'+c.raw.toFixed(1)+'M / 1%'}},
+      annotation:{}},
+    scales:{x:{grid:noGrid,ticks:{maxTicksLimit:16,color:'#5b5b60'}},
+      y:{grid:grid,ticks:{callback:v=>'$'+v+'M'}}}}
 });
 
-new Chart(document.getElementById('c4'), {
+// 4 IV term
+new Chart(document.getElementById('cIv'), {
   type:'line',
-  data:{ labels:D.ivL, datasets:[
-    { label:'ATM IV', data:D.ivV, borderColor:'#0a84ff', backgroundColor:'rgba(10,132,255,.12)',
-      borderWidth:2.4, pointRadius:4, pointBackgroundColor:'#0a84ff', tension:.25, fill:true },
-    { label:'HV30', data:D.hv, borderColor:'rgba(255,159,10,.9)', borderWidth:1.6, borderDash:[6,5],
-      pointRadius:0, tension:0, fill:false }
-  ]},
-  options:{ responsive:true, maintainAspectRatio:false,
-    plugins:{legend:{display:false}, tooltip:Object.assign({},TT,{callbacks:{label:c=>c.dataset.label+' '+c.raw+'%'}})},
-    scales:{ x:{grid:{display:false}}, y:{grid:{color:GRID}, ticks:{callback:v=>v+'%'}, min:60, max:130} }}
+  data:{labels:D.ivterm.labels,datasets:[{data:D.ivterm.iv,borderColor:'#bf5af2',borderWidth:2,
+    pointRadius:3,pointBackgroundColor:'#bf5af2',tension:.28,
+    fill:{target:'origin',above:'rgba(191,90,242,.12)'}}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toFixed(1)+'%'}}},
+    scales:{x:{grid:noGrid,ticks:{maxTicksLimit:8,color:'#5b5b60',font:{size:9.5}}},
+      y:{grid:grid,ticks:{callback:v=>v+'%'},suggestedMin:60,suggestedMax:125}}}
 });
 
-new Chart(document.getElementById('c5'), {
-  type:'line',
-  data:{ labels:D.aX, datasets:[
-    { label:'A1 650/800 CS', data:D.aY, borderColor:'#0a84ff', borderWidth:2.4, pointRadius:0, tension:0, fill:false },
-    { label:'B1 550/450 PS', data:D.bY, borderColor:'#30d158', borderWidth:2.4, pointRadius:0, tension:0, fill:false }
+// 5 OI
+new Chart(document.getElementById('cOi'), {
+  type:'bar',
+  data:{labels:D.oi.strikes,datasets:[
+    {label:'Call OI',data:D.oi.call,backgroundColor:'rgba(255,69,58,.62)',borderRadius:2,barPercentage:.9,categoryPercentage:.8},
+    {label:'Put OI',data:D.oi.put,backgroundColor:'rgba(48,209,88,.62)',borderRadius:2,barPercentage:.9,categoryPercentage:.8}
   ]},
-  options:{ responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false},
-    plugins:{legend:{display:false}, tooltip:Object.assign({},TT,{callbacks:{
-      title:c=>'到期价 $'+c[0].label, label:c=>c.dataset.label+'：'+(c.raw>0?'+':'')+'$'+c.raw}})},
-    scales:{ x:{grid:{display:false}, ticks:{maxRotation:0,autoSkip:true,maxTicksLimit:10,callback:v=>'$'+v}},
-      y:{grid:{color:GRID}, ticks:{callback:v=>(v>0?'+':'')+'$'+v}} }}
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{boxWidth:8,boxHeight:8,usePointStyle:true,pointStyle:'rect',padding:12}}},
+    scales:{x:{grid:noGrid,ticks:{maxTicksLimit:14,color:'#5b5b60'}},
+      y:{grid:grid,ticks:{callback:v=>(v/1000).toFixed(0)+'k'}}}}
+});
+
+// 6 probability
+const pr = D.prob.vals.map((v,i)=> i===0? v : v);
+new Chart(document.getElementById('cProb'), {
+  type:'bar',
+  data:{labels:D.prob.marks.map(m=>'$'+m),datasets:[{data:pr,
+    backgroundColor:pr.map(v=>v>=70?'rgba(10,132,255,.78)':v>=40?'rgba(10,132,255,.55)':'rgba(10,132,255,.32)'),
+    borderRadius:4,barPercentage:.66}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'P(S ≥ '+D.prob.marks[c.dataIndex]+') = '+c.raw.toFixed(1)+'%'}}},
+    scales:{x:{grid:noGrid,ticks:{color:'#5b5b60',font:{size:10}}},
+      y:{grid:grid,ticks:{callback:v=>v+'%'},suggestedMax:100}}}
 });
 </script>
 </body></html>
